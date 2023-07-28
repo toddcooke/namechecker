@@ -7,11 +7,10 @@ export default function Home() {
   const [text, setText] = useState("");
   const [existsInGithub, setExistsInGithub] = useState(null);
   const [existsInPip, setExistsInPip] = useState(null);
+  const [availableDomains, setAvailableDomains] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPip(packageName) {
-    console.log("xxx", packageName);
-
     let resp;
     try {
       resp = await fetch(`https://pypi.org/pypi/${packageName}/json`, {
@@ -22,11 +21,10 @@ export default function Home() {
       });
     } catch (e) {
       console.log(e);
+      setExistsInPip(false);
       return;
     }
 
-    // const json = await resp.json();
-    console.log("xxx", resp);
     if (resp.status === 200) setExistsInPip(true);
     else setExistsInPip(false);
   }
@@ -37,11 +35,20 @@ export default function Home() {
     setExistsInGithub(json.exists);
   }
 
+  async function searchDomainName(domainName) {
+    const res = await fetch(`/api/domain_available?domainName=${domainName}`);
+    const json = await res.json();
+    setAvailableDomains(json.domains.filter((d) => d.available));
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    console.log("handling submit...");
-    await Promise.all([searchGithub(text), searchPip(text)]);
+    await Promise.all([
+      searchGithub(text),
+      searchPip(text),
+      searchDomainName(text),
+    ]);
     setLoading(false);
   }
 
@@ -71,6 +78,20 @@ export default function Home() {
           {existsInPip && <p>❌ Pip package already exists</p>}
           {existsInPip !== null && !existsInPip && (
             <p>✅Pip package name is available!</p>
+          )}
+
+          {availableDomains !== null && availableDomains.length === 0 && (
+            <p>❌ Domain name already exists</p>
+          )}
+          {availableDomains !== null && availableDomains.length > 0 && (
+            <>
+              <p>✅Domain name available!</p>
+              <ul>
+                {availableDomains.map((d) => (
+                  <li key={d.domain}>{d.domain} is available!</li>
+                ))}
+              </ul>
+            </>
           )}
         </>
       )}

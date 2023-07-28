@@ -11,10 +11,11 @@
   "dependencies": {
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "net": "^1.0.2",
     "next": "13.4.12",
     "octokit": "^3.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "whoiser": "^1.17.1"
   },
   "devDependencies": {
     "prettier": "3.0.0"
