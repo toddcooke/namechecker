@@ -6,11 +6,11 @@ import { useState } from "react";
 export default function Home() {
   const [text, setText] = useState("");
   const [existsInGithub, setExistsInGithub] = useState(null);
-  const [existsInPip, setExistsInPip] = useState(null);
+  const [existsInPypi, setExistsInPypi] = useState(null);
   const [availableDomains, setAvailableDomains] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  async function searchPip(packageName) {
+  async function searchPypi(packageName) {
     let resp;
     try {
       resp = await fetch(`https://pypi.org/pypi/${packageName}/json`, {
@@ -21,12 +21,12 @@ export default function Home() {
       });
     } catch (e) {
       console.log(e);
-      setExistsInPip(false);
+      setExistsInPypi(false);
       return;
     }
 
-    if (resp.status === 200) setExistsInPip(true);
-    else setExistsInPip(false);
+    if (resp.status === 200) setExistsInPypi(true);
+    else setExistsInPypi(false);
   }
 
   async function searchGithub(repoName) {
@@ -46,7 +46,7 @@ export default function Home() {
     setLoading(true);
     await Promise.all([
       searchGithub(text),
-      searchPip(text),
+      searchPypi(text),
       searchDomainName(text),
     ]);
     setLoading(false);
@@ -75,9 +75,9 @@ export default function Home() {
             <p>✅GitHub repo name is available!</p>
           )}
 
-          {existsInPip && <p>❌ Pip package already exists</p>}
-          {existsInPip !== null && !existsInPip && (
-            <p>✅Pip package name is available!</p>
+          {existsInPypi && <p>❌ PyPI package already exists</p>}
+          {existsInPypi !== null && !existsInPypi && (
+            <p>✅PyPI package name is available!</p>
           )}
 
           {availableDomains !== null && availableDomains.length === 0 && (
