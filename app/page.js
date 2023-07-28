@@ -30,20 +30,21 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <input
-        value={text}
-        type={"text"}
-        onChange={(e) => setText(e.target.value)}
-        onSubmit={handleSubmit}
-      />
+      <form onSubmit={handleSubmit}>
+        <input
+          value={text}
+          type={"text"}
+          onChange={(e) => setText(e.target.value)}
+        />
 
-      <p>existsInGithub {existsInGithub}</p>
+        <button type={"submit"} onClick={handleSubmit}>
+          Search
+        </button>
+      </form>
 
-      <button onClick={handleSubmit}>Search</button>
-
-      {existsInGithub && <p>GitHub repo already exists</p>}
+      {existsInGithub && <p>❌ GitHub repo already exists</p>}
       {existsInGithub !== null && !existsInGithub && (
-        <p>GitHub repo name is available!</p>
+        <p>✅GitHub repo name is available!</p>
       )}
     </main>
   );
