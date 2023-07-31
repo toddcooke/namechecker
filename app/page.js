@@ -38,7 +38,7 @@ export default function Home() {
   }
 
   async function searchDomainName(domainName) {
-    const res = await fetch(`/api/domain_available?domainName=${domainName}`);
+    const res = await fetch(`/api/exists/domain_name?domainName=${domainName}`);
     const json = await res.json();
     setAvailableDomains(json.domains.filter((d) => d.available));
   }
