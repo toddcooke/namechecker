@@ -7,7 +7,7 @@ on:
     - cron:  '0 5 * * *'
 
 jobs:
-  Explore-GitHub-Actions:
+  scheduled:
     runs-on: ubuntu-latest
     steps:
     - name: Check out this repo
