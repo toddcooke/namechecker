@@ -8,6 +8,7 @@ export default function Home() {
   const [existsInGithub, setExistsInGithub] = useState(null);
   const [existsInPypi, setExistsInPypi] = useState(null);
   const [availableDomains, setAvailableDomains] = useState(null);
+  const [existsInHomebrew, setExistsInHomebrew] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(packageName) {
@@ -41,6 +42,16 @@ export default function Home() {
     setAvailableDomains(json.domains.filter((d) => d.available));
   }
 
+  async function searchHomebrew(name) {
+    const resFormula = await fetch(
+      `https://formulae.brew.sh/api/formula/${name}.json`,
+    );
+    const resCask = await fetch(
+      `https://formulae.brew.sh/api/cask/${name}.json`,
+    );
+    setExistsInHomebrew(resFormula.status !== 404 || resCask.status !== 404);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -48,6 +59,7 @@ export default function Home() {
       searchGithub(text),
       searchPypi(text),
       searchDomainName(text),
+      searchHomebrew(text),
     ]);
     setLoading(false);
   }
@@ -78,6 +90,11 @@ export default function Home() {
           {existsInPypi && <p>❌ PyPI package already exists</p>}
           {existsInPypi !== null && !existsInPypi && (
             <p>✅PyPI package name is available!</p>
+          )}
+
+          {existsInHomebrew && <p>❌ Homebrew cask/formula already exists</p>}
+          {existsInHomebrew !== null && !existsInHomebrew && (
+            <p>✅Homebrew cask/formula name is available!</p>
           )}
 
           {availableDomains !== null && availableDomains.length === 0 && (
