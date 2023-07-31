@@ -9,6 +9,7 @@ export default function Home() {
   const [existsInPypi, setExistsInPypi] = useState(null);
   const [availableDomains, setAvailableDomains] = useState(null);
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
+  const [existsInApt, setExistsInApt] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(packageName) {
@@ -52,6 +53,12 @@ export default function Home() {
     setExistsInHomebrew(resFormula.status !== 404 || resCask.status !== 404);
   }
 
+  async function searchApt(name) {
+    const res = await fetch(`/api/exists/apt?name=${name}`);
+    const json = await res.json();
+    setExistsInApt(json.exists);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -60,6 +67,7 @@ export default function Home() {
       searchPypi(text),
       searchDomainName(text),
       searchHomebrew(text),
+      searchApt(text),
     ]);
     setLoading(false);
   }
@@ -95,6 +103,11 @@ export default function Home() {
           {existsInHomebrew && <p>❌ Homebrew cask/formula already exists</p>}
           {existsInHomebrew !== null && !existsInHomebrew && (
             <p>✅Homebrew cask/formula name is available!</p>
+          )}
+
+          {existsInApt && <p>❌ apt package already exists</p>}
+          {existsInApt !== null && !existsInApt && (
+            <p>✅apt package name is available!</p>
           )}
 
           {availableDomains !== null && availableDomains.length === 0 && (
