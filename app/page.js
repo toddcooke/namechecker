@@ -2,7 +2,12 @@
 
 import styles from "./page.module.css";
 import { useState } from "react";
-import { MagnifyingGlassIcon, UsersIcon } from "@heroicons/react/20/solid";
+import {
+  MagnifyingGlassIcon,
+  PlusIcon,
+  UsersIcon,
+  XMarkIcon,
+} from "@heroicons/react/20/solid";
 import TailwindLayout from "@/app/TailwindLayout";
 
 export default function Home() {
@@ -88,8 +93,8 @@ export default function Home() {
       <main className={styles.main}>
         <form onSubmit={handleSubmit}>
           <label
-            htmlFor="email"
-            className="block text-sm font-medium leading-6 text-gray-900"
+            htmlFor="name-search"
+            className="block text-sm font-medium leading-6 text-gray-900 dark:text-amber-100"
           >
             Search names
           </label>
@@ -102,22 +107,19 @@ export default function Home() {
                 />
               </div>
               <input
+                id={"name-search"}
                 type="text"
                 onChange={(e) => setText(e.target.value)}
-                className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-slate-700 dark:text-amber-100"
                 placeholder="Name"
               />
             </div>
             <button
               type="button"
               onClick={handleSubmit}
-              className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-amber-100"
             >
               Search
-              {/*<MagnifyingGlassIcon*/}
-              {/*  className="-ml-0.5 h-5 w-5 text-gray-400"*/}
-              {/*  aria-hidden="true"*/}
-              {/*/>*/}
             </button>
           </div>
         </form>
@@ -165,3 +167,9 @@ export default function Home() {
     </TailwindLayout>
   );
 }
+// todo
+// wrap up simple dark mode
+//
+// space search results better - shouldn't take up tons of vertiical space
+//
+// suggest alternate names from dictionary/thesarus

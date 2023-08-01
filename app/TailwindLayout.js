@@ -3,14 +3,14 @@ import { Fragment } from "react";
 export default function TailwindLayout({ children }) {
   return (
     <>
-      <div className="min-h-full">
+      <div className="min-h-full dark:bg-slate-800">
         <div className="py-10">
           <header>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-center text-gray-900">
+              <h1 className="text-3xl font-bold leading-tight tracking-tight text-center text-gray-900 dark:text-amber-100">
                 Name Checker
               </h1>
-              <h3 className={"text-center p-1"}>
+              <h3 className={"text-center p-1 dark:text-amber-100"}>
                 Find out if your name is taken
               </h3>
             </div>
