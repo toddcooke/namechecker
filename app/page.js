@@ -56,6 +56,7 @@ export default function Home() {
     const resFormula = await fetch(
       `https://formulae.brew.sh/api/formula/${name}.json`,
     );
+    await new Promise((r) => setTimeout(r, 1000));
     const resCask = await fetch(
       `https://formulae.brew.sh/api/cask/${name}.json`,
     );
@@ -70,15 +71,16 @@ export default function Home() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setLoading(true);
-    await Promise.all([
-      searchGithub(text),
-      searchPypi(text),
-      // searchDomainName(text),
-      searchHomebrew(text),
-      searchApt(text),
-    ]);
-    setLoading(false);
+    // Maybe show loading icon per search?
+    // setLoading(true);
+    // await Promise.all([
+    searchGithub(text);
+    searchPypi(text);
+    searchDomainName(text);
+    searchHomebrew(text);
+    searchApt(text);
+    // ]);
+    // setLoading(false);
   }
 
   return (
@@ -94,7 +96,7 @@ export default function Home() {
           <div className="mt-2 flex rounded-md shadow-sm">
             <div className="relative flex flex-grow items-stretch focus-within:z-10">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <UsersIcon
+                <MagnifyingGlassIcon
                   className="h-5 w-5 text-gray-400"
                   aria-hidden="true"
                 />
@@ -111,11 +113,11 @@ export default function Home() {
               onClick={handleSubmit}
               className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
             >
-              <MagnifyingGlassIcon
-                className="-ml-0.5 h-5 w-5 text-gray-400"
-                aria-hidden="true"
-              />
               Search
+              {/*<MagnifyingGlassIcon*/}
+              {/*  className="-ml-0.5 h-5 w-5 text-gray-400"*/}
+              {/*  aria-hidden="true"*/}
+              {/*/>*/}
             </button>
           </div>
         </form>

@@ -6,9 +6,15 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const domainName = searchParams.get("domainName");
   const tlds = [".com", ".org", ".io", ".net", ".xyz"];
-  const domains = await Promise.all(
-    tlds.map((tld) => isDomainAvailable(domainName + tld)),
-  );
+  let domains = [];
+  for (let i = 0; i < tlds.length; i++) {
+    if (i > 0) {
+      await new Promise((r) => setTimeout(r, 1000));
+    }
+    const tld = tlds[i];
+    let domain = await isDomainAvailable(domainName + tld);
+    domains.push(domain);
+  }
   return NextResponse.json({ domains: domains });
 }
 
