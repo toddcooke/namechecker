@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import styles from "./page.module.css";
 
 export default function TailwindLayout({ children }) {
   return (
@@ -15,11 +16,8 @@ export default function TailwindLayout({ children }) {
               </h3>
             </div>
           </header>
-          <main>
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-              {/* Your content */}
-              {children}
-            </div>
+          <main className={styles.main}>
+            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
           </main>
         </div>
       </div>

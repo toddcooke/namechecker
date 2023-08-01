@@ -15,6 +15,7 @@ export async function GET(request) {
     let domain = await isDomainAvailable(domainName + tld);
     domains.push(domain);
   }
+  console.log(domains);
   return NextResponse.json({ domains: domains });
 }
 
@@ -33,5 +34,9 @@ async function isDomainAvailable(domainName) {
   } else if (firstTextLine.includes(`no match for "${domainName}"`)) {
     domainAvailability = "available";
   }
-  return { domain: domainName, available: domainAvailability === "available" };
+  return {
+    domain: domainName,
+    available:
+      domainAvailability !== "reserved" && domainAvailability !== "registered",
+  };
 }

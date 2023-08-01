@@ -1,14 +1,10 @@
 "use client";
 
-import styles from "./page.module.css";
 import { useState } from "react";
-import {
-  MagnifyingGlassIcon,
-  PlusIcon,
-  UsersIcon,
-  XMarkIcon,
-} from "@heroicons/react/20/solid";
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import TailwindLayout from "@/app/TailwindLayout";
+import { LoadingIcon } from "@/app/components/LoadingIcon";
+import Link from "next/link";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -37,7 +33,6 @@ export default function Home() {
       });
     } catch (e) {
       console.log(e);
-      setExistsInPypi(false);
       return;
     }
 
@@ -76,100 +71,108 @@ export default function Home() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // Maybe show loading icon per search?
-    // setLoading(true);
-    // await Promise.all([
-    searchGithub(text);
-    searchPypi(text);
-    searchDomainName(text);
-    searchHomebrew(text);
-    searchApt(text);
-    // ]);
-    // setLoading(false);
+    let editedText = text.trim();
+    if (!editedText) return;
+    else setLoading(true);
+    if (editedText.split(" ").length >= 2) {
+      editedText = editedText.replaceAll(/\s+/gi, "-");
+    }
+    setText(editedText);
+    await Promise.all([
+      searchGithub(editedText),
+      searchPypi(editedText),
+      searchDomainName(editedText),
+      searchHomebrew(editedText),
+      searchApt(editedText),
+    ]);
+    setLoading(false);
   }
 
   return (
     <TailwindLayout>
-      <main className={styles.main}>
-        <form onSubmit={handleSubmit}>
-          <label
-            htmlFor="name-search"
-            className="block text-sm font-medium leading-6 text-gray-900 dark:text-amber-100"
-          >
-            Search names
-          </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <div className="relative flex flex-grow items-stretch focus-within:z-10">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <MagnifyingGlassIcon
-                  className="h-5 w-5 text-gray-400"
-                  aria-hidden="true"
-                />
-              </div>
-              <input
-                id={"name-search"}
-                type="text"
-                onChange={(e) => setText(e.target.value)}
-                className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-slate-700 dark:text-amber-100"
-                placeholder="Name"
+      <form onSubmit={handleSubmit}>
+        <label
+          htmlFor="name-search"
+          className="block text-sm font-medium leading-6 text-gray-900 dark:text-amber-100"
+        >
+          Search names
+        </label>
+        <div className="mt-2 flex rounded-md shadow-sm">
+          <div className="relative flex flex-grow items-stretch focus-within:z-10">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <MagnifyingGlassIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
               />
             </div>
-            <button
-              type="button"
-              onClick={handleSubmit}
-              className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-amber-100"
-            >
-              Search
-            </button>
+            <input
+              id={"name-search"}
+              type="text"
+              spellCheck={false}
+              autoCorrect={"off"}
+              autoCapitalize={"off"}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-slate-700 dark:text-amber-100"
+              placeholder="Name"
+            />
           </div>
-        </form>
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-amber-100 dark:hover:bg-slate-700"
+          >
+            Search
+          </button>
+        </div>
+      </form>
 
-        {loading ? (
-          "Loading..."
-        ) : (
+      <ul className={"list-none pt-5 dark:text-amber-100"}>
+        {existsInGithub && <li>❌ GitHub repo already exists</li>}
+        {existsInGithub !== null && !existsInGithub && (
+          <li>✅GitHub repo name is available!</li>
+        )}
+
+        {existsInPypi && <li>❌ PyPI package already exists</li>}
+        {existsInPypi !== null && !existsInPypi && (
+          <li>✅PyPI package name is available!</li>
+        )}
+
+        {existsInHomebrew && <li>❌ Homebrew cask/formula already exists</li>}
+        {existsInHomebrew !== null && !existsInHomebrew && (
+          <li>✅Homebrew cask/formula name is available!</li>
+        )}
+
+        {existsInApt && <li>❌ apt package already exists</li>}
+        {existsInApt !== null && !existsInApt && (
+          <li>✅apt package name is available!</li>
+        )}
+
+        {availableDomains !== null && availableDomains.length === 0 && (
+          <li>❌ Domain name already exists</li>
+        )}
+        {availableDomains !== null && availableDomains.length > 0 && (
           <>
-            {existsInGithub && <p>❌ GitHub repo already exists</p>}
-            {existsInGithub !== null && !existsInGithub && (
-              <p>✅GitHub repo name is available!</p>
-            )}
-
-            {existsInPypi && <p>❌ PyPI package already exists</p>}
-            {existsInPypi !== null && !existsInPypi && (
-              <p>✅PyPI package name is available!</p>
-            )}
-
-            {existsInHomebrew && <p>❌ Homebrew cask/formula already exists</p>}
-            {existsInHomebrew !== null && !existsInHomebrew && (
-              <p>✅Homebrew cask/formula name is available!</p>
-            )}
-
-            {existsInApt && <p>❌ apt package already exists</p>}
-            {existsInApt !== null && !existsInApt && (
-              <p>✅apt package name is available!</p>
-            )}
-
-            {availableDomains !== null && availableDomains.length === 0 && (
-              <p>❌ Domain name already exists</p>
-            )}
-            {availableDomains !== null && availableDomains.length > 0 && (
-              <>
-                <p>✅Domain name available!</p>
-                <ul>
-                  {availableDomains.map((d) => (
-                    <li key={d.domain}>{d.domain} is available!</li>
-                  ))}
-                </ul>
-              </>
-            )}
+            <li>
+              <Link
+                href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+              >
+                ✅Domain name available!
+              </Link>
+            </li>
+            <ul className={"list-disc"}>
+              {availableDomains.map((d) => (
+                <li className={"ms-5"} key={d.domain}>
+                  {d.domain} is available!
+                </li>
+              ))}
+            </ul>
           </>
         )}
-      </main>
+      </ul>
+      {loading && <LoadingIcon />}
     </TailwindLayout>
   );
 }
 // todo
-// wrap up simple dark mode
-//
-// space search results better - shouldn't take up tons of vertiical space
-//
 // suggest alternate names from dictionary/thesarus
