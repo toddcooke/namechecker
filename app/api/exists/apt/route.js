@@ -10,7 +10,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get("name");
   let aptPackagesPath = process.env.VERCEL
-    ? path.join(serverRuntimeConfig.PROJECT_ROOT, "../../apt-packages.txt")
+    ? "/var/task/.next/server/app/apt-packages.txt"
     : "public/apt-packages.txt";
   console.log("project root", serverRuntimeConfig.PROJECT_ROOT);
   console.log(
