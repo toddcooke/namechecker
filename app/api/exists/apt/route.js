@@ -9,7 +9,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get("name");
   let aptPackagesPath = process.env.VERCEL
-    ? path.join(serverRuntimeConfig.PROJECT_ROOT, "../../../apt-packages.txt")
+    ? path.join(serverRuntimeConfig.PROJECT_ROOT, "../../apt-packages.txt")
     : "public/apt-packages.txt";
   const lines = await promises.readFile(aptPackagesPath, "utf-8");
   const found = lines.includes(name);
