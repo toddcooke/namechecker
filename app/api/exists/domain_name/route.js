@@ -15,7 +15,6 @@ export async function GET(request) {
     let domain = await isDomainAvailable(domainName + tld);
     domains.push(domain);
   }
-  console.log(domains);
   return NextResponse.json({ domains: domains });
 }
 
