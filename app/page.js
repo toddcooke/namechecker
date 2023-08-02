@@ -148,7 +148,16 @@ export default function Home() {
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
-          <li>❌ Domain name already exists</li>
+          <li>
+            ℹ️ Domain name (.com, .io, ...) taken.{" "}
+            <Link
+              target={"_blank"}
+              style={{ "text-decoration": "underline" }}
+              href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+            >
+              See alternatives
+            </Link>
+          </li>
         )}
         {availableDomains !== null && availableDomains.length > 0 && (
           <>
