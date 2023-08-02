@@ -17,6 +17,7 @@ export async function GET(request) {
     "files in project root",
     fs.readdirSync(serverRuntimeConfig.PROJECT_ROOT),
   );
+  console.log("pwd", __dirname);
   const lines = await promises.readFile(aptPackagesPath, "utf-8");
   const found = lines.includes(name);
   return NextResponse.json({ exists: found });
