@@ -16,6 +16,13 @@ export default function Home() {
   const [existsInCrates, setExistsInCrates] = useState(null);
   const [alternateNames, setAlternateNames] = useState(null);
   const [loading, setLoading] = useState(false);
+  const notAllAvailable =
+    !existsInApt ||
+    !existsInCrates ||
+    !existsInGithub ||
+    !existsInHomebrew ||
+    !existsInPypi ||
+    !availableDomains;
 
   async function searchPypi(packageName) {
     let resp;
@@ -70,7 +77,7 @@ export default function Home() {
     setExistsInCrates(response.status === 200);
   }
 
-  async function searchAlternateNames(name) {
+  async function searchAlternatesForWord(name) {
     if (!name) return;
     const response = await fetch(
       `https://en.wiktionary.org/w/api.php?action=parse&formatversion=2&page=${name}&prop=wikitext&format=json&origin=*`,
@@ -78,23 +85,42 @@ export default function Home() {
     const json = await response.json();
     if (json.error) {
       console.log(`No wikitionary entry for ${name}`);
-      return;
+      return [name];
     }
     const wikitext = json.parse.wikitext;
-    const start = wikitext.indexOf("====Synonyms====");
+    const start = wikitext.lastIndexOf("====Synonyms====");
     const end = wikitext.indexOf("===", start + "====Synonyms====".length);
     const synonymsRaw = wikitext.substring(start, end);
-    const regex = /\[\[(.*?)]]/g;
+    const regex = /\[\[(.*?)]]|\{\{l\|en\|(.*?)}}/g;
     const matches = synonymsRaw.match(regex);
+    if (!matches) return [name];
     const synonyms = matches
-      .map((match) => match.slice(2, -2))
+      .map((match) => {
+        const arr = match.slice(2, -2).split("|");
+        return arr[arr.length - 1];
+      })
       .filter((word) => !word.startsWith("Thesaurus:"));
-    console.log(synonyms);
-    const words = name
-      .split("-")
-      .map((word) => word.toUpperCase())
-      .join("-");
-    setAlternateNames(synonyms);
+    if (synonyms.length === 0) return [name];
+    else return synonyms;
+  }
+
+  async function searchAlternateNames(name) {
+    const words = name.split("-");
+    const alternates = [];
+    for (let i = 0; i < words.length; i++) {
+      alternates.push(await searchAlternatesForWord(words[i]));
+      if (i > 0) await new Promise((r) => setTimeout(r, 1000));
+    }
+    console.log("alternates", alternates);
+    console.log(
+      alternates.map((arr) => arr[Math.floor(Math.random() * arr.length)]),
+    );
+    const variants = alternates.map(
+      (arr) => arr[Math.floor(Math.random() * arr.length)],
+    );
+    console.log("variants", variants);
+    if (variants.length === 1 && variants[0] === name) return;
+    // setAlternateNames(variants.join("-"));
   }
 
   async function handleSubmit(e) {
@@ -222,28 +248,20 @@ export default function Home() {
         )}
 
         {/*If any names are already taken, suggest some alternate names*/}
-        {alternateNames &&
-          (!existsInApt ||
-            !existsInCrates ||
-            !existsInGithub ||
-            !existsInHomebrew ||
-            !existsInPypi) && (
-            <li>
-              How about some alternatives:{" "}
-              <ul className={"list-disc"}>
-                {alternateNames.map((name) => (
-                  <li className={"ms-5"} key={name}>
-                    {name}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          )}
+        {alternateNames && notAllAvailable && (
+          <li>
+            How about some alternatives:{" "}
+            <ul className={"list-disc"}>
+              {alternateNames.map((name) => (
+                <li className={"ms-5"} key={name}>
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </li>
+        )}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
   );
 }
-
-// todo
-// suggest alternate names from dictionary/thesarus
