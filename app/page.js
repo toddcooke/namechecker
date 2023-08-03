@@ -14,6 +14,7 @@ export default function Home() {
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
   const [existsInApt, setExistsInApt] = useState(null);
   const [existsInCrates, setExistsInCrates] = useState(null);
+  const [alternateNames, setAlternateNames] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(packageName) {
@@ -69,6 +70,33 @@ export default function Home() {
     setExistsInCrates(response.status === 200);
   }
 
+  async function searchAlternateNames(name) {
+    if (!name) return;
+    const response = await fetch(
+      `https://en.wiktionary.org/w/api.php?action=parse&formatversion=2&page=${name}&prop=wikitext&format=json&origin=*`,
+    );
+    const json = await response.json();
+    if (json.error) {
+      console.log(`No wikitionary entry for ${name}`);
+      return;
+    }
+    const wikitext = json.parse.wikitext;
+    const start = wikitext.indexOf("====Synonyms====");
+    const end = wikitext.indexOf("===", start + "====Synonyms====".length);
+    const synonymsRaw = wikitext.substring(start, end);
+    const regex = /\[\[(.*?)]]/g;
+    const matches = synonymsRaw.match(regex);
+    const synonyms = matches
+      .map((match) => match.slice(2, -2))
+      .filter((word) => !word.startsWith("Thesaurus:"));
+    console.log(synonyms);
+    const words = name
+      .split("-")
+      .map((word) => word.toUpperCase())
+      .join("-");
+    setAlternateNames(synonyms);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -85,6 +113,7 @@ export default function Home() {
     setExistsInGithub(null);
     setExistsInPypi(null);
     setAvailableDomains(null);
+    setAlternateNames(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -92,6 +121,7 @@ export default function Home() {
       searchHomebrew(editedText),
       searchApt(editedText),
       searchCrates(editedText),
+      searchAlternateNames(editedText),
     ]);
     setLoading(false);
   }
@@ -165,7 +195,7 @@ export default function Home() {
             ℹ️ Domain name (.com, .io, ...) taken.{" "}
             <Link
               target={"_blank"}
-              style={{ "text-decoration": "underline" }}
+              style={{ textDecoration: "underline" }}
               href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
             >
               See alternatives
@@ -190,6 +220,25 @@ export default function Home() {
             </ul>
           </>
         )}
+
+        {/*If any names are already taken, suggest some alternate names*/}
+        {alternateNames &&
+          (!existsInApt ||
+            !existsInCrates ||
+            !existsInGithub ||
+            !existsInHomebrew ||
+            !existsInPypi) && (
+            <li>
+              How about some alternatives:{" "}
+              <ul className={"list-disc"}>
+                {alternateNames.map((name) => (
+                  <li className={"ms-5"} key={name}>
+                    {name}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          )}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
