@@ -13,14 +13,8 @@ export default function Home() {
   const [availableDomains, setAvailableDomains] = useState(null);
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
   const [existsInApt, setExistsInApt] = useState(null);
+  const [existsInCrates, setExistsInCrates] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [checks, setChecks] = useState({
-    github: true,
-    pypi: true,
-    domains: true,
-    homebrew: true,
-    apt: true,
-  });
 
   async function searchPypi(packageName) {
     let resp;
@@ -32,6 +26,7 @@ export default function Home() {
         },
       });
     } catch (e) {
+      // 404 cors error issue https://github.com/pypi/warehouse/issues/14229
       console.log(e);
       return;
     }
@@ -69,6 +64,11 @@ export default function Home() {
     setExistsInApt(json.exists);
   }
 
+  async function searchCrates(name) {
+    const response = await fetch(`https://crates.io/api/v1/crates/${name}`);
+    setExistsInCrates(response.status === 200);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -84,6 +84,7 @@ export default function Home() {
       searchDomainName(editedText),
       searchHomebrew(editedText),
       searchApt(editedText),
+      searchCrates(editedText),
     ]);
     setLoading(false);
   }
@@ -145,6 +146,11 @@ export default function Home() {
         {existsInApt && <li>❌ apt package already exists</li>}
         {existsInApt !== null && !existsInApt && (
           <li>✅apt package name is available!</li>
+        )}
+
+        {existsInCrates && <li>❌ Rust crate name already exists</li>}
+        {existsInCrates !== null && !existsInCrates && (
+          <li>✅Rust crate name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
