@@ -78,6 +78,13 @@ export default function Home() {
       editedText = editedText.replaceAll(/\s+/gi, "-");
     }
     setText(editedText);
+    // Set state to null to 'reset' search results
+    setExistsInCrates(null);
+    setExistsInApt(null);
+    setExistsInHomebrew(null);
+    setExistsInGithub(null);
+    setExistsInPypi(null);
+    setAvailableDomains(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -188,5 +195,6 @@ export default function Home() {
     </TailwindLayout>
   );
 }
+
 // todo
 // suggest alternate names from dictionary/thesarus
