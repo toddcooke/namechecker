@@ -14,6 +14,7 @@ export default function Home() {
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
   const [existsInApt, setExistsInApt] = useState(null);
   const [existsInCrates, setExistsInCrates] = useState(null);
+  const [existsInMaven, setExistsInMaven] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(packageName) {
@@ -69,6 +70,12 @@ export default function Home() {
     setExistsInCrates(response.status === 200);
   }
 
+  async function searchMaven(name) {
+    const response = await fetch(`/api/exists/maven?name=${name}`);
+    const json = await response.json();
+    setExistsInMaven(json.exists);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -85,6 +92,7 @@ export default function Home() {
     setExistsInGithub(null);
     setExistsInPypi(null);
     setAvailableDomains(null);
+    setExistsInMaven(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -92,6 +100,7 @@ export default function Home() {
       searchHomebrew(editedText),
       searchApt(editedText),
       searchCrates(editedText),
+      searchMaven(editedText),
     ]);
     setLoading(false);
   }
@@ -158,6 +167,11 @@ export default function Home() {
         {existsInCrates && <li>❌ Rust crate name already exists</li>}
         {existsInCrates !== null && !existsInCrates && (
           <li>✅Rust crate name is available!</li>
+        )}
+
+        {existsInMaven && <li>❌ Java package name already exists</li>}
+        {existsInMaven !== null && !existsInMaven && (
+          <li>✅Java package name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
