@@ -9,7 +9,7 @@ import { NextResponse } from "next/server";
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get("name");
-  const resp = await octokit.request(
+  const response = await octokit.request(
     `GET /search/repositories?q=${name}&type=repositories`,
     {
       headers: {
@@ -18,8 +18,5 @@ export async function GET(request) {
     },
   );
 
-  return NextResponse.json(
-    { exists: resp.data.total_count > 0 },
-    { status: resp.status },
-  );
+  return NextResponse.json({ exists: response.data.total_count > 0 });
 }
