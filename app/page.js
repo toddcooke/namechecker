@@ -18,6 +18,7 @@ export default function Home() {
   const [existsInNpm, setExistsInNpm] = useState(null);
   const [existsInRubygems, setExistsInRubygems] = useState(null);
   const [existsInNuget, setExistsInNuget] = useState(null);
+  const [existsInGo, setExistsInGo] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(name) {
@@ -80,6 +81,12 @@ export default function Home() {
     setExistsInNuget(json.exists);
   }
 
+  async function searchGo(name) {
+    const response = await fetch(`/api/exists/go?name=${name}`);
+    const json = await response.json();
+    setExistsInGo(json.exists);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -100,6 +107,7 @@ export default function Home() {
     setExistsInNpm(null);
     setExistsInRubygems(null);
     setExistsInNuget(null);
+    setExistsInGo(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -111,6 +119,7 @@ export default function Home() {
       searchNpm(editedText),
       searchRubygems(editedText),
       searchNuget(editedText),
+      searchGo(editedText),
     ]);
     setLoading(false);
   }
@@ -199,6 +208,21 @@ export default function Home() {
         {existsInNuget && <li>❌ NuGet package name already exists</li>}
         {existsInNuget !== null && !existsInNuget && (
           <li>✅ NuGet package name is available!</li>
+        )}
+
+        {existsInGo && (
+          <li>
+            ℹ️ Go package name{" "}
+            <Link
+              style={{ textDecoration: "underline" }}
+              href={`https://pkg.go.dev/search?q=${text}&m=package`}
+            >
+              may already exist
+            </Link>
+          </li>
+        )}
+        {existsInGo !== null && !existsInGo && (
+          <li>✅ Go package name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
