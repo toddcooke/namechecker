@@ -19,6 +19,7 @@ export default function Home() {
   const [existsInRubygems, setExistsInRubygems] = useState(null);
   const [existsInNuget, setExistsInNuget] = useState(null);
   const [existsInGo, setExistsInGo] = useState(null);
+  const [existsInPackagist, setExistsInPackagist] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(name) {
@@ -87,6 +88,12 @@ export default function Home() {
     setExistsInGo(json.exists);
   }
 
+  async function searchPackagist(name) {
+    const response = await fetch(`/api/exists/packagist?name=${name}`);
+    const json = await response.json();
+    setExistsInPackagist(json.exists);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -108,6 +115,7 @@ export default function Home() {
     setExistsInRubygems(null);
     setExistsInNuget(null);
     setExistsInGo(null);
+    setExistsInPackagist(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -120,6 +128,7 @@ export default function Home() {
       searchRubygems(editedText),
       searchNuget(editedText),
       searchGo(editedText),
+      searchPackagist(editedText),
     ]);
     setLoading(false);
   }
@@ -208,6 +217,21 @@ export default function Home() {
         {existsInNuget && <li>❌ NuGet package name already exists</li>}
         {existsInNuget !== null && !existsInNuget && (
           <li>✅ NuGet package name is available!</li>
+        )}
+
+        {existsInPackagist && (
+          <li>
+            ℹ️ Packagist package name{" "}
+            <Link
+              style={{ textDecoration: "underline" }}
+              href={`https://packagist.org/?query=${text}`}
+            >
+              may already exist
+            </Link>
+          </li>
+        )}
+        {existsInPackagist !== null && !existsInPackagist && (
+          <li>✅ Packagist package name is available!</li>
         )}
 
         {existsInGo && (
