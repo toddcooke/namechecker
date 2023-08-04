@@ -16,35 +16,36 @@ export default function Home() {
   const [existsInCrates, setExistsInCrates] = useState(null);
   const [existsInMaven, setExistsInMaven] = useState(null);
   const [existsInNpm, setExistsInNpm] = useState(null);
+  const [existsInRubygems, setExistsInRubygems] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(name) {
-    const res = await fetch(`/api/exists/pypi?name=${name}`);
-    const json = await res.json();
+    const response = await fetch(`/api/exists/pypi?name=${name}`);
+    const json = await response.json();
     setExistsInPypi(json.exists);
   }
 
   async function searchGithub(name) {
-    const res = await fetch(`/api/exists/github?name=${name}`);
-    const json = await res.json();
+    const response = await fetch(`/api/exists/github?name=${name}`);
+    const json = await response.json();
     setExistsInGithub(json.exists);
   }
 
   async function searchDomainName(name) {
-    const res = await fetch(`/api/exists/domain_name?name=${name}`);
-    const json = await res.json();
+    const response = await fetch(`/api/exists/domain_name?name=${name}`);
+    const json = await response.json();
     setAvailableDomains(json.domains.filter((d) => d.available));
   }
 
   async function searchHomebrew(name) {
-    const res = await fetch(`/api/exists/homebrew?name=${name}`);
-    const json = await res.json();
+    const response = await fetch(`/api/exists/homebrew?name=${name}`);
+    const json = await response.json();
     setExistsInHomebrew(json.exists);
   }
 
   async function searchApt(name) {
-    const res = await fetch(`/api/exists/apt?name=${name}`);
-    const json = await res.json();
+    const response = await fetch(`/api/exists/apt?name=${name}`);
+    const json = await response.json();
     setExistsInApt(json.exists);
   }
 
@@ -66,6 +67,12 @@ export default function Home() {
     setExistsInNpm(json.exists);
   }
 
+  async function searchRubygems(name) {
+    const response = await fetch(`/api/exists/rubygems?name=${name}`);
+    const json = await response.json();
+    setExistsInRubygems(json.exists);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -84,6 +91,7 @@ export default function Home() {
     setAvailableDomains(null);
     setExistsInMaven(null);
     setExistsInNpm(null);
+    setExistsInRubygems(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -93,6 +101,7 @@ export default function Home() {
       searchCrates(editedText),
       searchMaven(editedText),
       searchNpm(editedText),
+      searchRubygems(editedText),
     ]);
     setLoading(false);
   }
@@ -136,39 +145,46 @@ export default function Home() {
       </form>
 
       <ul className={"list-none pt-5 dark:text-amber-100"}>
-        {existsInGithub && <li>❌ GitHub repo already exists</li>}
+        {existsInGithub && <li>❌ GitHub repo name already exists</li>}
         {existsInGithub !== null && !existsInGithub && (
-          <li>✅GitHub repo name is available!</li>
+          <li>✅ GitHub repo name is available!</li>
         )}
 
-        {existsInPypi && <li>❌ PyPI package already exists</li>}
+        {existsInPypi && <li>❌ PyPI package name already exists</li>}
         {existsInPypi !== null && !existsInPypi && (
-          <li>✅PyPI package name is available!</li>
+          <li>✅ PyPI package name is available!</li>
         )}
 
-        {existsInHomebrew && <li>❌ Homebrew cask/formula already exists</li>}
+        {existsInHomebrew && (
+          <li>❌ Homebrew cask/formula name already exists</li>
+        )}
         {existsInHomebrew !== null && !existsInHomebrew && (
-          <li>✅Homebrew cask/formula name is available!</li>
+          <li>✅ Homebrew cask/formula name is available!</li>
         )}
 
-        {existsInApt && <li>❌ apt package already exists</li>}
+        {existsInApt && <li>❌ apt package name already exists</li>}
         {existsInApt !== null && !existsInApt && (
-          <li>✅apt package name is available!</li>
+          <li>✅ apt package name is available!</li>
         )}
 
         {existsInCrates && <li>❌ Rust crate name already exists</li>}
         {existsInCrates !== null && !existsInCrates && (
-          <li>✅Rust crate name is available!</li>
+          <li>✅ Rust crate name is available!</li>
         )}
 
         {existsInMaven && <li>❌ Java package name already exists</li>}
         {existsInMaven !== null && !existsInMaven && (
-          <li>✅Java package name is available!</li>
+          <li>✅ Java package name is available!</li>
         )}
 
         {existsInNpm && <li>❌ npm package name already exists</li>}
         {existsInNpm !== null && !existsInNpm && (
-          <li>✅npm package name is available!</li>
+          <li>✅ npm package name is available!</li>
+        )}
+
+        {existsInRubygems && <li>❌ Ruby gem name already exists</li>}
+        {existsInRubygems !== null && !existsInRubygems && (
+          <li>✅ Ruby gem name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
@@ -189,7 +205,7 @@ export default function Home() {
               <Link
                 href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
               >
-                ✅Domain name available!
+                ✅ Domain name available!
               </Link>
             </li>
             <ul className={"list-disc"}>
