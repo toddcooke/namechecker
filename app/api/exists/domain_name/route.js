@@ -4,7 +4,7 @@ const whoiser = require("whoiser");
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const domainName = searchParams.get("domainName");
+  const name = searchParams.get("name");
   const tlds = [".com", ".org", ".io", ".net", ".xyz"];
   let domains = [];
   for (let i = 0; i < tlds.length; i++) {
@@ -12,7 +12,7 @@ export async function GET(request) {
       await new Promise((r) => setTimeout(r, 1000));
     }
     const tld = tlds[i];
-    let domain = await isDomainAvailable(domainName + tld);
+    let domain = await isDomainAvailable(name + tld);
     domains.push(domain);
   }
   return NextResponse.json({ domains: domains });

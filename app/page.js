@@ -18,33 +18,28 @@ export default function Home() {
   const [existsInNpm, setExistsInNpm] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  async function searchPypi(packageName) {
-    const res = await fetch(`/api/exists/pypi?name=${packageName}`);
+  async function searchPypi(name) {
+    const res = await fetch(`/api/exists/pypi?name=${name}`);
     const json = await res.json();
     setExistsInPypi(json.exists);
   }
 
-  async function searchGithub(repoName) {
-    const res = await fetch(`/api/exists/github?repo=${repoName}`);
+  async function searchGithub(name) {
+    const res = await fetch(`/api/exists/github?name=${name}`);
     const json = await res.json();
     setExistsInGithub(json.exists);
   }
 
-  async function searchDomainName(domainName) {
-    const res = await fetch(`/api/exists/domain_name?domainName=${domainName}`);
+  async function searchDomainName(name) {
+    const res = await fetch(`/api/exists/domain_name?name=${name}`);
     const json = await res.json();
     setAvailableDomains(json.domains.filter((d) => d.available));
   }
 
   async function searchHomebrew(name) {
-    const resFormula = await fetch(
-      `https://formulae.brew.sh/api/formula/${name}.json`,
-    );
-    await new Promise((r) => setTimeout(r, 1000));
-    const resCask = await fetch(
-      `https://formulae.brew.sh/api/cask/${name}.json`,
-    );
-    setExistsInHomebrew(resFormula.status !== 404 || resCask.status !== 404);
+    const res = await fetch(`/api/exists/homebrew?name=${name}`);
+    const json = await res.json();
+    setExistsInHomebrew(json.exists);
   }
 
   async function searchApt(name) {
@@ -54,8 +49,9 @@ export default function Home() {
   }
 
   async function searchCrates(name) {
-    const response = await fetch(`https://crates.io/api/v1/crates/${name}`);
-    setExistsInCrates(response.status === 200);
+    const response = await fetch(`/api/exists/crates?name=${name}`);
+    const json = await response.json();
+    setExistsInCrates(json.exists);
   }
 
   async function searchMaven(name) {

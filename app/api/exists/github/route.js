@@ -8,9 +8,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const repo = searchParams.get("repo");
+  const name = searchParams.get("name");
   const resp = await octokit.request(
-    `GET /search/repositories?q=${repo}&type=repositories`,
+    `GET /search/repositories?q=${name}&type=repositories`,
     {
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
