@@ -19,22 +19,9 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(packageName) {
-    let resp;
-    try {
-      resp = await fetch(`https://pypi.org/pypi/${packageName}/json`, {
-        headers: {
-          Host: "pypi.org",
-          Accept: "application/json",
-        },
-      });
-    } catch (e) {
-      // 404 cors error issue https://github.com/pypi/warehouse/issues/14229
-      console.log(e);
-      return;
-    }
-
-    if (resp.status === 200) setExistsInPypi(true);
-    else setExistsInPypi(false);
+    const res = await fetch(`/api/exists/pypi?name=${packageName}`);
+    const json = await res.json();
+    setExistsInPypi(json.exists);
   }
 
   async function searchGithub(repoName) {
@@ -78,8 +65,9 @@ export default function Home() {
   }
 
   async function searchNpm(name) {
-    const response = await fetch(`https://registry.npmjs.org/${name}`);
-    setExistsInNpm(response.status === 200);
+    const response = await fetch(`/api/exists/npm?name=${name}`);
+    const json = await response.json();
+    setExistsInNpm(json.exists);
   }
 
   async function handleSubmit(e) {
@@ -182,9 +170,9 @@ export default function Home() {
           <li>✅Java package name is available!</li>
         )}
 
-        {existsInNpm && <li>❌ NPM package name already exists</li>}
+        {existsInNpm && <li>❌ npm package name already exists</li>}
         {existsInNpm !== null && !existsInNpm && (
-          <li>✅NPM package name is available!</li>
+          <li>✅npm package name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
