@@ -15,6 +15,7 @@ export default function Home() {
   const [existsInApt, setExistsInApt] = useState(null);
   const [existsInCrates, setExistsInCrates] = useState(null);
   const [existsInMaven, setExistsInMaven] = useState(null);
+  const [existsInNpm, setExistsInNpm] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(packageName) {
@@ -76,6 +77,11 @@ export default function Home() {
     setExistsInMaven(json.exists);
   }
 
+  async function searchNpm(name) {
+    const response = await fetch(`https://registry.npmjs.org/${name}`);
+    setExistsInNpm(response.status === 200);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -93,6 +99,7 @@ export default function Home() {
     setExistsInPypi(null);
     setAvailableDomains(null);
     setExistsInMaven(null);
+    setExistsInNpm(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -101,6 +108,7 @@ export default function Home() {
       searchApt(editedText),
       searchCrates(editedText),
       searchMaven(editedText),
+      searchNpm(editedText),
     ]);
     setLoading(false);
   }
@@ -172,6 +180,11 @@ export default function Home() {
         {existsInMaven && <li>❌ Java package name already exists</li>}
         {existsInMaven !== null && !existsInMaven && (
           <li>✅Java package name is available!</li>
+        )}
+
+        {existsInNpm && <li>❌ NPM package name already exists</li>}
+        {existsInNpm !== null && !existsInNpm && (
+          <li>✅NPM package name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
