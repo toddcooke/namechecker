@@ -17,6 +17,7 @@ export default function Home() {
   const [existsInMaven, setExistsInMaven] = useState(null);
   const [existsInNpm, setExistsInNpm] = useState(null);
   const [existsInRubygems, setExistsInRubygems] = useState(null);
+  const [existsInNuget, setExistsInNuget] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function searchPypi(name) {
@@ -73,6 +74,12 @@ export default function Home() {
     setExistsInRubygems(json.exists);
   }
 
+  async function searchNuget(name) {
+    const response = await fetch(`/api/exists/nuget?name=${name}`);
+    const json = await response.json();
+    setExistsInNuget(json.exists);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     let editedText = text.trim();
@@ -92,6 +99,7 @@ export default function Home() {
     setExistsInMaven(null);
     setExistsInNpm(null);
     setExistsInRubygems(null);
+    setExistsInNuget(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -102,6 +110,7 @@ export default function Home() {
       searchMaven(editedText),
       searchNpm(editedText),
       searchRubygems(editedText),
+      searchNuget(editedText),
     ]);
     setLoading(false);
   }
@@ -172,9 +181,9 @@ export default function Home() {
           <li>✅ Rust crate name is available!</li>
         )}
 
-        {existsInMaven && <li>❌ Java package name already exists</li>}
+        {existsInMaven && <li>❌ Maven package name already exists</li>}
         {existsInMaven !== null && !existsInMaven && (
-          <li>✅ Java package name is available!</li>
+          <li>✅ Maven package name is available!</li>
         )}
 
         {existsInNpm && <li>❌ npm package name already exists</li>}
@@ -185,6 +194,11 @@ export default function Home() {
         {existsInRubygems && <li>❌ Ruby gem name already exists</li>}
         {existsInRubygems !== null && !existsInRubygems && (
           <li>✅ Ruby gem name is available!</li>
+        )}
+
+        {existsInNuget && <li>❌ NuGet package name already exists</li>}
+        {existsInNuget !== null && !existsInNuget && (
+          <li>✅ NuGet package name is available!</li>
         )}
 
         {availableDomains !== null && availableDomains.length === 0 && (
