@@ -10,7 +10,7 @@ export default function Home() {
   const [text, setText] = useState("");
   const [existsInGithub, setExistsInGithub] = useState(null);
   const [existsInPypi, setExistsInPypi] = useState(null);
-  const [availableDomains, setAvailableDomains] = useState(null);
+  const [domains, setDomains] = useState([]);
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
   const [existsInApt, setExistsInApt] = useState(null);
   const [existsInCrates, setExistsInCrates] = useState(null);
@@ -21,6 +21,7 @@ export default function Home() {
   const [existsInGo, setExistsInGo] = useState(null);
   const [existsInPackagist, setExistsInPackagist] = useState(null);
   const [loading, setLoading] = useState(false);
+  const availableDomains = domains.filter((d) => d.available);
 
   async function searchPypi(name) {
     const response = await fetch(`/api/exists/pypi?name=${name}`);
@@ -37,7 +38,7 @@ export default function Home() {
   async function searchDomainName(name) {
     const response = await fetch(`/api/exists/domain_name?name=${name}`);
     const json = await response.json();
-    setAvailableDomains(json.domains.filter((d) => d.available));
+    setDomains(json.domains);
   }
 
   async function searchHomebrew(name) {
@@ -109,7 +110,7 @@ export default function Home() {
     setExistsInHomebrew(null);
     setExistsInGithub(null);
     setExistsInPypi(null);
-    setAvailableDomains(null);
+    setDomains([]);
     setExistsInMaven(null);
     setExistsInNpm(null);
     setExistsInRubygems(null);
@@ -249,33 +250,69 @@ export default function Home() {
           <li>✅ Go package name is available!</li>
         )}
 
-        {availableDomains !== null && availableDomains.length === 0 && (
-          <li>
-            ℹ️ Domain name (.com, .io, ...) taken.{" "}
-            <Link
-              target={"_blank"}
-              style={{ textDecoration: "underline" }}
-              href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
-            >
-              See alternatives
-            </Link>
-          </li>
-        )}
-        {availableDomains !== null && availableDomains.length > 0 && (
+        {domains.length > 0 && (
           <>
-            <li>
-              <Link
-                href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
-              >
-                ✅ Domain name available!
-              </Link>
-            </li>
-            <ul className={"list-disc"}>
-              {availableDomains.map((d) => (
-                <li className={"ms-5"} key={d.domain}>
-                  {d.domain} is available!
+            {availableDomains.length === domains.length && (
+              <li>
+                <Link
+                  target={"_blank"}
+                  href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+                >
+                  ✅ Domain names available!
+                </Link>
+              </li>
+            )}
+            {availableDomains.length === 0 && (
+              <li>
+                ℹ️ Domain name (.com, .io, ...) taken.{" "}
+                <Link
+                  target={"_blank"}
+                  style={{ textDecoration: "underline" }}
+                  href={`https:domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+                >
+                  See alternatives
+                </Link>
+              </li>
+            )}
+            {availableDomains.length > 0 &&
+              availableDomains.length < domains.length && (
+                <li>
+                  <Link
+                    target={"_blank"}
+                    href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+                  >
+                    ℹ️ Some domain names available
+                  </Link>
                 </li>
-              ))}
+              )}
+            <ul className={"list-disc"}>
+              {domains.map((d) =>
+                d.available ? (
+                  <li className={"ms-5"} key={d.domain}>
+                    ✅{" "}
+                    <Link
+                      target={"_blank"}
+                      style={{ textDecoration: "underline" }}
+                      href={`https://domains.google.com/registrar/search?searchTerm=${d.domain}&hl=en`}
+                    >
+                      {d.domain}
+                    </Link>{" "}
+                    is available!
+                  </li>
+                ) : (
+                  <li className={"ms-5"} key={d.domain}>
+                    ❌{" "}
+                    <Link
+                      style={{ textDecoration: "underline" }}
+                      target={"_blank"}
+                      href={`https://${d.domain}`}
+                    >
+                      {d.domain}
+                    </Link>{" "}
+                    already exists
+                  </li>
+                ),
+              )}
             </ul>
           </>
         )}
