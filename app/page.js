@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Home() {
   const [text, setText] = useState("");
-  const [existsInGithub, setExistsInGithub] = useState(null);
+  const [githubResponse, setGithubResponse] = useState(null);
   const [existsInPypi, setExistsInPypi] = useState(null);
   const [domains, setDomains] = useState(null);
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
@@ -32,7 +32,7 @@ export default function Home() {
   async function searchGithub(name) {
     const response = await fetch(`/api/exists/github?name=${name}`);
     const json = await response.json();
-    setExistsInGithub(json.exists);
+    setGithubResponse(json);
   }
 
   async function searchDomainName(name) {
@@ -108,7 +108,7 @@ export default function Home() {
     setExistsInCrates(null);
     setExistsInApt(null);
     setExistsInHomebrew(null);
-    setExistsInGithub(null);
+    setGithubResponse(null);
     setExistsInPypi(null);
     setDomains(null);
     setExistsInMaven(null);
@@ -174,10 +174,7 @@ export default function Home() {
       </form>
 
       <ul className={"list-none pt-5 dark:text-amber-100"}>
-        {existsInGithub && <li>❌ GitHub repo name already exists</li>}
-        {existsInGithub !== null && !existsInGithub && (
-          <li>✅ GitHub repo name is available!</li>
-        )}
+        <CheckListItem state={githubResponse} name={"GitHub repo"} />
 
         {existsInPypi && <li>❌ PyPI package name already exists</li>}
         {existsInPypi !== null && !existsInPypi && (
@@ -326,5 +323,39 @@ export default function Home() {
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
+  );
+}
+
+/**
+ * @param state
+ *    state = {
+ *     exists: boolean
+ *     existingName: string
+ *    }?
+ * @param name "PyPI package name", for example
+ */
+function CheckListItem({ state, name }) {
+  return (
+    <>
+      {state && (
+        <>
+          {state.exists ? (
+            <li>
+              ❌ {name}
+              {" name "}
+              <Link
+                style={{ textDecoration: "underline" }}
+                target={"_blank"}
+                href={state.existingUrl}
+              >
+                already exists
+              </Link>
+            </li>
+          ) : (
+            <li>✅ {name} name is available!</li>
+          )}
+        </>
+      )}
+    </>
   );
 }

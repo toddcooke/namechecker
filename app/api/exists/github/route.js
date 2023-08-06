@@ -1,5 +1,6 @@
 import "server-only";
 import { Octokit, App } from "octokit";
+
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
@@ -18,5 +19,12 @@ export async function GET(request) {
     },
   );
 
-  return NextResponse.json({ exists: response.data.total_count > 0 });
+  const existingUrl = response.data.items.find(
+    (item) => item.name.toLowerCase() === name.toLowerCase(),
+  )?.html_url;
+
+  return NextResponse.json({
+    exists: existingUrl !== undefined,
+    existingUrl: existingUrl,
+  });
 }
