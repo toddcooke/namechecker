@@ -1,4 +1,4 @@
-name: Save apt package names
+name: Save TLDs
 
 on:
   push:

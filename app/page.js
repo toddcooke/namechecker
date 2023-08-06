@@ -21,7 +21,7 @@ export default function Home() {
   const [existsInGo, setExistsInGo] = useState(null);
   const [existsInPackagist, setExistsInPackagist] = useState(null);
   const [loading, setLoading] = useState(false);
-  const availableDomains = domains?.filter((d) => d.available);
+  const availableDomains = domains?.domains?.filter((d) => d.available);
 
   async function searchPypi(name) {
     const response = await fetch(`/api/exists/pypi?name=${name}`);
@@ -38,7 +38,7 @@ export default function Home() {
   async function searchDomainName(name) {
     const response = await fetch(`/api/exists/domain_name?name=${name}`);
     const json = await response.json();
-    setDomains(json.domains);
+    setDomains(json);
   }
 
   async function searchHomebrew(name) {
@@ -251,7 +251,7 @@ export default function Home() {
           <li>✅ Go package name is available!</li>
         )}
 
-        {domains != null && (
+        {domains?.domains != null && (
           <>
             {availableDomains.length === 5 && (
               <li>
@@ -265,8 +265,8 @@ export default function Home() {
             )}
             {availableDomains.length === 0 && (
               <>
-                {text.split(".").length - 1 > 1 ? (
-                  <li>ℹ️ Domain name must have 0 or 1 dots</li>
+                {domains?.error ? (
+                  <li>ℹ️ {domains.error}</li>
                 ) : (
                   <li>
                     ℹ️ Domain name already exists.{" "}
@@ -282,7 +282,7 @@ export default function Home() {
               </>
             )}
             {availableDomains.length > 0 &&
-              availableDomains.length < domains.length && (
+              availableDomains.length < domains?.domains?.length && (
                 <li>
                   <Link
                     target={"_blank"}
@@ -293,7 +293,7 @@ export default function Home() {
                 </li>
               )}
             <ul className={"list-disc"}>
-              {domains.map((d) =>
+              {domains?.domains?.map((d) =>
                 d.available ? (
                   <li className={"ms-5"} key={d.domain}>
                     ✅{" "}
