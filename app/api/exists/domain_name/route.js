@@ -5,7 +5,20 @@ const whoiser = require("whoiser");
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get("name");
-  const tlds = [".com", ".org", ".io", ".net", ".xyz"];
+  let tlds = [".com", ".org", ".io", ".net", ".xyz"];
+  try {
+    const dotCount = name.split(".").length - 1;
+    if (dotCount === 1) {
+      new URL("https://" + name);
+      return NextResponse.json({ domains: [await isDomainAvailable(name)] });
+    } else if (dotCount > 1) {
+      return NextResponse.json({ domains: [] });
+    }
+  } catch (e) {
+    console.log(e);
+    return NextResponse.json({ domains: [] });
+  }
+
   let domains = [];
   for (let i = 0; i < tlds.length; i++) {
     if (i > 0) {
@@ -19,7 +32,13 @@ export async function GET(request) {
 }
 
 async function isDomainAvailable(domainName) {
-  const domainWhois = await whoiser(domainName, { follow: 1 });
+  const domainWhois = await whoiser(domainName, { follow: 2 });
+  if (JSON.stringify(domainWhois).includes('{"Domain Status":[]')) {
+    return {
+      domain: domainName,
+      available: true,
+    };
+  }
   const firstDomainWhois = whoiser.firstResult(domainWhois);
   const firstTextLine = (firstDomainWhois.text[0] || "").toLowerCase();
   let domainAvailability = "unknown";
@@ -35,7 +54,6 @@ async function isDomainAvailable(domainName) {
   }
   return {
     domain: domainName,
-    available:
-      domainAvailability !== "reserved" && domainAvailability !== "registered",
+    available: domainAvailability === "available",
   };
 }

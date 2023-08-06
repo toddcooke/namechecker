@@ -10,7 +10,7 @@ export default function Home() {
   const [text, setText] = useState("");
   const [existsInGithub, setExistsInGithub] = useState(null);
   const [existsInPypi, setExistsInPypi] = useState(null);
-  const [domains, setDomains] = useState([]);
+  const [domains, setDomains] = useState(null);
   const [existsInHomebrew, setExistsInHomebrew] = useState(null);
   const [existsInApt, setExistsInApt] = useState(null);
   const [existsInCrates, setExistsInCrates] = useState(null);
@@ -21,7 +21,7 @@ export default function Home() {
   const [existsInGo, setExistsInGo] = useState(null);
   const [existsInPackagist, setExistsInPackagist] = useState(null);
   const [loading, setLoading] = useState(false);
-  const availableDomains = domains.filter((d) => d.available);
+  const availableDomains = domains?.filter((d) => d.available);
 
   async function searchPypi(name) {
     const response = await fetch(`/api/exists/pypi?name=${name}`);
@@ -110,7 +110,7 @@ export default function Home() {
     setExistsInHomebrew(null);
     setExistsInGithub(null);
     setExistsInPypi(null);
-    setDomains([]);
+    setDomains(null);
     setExistsInMaven(null);
     setExistsInNpm(null);
     setExistsInRubygems(null);
@@ -163,6 +163,7 @@ export default function Home() {
             />
           </div>
           <button
+            id={"search-button"}
             type="button"
             onClick={handleSubmit}
             className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-amber-100 dark:hover:bg-slate-700"
@@ -250,9 +251,9 @@ export default function Home() {
           <li>✅ Go package name is available!</li>
         )}
 
-        {domains.length > 0 && (
+        {domains != null && (
           <>
-            {availableDomains.length === domains.length && (
+            {availableDomains.length === 5 && (
               <li>
                 <Link
                   target={"_blank"}
@@ -263,16 +264,22 @@ export default function Home() {
               </li>
             )}
             {availableDomains.length === 0 && (
-              <li>
-                ℹ️ Domain name (.com, .io, ...) taken.{" "}
-                <Link
-                  target={"_blank"}
-                  style={{ textDecoration: "underline" }}
-                  href={`https:domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
-                >
-                  See alternatives
-                </Link>
-              </li>
+              <>
+                {text.split(".").length - 1 > 1 ? (
+                  <li>ℹ️ Domain name must have 0 or 1 dots</li>
+                ) : (
+                  <li>
+                    ℹ️ Domain name already exists.{" "}
+                    <Link
+                      target={"_blank"}
+                      style={{ textDecoration: "underline" }}
+                      href={`https:domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+                    >
+                      See alternatives
+                    </Link>
+                  </li>
+                )}
+              </>
             )}
             {availableDomains.length > 0 &&
               availableDomains.length < domains.length && (
