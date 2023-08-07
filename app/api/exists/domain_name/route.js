@@ -34,7 +34,7 @@ export async function GET(request) {
     return NextResponse.json({ domains: [await isDomainAvailable(name)] });
   }
   let domains = [];
-  let tlds = [".com", ".org", ".io", ".net", ".xyz"];
+  let tlds = [".com", ".org", ".io", ".ai", ".dev" , ".app", ".net", ".xyz"];
   for (let i = 0; i < tlds.length; i++) {
     if (i > 0) await new Promise((r) => setTimeout(r, 1000));
     const tld = tlds[i];
