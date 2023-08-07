@@ -13,5 +13,8 @@ export async function GET(request) {
   if (match && match[1]) {
     searchCount = parseInt(match[1]);
   }
-  return NextResponse.json({ exists: searchCount > 0 });
+  return NextResponse.json({
+    exists: searchCount > 0,
+    existsUrl: `https://pkg.go.dev/search?q=${name}&m=package`,
+  });
 }

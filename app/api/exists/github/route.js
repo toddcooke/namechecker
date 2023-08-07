@@ -19,12 +19,12 @@ export async function GET(request) {
     },
   );
 
-  const existingUrl = response.data.items.find(
+  const existsUrl = response.data.items.find(
     (item) => item.name.toLowerCase() === name.toLowerCase(),
   )?.html_url;
 
   return NextResponse.json({
-    exists: existingUrl !== undefined,
-    existingUrl: existingUrl,
+    exists: existsUrl !== undefined,
+    existsUrl: existsUrl,
   });
 }

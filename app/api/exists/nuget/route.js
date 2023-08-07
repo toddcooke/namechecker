@@ -8,5 +8,9 @@ export async function GET(request) {
   const response = await fetch(
     `https://api.nuget.org/v3-flatcontainer/${name.toLowerCase()}/index.json`,
   );
-  return NextResponse.json({ exists: response.status === 200 });
+  const exists = response.status === 200;
+  return NextResponse.json({
+    exists: exists,
+    existsUrl: exists && `https://www.nuget.org/packages/${name}`,
+  });
 }

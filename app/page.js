@@ -9,24 +9,24 @@ import Link from "next/link";
 export default function Home() {
   const [text, setText] = useState("");
   const [githubResponse, setGithubResponse] = useState(null);
-  const [existsInPypi, setExistsInPypi] = useState(null);
+  const [pypiResponse, setPypiResponse] = useState(null);
   const [domains, setDomains] = useState(null);
-  const [existsInHomebrew, setExistsInHomebrew] = useState(null);
-  const [existsInApt, setExistsInApt] = useState(null);
-  const [existsInCrates, setExistsInCrates] = useState(null);
-  const [existsInMaven, setExistsInMaven] = useState(null);
-  const [existsInNpm, setExistsInNpm] = useState(null);
-  const [existsInRubygems, setExistsInRubygems] = useState(null);
-  const [existsInNuget, setExistsInNuget] = useState(null);
+  const [homebrewResponse, setHomebrewResponse] = useState(null);
+  const [aptResponse, setAptResponse] = useState(null);
+  const [cratesResponse, setCratesResponse] = useState(null);
+  const [mavenResponse, setMavenResponse] = useState(null);
+  const [npmResponse, setNpmResponse] = useState(null);
+  const [rubyGemsResponse, setRubyGemsResponse] = useState(null);
+  const [nugetResponse, setNugetResponse] = useState(null);
   const [existsInGo, setExistsInGo] = useState(null);
-  const [existsInPackagist, setExistsInPackagist] = useState(null);
+  const [packagistResponse, setPackagistResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const availableDomains = domains?.domains?.filter((d) => d.available);
 
   async function searchPypi(name) {
     const response = await fetch(`/api/exists/pypi?name=${name}`);
     const json = await response.json();
-    setExistsInPypi(json.exists);
+    setPypiResponse(json);
   }
 
   async function searchGithub(name) {
@@ -44,43 +44,43 @@ export default function Home() {
   async function searchHomebrew(name) {
     const response = await fetch(`/api/exists/homebrew?name=${name}`);
     const json = await response.json();
-    setExistsInHomebrew(json.exists);
+    setHomebrewResponse(json);
   }
 
   async function searchApt(name) {
     const response = await fetch(`/api/exists/apt?name=${name}`);
     const json = await response.json();
-    setExistsInApt(json.exists);
+    setAptResponse(json);
   }
 
   async function searchCrates(name) {
     const response = await fetch(`/api/exists/crates?name=${name}`);
     const json = await response.json();
-    setExistsInCrates(json.exists);
+    setCratesResponse(json);
   }
 
   async function searchMaven(name) {
     const response = await fetch(`/api/exists/maven?name=${name}`);
     const json = await response.json();
-    setExistsInMaven(json.exists);
+    setMavenResponse(json);
   }
 
   async function searchNpm(name) {
     const response = await fetch(`/api/exists/npm?name=${name}`);
     const json = await response.json();
-    setExistsInNpm(json.exists);
+    setNpmResponse(json);
   }
 
   async function searchRubygems(name) {
     const response = await fetch(`/api/exists/rubygems?name=${name}`);
     const json = await response.json();
-    setExistsInRubygems(json.exists);
+    setRubyGemsResponse(json);
   }
 
   async function searchNuget(name) {
     const response = await fetch(`/api/exists/nuget?name=${name}`);
     const json = await response.json();
-    setExistsInNuget(json.exists);
+    setNugetResponse(json);
   }
 
   async function searchGo(name) {
@@ -92,7 +92,7 @@ export default function Home() {
   async function searchPackagist(name) {
     const response = await fetch(`/api/exists/packagist?name=${name}`);
     const json = await response.json();
-    setExistsInPackagist(json.exists);
+    setPackagistResponse(json);
   }
 
   async function handleSubmit(e) {
@@ -105,18 +105,18 @@ export default function Home() {
     }
     setText(editedText);
     // Set state to null to 'reset' search results
-    setExistsInCrates(null);
-    setExistsInApt(null);
-    setExistsInHomebrew(null);
+    setCratesResponse(null);
+    setAptResponse(null);
+    setHomebrewResponse(null);
     setGithubResponse(null);
-    setExistsInPypi(null);
+    setPypiResponse(null);
     setDomains(null);
-    setExistsInMaven(null);
-    setExistsInNpm(null);
-    setExistsInRubygems(null);
-    setExistsInNuget(null);
+    setMavenResponse(null);
+    setNpmResponse(null);
+    setRubyGemsResponse(null);
+    setNugetResponse(null);
     setExistsInGo(null);
-    setExistsInPackagist(null);
+    setPackagistResponse(null);
     await Promise.all([
       searchGithub(editedText),
       searchPypi(editedText),
@@ -175,68 +175,23 @@ export default function Home() {
 
       <ul className={"list-none pt-5 dark:text-amber-100"}>
         <CheckListItem state={githubResponse} name={"GitHub repo"} />
-
-        {existsInPypi && <li>❌ PyPI package name already exists</li>}
-        {existsInPypi !== null && !existsInPypi && (
-          <li>✅ PyPI package name is available!</li>
-        )}
-
-        {existsInHomebrew && (
-          <li>❌ Homebrew cask/formula name already exists</li>
-        )}
-        {existsInHomebrew !== null && !existsInHomebrew && (
-          <li>✅ Homebrew cask/formula name is available!</li>
-        )}
-
-        {existsInApt && <li>❌ apt package name already exists</li>}
-        {existsInApt !== null && !existsInApt && (
-          <li>✅ apt package name is available!</li>
-        )}
-
-        {existsInCrates && <li>❌ Rust crate name already exists</li>}
-        {existsInCrates !== null && !existsInCrates && (
-          <li>✅ Rust crate name is available!</li>
-        )}
-
-        {existsInMaven && <li>❌ Maven package name already exists</li>}
-        {existsInMaven !== null && !existsInMaven && (
-          <li>✅ Maven package name is available!</li>
-        )}
-
-        {existsInNpm && <li>❌ npm package name already exists</li>}
-        {existsInNpm !== null && !existsInNpm && (
-          <li>✅ npm package name is available!</li>
-        )}
-
-        {existsInRubygems && <li>❌ Ruby gem name already exists</li>}
-        {existsInRubygems !== null && !existsInRubygems && (
-          <li>✅ Ruby gem name is available!</li>
-        )}
-
-        {existsInNuget && <li>❌ NuGet package name already exists</li>}
-        {existsInNuget !== null && !existsInNuget && (
-          <li>✅ NuGet package name is available!</li>
-        )}
-
-        {existsInPackagist && (
-          <li>
-            ℹ️ Packagist package name{" "}
-            <Link
-              style={{ textDecoration: "underline" }}
-              href={`https://packagist.org/?query=${text}`}
-            >
-              may already exist
-            </Link>
-          </li>
-        )}
-        {existsInPackagist !== null && !existsInPackagist && (
-          <li>✅ Packagist package name is available!</li>
-        )}
-
+        <CheckListItem state={pypiResponse} name={"PyPI package"} />
+        <CheckListItem
+          state={homebrewResponse}
+          name={"Homebrew cask/formula"}
+        />
+        <CheckListItem state={aptResponse} name={"apt package"} />
+        <CheckListItem state={cratesResponse} name={"Rust crate"} />
+        <CheckListItem state={mavenResponse} name={"Maven package"} />
+        <CheckListItem state={npmResponse} name={"npm package"} />
+        <CheckListItem state={rubyGemsResponse} name={"Ruby gem"} />
+        <CheckListItem state={nugetResponse} name={"Nuget package"} />
+        <CheckListItem state={packagistResponse} name={"Packagist package"} />
         {existsInGo && (
           <li>
             ℹ️ Go package name{" "}
             <Link
+              target={"_blank"}
               style={{ textDecoration: "underline" }}
               href={`https://pkg.go.dev/search?q=${text}&m=package`}
             >
@@ -247,7 +202,6 @@ export default function Home() {
         {existsInGo !== null && !existsInGo && (
           <li>✅ Go package name is available!</li>
         )}
-
         {domains?.domains != null && (
           <>
             {availableDomains.length === 5 && (
@@ -297,7 +251,7 @@ export default function Home() {
                     <Link
                       target={"_blank"}
                       style={{ textDecoration: "underline" }}
-                      href={`https://domains.google.com/registrar/search?searchTerm=${d.domain}&hl=en`}
+                      href={`https://www.namecheap.com/domains/registration/results/?domain=${d.domain}`}
                     >
                       {d.domain}
                     </Link>{" "}
@@ -330,9 +284,9 @@ export default function Home() {
  * @param state
  *    state = {
  *     exists: boolean
- *     existingName: string
+ *     existsUrl: string
  *    }?
- * @param name "PyPI package name", for example
+ * @param name "PyPI package", for example
  */
 function CheckListItem({ state, name }) {
   return (
@@ -346,7 +300,7 @@ function CheckListItem({ state, name }) {
               <Link
                 style={{ textDecoration: "underline" }}
                 target={"_blank"}
-                href={state.existingUrl}
+                href={state.existsUrl}
               >
                 already exists
               </Link>

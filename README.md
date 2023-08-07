@@ -10,6 +10,7 @@ Check it out at https://namechecker.vercel.app
 
 ### TODO
 
-- [ ] Case insensitive searching. Searching FZF should count as taken if fzf exists
+- [x] Case insensitive searching. Searching FZF should count as taken if fzf exists - Thanks to [@YogPanjarale](https://github.com/YogPanjarale)
 - [ ] Count - or _ as taken. Searching hello-world should count as taken if hello_world exists
 - [ ] Add fuzzy check option. Searching hello should count as taken if hello-world exists
+- [ ] More accurate go.dev package search. Searching asdf should return the package named asdf with the most imports.
