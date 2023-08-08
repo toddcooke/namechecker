@@ -139,7 +139,7 @@ export default function Home() {
       <form onSubmit={handleSubmit}>
         <label
           htmlFor="name-search"
-          className="block text-sm font-medium leading-6 text-gray-900 dark:text-amber-100"
+          className="block text-sm font-medium leading-6"
         >
           Search names
         </label>
@@ -158,7 +158,7 @@ export default function Home() {
               autoCorrect={"off"}
               value={text}
               onChange={(e) => setText(e.target.value.toLowerCase())}
-              className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:text-amber-100 bg-transparent"
+              className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
               placeholder="Name"
             />
           </div>
@@ -166,14 +166,14 @@ export default function Home() {
             id={"search-button"}
             type="button"
             onClick={handleSubmit}
-            className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-neutral-50 dark:text-amber-100 dark:hover:bg-neutral-700"
+            className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-neutral-200  dark:hover:bg-neutral-700"
           >
             Search
           </button>
         </div>
       </form>
 
-      <ul className={"list-none pt-5 dark:text-amber-100"}>
+      <ul className="list-none pt-5">
         <CheckListItem state={githubResponse} name={"GitHub repo"} />
         <CheckListItem state={pypiResponse} name={"PyPI package"} />
         <CheckListItem
@@ -243,10 +243,10 @@ export default function Home() {
                   </Link>
                 </li>
               )}
-            <ul className={"list-disc"}>
+            <ul className="list-disc">
               {domains?.domains?.map((d) =>
                 d.available ? (
-                  <li className={"ms-5"} key={d.domain}>
+                  <li className="ms-5" key={d.domain}>
                     ✅{" "}
                     <Link
                       target={"_blank"}
@@ -258,7 +258,7 @@ export default function Home() {
                     is available!
                   </li>
                 ) : (
-                  <li className={"ms-5"} key={d.domain}>
+                  <li className="ms-5" key={d.domain}>
                     ❌{" "}
                     <Link
                       style={{ textDecoration: "underline" }}
