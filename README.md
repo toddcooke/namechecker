@@ -3,9 +3,8 @@
 This is a tool for finding out if a project name is taken already. Instead of checking apt, npm, GitHub, etc, for the
 name of your project, you can use this tool to search many places at once.
 
-<p align="center">
-  <img width="407" alt="Name Checker screenshot" src="https://github.com/toddcooke/namechecker/assets/7469379/737ac081-ce0c-43d3-9e68-913fb4e0b494">
-</p>
+<img width="1219" alt="259210364-b9cfd076-568f-4098-9696-680b3c5d9ebc" src="https://github.com/toddcooke/namechecker/assets/7469379/f6c8e03d-ceb3-4eee-ad5c-ca42794d1332">
+
 
 Check it out at https://namechecker.vercel.app
 
