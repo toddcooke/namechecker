@@ -1,5 +1,5 @@
-import styles from "./page.module.css";
-import Link from "next/link";
+import styles from './page.module.css';
+import Link from 'next/link';
 
 export default function TailwindLayout({ children }) {
   return (
@@ -8,7 +8,7 @@ export default function TailwindLayout({ children }) {
         <div className="py-10">
           <header>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <Link href={"https://github.com/toddcooke/namechecker"}>
+              <Link href={'https://github.com/toddcooke/namechecker'}>
                 <h1 className="text-3xl font-bold leading-tight tracking-tight text-center">
                   Name Checker
                 </h1>

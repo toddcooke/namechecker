@@ -1,6 +1,6 @@
 // From https://stackoverflow.com/a/27995370/3569329
 function stringPermutations(input) {
-  const letters = input.split("");
+  const letters = input.split('');
   const permCount = 1 << input.length;
   var res = [];
   for (let perm = 0; perm < permCount; perm++) {
@@ -10,7 +10,7 @@ function stringPermutations(input) {
       return perm >> 1;
     }, perm);
 
-    const result = letters.join("");
+    const result = letters.join('');
     res.push(result);
   }
   return res;

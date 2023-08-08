@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import TailwindLayout from "@/app/TailwindLayout";
-import { LoadingIcon } from "@/app/components/LoadingIcon";
-import Link from "next/link";
+import { useState } from 'react';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+import TailwindLayout from '@/app/TailwindLayout';
+import { LoadingIcon } from '@/app/components/LoadingIcon';
+import Link from 'next/link';
 
 export default function Home() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [githubResponse, setGithubResponse] = useState(null);
   const [pypiResponse, setPypiResponse] = useState(null);
   const [domains, setDomains] = useState(null);
@@ -100,8 +100,8 @@ export default function Home() {
     let editedText = text.trim();
     if (!editedText) return;
     else setLoading(true);
-    if (editedText.split(" ").length >= 2) {
-      editedText = editedText.replaceAll(/\s+/gi, "-");
+    if (editedText.split(' ').length >= 2) {
+      editedText = editedText.replaceAll(/\s+/gi, '-');
     }
     setText(editedText);
     // Set state to null to 'reset' search results
@@ -152,10 +152,10 @@ export default function Home() {
               />
             </div>
             <input
-              id={"name-search"}
+              id={'name-search'}
               type="text"
               spellCheck={false}
-              autoCorrect={"off"}
+              autoCorrect={'off'}
               value={text}
               onChange={(e) => setText(e.target.value.toLowerCase())}
               className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-transparent"
@@ -163,7 +163,7 @@ export default function Home() {
             />
           </div>
           <button
-            id={"search-button"}
+            id={'search-button'}
             type="button"
             onClick={handleSubmit}
             className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-neutral-200  dark:hover:bg-neutral-700"
@@ -174,25 +174,25 @@ export default function Home() {
       </form>
 
       <ul className="list-none pt-5">
-        <CheckListItem state={githubResponse} name={"GitHub repo"} />
-        <CheckListItem state={pypiResponse} name={"PyPI package"} />
+        <CheckListItem state={githubResponse} name={'GitHub repo'} />
+        <CheckListItem state={pypiResponse} name={'PyPI package'} />
         <CheckListItem
           state={homebrewResponse}
-          name={"Homebrew cask/formula"}
+          name={'Homebrew cask/formula'}
         />
-        <CheckListItem state={aptResponse} name={"apt package"} />
-        <CheckListItem state={cratesResponse} name={"Rust crate"} />
-        <CheckListItem state={mavenResponse} name={"Maven package"} />
-        <CheckListItem state={npmResponse} name={"npm package"} />
-        <CheckListItem state={rubyGemsResponse} name={"Ruby gem"} />
-        <CheckListItem state={nugetResponse} name={"Nuget package"} />
-        <CheckListItem state={packagistResponse} name={"Packagist package"} />
+        <CheckListItem state={aptResponse} name={'apt package'} />
+        <CheckListItem state={cratesResponse} name={'Rust crate'} />
+        <CheckListItem state={mavenResponse} name={'Maven package'} />
+        <CheckListItem state={npmResponse} name={'npm package'} />
+        <CheckListItem state={rubyGemsResponse} name={'Ruby gem'} />
+        <CheckListItem state={nugetResponse} name={'Nuget package'} />
+        <CheckListItem state={packagistResponse} name={'Packagist package'} />
         {existsInGo && (
           <li>
-            ℹ️ Go package name{" "}
+            ℹ️ Go package name{' '}
             <Link
-              target={"_blank"}
-              style={{ textDecoration: "underline" }}
+              target={'_blank'}
+              style={{ textDecoration: 'underline' }}
               href={`https://pkg.go.dev/search?q=${text}&m=package`}
             >
               may already exist
@@ -207,7 +207,7 @@ export default function Home() {
             {availableDomains.length === 5 && (
               <li>
                 <Link
-                  target={"_blank"}
+                  target={'_blank'}
                   href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
                 >
                   ✅ Domain names available!
@@ -220,10 +220,10 @@ export default function Home() {
                   <li>ℹ️ {domains.error}</li>
                 ) : (
                   <li>
-                    ℹ️ Domain name already exists.{" "}
+                    ℹ️ Domain name already exists.{' '}
                     <Link
-                      target={"_blank"}
-                      style={{ textDecoration: "underline" }}
+                      target={'_blank'}
+                      style={{ textDecoration: 'underline' }}
                       href={`https:domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
                     >
                       See alternatives
@@ -236,7 +236,7 @@ export default function Home() {
               availableDomains.length < domains?.domains?.length && (
                 <li>
                   <Link
-                    target={"_blank"}
+                    target={'_blank'}
                     href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
                   >
                     ℹ️ Some domain names available
@@ -247,26 +247,26 @@ export default function Home() {
               {domains?.domains?.map((d) =>
                 d.available ? (
                   <li className="ms-5" key={d.domain}>
-                    ✅{" "}
+                    ✅{' '}
                     <Link
-                      target={"_blank"}
-                      style={{ textDecoration: "underline" }}
+                      target={'_blank'}
+                      style={{ textDecoration: 'underline' }}
                       href={`https://www.namecheap.com/domains/registration/results/?domain=${d.domain}`}
                     >
                       {d.domain}
-                    </Link>{" "}
+                    </Link>{' '}
                     is available!
                   </li>
                 ) : (
                   <li className="ms-5" key={d.domain}>
-                    ❌{" "}
+                    ❌{' '}
                     <Link
-                      style={{ textDecoration: "underline" }}
-                      target={"_blank"}
+                      style={{ textDecoration: 'underline' }}
+                      target={'_blank'}
                       href={`https://${d.domain}`}
                     >
                       {d.domain}
-                    </Link>{" "}
+                    </Link>{' '}
                     already exists
                   </li>
                 ),
@@ -296,10 +296,10 @@ function CheckListItem({ state, name }) {
           {state.exists ? (
             <li>
               ❌ {name}
-              {" name "}
+              {' name '}
               <Link
-                style={{ textDecoration: "underline" }}
-                target={"_blank"}
+                style={{ textDecoration: 'underline' }}
+                target={'_blank'}
                 href={state.existsUrl}
               >
                 already exists
