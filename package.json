@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "namechecker",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
     "test": "npx playwright test"
   },
   "dependencies": {
@@ -15,7 +16,6 @@
     "@vercel/og": "^0.5.10",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
-    "net": "^1.0.2",
     "next": "13.4.12",
     "octokit": "^3.1.0",
     "react": "18.2.0",
