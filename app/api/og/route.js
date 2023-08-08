@@ -1,4 +1,4 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from '@vercel/og';
 
 export async function GET(request) {
   return new ImageResponse(
@@ -6,16 +6,16 @@ export async function GET(request) {
       <div
         style={{
           fontSize: 128,
-          background: "#1e293b",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          textAlign: "center",
-          alignItems: "center",
-          justifyContent: "center",
+          background: '#1e293b',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          textAlign: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        <span style={{ color: "#fef3c7" }}>Name Checker✅</span>
+        <span style={{ color: '#fef3c7' }}>Name Checker✅</span>
       </div>
     ),
     {
