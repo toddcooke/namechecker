@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="h-full dark:bg-slate-800 " lang="en">
+    <html className="h-full" lang="en">
       <head>
         <title>Name Checker</title>
         <meta

@@ -158,7 +158,7 @@ export default function Home() {
               autoCorrect={"off"}
               value={text}
               onChange={(e) => setText(e.target.value.toLowerCase())}
-              className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-slate-700 dark:text-amber-100"
+              className="block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:text-amber-100 bg-transparent"
               placeholder="Name"
             />
           </div>
@@ -166,7 +166,7 @@ export default function Home() {
             id={"search-button"}
             type="button"
             onClick={handleSubmit}
-            className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-amber-100 dark:hover:bg-slate-700"
+            className="relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-neutral-50 dark:text-amber-100 dark:hover:bg-neutral-700"
           >
             Search
           </button>

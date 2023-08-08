@@ -1,6 +1,6 @@
 export function LoadingIcon() {
   return (
-    <div role="status">
+    <div role="status" className="flex flex-row justify-center mt-4">
       <svg
         aria-hidden="true"
         id={"loading-icon"}

@@ -1,11 +1,10 @@
-import { Fragment } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 
 export default function TailwindLayout({ children }) {
   return (
     <>
-      <div className="min-h-full dark:bg-slate-800">
+      <div className="min-h-full dark:bg-neutral-900">
         <div className="py-10">
           <header>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
