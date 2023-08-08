@@ -754,7 +754,6 @@ gir1.2-udisks-2.0
 gir1.2-unity-7.0
 gir1.2-upowerglib-1.0
 gir1.2-vte-2.91
-gir1.2-webkit2-4.0
 gir1.2-wnck-3.0
 gir1.2-xkl-1.0
 gir1.2-xmlb-2.0
@@ -2374,7 +2373,6 @@ libgjs-dev
 libgjs0g
 libgl-dev
 libgl1
-libgl1-amber-dri
 libgl1-mesa-dev
 libgl1-mesa-dri
 libglapi-mesa
@@ -4048,9 +4046,6 @@ libwayland-egl1
 libwayland-server0
 libwbclient-dev
 libwbclient0
-libwebkit2gtk-4.0-37
-libwebkit2gtk-4.0-dev
-libwebkit2gtk-4.0-doc
 libwebp-dev
 libwebp7
 libwebpdemux2
@@ -10911,9 +10906,7 @@ dochelp
 docker
 docker-clean
 docker-compose
-docker-doc
 docker-registry
-docker.io
 docker2aci
 docknot
 doclava-aosp
@@ -15412,7 +15405,6 @@ gir1.2-umockdev-1.0
 gir1.2-urfkill-glib0
 gir1.2-v-sim-1.0
 gir1.2-vips-8.0
-gir1.2-webkit2-4.1
 gir1.2-wnck-1.0
 gir1.2-wp-0.4
 gir1.2-xapp-1.0
@@ -43770,8 +43762,6 @@ libwebjars-locator-core-java
 libwebjars-locator-java
 libwebkit2-sharp-4.0-cil
 libwebkit2-sharp-4.0-cil-dev
-libwebkit2gtk-4.1-0
-libwebkit2gtk-4.1-dev
 libwebm-dev
 libwebm-tools
 libwebm1
@@ -49289,7 +49279,6 @@ openjdk-8-demo
 openjdk-8-doc
 openjdk-8-jre
 openjdk-8-jre-headless
-openjdk-8-jre-zero
 openjdk-8-source
 openjfx
 openjfx-source
@@ -66388,6 +66377,10 @@ clang-format-15
 clang-tidy-15
 clang-tools-15
 clangd-15
+gir1.2-javascriptcoregtk-6.0
+gir1.2-webkit-6.0
+gir1.2-webkit2-4.0
+gm2-12-doc
 libbolt-15-dev
 libc++-15-dev
 libc++1-15
@@ -66401,6 +66394,9 @@ libclang1-15
 libclc-15
 libclc-15-dev
 libfuzzer-15-dev
+libgl1-amber-dri
+libjavascriptcoregtk-6.0-1
+libjavascriptcoregtk-6.0-dev
 liblld-15
 liblld-15-dev
 liblldb-15
@@ -66422,6 +66418,11 @@ libstd-rust-1.65
 libstd-rust-1.66
 libunwind-15
 libunwind-15-dev
+libwebkit2gtk-4.0-37
+libwebkit2gtk-4.0-dev
+libwebkit2gtk-4.0-doc
+libwebkitgtk-6.0-4
+libwebkitgtk-6.0-dev
 linux-allwinner-5.17-headers-5.17.0-1010
 linux-allwinner-5.19-headers-5.19.0-1011
 linux-allwinner-5.19-headers-5.19.0-1012
@@ -67606,6 +67607,7 @@ linux-modules-ipu6-6.2.0-26-generic
 linux-modules-ipu6-azure-edge
 linux-modules-ipu6-generic-hwe-22.04
 linux-modules-ipu6-generic-hwe-22.04-edge
+linux-modules-ipu6-lowlatency-hwe-22.04
 linux-modules-ipu6-lowlatency-hwe-22.04-edge
 linux-modules-ipu6-oem-22.04
 linux-modules-ipu6-oem-22.04a
@@ -67646,6 +67648,7 @@ linux-modules-ivsc-6.2.0-26-generic
 linux-modules-ivsc-azure-edge
 linux-modules-ivsc-generic-hwe-22.04
 linux-modules-ivsc-generic-hwe-22.04-edge
+linux-modules-ivsc-lowlatency-hwe-22.04
 linux-modules-ivsc-lowlatency-hwe-22.04-edge
 linux-modules-ivsc-oem-22.04
 linux-modules-ivsc-oem-22.04a
@@ -67725,6 +67728,7 @@ linux-modules-iwlwifi-gcp-edge
 linux-modules-iwlwifi-generic
 linux-modules-iwlwifi-generic-hwe-22.04
 linux-modules-iwlwifi-generic-hwe-22.04-edge
+linux-modules-iwlwifi-lowlatency-hwe-22.04
 linux-modules-iwlwifi-lowlatency-hwe-22.04-edge
 linux-modules-iwlwifi-oem-22.04
 linux-modules-iwlwifi-oem-22.04a
@@ -68002,8 +68006,10 @@ llvm-15-examples
 llvm-15-linker-tools
 llvm-15-runtime
 llvm-15-tools
+mesa-drm-shim
 mlir-15-tools
 oem-somerville-tentacool-meta
+oem-somerville-tentacool-rpl-meta
 oem-sutton-balin-meta
 oem-sutton-balint-meta
 oem-sutton-bambina-meta
@@ -71243,6 +71249,7 @@ nvidia-driver-535-server-open
 nvidia-fabricmanager-515
 nvidia-fabricmanager-dev-515
 nvidia-firmware-535-535.54.03
+nvidia-firmware-535-535.86.05
 nvidia-firmware-535-server-535.54.03
 nvidia-headless-510
 nvidia-headless-510-server
@@ -71333,6 +71340,8 @@ collectd-core
 collectd-dev
 collectd-utils
 coturn
+docker-doc
+docker.io
 dotnet-apphost-pack-6.0
 dotnet-apphost-pack-7.0
 dotnet-host-7.0
@@ -71349,6 +71358,7 @@ dotnet-templates-7.0
 dotnet6
 dotnet7
 evolution
+gir1.2-webkit2-4.1
 gnat-11-alpha-linux-gnu
 golang-1.20
 golang-1.20-doc
@@ -71379,6 +71389,8 @@ libreoffice-qt5
 libstd-rust-1.62
 libstd-rust-1.62-dev
 libtestng7-java
+libwebkit2gtk-4.1-0
+libwebkit2gtk-4.1-dev
 linux-buildinfo-5.15.0-1019-gkeop
 linux-buildinfo-5.15.0-1020-gkeop
 linux-buildinfo-5.15.0-1021-gkeop
@@ -71602,6 +71614,7 @@ openjdk-19-jre-zero
 openjdk-19-source
 openjdk-8-jdk
 openjdk-8-jdk-headless
+openjdk-8-jre-zero
 plasma-distro-release-notifier
 python3-nvme
 python3-qpageview
@@ -71829,6 +71842,7 @@ powershell-lts
 aadsshlogin-selinux
 moby-containerd
 moby-compose
+aziot-edge
 mde-netfilter
 azapi2azurerm
 powershell
@@ -71843,7 +71857,6 @@ azure-ai-vision-dev-image-analysis
 moby-buildx
 powershell-preview
 libmsquic
-aziot-edge
 blobfuse2
 msodbcsql17
 aadsshlogin
@@ -71869,11 +71882,11 @@ azureauth
 azure-ai-vision-dev-core
 omi
 azure-ai-vision-runtime-core
+msodbcsql18
 azure-ai-vision-runtime-image-analysis
 azure-ai-vision-runtime-common
 dotnet-sdk-7.0
 dotnet-runtime-3.1
-msodbcsql18
 dotnet-sdk-3.1
 hibernation-setup-tool
 microsoft-identity-diagnostics
