@@ -21,6 +21,7 @@ export default function Home() {
   const [nugetResponse, setNugetResponse] = useState(null);
   const [existsInGo, setExistsInGo] = useState(null);
   const [packagistResponse, setPackagistResponse] = useState(null);
+  const [gitlabResponse, setGitlabResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const availableDomains = domains?.domains?.filter((d) => d.available);
 
@@ -40,6 +41,11 @@ export default function Home() {
     const response = await fetch(`/api/exists/github_org?name=${name}`);
     const json = await response.json();
     setGithubOrgResponse(json)
+    
+  async function searchGitlab(name) {
+    const response = await fetch(`/api/exists/gitlab?name=${name}`);
+    const json = await response.json();
+    setGitlabResponse(json);
   }
 
   async function searchDomainName(name) {
@@ -125,6 +131,7 @@ export default function Home() {
     setNugetResponse(null);
     setExistsInGo(null);
     setPackagistResponse(null);
+    setGitlabResponse(null);
     await Promise.all([
       searchGithub(editedText),
       searchGithubOrg(editedText),
@@ -139,6 +146,7 @@ export default function Home() {
       searchNuget(editedText),
       searchGo(editedText),
       searchPackagist(editedText),
+      searchGitlab(editedText),
     ]);
     setLoading(false);
   }
@@ -185,6 +193,7 @@ export default function Home() {
       <ul className="list-none pt-5">
         <CheckListItem state={githubResponse} name={'GitHub repo'} />
         <CheckListItem state={githubOrgResponse} name={'GitHub org'} />
+        <CheckListItem state={gitlabResponse} name={'GitLab project'} />
         <CheckListItem state={pypiResponse} name={'PyPI package'} />
         <CheckListItem
           state={homebrewResponse}
