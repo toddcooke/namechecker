@@ -40,8 +40,9 @@ export default function Home() {
   async function searchGithubOrg(name) {
     const response = await fetch(`/api/exists/github_org?name=${name}`);
     const json = await response.json();
-    setGithubOrgResponse(json)
-    
+    setGithubOrgResponse(json);
+  }
+
   async function searchGitlab(name) {
     const response = await fetch(`/api/exists/gitlab?name=${name}`);
     const json = await response.json();

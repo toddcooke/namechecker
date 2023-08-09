@@ -11,14 +11,11 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
   try {
-    const response = await octokit.request(
-      `GET /orgs/${name}`,
-      {
-        headers: {
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
+    const response = await octokit.request(`GET /orgs/${name}`, {
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28',
       },
-    );
+    });
 
     const existsUrl = response?.data?.html_url;
 
@@ -26,7 +23,6 @@ export async function GET(request) {
       exists: existsUrl !== undefined,
       existsUrl: existsUrl,
     });
-
   } catch (error) {
     return NextResponse.json({ exists: false });
   }
