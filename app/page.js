@@ -9,6 +9,7 @@ import Link from 'next/link';
 export default function Home() {
   const [text, setText] = useState('');
   const [githubResponse, setGithubResponse] = useState(null);
+  const [githubOrgResponse, setGithubOrgResponse] = useState(null);
   const [pypiResponse, setPypiResponse] = useState(null);
   const [domains, setDomains] = useState(null);
   const [homebrewResponse, setHomebrewResponse] = useState(null);
@@ -33,6 +34,12 @@ export default function Home() {
     const response = await fetch(`/api/exists/github?name=${name}`);
     const json = await response.json();
     setGithubResponse(json);
+  }
+
+  async function searchGithubOrg(name) {
+    const response = await fetch(`/api/exists/github_org?name=${name}`);
+    const json = await response.json();
+    setGithubOrgResponse(json)
   }
 
   async function searchDomainName(name) {
@@ -109,6 +116,7 @@ export default function Home() {
     setAptResponse(null);
     setHomebrewResponse(null);
     setGithubResponse(null);
+    setGithubOrgResponse(null);
     setPypiResponse(null);
     setDomains(null);
     setMavenResponse(null);
@@ -119,6 +127,7 @@ export default function Home() {
     setPackagistResponse(null);
     await Promise.all([
       searchGithub(editedText),
+      searchGithubOrg(editedText),
       searchPypi(editedText),
       searchDomainName(editedText),
       searchHomebrew(editedText),
@@ -175,6 +184,7 @@ export default function Home() {
 
       <ul className="list-none pt-5">
         <CheckListItem state={githubResponse} name={'GitHub repo'} />
+        <CheckListItem state={githubOrgResponse} name={'GitHub org'} />
         <CheckListItem state={pypiResponse} name={'PyPI package'} />
         <CheckListItem
           state={homebrewResponse}

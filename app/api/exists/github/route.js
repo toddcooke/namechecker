@@ -23,6 +23,8 @@ export async function GET(request) {
     (item) => item.name.toLowerCase() === name.toLowerCase(),
   )?.html_url;
 
+  console.info(existsUrl)
+
   return NextResponse.json({
     exists: existsUrl !== undefined,
     existsUrl: existsUrl,
