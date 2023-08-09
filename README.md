@@ -15,3 +15,4 @@ Check it out at https://namechecker.vercel.app
 - [ ] Add fuzzy check option. Searching hello should count as taken if hello-world exists
 - [ ] More accurate go.dev package search. Searching asdf should return the package named asdf with the most imports.
 - [ ] Fix domain name false positive. Searching sk.org should not show as available - [example](https://www.namecheap.com/domains/registration/results/?domain=sk.org)
+- [ ] Check GitLab projects for availabillity.
