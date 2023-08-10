@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server';
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
-  for (let page = 1; page <= 100; page++) {
+  for (let page = 1; page <= 10; page++) {
     const response = await fetch(
       `https://gitlab.com/api/v4/projects?search="${name}"&per_page=100&page=${page}`,
     );

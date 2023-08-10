@@ -46,24 +46,20 @@ export async function GET(request) {
 
 async function isDomainAvailable(domainName) {
   const domainWhois = await whoiser(domainName, { follow: 1 });
-  if (JSON.stringify(domainWhois).includes('{"Domain Status":[]')) {
-    return {
-      domain: domainName,
-      available: true,
-    };
-  }
   const firstDomainWhois = whoiser.firstResult(domainWhois);
   const firstTextLine = (firstDomainWhois.text[0] || '').toLowerCase();
   let domainAvailability = 'unknown';
-  if (firstTextLine.includes('reserved')) {
-    domainAvailability = 'reserved';
-  } else if (
-    firstDomainWhois['Domain Name'] &&
-    firstDomainWhois['Domain Name'].toLowerCase() === domainName
+  const domainStatusArr = firstDomainWhois['Domain Status'];
+  if (
+    firstTextLine.includes(`no match for "${domainName}"`) ||
+    firstTextLine.includes('domain not found') ||
+    (domainStatusArr &&
+      domainStatusArr[0]?.toLowerCase().includes('no object found'))
   ) {
-    domainAvailability = 'registered';
-  } else if (firstTextLine.includes(`no match for "${domainName}"`)) {
     domainAvailability = 'available';
+  }
+  if (firstTextLine.includes('is reserved')) {
+    domainAvailability = 'reserved';
   }
   return {
     domain: domainName,
