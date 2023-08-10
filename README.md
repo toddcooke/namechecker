@@ -15,3 +15,4 @@ Check it out at https://namechecker.vercel.app
 - [ ] More accurate go.dev package search. Searching asdf should return the package named asdf with the most imports.
 - [ ] Fix domain name false positive. Searching sk.org should not show as available - [example](https://www.namecheap.com/domains/registration/results/?domain=sk.org)
 - [ ] Filter by popularity. With this filter option on, searching kubernetes should not return results with fewer than n stars.
+- [ ] Fix .ai domain checks. Currently always show as taken.

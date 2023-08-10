@@ -1,5 +1,5 @@
 import 'server-only';
-import { Octokit, App } from 'octokit';
+import { Octokit, RequestError } from 'octokit';
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
@@ -24,6 +24,8 @@ export async function GET(request) {
       existsUrl: existsUrl,
     });
   } catch (error) {
-    return NextResponse.json({ exists: false });
+    if (error instanceof RequestError && error.status === 404) {
+      return NextResponse.json({ exists: false });
+    } else throw error;
   }
 }
