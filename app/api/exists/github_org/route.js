@@ -11,7 +11,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
   try {
-    const response = await octokit.request(`GET /orgs/${name}`, {
+    const response = await octokit.request(`GET /users/${name}`, {
       headers: {
         'X-GitHub-Api-Version': '2022-11-28',
       },
