@@ -193,7 +193,7 @@ export default function Home() {
 
       <ul className="list-none pt-5">
         <CheckListItem state={githubResponse} name={'GitHub repo'} />
-        <CheckListItem state={githubOrgResponse} name={'GitHub org'} />
+        <CheckListItem state={githubOrgResponse} name={'GitHub org/user'} />
         <CheckListItem state={gitlabResponse} name={'GitLab project'} />
         <CheckListItem state={pypiResponse} name={'PyPI package'} />
         <CheckListItem
