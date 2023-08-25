@@ -66497,6 +66497,7 @@ linux-azure-cloud-tools-5.15.0-1038
 linux-azure-cloud-tools-5.15.0-1039
 linux-azure-cloud-tools-5.15.0-1040
 linux-azure-cloud-tools-5.15.0-1041
+linux-azure-cloud-tools-5.15.0-1042
 linux-azure-cloud-tools-5.15.0-1044
 linux-azure-edge
 linux-azure-fde
@@ -66509,6 +66510,7 @@ linux-azure-headers-5.15.0-1038
 linux-azure-headers-5.15.0-1039
 linux-azure-headers-5.15.0-1040
 linux-azure-headers-5.15.0-1041
+linux-azure-headers-5.15.0-1042
 linux-azure-headers-5.15.0-1044
 linux-azure-lts-22.04
 linux-azure-tools-5.15.0-1035
@@ -66518,6 +66520,7 @@ linux-azure-tools-5.15.0-1038
 linux-azure-tools-5.15.0-1039
 linux-azure-tools-5.15.0-1040
 linux-azure-tools-5.15.0-1041
+linux-azure-tools-5.15.0-1042
 linux-azure-tools-5.15.0-1044
 linux-buildinfo-5.15.0-1025-nvidia
 linux-buildinfo-5.15.0-1025-nvidia-lowlatency
@@ -66580,12 +66583,15 @@ linux-buildinfo-5.15.0-1038-oracle
 linux-buildinfo-5.15.0-1039-aws
 linux-buildinfo-5.15.0-1039-azure
 linux-buildinfo-5.15.0-1039-gcp
+linux-buildinfo-5.15.0-1039-gke
+linux-buildinfo-5.15.0-1039-kvm
 linux-buildinfo-5.15.0-1039-oracle
 linux-buildinfo-5.15.0-1040-aws
 linux-buildinfo-5.15.0-1040-azure
 linux-buildinfo-5.15.0-1040-oracle
 linux-buildinfo-5.15.0-1041-azure
 linux-buildinfo-5.15.0-1042-aws
+linux-buildinfo-5.15.0-1042-azure
 linux-buildinfo-5.15.0-1044-azure
 linux-buildinfo-5.15.0-72-generic
 linux-buildinfo-5.15.0-72-lowlatency
@@ -66660,6 +66666,7 @@ linux-buildinfo-6.2.0-1009-aws
 linux-buildinfo-6.2.0-1009-gcp
 linux-buildinfo-6.2.0-1009-lowlatency
 linux-buildinfo-6.2.0-1010-gcp
+linux-buildinfo-6.2.0-1011-gcp
 linux-buildinfo-6.2.0-25-generic
 linux-buildinfo-6.2.0-26-generic
 linux-cloud-tools-5.15.0-1025-nvidia
@@ -66689,6 +66696,7 @@ linux-cloud-tools-5.15.0-1038-azure
 linux-cloud-tools-5.15.0-1039-azure
 linux-cloud-tools-5.15.0-1040-azure
 linux-cloud-tools-5.15.0-1041-azure
+linux-cloud-tools-5.15.0-1042-azure
 linux-cloud-tools-5.15.0-1044-azure
 linux-cloud-tools-5.15.0-72
 linux-cloud-tools-5.15.0-72-generic
@@ -66752,8 +66760,10 @@ linux-gcp-5.19-tools-5.19.0-1027
 linux-gcp-5.19-tools-5.19.0-1030
 linux-gcp-6.2-headers-6.2.0-1009
 linux-gcp-6.2-headers-6.2.0-1010
+linux-gcp-6.2-headers-6.2.0-1011
 linux-gcp-6.2-tools-6.2.0-1009
 linux-gcp-6.2-tools-6.2.0-1010
+linux-gcp-6.2-tools-6.2.0-1011
 linux-gcp-edge
 linux-gcp-headers-5.15.0-1034
 linux-gcp-headers-5.15.0-1035
@@ -66778,6 +66788,7 @@ linux-gke-headers-5.15.0-1035
 linux-gke-headers-5.15.0-1036
 linux-gke-headers-5.15.0-1037
 linux-gke-headers-5.15.0-1038
+linux-gke-headers-5.15.0-1039
 linux-gke-tools-5.15.0-1027
 linux-gke-tools-5.15.0-1028
 linux-gke-tools-5.15.0-1030
@@ -66788,6 +66799,7 @@ linux-gke-tools-5.15.0-1035
 linux-gke-tools-5.15.0-1036
 linux-gke-tools-5.15.0-1037
 linux-gke-tools-5.15.0-1038
+linux-gke-tools-5.15.0-1039
 linux-headers-5.15.0-1025-nvidia
 linux-headers-5.15.0-1025-nvidia-lowlatency
 linux-headers-5.15.0-1026-nvidia
@@ -66849,12 +66861,15 @@ linux-headers-5.15.0-1038-oracle
 linux-headers-5.15.0-1039-aws
 linux-headers-5.15.0-1039-azure
 linux-headers-5.15.0-1039-gcp
+linux-headers-5.15.0-1039-gke
+linux-headers-5.15.0-1039-kvm
 linux-headers-5.15.0-1039-oracle
 linux-headers-5.15.0-1040-aws
 linux-headers-5.15.0-1040-azure
 linux-headers-5.15.0-1040-oracle
 linux-headers-5.15.0-1041-azure
 linux-headers-5.15.0-1042-aws
+linux-headers-5.15.0-1042-azure
 linux-headers-5.15.0-1044-azure
 linux-headers-5.15.0-72
 linux-headers-5.15.0-72-generic
@@ -66934,6 +66949,7 @@ linux-headers-6.2.0-1009-aws
 linux-headers-6.2.0-1009-gcp
 linux-headers-6.2.0-1009-lowlatency
 linux-headers-6.2.0-1010-gcp
+linux-headers-6.2.0-1011-gcp
 linux-headers-6.2.0-25-generic
 linux-headers-6.2.0-26-generic
 linux-headers-aws-edge
@@ -67058,6 +67074,8 @@ linux-image-5.15.0-1039-aws
 linux-image-5.15.0-1039-azure
 linux-image-5.15.0-1039-azure-fde
 linux-image-5.15.0-1039-gcp
+linux-image-5.15.0-1039-gke
+linux-image-5.15.0-1039-kvm
 linux-image-5.15.0-1039-oracle
 linux-image-5.15.0-1040-aws
 linux-image-5.15.0-1040-azure
@@ -67145,6 +67163,7 @@ linux-image-6.2.0-1009-aws
 linux-image-6.2.0-1009-gcp
 linux-image-6.2.0-1009-lowlatency
 linux-image-6.2.0-1010-gcp
+linux-image-6.2.0-1011-gcp
 linux-image-6.2.0-25-generic
 linux-image-6.2.0-26-generic
 linux-image-aws-edge
@@ -67227,6 +67246,8 @@ linux-image-unsigned-5.15.0-1039-aws
 linux-image-unsigned-5.15.0-1039-azure
 linux-image-unsigned-5.15.0-1039-azure-fde
 linux-image-unsigned-5.15.0-1039-gcp
+linux-image-unsigned-5.15.0-1039-gke
+linux-image-unsigned-5.15.0-1039-kvm
 linux-image-unsigned-5.15.0-1039-oracle
 linux-image-unsigned-5.15.0-1040-aws
 linux-image-unsigned-5.15.0-1040-azure
@@ -67234,6 +67255,7 @@ linux-image-unsigned-5.15.0-1040-oracle
 linux-image-unsigned-5.15.0-1041-azure
 linux-image-unsigned-5.15.0-1041-azure-fde
 linux-image-unsigned-5.15.0-1042-aws
+linux-image-unsigned-5.15.0-1042-azure
 linux-image-unsigned-5.15.0-1042-azure-fde
 linux-image-unsigned-5.15.0-1044-azure
 linux-image-unsigned-5.15.0-1044-azure-fde
@@ -67314,6 +67336,7 @@ linux-image-unsigned-6.2.0-1009-aws
 linux-image-unsigned-6.2.0-1009-gcp
 linux-image-unsigned-6.2.0-1009-lowlatency
 linux-image-unsigned-6.2.0-1010-gcp
+linux-image-unsigned-6.2.0-1011-gcp
 linux-image-unsigned-6.2.0-25-generic
 linux-image-unsigned-6.2.0-26-generic
 linux-intel-iotg-cloud-tools-5.15.0-1028
@@ -67345,11 +67368,13 @@ linux-kvm-headers-5.15.0-1034
 linux-kvm-headers-5.15.0-1035
 linux-kvm-headers-5.15.0-1037
 linux-kvm-headers-5.15.0-1038
+linux-kvm-headers-5.15.0-1039
 linux-kvm-tools-5.15.0-1033
 linux-kvm-tools-5.15.0-1034
 linux-kvm-tools-5.15.0-1035
 linux-kvm-tools-5.15.0-1037
 linux-kvm-tools-5.15.0-1038
+linux-kvm-tools-5.15.0-1039
 linux-lowlatency-cloud-tools-5.15.0-72
 linux-lowlatency-cloud-tools-5.15.0-73
 linux-lowlatency-cloud-tools-5.15.0-75
@@ -67456,12 +67481,15 @@ linux-modules-5.15.0-1038-oracle
 linux-modules-5.15.0-1039-aws
 linux-modules-5.15.0-1039-azure
 linux-modules-5.15.0-1039-gcp
+linux-modules-5.15.0-1039-gke
+linux-modules-5.15.0-1039-kvm
 linux-modules-5.15.0-1039-oracle
 linux-modules-5.15.0-1040-aws
 linux-modules-5.15.0-1040-azure
 linux-modules-5.15.0-1040-oracle
 linux-modules-5.15.0-1041-azure
 linux-modules-5.15.0-1042-aws
+linux-modules-5.15.0-1042-azure
 linux-modules-5.15.0-1044-azure
 linux-modules-5.15.0-72-generic
 linux-modules-5.15.0-72-lowlatency
@@ -67536,6 +67564,7 @@ linux-modules-6.2.0-1009-aws
 linux-modules-6.2.0-1009-gcp
 linux-modules-6.2.0-1009-lowlatency
 linux-modules-6.2.0-1010-gcp
+linux-modules-6.2.0-1011-gcp
 linux-modules-6.2.0-25-generic
 linux-modules-6.2.0-26-generic
 linux-modules-extra-5.15.0-1025-nvidia
@@ -67588,12 +67617,14 @@ linux-modules-extra-5.15.0-1038-oracle
 linux-modules-extra-5.15.0-1039-aws
 linux-modules-extra-5.15.0-1039-azure
 linux-modules-extra-5.15.0-1039-gcp
+linux-modules-extra-5.15.0-1039-gke
 linux-modules-extra-5.15.0-1039-oracle
 linux-modules-extra-5.15.0-1040-aws
 linux-modules-extra-5.15.0-1040-azure
 linux-modules-extra-5.15.0-1040-oracle
 linux-modules-extra-5.15.0-1041-azure
 linux-modules-extra-5.15.0-1042-aws
+linux-modules-extra-5.15.0-1042-azure
 linux-modules-extra-5.15.0-1044-azure
 linux-modules-extra-5.15.0-72-generic
 linux-modules-extra-5.15.0-73-generic
@@ -67638,6 +67669,7 @@ linux-modules-extra-6.2.0-1008-azure
 linux-modules-extra-6.2.0-1009-aws
 linux-modules-extra-6.2.0-1009-gcp
 linux-modules-extra-6.2.0-1010-gcp
+linux-modules-extra-6.2.0-1011-gcp
 linux-modules-extra-6.2.0-25-generic
 linux-modules-extra-6.2.0-26-generic
 linux-modules-extra-aws-edge
@@ -67757,6 +67789,7 @@ linux-modules-iwlwifi-5.15.0-1037-intel-iotg
 linux-modules-iwlwifi-5.15.0-1038-gcp
 linux-modules-iwlwifi-5.15.0-1038-gke
 linux-modules-iwlwifi-5.15.0-1039-gcp
+linux-modules-iwlwifi-5.15.0-1039-gke
 linux-modules-iwlwifi-5.15.0-72-generic
 linux-modules-iwlwifi-5.15.0-72-lowlatency
 linux-modules-iwlwifi-5.15.0-73-generic
@@ -67803,10 +67836,12 @@ linux-modules-iwlwifi-6.2.0-1008-azure
 linux-modules-iwlwifi-6.2.0-1008-lowlatency
 linux-modules-iwlwifi-6.2.0-1009-lowlatency
 linux-modules-iwlwifi-6.2.0-1010-gcp
+linux-modules-iwlwifi-6.2.0-1011-gcp
 linux-modules-iwlwifi-6.2.0-25-generic
 linux-modules-iwlwifi-6.2.0-26-generic
 linux-modules-iwlwifi-aws-edge
 linux-modules-iwlwifi-azure-edge
+linux-modules-iwlwifi-gcp
 linux-modules-iwlwifi-gcp-edge
 linux-modules-iwlwifi-generic
 linux-modules-iwlwifi-generic-hwe-22.04
@@ -67996,12 +68031,15 @@ linux-tools-5.15.0-1038-oracle
 linux-tools-5.15.0-1039-aws
 linux-tools-5.15.0-1039-azure
 linux-tools-5.15.0-1039-gcp
+linux-tools-5.15.0-1039-gke
+linux-tools-5.15.0-1039-kvm
 linux-tools-5.15.0-1039-oracle
 linux-tools-5.15.0-1040-aws
 linux-tools-5.15.0-1040-azure
 linux-tools-5.15.0-1040-oracle
 linux-tools-5.15.0-1041-azure
 linux-tools-5.15.0-1042-aws
+linux-tools-5.15.0-1042-azure
 linux-tools-5.15.0-1044-azure
 linux-tools-5.15.0-72
 linux-tools-5.15.0-72-generic
@@ -68081,6 +68119,7 @@ linux-tools-6.2.0-1009-aws
 linux-tools-6.2.0-1009-gcp
 linux-tools-6.2.0-1009-lowlatency
 linux-tools-6.2.0-1010-gcp
+linux-tools-6.2.0-1011-gcp
 linux-tools-6.2.0-25-generic
 linux-tools-6.2.0-26-generic
 linux-tools-aws-edge
@@ -68308,6 +68347,7 @@ linux-modules-nvidia-390-6.2.0-1009-aws
 linux-modules-nvidia-390-6.2.0-1009-gcp
 linux-modules-nvidia-390-6.2.0-1009-lowlatency
 linux-modules-nvidia-390-6.2.0-1010-gcp
+linux-modules-nvidia-390-6.2.0-1011-gcp
 linux-modules-nvidia-390-6.2.0-25-generic
 linux-modules-nvidia-390-6.2.0-26-generic
 linux-modules-nvidia-390-aws-edge
@@ -68535,6 +68575,7 @@ linux-modules-nvidia-450-server-6.2.0-1009-aws
 linux-modules-nvidia-450-server-6.2.0-1009-gcp
 linux-modules-nvidia-450-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-450-server-6.2.0-1010-gcp
+linux-modules-nvidia-450-server-6.2.0-1011-gcp
 linux-modules-nvidia-450-server-6.2.0-25-generic
 linux-modules-nvidia-450-server-6.2.0-26-generic
 linux-modules-nvidia-450-server-aws-edge
@@ -68695,6 +68736,7 @@ linux-modules-nvidia-470-6.2.0-1009-aws
 linux-modules-nvidia-470-6.2.0-1009-gcp
 linux-modules-nvidia-470-6.2.0-1009-lowlatency
 linux-modules-nvidia-470-6.2.0-1010-gcp
+linux-modules-nvidia-470-6.2.0-1011-gcp
 linux-modules-nvidia-470-6.2.0-25-generic
 linux-modules-nvidia-470-6.2.0-26-generic
 linux-modules-nvidia-470-aws-edge
@@ -68806,6 +68848,7 @@ linux-modules-nvidia-470-server-6.2.0-1009-aws
 linux-modules-nvidia-470-server-6.2.0-1009-gcp
 linux-modules-nvidia-470-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-470-server-6.2.0-1010-gcp
+linux-modules-nvidia-470-server-6.2.0-1011-gcp
 linux-modules-nvidia-470-server-6.2.0-25-generic
 linux-modules-nvidia-470-server-6.2.0-26-generic
 linux-modules-nvidia-470-server-aws-edge
@@ -69285,6 +69328,7 @@ linux-modules-nvidia-525-6.2.0-1009-aws
 linux-modules-nvidia-525-6.2.0-1009-gcp
 linux-modules-nvidia-525-6.2.0-1009-lowlatency
 linux-modules-nvidia-525-6.2.0-1010-gcp
+linux-modules-nvidia-525-6.2.0-1011-gcp
 linux-modules-nvidia-525-6.2.0-25-generic
 linux-modules-nvidia-525-6.2.0-26-generic
 linux-modules-nvidia-525-aws
@@ -69420,6 +69464,7 @@ linux-modules-nvidia-525-open-6.2.0-1009-aws
 linux-modules-nvidia-525-open-6.2.0-1009-gcp
 linux-modules-nvidia-525-open-6.2.0-1009-lowlatency
 linux-modules-nvidia-525-open-6.2.0-1010-gcp
+linux-modules-nvidia-525-open-6.2.0-1011-gcp
 linux-modules-nvidia-525-open-6.2.0-25-generic
 linux-modules-nvidia-525-open-6.2.0-26-generic
 linux-modules-nvidia-525-open-aws
@@ -69547,6 +69592,7 @@ linux-modules-nvidia-525-server-6.2.0-1009-aws
 linux-modules-nvidia-525-server-6.2.0-1009-gcp
 linux-modules-nvidia-525-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-525-server-6.2.0-1010-gcp
+linux-modules-nvidia-525-server-6.2.0-1011-gcp
 linux-modules-nvidia-525-server-6.2.0-25-generic
 linux-modules-nvidia-525-server-6.2.0-26-generic
 linux-modules-nvidia-525-server-aws
@@ -69826,6 +69872,7 @@ linux-modules-nvidia-535-6.2.0-1009-aws
 linux-modules-nvidia-535-6.2.0-1009-gcp
 linux-modules-nvidia-535-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-6.2.0-1010-gcp
+linux-modules-nvidia-535-6.2.0-1011-gcp
 linux-modules-nvidia-535-6.2.0-26-generic
 linux-modules-nvidia-535-aws
 linux-modules-nvidia-535-aws-edge
@@ -69902,6 +69949,7 @@ linux-modules-nvidia-535-open-6.2.0-1009-aws
 linux-modules-nvidia-535-open-6.2.0-1009-gcp
 linux-modules-nvidia-535-open-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-open-6.2.0-1010-gcp
+linux-modules-nvidia-535-open-6.2.0-1011-gcp
 linux-modules-nvidia-535-open-6.2.0-26-generic
 linux-modules-nvidia-535-open-aws
 linux-modules-nvidia-535-open-aws-edge
@@ -69973,6 +70021,7 @@ linux-modules-nvidia-535-server-6.2.0-1009-aws
 linux-modules-nvidia-535-server-6.2.0-1009-gcp
 linux-modules-nvidia-535-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-server-6.2.0-1010-gcp
+linux-modules-nvidia-535-server-6.2.0-1011-gcp
 linux-modules-nvidia-535-server-6.2.0-26-generic
 linux-modules-nvidia-535-server-aws
 linux-modules-nvidia-535-server-aws-edge
@@ -70038,6 +70087,7 @@ linux-modules-nvidia-535-server-open-6.2.0-1009-aws
 linux-modules-nvidia-535-server-open-6.2.0-1009-gcp
 linux-modules-nvidia-535-server-open-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-server-open-6.2.0-1010-gcp
+linux-modules-nvidia-535-server-open-6.2.0-1011-gcp
 linux-modules-nvidia-535-server-open-6.2.0-26-generic
 linux-modules-nvidia-535-server-open-aws
 linux-modules-nvidia-535-server-open-aws-edge
@@ -70160,6 +70210,7 @@ linux-objects-nvidia-390-6.2.0-1009-aws
 linux-objects-nvidia-390-6.2.0-1009-gcp
 linux-objects-nvidia-390-6.2.0-1009-lowlatency
 linux-objects-nvidia-390-6.2.0-1010-gcp
+linux-objects-nvidia-390-6.2.0-1011-gcp
 linux-objects-nvidia-390-6.2.0-25-generic
 linux-objects-nvidia-390-6.2.0-26-generic
 linux-objects-nvidia-418-server-5.15.0-1025-nvidia
@@ -70328,6 +70379,7 @@ linux-objects-nvidia-450-server-6.2.0-1009-aws
 linux-objects-nvidia-450-server-6.2.0-1009-gcp
 linux-objects-nvidia-450-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-450-server-6.2.0-1010-gcp
+linux-objects-nvidia-450-server-6.2.0-1011-gcp
 linux-objects-nvidia-450-server-6.2.0-25-generic
 linux-objects-nvidia-450-server-6.2.0-26-generic
 linux-objects-nvidia-470-5.15.0-1025-nvidia
@@ -70435,6 +70487,7 @@ linux-objects-nvidia-470-6.2.0-1009-aws
 linux-objects-nvidia-470-6.2.0-1009-gcp
 linux-objects-nvidia-470-6.2.0-1009-lowlatency
 linux-objects-nvidia-470-6.2.0-1010-gcp
+linux-objects-nvidia-470-6.2.0-1011-gcp
 linux-objects-nvidia-470-6.2.0-25-generic
 linux-objects-nvidia-470-6.2.0-26-generic
 linux-objects-nvidia-470-server-5.15.0-1025-nvidia
@@ -70535,6 +70588,7 @@ linux-objects-nvidia-470-server-6.2.0-1009-aws
 linux-objects-nvidia-470-server-6.2.0-1009-gcp
 linux-objects-nvidia-470-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-470-server-6.2.0-1010-gcp
+linux-objects-nvidia-470-server-6.2.0-1011-gcp
 linux-objects-nvidia-470-server-6.2.0-25-generic
 linux-objects-nvidia-470-server-6.2.0-26-generic
 linux-objects-nvidia-510-5.15.0-1025-nvidia
@@ -70862,6 +70916,7 @@ linux-objects-nvidia-525-6.2.0-1009-aws
 linux-objects-nvidia-525-6.2.0-1009-gcp
 linux-objects-nvidia-525-6.2.0-1009-lowlatency
 linux-objects-nvidia-525-6.2.0-1010-gcp
+linux-objects-nvidia-525-6.2.0-1011-gcp
 linux-objects-nvidia-525-6.2.0-25-generic
 linux-objects-nvidia-525-6.2.0-26-generic
 linux-objects-nvidia-525-open-5.15.0-1025-nvidia
@@ -70974,6 +71029,7 @@ linux-objects-nvidia-525-open-6.2.0-1009-aws
 linux-objects-nvidia-525-open-6.2.0-1009-gcp
 linux-objects-nvidia-525-open-6.2.0-1009-lowlatency
 linux-objects-nvidia-525-open-6.2.0-1010-gcp
+linux-objects-nvidia-525-open-6.2.0-1011-gcp
 linux-objects-nvidia-525-open-6.2.0-25-generic
 linux-objects-nvidia-525-open-6.2.0-26-generic
 linux-objects-nvidia-525-server-5.15.0-1025-nvidia
@@ -71074,6 +71130,7 @@ linux-objects-nvidia-525-server-6.2.0-1009-aws
 linux-objects-nvidia-525-server-6.2.0-1009-gcp
 linux-objects-nvidia-525-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-525-server-6.2.0-1010-gcp
+linux-objects-nvidia-525-server-6.2.0-1011-gcp
 linux-objects-nvidia-525-server-6.2.0-25-generic
 linux-objects-nvidia-525-server-6.2.0-26-generic
 linux-objects-nvidia-530-5.15.0-1025-nvidia
@@ -71280,6 +71337,7 @@ linux-objects-nvidia-535-6.2.0-1009-aws
 linux-objects-nvidia-535-6.2.0-1009-gcp
 linux-objects-nvidia-535-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-6.2.0-1010-gcp
+linux-objects-nvidia-535-6.2.0-1011-gcp
 linux-objects-nvidia-535-6.2.0-26-generic
 linux-objects-nvidia-535-open-5.15.0-1028-nvidia
 linux-objects-nvidia-535-open-5.15.0-1029-nvidia
@@ -71335,6 +71393,7 @@ linux-objects-nvidia-535-open-6.2.0-1009-aws
 linux-objects-nvidia-535-open-6.2.0-1009-gcp
 linux-objects-nvidia-535-open-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-open-6.2.0-1010-gcp
+linux-objects-nvidia-535-open-6.2.0-1011-gcp
 linux-objects-nvidia-535-open-6.2.0-26-generic
 linux-objects-nvidia-535-server-5.15.0-1028-nvidia
 linux-objects-nvidia-535-server-5.15.0-1029-nvidia
@@ -71381,6 +71440,7 @@ linux-objects-nvidia-535-server-6.2.0-1009-aws
 linux-objects-nvidia-535-server-6.2.0-1009-gcp
 linux-objects-nvidia-535-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-server-6.2.0-1010-gcp
+linux-objects-nvidia-535-server-6.2.0-1011-gcp
 linux-objects-nvidia-535-server-6.2.0-26-generic
 linux-objects-nvidia-535-server-open-5.15.0-1028-nvidia
 linux-objects-nvidia-535-server-open-5.15.0-1029-nvidia
@@ -71427,6 +71487,7 @@ linux-objects-nvidia-535-server-open-6.2.0-1009-aws
 linux-objects-nvidia-535-server-open-6.2.0-1009-gcp
 linux-objects-nvidia-535-server-open-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-server-open-6.2.0-1010-gcp
+linux-objects-nvidia-535-server-open-6.2.0-1011-gcp
 linux-objects-nvidia-535-server-open-6.2.0-26-generic
 linux-signatures-nvidia-5.15.0-1025-nvidia
 linux-signatures-nvidia-5.15.0-1026-nvidia
@@ -71538,6 +71599,7 @@ linux-signatures-nvidia-6.2.0-1009-aws
 linux-signatures-nvidia-6.2.0-1009-gcp
 linux-signatures-nvidia-6.2.0-1009-lowlatency
 linux-signatures-nvidia-6.2.0-1010-gcp
+linux-signatures-nvidia-6.2.0-1011-gcp
 linux-signatures-nvidia-6.2.0-25-generic
 linux-signatures-nvidia-6.2.0-26-generic
 nvidia-compute-utils-510
@@ -71733,6 +71795,7 @@ linux-buildinfo-5.15.0-1021-gkeop
 linux-buildinfo-5.15.0-1022-gkeop
 linux-buildinfo-5.15.0-1023-gkeop
 linux-buildinfo-5.15.0-1024-gkeop
+linux-buildinfo-5.15.0-1025-gkeop
 linux-buildinfo-5.15.0-1032-realtime
 linux-buildinfo-5.19.0-1010-nvidia
 linux-buildinfo-5.19.0-1010-nvidia-lowlatency
@@ -71745,6 +71808,7 @@ linux-cloud-tools-5.15.0-1021-gkeop
 linux-cloud-tools-5.15.0-1022-gkeop
 linux-cloud-tools-5.15.0-1023-gkeop
 linux-cloud-tools-5.15.0-1024-gkeop
+linux-cloud-tools-5.15.0-1025-gkeop
 linux-cloud-tools-5.15.0-1032-realtime
 linux-cloud-tools-5.19.0-1010-nvidia
 linux-cloud-tools-5.19.0-1010-nvidia-lowlatency
@@ -71763,24 +71827,28 @@ linux-gkeop-cloud-tools-5.15.0-1021
 linux-gkeop-cloud-tools-5.15.0-1022
 linux-gkeop-cloud-tools-5.15.0-1023
 linux-gkeop-cloud-tools-5.15.0-1024
+linux-gkeop-cloud-tools-5.15.0-1025
 linux-gkeop-headers-5.15.0-1019
 linux-gkeop-headers-5.15.0-1020
 linux-gkeop-headers-5.15.0-1021
 linux-gkeop-headers-5.15.0-1022
 linux-gkeop-headers-5.15.0-1023
 linux-gkeop-headers-5.15.0-1024
+linux-gkeop-headers-5.15.0-1025
 linux-gkeop-tools-5.15.0-1019
 linux-gkeop-tools-5.15.0-1020
 linux-gkeop-tools-5.15.0-1021
 linux-gkeop-tools-5.15.0-1022
 linux-gkeop-tools-5.15.0-1023
 linux-gkeop-tools-5.15.0-1024
+linux-gkeop-tools-5.15.0-1025
 linux-headers-5.15.0-1019-gkeop
 linux-headers-5.15.0-1020-gkeop
 linux-headers-5.15.0-1021-gkeop
 linux-headers-5.15.0-1022-gkeop
 linux-headers-5.15.0-1023-gkeop
 linux-headers-5.15.0-1024-gkeop
+linux-headers-5.15.0-1025-gkeop
 linux-headers-5.15.0-1032-realtime
 linux-headers-5.19.0-1010-nvidia
 linux-headers-5.19.0-1010-nvidia-lowlatency
@@ -71799,6 +71867,7 @@ linux-image-5.15.0-1021-gkeop
 linux-image-5.15.0-1022-gkeop
 linux-image-5.15.0-1023-gkeop
 linux-image-5.15.0-1024-gkeop
+linux-image-5.15.0-1025-gkeop
 linux-image-5.15.0-1032-realtime
 linux-image-5.19.0-1010-nvidia
 linux-image-5.19.0-1010-nvidia-lowlatency
@@ -71817,6 +71886,7 @@ linux-image-unsigned-5.15.0-1021-gkeop
 linux-image-unsigned-5.15.0-1022-gkeop
 linux-image-unsigned-5.15.0-1023-gkeop
 linux-image-unsigned-5.15.0-1024-gkeop
+linux-image-unsigned-5.15.0-1025-gkeop
 linux-image-unsigned-5.15.0-1032-realtime
 linux-image-unsigned-5.19.0-1010-nvidia
 linux-image-unsigned-5.19.0-1010-nvidia-lowlatency
@@ -71829,6 +71899,7 @@ linux-modules-5.15.0-1021-gkeop
 linux-modules-5.15.0-1022-gkeop
 linux-modules-5.15.0-1023-gkeop
 linux-modules-5.15.0-1024-gkeop
+linux-modules-5.15.0-1025-gkeop
 linux-modules-5.15.0-1032-realtime
 linux-modules-5.19.0-1010-nvidia
 linux-modules-5.19.0-1010-nvidia-lowlatency
@@ -71841,6 +71912,7 @@ linux-modules-extra-5.15.0-1021-gkeop
 linux-modules-extra-5.15.0-1022-gkeop
 linux-modules-extra-5.15.0-1023-gkeop
 linux-modules-extra-5.15.0-1024-gkeop
+linux-modules-extra-5.15.0-1025-gkeop
 linux-modules-extra-5.15.0-1032-realtime
 linux-modules-extra-5.19.0-1010-nvidia
 linux-modules-extra-5.19.0-1014-nvidia
@@ -71915,6 +71987,7 @@ linux-tools-5.15.0-1021-gkeop
 linux-tools-5.15.0-1022-gkeop
 linux-tools-5.15.0-1023-gkeop
 linux-tools-5.15.0-1024-gkeop
+linux-tools-5.15.0-1025-gkeop
 linux-tools-5.15.0-1032-realtime
 linux-tools-5.19.0-1010-nvidia
 linux-tools-5.19.0-1010-nvidia-lowlatency
@@ -72202,8 +72275,8 @@ procdump
 aziot-identity-service
 msopenjdk-17
 azure-ai-vision-dev-common
-mssql-tools
 mde-netfilter-src
+mssql-tools
 msalsdk-dbusclient
 azcmagent
 azure-functions-core-tools-4
@@ -72302,6 +72375,10 @@ libx32stdc++-13-dev
 libx32stdc++6-13-dbg
 adoptium-ca-certificates
 azure-cli
+containerd.io
+docker-buildx-plugin
+docker-ce
+docker-ce-cli
 gh
 git-lfs
 google-chrome-stable
