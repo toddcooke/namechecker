@@ -19,14 +19,18 @@ export async function GET(request) {
     },
   );
 
-  const repository = response.data.items.find(
-    (item) => item.name.toLowerCase() === name.toLowerCase(),
-  );
+  const repositories = response.data.items
+    .filter(
+      (item) =>
+        item.name.toLowerCase() === name.toLowerCase() &&
+        item.stargazers_count > 10,
+    )
+    .sort((a, b) => b.stargazers_count - a.stargazers_count);
 
-  const enoughStars = repository?.stargazers_count > 10;
+  const existsUrl = repositories[0]?.html_url;
 
   return NextResponse.json({
-    exists: enoughStars,
-    existsUrl: enoughStars && repository.html_url,
+    exists: existsUrl !== undefined,
+    existsUrl: existsUrl,
   });
 }
