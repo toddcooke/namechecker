@@ -19,9 +19,15 @@ export async function GET(request) {
     },
   );
 
-  const existsUrl = response.data.items.find(
-    (item) => item.name.toLowerCase() === name.toLowerCase(),
-  )?.html_url;
+  const repositories = response.data.items
+    .filter(
+      (item) =>
+        item.name.toLowerCase() === name.toLowerCase() &&
+        item.stargazers_count > 10,
+    )
+    .sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+  const existsUrl = repositories[0]?.html_url;
 
   return NextResponse.json({
     exists: existsUrl !== undefined,
