@@ -19,12 +19,14 @@ export async function GET(request) {
     },
   );
 
-  const existsUrl = response.data.items.find(
+  const repository = response.data.items.find(
     (item) => item.name.toLowerCase() === name.toLowerCase(),
-  )?.html_url;
+  );
+
+  const enoughStars = repository?.stargazers_count > 10;
 
   return NextResponse.json({
-    exists: existsUrl !== undefined,
-    existsUrl: existsUrl,
+    exists: enoughStars,
+    existsUrl: enoughStars && repository.html_url,
   });
 }
