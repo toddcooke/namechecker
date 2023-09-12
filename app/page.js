@@ -24,6 +24,7 @@ export default function Home() {
   const [gitlabResponse, setGitlabResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const availableDomains = domains?.domains?.filter((d) => d.available);
+  const domainNameUrl = `https://www.namecheap.com/domains/registration/results/?domain=${text}`;
 
   async function searchPypi(name) {
     const response = await fetch(`/api/exists/pypi?name=${name}`);
@@ -226,10 +227,7 @@ export default function Home() {
           <>
             {availableDomains.length === 5 && (
               <li>
-                <Link
-                  target={'_blank'}
-                  href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
-                >
+                <Link target={'_blank'} href={domainNameUrl}>
                   ✅ Domain names available!
                 </Link>
               </li>
@@ -244,7 +242,7 @@ export default function Home() {
                     <Link
                       target={'_blank'}
                       style={{ textDecoration: 'underline' }}
-                      href={`https:domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
+                      href={domainNameUrl}
                     >
                       See alternatives
                     </Link>
@@ -255,10 +253,7 @@ export default function Home() {
             {availableDomains.length > 0 &&
               availableDomains.length < domains?.domains?.length && (
                 <li>
-                  <Link
-                    target={'_blank'}
-                    href={`https://domains.google.com/registrar/search?searchTerm=${text}&hl=en`}
-                  >
+                  <Link target={'_blank'} href={domainNameUrl}>
                     ℹ️ Some domain names available
                   </Link>
                 </li>
