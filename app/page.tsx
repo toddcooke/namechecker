@@ -1,29 +1,44 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import TailwindLayout from '@/app/TailwindLayout';
 import { LoadingIcon } from '@/app/components/LoadingIcon';
 import Link from 'next/link';
+import TailwindLayout from '@/app/TailwindLayout';
+import { topLevelDomains } from '@/app/util';
+
+interface CheckListState {
+  exists: boolean;
+  existsUrl: string;
+}
+
+interface DomainsResponse {
+  error?: string;
+  domains: Array<{ available: boolean; domain: string }>;
+}
 
 export default function Home() {
   const [text, setText] = useState('');
-  const [githubResponse, setGithubResponse] = useState(null);
-  const [githubOrgResponse, setGithubOrgResponse] = useState(null);
-  const [pypiResponse, setPypiResponse] = useState(null);
-  const [domains, setDomains] = useState(null);
-  const [homebrewResponse, setHomebrewResponse] = useState(null);
-  const [aptResponse, setAptResponse] = useState(null);
-  const [cratesResponse, setCratesResponse] = useState(null);
-  const [mavenResponse, setMavenResponse] = useState(null);
-  const [npmResponse, setNpmResponse] = useState(null);
-  const [rubyGemsResponse, setRubyGemsResponse] = useState(null);
-  const [nugetResponse, setNugetResponse] = useState(null);
-  const [existsInGo, setExistsInGo] = useState(null);
-  const [packagistResponse, setPackagistResponse] = useState(null);
-  const [gitlabResponse, setGitlabResponse] = useState(null);
+  const [githubResponse, setGithubResponse] = useState<CheckListState>(null);
+  const [githubOrgResponse, setGithubOrgResponse] =
+    useState<CheckListState>(null);
+  const [pypiResponse, setPypiResponse] = useState<CheckListState>(null);
+  const [domainsResponse, setDomainsResponse] = useState<DomainsResponse>(null);
+  const [homebrewResponse, setHomebrewResponse] =
+    useState<CheckListState>(null);
+  const [aptResponse, setAptResponse] = useState<CheckListState>(null);
+  const [cratesResponse, setCratesResponse] = useState<CheckListState>(null);
+  const [mavenResponse, setMavenResponse] = useState<CheckListState>(null);
+  const [npmResponse, setNpmResponse] = useState<CheckListState>(null);
+  const [rubyGemsResponse, setRubyGemsResponse] =
+    useState<CheckListState>(null);
+  const [nugetResponse, setNugetResponse] = useState<CheckListState>(null);
+  const [existsInGo, setExistsInGo] = useState<CheckListState>(null);
+  const [packagistResponse, setPackagistResponse] =
+    useState<CheckListState>(null);
+  const [gitlabResponse, setGitlabResponse] = useState<CheckListState>(null);
   const [loading, setLoading] = useState(false);
-  const availableDomains = domains?.domains?.filter((d) => d.available);
+  const availableDomains = domainsResponse?.domains?.filter((d) => d.available);
   const domainNameUrl = `https://www.namecheap.com/domains/registration/results/?domain=${text}`;
 
   async function searchPypi(name) {
@@ -53,7 +68,7 @@ export default function Home() {
   async function searchDomainName(name) {
     const response = await fetch(`/api/exists/domain_name?name=${name}`);
     const json = await response.json();
-    setDomains(json);
+    setDomainsResponse(json);
   }
 
   async function searchHomebrew(name) {
@@ -126,7 +141,7 @@ export default function Home() {
     setGithubResponse(null);
     setGithubOrgResponse(null);
     setPypiResponse(null);
-    setDomains(null);
+    setDomainsResponse(null);
     setMavenResponse(null);
     setNpmResponse(null);
     setRubyGemsResponse(null);
@@ -223,9 +238,9 @@ export default function Home() {
         {existsInGo !== null && !existsInGo && (
           <li>✅ Go package name is available!</li>
         )}
-        {domains?.domains != null && (
+        {domainsResponse?.domains != null && (
           <>
-            {availableDomains.length === 5 && (
+            {availableDomains.length === topLevelDomains.length && (
               <li>
                 <Link target={'_blank'} href={domainNameUrl}>
                   ✅ Domain names available!
@@ -234,8 +249,8 @@ export default function Home() {
             )}
             {availableDomains.length === 0 && (
               <>
-                {domains?.error ? (
-                  <li>ℹ️ {domains.error}</li>
+                {domainsResponse?.error ? (
+                  <li>ℹ️ {domainsResponse.error}</li>
                 ) : (
                   <li>
                     ℹ️ Domain name already exists.{' '}
@@ -251,7 +266,7 @@ export default function Home() {
               </>
             )}
             {availableDomains.length > 0 &&
-              availableDomains.length < domains?.domains?.length && (
+              availableDomains.length < domainsResponse?.domains?.length && (
                 <li>
                   <Link target={'_blank'} href={domainNameUrl}>
                     ℹ️ Some domain names available
@@ -259,7 +274,7 @@ export default function Home() {
                 </li>
               )}
             <ul className="list-disc">
-              {domains?.domains?.map((d) =>
+              {domainsResponse?.domains?.map((d) =>
                 d.available ? (
                   <li className="ms-5" key={d.domain}>
                     ✅{' '}
@@ -295,15 +310,13 @@ export default function Home() {
   );
 }
 
-/**
- * @param state
- *    state = {
- *     exists: boolean
- *     existsUrl: string
- *    }?
- * @param name "PyPI package", for example
- */
-function CheckListItem({ state, name }) {
+function CheckListItem({
+  state,
+  name,
+}: {
+  state: CheckListState;
+  name: string;
+}) {
   return (
     <>
       {state && (

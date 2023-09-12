@@ -1,5 +1,5 @@
 import 'server-only';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { promises } from 'fs';
 import * as path from 'path';
 
@@ -11,7 +11,7 @@ const packages = (await promises.readFile(aptPackagesPath, 'utf-8')).split(
   '\n',
 );
 
-export async function GET(request) {
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
   const exists = packages.includes(name);

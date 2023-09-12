@@ -1,6 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import { promises } from 'fs';
+import { topLevelDomains } from '@/app/util';
 
 const whoiser = require('whoiser');
 const dir = path.resolve('./public', '.');
@@ -16,9 +17,11 @@ async function isValidTLD(tld) {
   return false;
 }
 
-export async function GET(request) {
+export async function GET(request: NextRequest) {
+  const startTime = new Date().getTime();
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
+  // Validate input
   if (name.split('.').length - 1 > 1) {
     return NextResponse.json({
       domains: [],
@@ -33,11 +36,18 @@ export async function GET(request) {
     }
     return NextResponse.json({ domains: [await isDomainAvailable(name)] });
   }
+  // Check availability
   let domains = [];
-  let tlds = ['.com', '.org', '.io', '.ai', '.dev', '.app', '.net', '.xyz'];
-  for (let i = 0; i < tlds.length; i++) {
+  for (let i = 0; i < topLevelDomains.length; i++) {
+    // Return early if we are approaching 10s - Vercel limits function execution at 10s
+    const nowTime = new Date().getTime();
+    const secondsElapsed = (nowTime - startTime) / 1000;
+    if (secondsElapsed >= 8.5) {
+      return NextResponse.json({ domains: domains });
+    }
+
     if (i > 0) await new Promise((r) => setTimeout(r, 1000));
-    const tld = tlds[i];
+    const tld = topLevelDomains[i];
     let domain = await isDomainAvailable(name + tld);
     domains.push(domain);
   }
