@@ -66733,6 +66733,7 @@ linux-buildinfo-6.2.0-1009-lowlatency
 linux-buildinfo-6.2.0-1009-nvidia
 linux-buildinfo-6.2.0-1010-aws
 linux-buildinfo-6.2.0-1010-gcp
+linux-buildinfo-6.2.0-1010-nvidia
 linux-buildinfo-6.2.0-1011-aws
 linux-buildinfo-6.2.0-1011-azure
 linux-buildinfo-6.2.0-1011-gcp
@@ -67121,6 +67122,7 @@ linux-headers-6.2.0-1009-lowlatency
 linux-headers-6.2.0-1009-nvidia
 linux-headers-6.2.0-1010-aws
 linux-headers-6.2.0-1010-gcp
+linux-headers-6.2.0-1010-nvidia
 linux-headers-6.2.0-1011-aws
 linux-headers-6.2.0-1011-azure
 linux-headers-6.2.0-1011-gcp
@@ -67413,6 +67415,7 @@ linux-image-6.2.0-1009-lowlatency
 linux-image-6.2.0-1009-nvidia
 linux-image-6.2.0-1010-aws
 linux-image-6.2.0-1010-gcp
+linux-image-6.2.0-1010-nvidia
 linux-image-6.2.0-1011-aws
 linux-image-6.2.0-1011-azure
 linux-image-6.2.0-1011-azure-fde
@@ -67650,6 +67653,7 @@ linux-image-unsigned-6.2.0-1009-lowlatency
 linux-image-unsigned-6.2.0-1009-nvidia
 linux-image-unsigned-6.2.0-1010-aws
 linux-image-unsigned-6.2.0-1010-gcp
+linux-image-unsigned-6.2.0-1010-nvidia
 linux-image-unsigned-6.2.0-1011-aws
 linux-image-unsigned-6.2.0-1011-azure
 linux-image-unsigned-6.2.0-1011-azure-fde
@@ -67964,6 +67968,7 @@ linux-modules-6.2.0-1009-lowlatency
 linux-modules-6.2.0-1009-nvidia
 linux-modules-6.2.0-1010-aws
 linux-modules-6.2.0-1010-gcp
+linux-modules-6.2.0-1010-nvidia
 linux-modules-6.2.0-1011-aws
 linux-modules-6.2.0-1011-azure
 linux-modules-6.2.0-1011-gcp
@@ -68110,6 +68115,7 @@ linux-modules-extra-6.2.0-1009-gcp
 linux-modules-extra-6.2.0-1009-nvidia
 linux-modules-extra-6.2.0-1010-aws
 linux-modules-extra-6.2.0-1010-gcp
+linux-modules-extra-6.2.0-1010-nvidia
 linux-modules-extra-6.2.0-1011-aws
 linux-modules-extra-6.2.0-1011-azure
 linux-modules-extra-6.2.0-1011-gcp
@@ -68380,8 +68386,10 @@ linux-nvidia-6.2-cloud-tools-6.2.0-1003
 linux-nvidia-6.2-cloud-tools-common
 linux-nvidia-6.2-headers-6.2.0-1003
 linux-nvidia-6.2-headers-6.2.0-1009
+linux-nvidia-6.2-headers-6.2.0-1010
 linux-nvidia-6.2-tools-6.2.0-1003
 linux-nvidia-6.2-tools-6.2.0-1009
+linux-nvidia-6.2-tools-6.2.0-1010
 linux-nvidia-6.2-tools-common
 linux-nvidia-6.2-tools-host
 linux-nvidia-cloud-tools-5.15.0-1025
@@ -68703,6 +68711,7 @@ linux-tools-6.2.0-1009-lowlatency
 linux-tools-6.2.0-1009-nvidia
 linux-tools-6.2.0-1010-aws
 linux-tools-6.2.0-1010-gcp
+linux-tools-6.2.0-1010-nvidia
 linux-tools-6.2.0-1011-aws
 linux-tools-6.2.0-1011-azure
 linux-tools-6.2.0-1011-gcp
@@ -68756,6 +68765,8 @@ oem-somerville-tentacool-rpl-meta
 oem-stella-aron-meta
 oem-stella-asobo-meta
 oem-stella-cascoon-rpl-meta
+oem-stella-kuku-meta
+oem-stella-romi-meta
 oem-sutton-balin-meta
 oem-sutton-balint-meta
 oem-sutton-bambina-meta
@@ -68976,6 +68987,7 @@ linux-modules-nvidia-390-6.2.0-1009-lowlatency
 linux-modules-nvidia-390-6.2.0-1009-nvidia
 linux-modules-nvidia-390-6.2.0-1010-aws
 linux-modules-nvidia-390-6.2.0-1010-gcp
+linux-modules-nvidia-390-6.2.0-1010-nvidia
 linux-modules-nvidia-390-6.2.0-1011-aws
 linux-modules-nvidia-390-6.2.0-1011-azure
 linux-modules-nvidia-390-6.2.0-1011-gcp
@@ -69279,6 +69291,7 @@ linux-modules-nvidia-450-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-450-server-6.2.0-1009-nvidia
 linux-modules-nvidia-450-server-6.2.0-1010-aws
 linux-modules-nvidia-450-server-6.2.0-1010-gcp
+linux-modules-nvidia-450-server-6.2.0-1010-nvidia
 linux-modules-nvidia-450-server-6.2.0-1011-aws
 linux-modules-nvidia-450-server-6.2.0-1011-azure
 linux-modules-nvidia-450-server-6.2.0-1011-gcp
@@ -69495,6 +69508,7 @@ linux-modules-nvidia-470-6.2.0-1009-lowlatency
 linux-modules-nvidia-470-6.2.0-1009-nvidia
 linux-modules-nvidia-470-6.2.0-1010-aws
 linux-modules-nvidia-470-6.2.0-1010-gcp
+linux-modules-nvidia-470-6.2.0-1010-nvidia
 linux-modules-nvidia-470-6.2.0-1011-aws
 linux-modules-nvidia-470-6.2.0-1011-azure
 linux-modules-nvidia-470-6.2.0-1011-gcp
@@ -69647,6 +69661,7 @@ linux-modules-nvidia-470-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-470-server-6.2.0-1009-nvidia
 linux-modules-nvidia-470-server-6.2.0-1010-aws
 linux-modules-nvidia-470-server-6.2.0-1010-gcp
+linux-modules-nvidia-470-server-6.2.0-1010-nvidia
 linux-modules-nvidia-470-server-6.2.0-1011-aws
 linux-modules-nvidia-470-server-6.2.0-1011-azure
 linux-modules-nvidia-470-server-6.2.0-1011-gcp
@@ -70191,6 +70206,7 @@ linux-modules-nvidia-525-6.2.0-1009-lowlatency
 linux-modules-nvidia-525-6.2.0-1009-nvidia
 linux-modules-nvidia-525-6.2.0-1010-aws
 linux-modules-nvidia-525-6.2.0-1010-gcp
+linux-modules-nvidia-525-6.2.0-1010-nvidia
 linux-modules-nvidia-525-6.2.0-1011-aws
 linux-modules-nvidia-525-6.2.0-1011-azure
 linux-modules-nvidia-525-6.2.0-1011-gcp
@@ -70370,6 +70386,7 @@ linux-modules-nvidia-525-open-6.2.0-1009-lowlatency
 linux-modules-nvidia-525-open-6.2.0-1009-nvidia
 linux-modules-nvidia-525-open-6.2.0-1010-aws
 linux-modules-nvidia-525-open-6.2.0-1010-gcp
+linux-modules-nvidia-525-open-6.2.0-1010-nvidia
 linux-modules-nvidia-525-open-6.2.0-1011-aws
 linux-modules-nvidia-525-open-6.2.0-1011-azure
 linux-modules-nvidia-525-open-6.2.0-1011-gcp
@@ -70539,6 +70556,7 @@ linux-modules-nvidia-525-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-525-server-6.2.0-1009-nvidia
 linux-modules-nvidia-525-server-6.2.0-1010-aws
 linux-modules-nvidia-525-server-6.2.0-1010-gcp
+linux-modules-nvidia-525-server-6.2.0-1010-nvidia
 linux-modules-nvidia-525-server-6.2.0-1011-aws
 linux-modules-nvidia-525-server-6.2.0-1011-azure
 linux-modules-nvidia-525-server-6.2.0-1011-gcp
@@ -70871,6 +70889,7 @@ linux-modules-nvidia-535-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-6.2.0-1009-nvidia
 linux-modules-nvidia-535-6.2.0-1010-aws
 linux-modules-nvidia-535-6.2.0-1010-gcp
+linux-modules-nvidia-535-6.2.0-1010-nvidia
 linux-modules-nvidia-535-6.2.0-1011-aws
 linux-modules-nvidia-535-6.2.0-1011-azure
 linux-modules-nvidia-535-6.2.0-1011-gcp
@@ -70994,6 +71013,7 @@ linux-modules-nvidia-535-open-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-open-6.2.0-1009-nvidia
 linux-modules-nvidia-535-open-6.2.0-1010-aws
 linux-modules-nvidia-535-open-6.2.0-1010-gcp
+linux-modules-nvidia-535-open-6.2.0-1010-nvidia
 linux-modules-nvidia-535-open-6.2.0-1011-aws
 linux-modules-nvidia-535-open-6.2.0-1011-azure
 linux-modules-nvidia-535-open-6.2.0-1011-gcp
@@ -71110,6 +71130,7 @@ linux-modules-nvidia-535-server-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-server-6.2.0-1009-nvidia
 linux-modules-nvidia-535-server-6.2.0-1010-aws
 linux-modules-nvidia-535-server-6.2.0-1010-gcp
+linux-modules-nvidia-535-server-6.2.0-1010-nvidia
 linux-modules-nvidia-535-server-6.2.0-1011-aws
 linux-modules-nvidia-535-server-6.2.0-1011-azure
 linux-modules-nvidia-535-server-6.2.0-1011-gcp
@@ -71216,6 +71237,7 @@ linux-modules-nvidia-535-server-open-6.2.0-1009-lowlatency
 linux-modules-nvidia-535-server-open-6.2.0-1009-nvidia
 linux-modules-nvidia-535-server-open-6.2.0-1010-aws
 linux-modules-nvidia-535-server-open-6.2.0-1010-gcp
+linux-modules-nvidia-535-server-open-6.2.0-1010-nvidia
 linux-modules-nvidia-535-server-open-6.2.0-1011-aws
 linux-modules-nvidia-535-server-open-6.2.0-1011-azure
 linux-modules-nvidia-535-server-open-6.2.0-1011-gcp
@@ -71381,6 +71403,7 @@ linux-objects-nvidia-390-6.2.0-1009-lowlatency
 linux-objects-nvidia-390-6.2.0-1009-nvidia
 linux-objects-nvidia-390-6.2.0-1010-aws
 linux-objects-nvidia-390-6.2.0-1010-gcp
+linux-objects-nvidia-390-6.2.0-1010-nvidia
 linux-objects-nvidia-390-6.2.0-1011-aws
 linux-objects-nvidia-390-6.2.0-1011-azure
 linux-objects-nvidia-390-6.2.0-1011-gcp
@@ -71609,6 +71632,7 @@ linux-objects-nvidia-450-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-450-server-6.2.0-1009-nvidia
 linux-objects-nvidia-450-server-6.2.0-1010-aws
 linux-objects-nvidia-450-server-6.2.0-1010-gcp
+linux-objects-nvidia-450-server-6.2.0-1010-nvidia
 linux-objects-nvidia-450-server-6.2.0-1011-aws
 linux-objects-nvidia-450-server-6.2.0-1011-azure
 linux-objects-nvidia-450-server-6.2.0-1011-gcp
@@ -71757,6 +71781,7 @@ linux-objects-nvidia-470-6.2.0-1009-lowlatency
 linux-objects-nvidia-470-6.2.0-1009-nvidia
 linux-objects-nvidia-470-6.2.0-1010-aws
 linux-objects-nvidia-470-6.2.0-1010-gcp
+linux-objects-nvidia-470-6.2.0-1010-nvidia
 linux-objects-nvidia-470-6.2.0-1011-aws
 linux-objects-nvidia-470-6.2.0-1011-azure
 linux-objects-nvidia-470-6.2.0-1011-gcp
@@ -71895,6 +71920,7 @@ linux-objects-nvidia-470-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-470-server-6.2.0-1009-nvidia
 linux-objects-nvidia-470-server-6.2.0-1010-aws
 linux-objects-nvidia-470-server-6.2.0-1010-gcp
+linux-objects-nvidia-470-server-6.2.0-1010-nvidia
 linux-objects-nvidia-470-server-6.2.0-1011-aws
 linux-objects-nvidia-470-server-6.2.0-1011-azure
 linux-objects-nvidia-470-server-6.2.0-1011-gcp
@@ -72264,6 +72290,7 @@ linux-objects-nvidia-525-6.2.0-1009-lowlatency
 linux-objects-nvidia-525-6.2.0-1009-nvidia
 linux-objects-nvidia-525-6.2.0-1010-aws
 linux-objects-nvidia-525-6.2.0-1010-gcp
+linux-objects-nvidia-525-6.2.0-1010-nvidia
 linux-objects-nvidia-525-6.2.0-1011-aws
 linux-objects-nvidia-525-6.2.0-1011-azure
 linux-objects-nvidia-525-6.2.0-1011-gcp
@@ -72418,6 +72445,7 @@ linux-objects-nvidia-525-open-6.2.0-1009-lowlatency
 linux-objects-nvidia-525-open-6.2.0-1009-nvidia
 linux-objects-nvidia-525-open-6.2.0-1010-aws
 linux-objects-nvidia-525-open-6.2.0-1010-gcp
+linux-objects-nvidia-525-open-6.2.0-1010-nvidia
 linux-objects-nvidia-525-open-6.2.0-1011-aws
 linux-objects-nvidia-525-open-6.2.0-1011-azure
 linux-objects-nvidia-525-open-6.2.0-1011-gcp
@@ -72556,6 +72584,7 @@ linux-objects-nvidia-525-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-525-server-6.2.0-1009-nvidia
 linux-objects-nvidia-525-server-6.2.0-1010-aws
 linux-objects-nvidia-525-server-6.2.0-1010-gcp
+linux-objects-nvidia-525-server-6.2.0-1010-nvidia
 linux-objects-nvidia-525-server-6.2.0-1011-aws
 linux-objects-nvidia-525-server-6.2.0-1011-azure
 linux-objects-nvidia-525-server-6.2.0-1011-gcp
@@ -72804,6 +72833,7 @@ linux-objects-nvidia-535-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-6.2.0-1009-nvidia
 linux-objects-nvidia-535-6.2.0-1010-aws
 linux-objects-nvidia-535-6.2.0-1010-gcp
+linux-objects-nvidia-535-6.2.0-1010-nvidia
 linux-objects-nvidia-535-6.2.0-1011-aws
 linux-objects-nvidia-535-6.2.0-1011-azure
 linux-objects-nvidia-535-6.2.0-1011-gcp
@@ -72902,6 +72932,7 @@ linux-objects-nvidia-535-open-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-open-6.2.0-1009-nvidia
 linux-objects-nvidia-535-open-6.2.0-1010-aws
 linux-objects-nvidia-535-open-6.2.0-1010-gcp
+linux-objects-nvidia-535-open-6.2.0-1010-nvidia
 linux-objects-nvidia-535-open-6.2.0-1011-aws
 linux-objects-nvidia-535-open-6.2.0-1011-azure
 linux-objects-nvidia-535-open-6.2.0-1011-gcp
@@ -72987,6 +73018,7 @@ linux-objects-nvidia-535-server-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-server-6.2.0-1009-nvidia
 linux-objects-nvidia-535-server-6.2.0-1010-aws
 linux-objects-nvidia-535-server-6.2.0-1010-gcp
+linux-objects-nvidia-535-server-6.2.0-1010-nvidia
 linux-objects-nvidia-535-server-6.2.0-1011-aws
 linux-objects-nvidia-535-server-6.2.0-1011-azure
 linux-objects-nvidia-535-server-6.2.0-1011-gcp
@@ -73071,6 +73103,7 @@ linux-objects-nvidia-535-server-open-6.2.0-1009-lowlatency
 linux-objects-nvidia-535-server-open-6.2.0-1009-nvidia
 linux-objects-nvidia-535-server-open-6.2.0-1010-aws
 linux-objects-nvidia-535-server-open-6.2.0-1010-gcp
+linux-objects-nvidia-535-server-open-6.2.0-1010-nvidia
 linux-objects-nvidia-535-server-open-6.2.0-1011-aws
 linux-objects-nvidia-535-server-open-6.2.0-1011-azure
 linux-objects-nvidia-535-server-open-6.2.0-1011-gcp
@@ -73224,6 +73257,7 @@ linux-signatures-nvidia-6.2.0-1009-lowlatency
 linux-signatures-nvidia-6.2.0-1009-nvidia
 linux-signatures-nvidia-6.2.0-1010-aws
 linux-signatures-nvidia-6.2.0-1010-gcp
+linux-signatures-nvidia-6.2.0-1010-nvidia
 linux-signatures-nvidia-6.2.0-1011-aws
 linux-signatures-nvidia-6.2.0-1011-azure
 linux-signatures-nvidia-6.2.0-1011-gcp
@@ -73285,8 +73319,12 @@ nvidia-driver-535-server
 nvidia-driver-535-server-open
 nvidia-fabricmanager-515
 nvidia-fabricmanager-dev-515
+nvidia-firmware-535-535.104.05
+nvidia-firmware-535-535.113.01
 nvidia-firmware-535-535.54.03
 nvidia-firmware-535-535.86.05
+nvidia-firmware-535-server-535.104.05
+nvidia-firmware-535-server-535.104.12
 nvidia-firmware-535-server-535.54.03
 nvidia-headless-510
 nvidia-headless-510-server
@@ -73977,6 +74015,7 @@ dotnet-runtime-3.1
 dotnet-sdk-3.1
 hibernation-setup-tool
 microsoft-identity-diagnostics
+msopenjdk-21
 dotnet-runtime-deps-7.0
 aspnetcore-runtime-3.1
 libdeliveryoptimization
