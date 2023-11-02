@@ -66805,6 +66805,7 @@ linux-buildinfo-6.2.0-34-generic
 linux-buildinfo-6.2.0-35-generic
 linux-buildinfo-6.5.0-1003-oem
 linux-buildinfo-6.5.0-1004-oem
+linux-buildinfo-6.5.0-1006-oem
 linux-cloud-tools-5.15.0-1025-nvidia
 linux-cloud-tools-5.15.0-1025-nvidia-lowlatency
 linux-cloud-tools-5.15.0-1026-nvidia
@@ -67268,6 +67269,7 @@ linux-headers-6.2.0-34-generic
 linux-headers-6.2.0-35-generic
 linux-headers-6.5.0-1003-oem
 linux-headers-6.5.0-1004-oem
+linux-headers-6.5.0-1006-oem
 linux-headers-aws-edge
 linux-headers-aws-lts-22.04
 linux-headers-azure-edge
@@ -67618,6 +67620,7 @@ linux-image-6.2.0-34-generic
 linux-image-6.2.0-35-generic
 linux-image-6.5.0-1003-oem
 linux-image-6.5.0-1004-oem
+linux-image-6.5.0-1006-oem
 linux-image-aws-edge
 linux-image-aws-lts-22.04
 linux-image-azure-edge
@@ -67640,8 +67643,10 @@ linux-image-oem-22.04d
 linux-image-oracle-edge
 linux-image-oracle-lts-22.04
 linux-image-uc-6.2.0-35-generic
+linux-image-uc-6.5.0-1006-oem
 linux-image-uc-generic-hwe-22.04
 linux-image-uc-generic-hwe-22.04-edge
+linux-image-uc-oem-22.04d
 linux-image-unsigned-5.15.0-1025-nvidia
 linux-image-unsigned-5.15.0-1025-nvidia-lowlatency
 linux-image-unsigned-5.15.0-1026-nvidia
@@ -67904,6 +67909,7 @@ linux-image-unsigned-6.2.0-34-generic
 linux-image-unsigned-6.2.0-35-generic
 linux-image-unsigned-6.5.0-1003-oem
 linux-image-unsigned-6.5.0-1004-oem
+linux-image-unsigned-6.5.0-1006-oem
 linux-intel-iotg-cloud-tools-5.15.0-1028
 linux-intel-iotg-cloud-tools-5.15.0-1030
 linux-intel-iotg-cloud-tools-5.15.0-1031
@@ -68279,6 +68285,7 @@ linux-modules-6.2.0-34-generic
 linux-modules-6.2.0-35-generic
 linux-modules-6.5.0-1003-oem
 linux-modules-6.5.0-1004-oem
+linux-modules-6.5.0-1006-oem
 linux-modules-extra-5.15.0-1025-nvidia
 linux-modules-extra-5.15.0-1026-nvidia
 linux-modules-extra-5.15.0-1027-gke
@@ -68511,6 +68518,7 @@ linux-modules-ipu6-6.2.0-34-generic
 linux-modules-ipu6-6.2.0-35-generic
 linux-modules-ipu6-6.5.0-1003-oem
 linux-modules-ipu6-6.5.0-1004-oem
+linux-modules-ipu6-6.5.0-1006-oem
 linux-modules-ipu6-azure-edge
 linux-modules-ipu6-generic-hwe-22.04
 linux-modules-ipu6-generic-hwe-22.04-edge
@@ -68572,6 +68580,7 @@ linux-modules-ivsc-6.2.0-34-generic
 linux-modules-ivsc-6.2.0-35-generic
 linux-modules-ivsc-6.5.0-1003-oem
 linux-modules-ivsc-6.5.0-1004-oem
+linux-modules-ivsc-6.5.0-1006-oem
 linux-modules-ivsc-azure-edge
 linux-modules-ivsc-generic-hwe-22.04
 linux-modules-ivsc-generic-hwe-22.04-edge
@@ -68703,6 +68712,7 @@ linux-modules-iwlwifi-6.2.0-34-generic
 linux-modules-iwlwifi-6.2.0-35-generic
 linux-modules-iwlwifi-6.5.0-1003-oem
 linux-modules-iwlwifi-6.5.0-1004-oem
+linux-modules-iwlwifi-6.5.0-1006-oem
 linux-modules-iwlwifi-aws-edge
 linux-modules-iwlwifi-azure-edge
 linux-modules-iwlwifi-gcp
@@ -68845,10 +68855,13 @@ linux-oem-6.1-tools-6.1.0-1024
 linux-oem-6.1-tools-host
 linux-oem-6.5-headers-6.5.0-1003
 linux-oem-6.5-headers-6.5.0-1004
+linux-oem-6.5-headers-6.5.0-1006
 linux-oem-6.5-lib-rust-6.5.0-1003-oem
 linux-oem-6.5-lib-rust-6.5.0-1004-oem
+linux-oem-6.5-lib-rust-6.5.0-1006-oem
 linux-oem-6.5-tools-6.5.0-1003
 linux-oem-6.5-tools-6.5.0-1004
+linux-oem-6.5-tools-6.5.0-1006
 linux-oem-6.5-tools-host
 linux-oracle-5.19-headers-5.19.0-1023
 linux-oracle-5.19-headers-5.19.0-1024
@@ -69156,6 +69169,7 @@ linux-tools-6.2.0-34-generic
 linux-tools-6.2.0-35-generic
 linux-tools-6.5.0-1003-oem
 linux-tools-6.5.0-1004-oem
+linux-tools-6.5.0-1006-oem
 linux-tools-aws-edge
 linux-tools-aws-lts-22.04
 linux-tools-azure-edge
@@ -71617,6 +71631,7 @@ linux-modules-nvidia-535-6.2.0-34-generic
 linux-modules-nvidia-535-6.2.0-35-generic
 linux-modules-nvidia-535-6.5.0-1003-oem
 linux-modules-nvidia-535-6.5.0-1004-oem
+linux-modules-nvidia-535-6.5.0-1006-oem
 linux-modules-nvidia-535-aws
 linux-modules-nvidia-535-aws-edge
 linux-modules-nvidia-535-aws-lts-22.04
@@ -71773,6 +71788,7 @@ linux-modules-nvidia-535-open-6.2.0-34-generic
 linux-modules-nvidia-535-open-6.2.0-35-generic
 linux-modules-nvidia-535-open-6.5.0-1003-oem
 linux-modules-nvidia-535-open-6.5.0-1004-oem
+linux-modules-nvidia-535-open-6.5.0-1006-oem
 linux-modules-nvidia-535-open-aws
 linux-modules-nvidia-535-open-aws-edge
 linux-modules-nvidia-535-open-aws-lts-22.04
@@ -73909,6 +73925,7 @@ linux-objects-nvidia-535-6.2.0-34-generic
 linux-objects-nvidia-535-6.2.0-35-generic
 linux-objects-nvidia-535-6.5.0-1003-oem
 linux-objects-nvidia-535-6.5.0-1004-oem
+linux-objects-nvidia-535-6.5.0-1006-oem
 linux-objects-nvidia-535-open-5.15.0-1028-nvidia
 linux-objects-nvidia-535-open-5.15.0-1029-nvidia
 linux-objects-nvidia-535-open-5.15.0-1030-nvidia
@@ -74040,6 +74057,7 @@ linux-objects-nvidia-535-open-6.2.0-34-generic
 linux-objects-nvidia-535-open-6.2.0-35-generic
 linux-objects-nvidia-535-open-6.5.0-1003-oem
 linux-objects-nvidia-535-open-6.5.0-1004-oem
+linux-objects-nvidia-535-open-6.5.0-1006-oem
 linux-objects-nvidia-535-server-5.15.0-1028-nvidia
 linux-objects-nvidia-535-server-5.15.0-1029-nvidia
 linux-objects-nvidia-535-server-5.15.0-1030-nvidia
@@ -74456,6 +74474,7 @@ linux-signatures-nvidia-6.2.0-34-generic
 linux-signatures-nvidia-6.2.0-35-generic
 linux-signatures-nvidia-6.5.0-1003-oem
 linux-signatures-nvidia-6.5.0-1004-oem
+linux-signatures-nvidia-6.5.0-1006-oem
 nvidia-compute-utils-510
 nvidia-compute-utils-510-server
 nvidia-compute-utils-515
