@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { LoadingIcon } from '@/app/components/LoadingIcon';
 import Link from 'next/link';
 import TailwindLayout from '@/app/TailwindLayout';
 import { topLevelDomains } from '@/app/util';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 interface CheckListState {
   exists: boolean;
@@ -40,6 +42,24 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const availableDomains = domainsResponse?.domains?.filter((d) => d.available);
   const domainNameUrl = `https://www.namecheap.com/domains/registration/results/?domain=${text}`;
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams()!;
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+      return params.toString();
+    },
+    [searchParams],
+  );
+
+  // When the URL includes a name query param, set the text to that value
+  const nameQueryParam = useSearchParams().get('name');
+  useEffect(() => {
+    setText(nameQueryParam);
+  }, [nameQueryParam]);
 
   async function searchPypi(name) {
     const response = await fetch(`/api/exists/pypi?name=${name}`);
@@ -133,6 +153,7 @@ export default function Home() {
     if (editedText.split(' ').length >= 2) {
       editedText = editedText.replaceAll(/\s+/gi, '-');
     }
+    router.push(pathname + '?' + createQueryString('name', text));
     setText(editedText);
     // Set state to null to 'reset' search results
     setCratesResponse(null);
