@@ -14,6 +14,8 @@ export async function GET(request: NextRequest) {
     const response = await octokit.request(`GET /users/${name}`, {
       headers: {
         'X-GitHub-Api-Version': '2022-11-28',
+        'User-Agent':
+          'namechecker.vercel.app https://github.com/toddcooke/namechecker',
       },
     });
 
