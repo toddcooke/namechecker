@@ -8,3 +8,10 @@ export const topLevelDomains = [
   '.xyz',
   '.org',
 ];
+
+export const fetchOptions = {
+  headers: {
+    'User-Agent':
+      'namechecker.vercel.app https://github.com/toddcooke/namechecker',
+  },
+};

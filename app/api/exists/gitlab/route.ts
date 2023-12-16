@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { NextRequest, NextResponse } from 'next/server';
+import { fetchOptions } from '@/app/util';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -9,6 +10,7 @@ export async function GET(request: NextRequest) {
     for (let page = 1; page <= 10; page++) {
       const response = await fetch(
         `https://gitlab.com/api/v4/projects?search="${name}"&per_page=100&page=${page}`,
+        fetchOptions,
       );
       const json = await response.json();
       if (json.length === 0) break;
