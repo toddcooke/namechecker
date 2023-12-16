@@ -1,5 +1,6 @@
 import './globals.css';
-
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 export const metadata = {
   title: 'Name Checker',
   description: 'Find out if your project name is taken',
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
           content="https://namechecker.vercel.app/api/og"
         />
       </head>
+      <Analytics />
+      <SpeedInsights />
       <body className="h-full">{children}</body>
     </html>
   );
