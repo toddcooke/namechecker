@@ -24,7 +24,7 @@
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@tailwindcss/forms": "^0.5.6",
-    "@types/react": "18.2.24",
+    "@types/react": "18.2.45",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.0.4",
