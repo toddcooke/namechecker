@@ -66412,6 +66412,7 @@ libstd-rust-1.65
 libstd-rust-1.66
 libstd-rust-1.70
 libstd-rust-1.71
+libstd-rust-1.72
 libunwind-15
 libunwind-15-dev
 libwebkit2gtk-4.0-37
@@ -78026,6 +78027,7 @@ blobfuse2
 moby-compose
 aztfy
 azure-ai-vision-dev-common
+libmsquic
 azcmagent
 aziot-edge
 powershell-lts
@@ -78040,7 +78042,6 @@ aadsshlogin-selinux
 azapi2azurerm
 msopenjdk-21
 dotnet-apphost-pack-3.1
-libmsquic
 mssql-tools
 hibernation-setup-tool
 azureauth
