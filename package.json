@@ -13,7 +13,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
-    "@vercel/analytics": "^1.1.1",
+    "@vercel/analytics": "^1.2.1",
     "@vercel/og": "^0.6.2",
     "@vercel/speed-insights": "^1.0.9",
     "next": "14.0.4",
