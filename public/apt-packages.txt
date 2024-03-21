@@ -66937,6 +66937,7 @@ linux-buildinfo-6.1.0-1028-oem
 linux-buildinfo-6.1.0-1029-oem
 linux-buildinfo-6.1.0-1033-oem
 linux-buildinfo-6.1.0-1034-oem
+linux-buildinfo-6.1.0-1035-oem
 linux-buildinfo-6.2.0-1003-nvidia
 linux-buildinfo-6.2.0-1005-aws
 linux-buildinfo-6.2.0-1005-azure
@@ -67718,6 +67719,7 @@ linux-headers-6.1.0-1028-oem
 linux-headers-6.1.0-1029-oem
 linux-headers-6.1.0-1033-oem
 linux-headers-6.1.0-1034-oem
+linux-headers-6.1.0-1035-oem
 linux-headers-6.2.0-1003-nvidia
 linux-headers-6.2.0-1005-aws
 linux-headers-6.2.0-1005-azure
@@ -68276,6 +68278,7 @@ linux-image-6.1.0-1028-oem
 linux-image-6.1.0-1029-oem
 linux-image-6.1.0-1033-oem
 linux-image-6.1.0-1034-oem
+linux-image-6.1.0-1035-oem
 linux-image-6.2.0-1003-nvidia
 linux-image-6.2.0-1005-aws
 linux-image-6.2.0-1005-azure
@@ -68764,6 +68767,7 @@ linux-image-unsigned-6.1.0-1028-oem
 linux-image-unsigned-6.1.0-1029-oem
 linux-image-unsigned-6.1.0-1033-oem
 linux-image-unsigned-6.1.0-1034-oem
+linux-image-unsigned-6.1.0-1035-oem
 linux-image-unsigned-6.2.0-1003-nvidia
 linux-image-unsigned-6.2.0-1005-aws
 linux-image-unsigned-6.2.0-1005-azure
@@ -69389,6 +69393,7 @@ linux-modules-6.1.0-1028-oem
 linux-modules-6.1.0-1029-oem
 linux-modules-6.1.0-1033-oem
 linux-modules-6.1.0-1034-oem
+linux-modules-6.1.0-1035-oem
 linux-modules-6.2.0-1003-nvidia
 linux-modules-6.2.0-1005-aws
 linux-modules-6.2.0-1005-azure
@@ -69843,6 +69848,7 @@ linux-modules-ipu6-6.1.0-1028-oem
 linux-modules-ipu6-6.1.0-1029-oem
 linux-modules-ipu6-6.1.0-1033-oem
 linux-modules-ipu6-6.1.0-1034-oem
+linux-modules-ipu6-6.1.0-1035-oem
 linux-modules-ipu6-6.2.0-1007-azure
 linux-modules-ipu6-6.2.0-1008-azure
 linux-modules-ipu6-6.2.0-1009-lowlatency
@@ -69936,6 +69942,7 @@ linux-modules-ivsc-6.1.0-1028-oem
 linux-modules-ivsc-6.1.0-1029-oem
 linux-modules-ivsc-6.1.0-1033-oem
 linux-modules-ivsc-6.1.0-1034-oem
+linux-modules-ivsc-6.1.0-1035-oem
 linux-modules-ivsc-6.2.0-1007-azure
 linux-modules-ivsc-6.2.0-1008-azure
 linux-modules-ivsc-6.2.0-1009-lowlatency
@@ -70119,6 +70126,7 @@ linux-modules-iwlwifi-6.1.0-1028-oem
 linux-modules-iwlwifi-6.1.0-1029-oem
 linux-modules-iwlwifi-6.1.0-1033-oem
 linux-modules-iwlwifi-6.1.0-1034-oem
+linux-modules-iwlwifi-6.1.0-1035-oem
 linux-modules-iwlwifi-6.2.0-1007-aws
 linux-modules-iwlwifi-6.2.0-1007-azure
 linux-modules-iwlwifi-6.2.0-1008-aws
@@ -70321,6 +70329,11 @@ linux-nvidia-headers-5.15.0-1046
 linux-nvidia-hwe-22.04
 linux-nvidia-hwe-22.04-edge
 linux-nvidia-lowlatency
+linux-nvidia-tegra-igx-cloud-tools-common
+linux-nvidia-tegra-igx-headers-5.15.0-1009
+linux-nvidia-tegra-igx-tegra-igpu-igx-defaults
+linux-nvidia-tegra-igx-tools-common
+linux-nvidia-tegra-igx-tools-host
 linux-nvidia-tools-5.15.0-1025
 linux-nvidia-tools-5.15.0-1026
 linux-nvidia-tools-5.15.0-1027
@@ -70387,6 +70400,7 @@ linux-oem-6.1-headers-6.1.0-1028
 linux-oem-6.1-headers-6.1.0-1029
 linux-oem-6.1-headers-6.1.0-1033
 linux-oem-6.1-headers-6.1.0-1034
+linux-oem-6.1-headers-6.1.0-1035
 linux-oem-6.1-tools-6.1.0-1012
 linux-oem-6.1-tools-6.1.0-1013
 linux-oem-6.1-tools-6.1.0-1014
@@ -70406,6 +70420,7 @@ linux-oem-6.1-tools-6.1.0-1028
 linux-oem-6.1-tools-6.1.0-1029
 linux-oem-6.1-tools-6.1.0-1033
 linux-oem-6.1-tools-6.1.0-1034
+linux-oem-6.1-tools-6.1.0-1035
 linux-oem-6.1-tools-host
 linux-oem-6.5-headers-6.5.0-1003
 linux-oem-6.5-headers-6.5.0-1004
@@ -70834,6 +70849,7 @@ linux-tools-6.1.0-1028-oem
 linux-tools-6.1.0-1029-oem
 linux-tools-6.1.0-1033-oem
 linux-tools-6.1.0-1034-oem
+linux-tools-6.1.0-1035-oem
 linux-tools-6.2.0-1003-nvidia
 linux-tools-6.2.0-1005-aws
 linux-tools-6.2.0-1005-azure
@@ -71040,6 +71056,8 @@ systemd-hwe-hwdb
 systemd-repart
 u-boot-tools
 ubuntu-advantage-tools
+ubuntu-pro-auto-attach
+ubuntu-pro-client
 ubuntu-pro-client-l10n
 cuda-drivers-fabricmanager-515
 libnvidia-cfg1-510
@@ -72109,6 +72127,7 @@ linux-modules-nvidia-470-6.1.0-1028-oem
 linux-modules-nvidia-470-6.1.0-1029-oem
 linux-modules-nvidia-470-6.1.0-1033-oem
 linux-modules-nvidia-470-6.1.0-1034-oem
+linux-modules-nvidia-470-6.1.0-1035-oem
 linux-modules-nvidia-470-6.2.0-1003-nvidia
 linux-modules-nvidia-470-6.2.0-1007-aws
 linux-modules-nvidia-470-6.2.0-1007-azure
@@ -73118,6 +73137,7 @@ linux-modules-nvidia-525-6.1.0-1028-oem
 linux-modules-nvidia-525-6.1.0-1029-oem
 linux-modules-nvidia-525-6.1.0-1033-oem
 linux-modules-nvidia-525-6.1.0-1034-oem
+linux-modules-nvidia-525-6.1.0-1035-oem
 linux-modules-nvidia-525-6.2.0-1003-nvidia
 linux-modules-nvidia-525-6.2.0-1007-aws
 linux-modules-nvidia-525-6.2.0-1007-azure
@@ -73452,6 +73472,7 @@ linux-modules-nvidia-525-open-6.1.0-1028-oem
 linux-modules-nvidia-525-open-6.1.0-1029-oem
 linux-modules-nvidia-525-open-6.1.0-1033-oem
 linux-modules-nvidia-525-open-6.1.0-1034-oem
+linux-modules-nvidia-525-open-6.1.0-1035-oem
 linux-modules-nvidia-525-open-6.2.0-1003-nvidia
 linux-modules-nvidia-525-open-6.2.0-1007-aws
 linux-modules-nvidia-525-open-6.2.0-1007-azure
@@ -74254,6 +74275,7 @@ linux-modules-nvidia-535-6.1.0-1028-oem
 linux-modules-nvidia-535-6.1.0-1029-oem
 linux-modules-nvidia-535-6.1.0-1033-oem
 linux-modules-nvidia-535-6.1.0-1034-oem
+linux-modules-nvidia-535-6.1.0-1035-oem
 linux-modules-nvidia-535-6.2.0-1007-aws
 linux-modules-nvidia-535-6.2.0-1007-azure
 linux-modules-nvidia-535-6.2.0-1008-aws
@@ -74536,6 +74558,7 @@ linux-modules-nvidia-535-open-6.1.0-1028-oem
 linux-modules-nvidia-535-open-6.1.0-1029-oem
 linux-modules-nvidia-535-open-6.1.0-1033-oem
 linux-modules-nvidia-535-open-6.1.0-1034-oem
+linux-modules-nvidia-535-open-6.1.0-1035-oem
 linux-modules-nvidia-535-open-6.2.0-1007-aws
 linux-modules-nvidia-535-open-6.2.0-1007-azure
 linux-modules-nvidia-535-open-6.2.0-1008-aws
@@ -75195,6 +75218,7 @@ linux-modules-nvidia-545-5.15.0-97-generic
 linux-modules-nvidia-545-5.15.0-97-lowlatency
 linux-modules-nvidia-545-6.1.0-1033-oem
 linux-modules-nvidia-545-6.1.0-1034-oem
+linux-modules-nvidia-545-6.1.0-1035-oem
 linux-modules-nvidia-545-6.5.0-1007-nvidia
 linux-modules-nvidia-545-6.5.0-1013-gcp
 linux-modules-nvidia-545-6.5.0-1013-nvidia
@@ -75234,6 +75258,7 @@ linux-modules-nvidia-545-lowlatency-hwe-22.04
 linux-modules-nvidia-545-lowlatency-hwe-22.04-edge
 linux-modules-nvidia-545-nvidia
 linux-modules-nvidia-545-nvidia-6.5
+linux-modules-nvidia-545-nvidia-hwe-22.04
 linux-modules-nvidia-545-nvidia-hwe-22.04-edge
 linux-modules-nvidia-545-oem-22.04
 linux-modules-nvidia-545-oem-22.04c
@@ -75261,6 +75286,7 @@ linux-modules-nvidia-545-open-5.15.0-97-generic
 linux-modules-nvidia-545-open-5.15.0-97-lowlatency
 linux-modules-nvidia-545-open-6.1.0-1033-oem
 linux-modules-nvidia-545-open-6.1.0-1034-oem
+linux-modules-nvidia-545-open-6.1.0-1035-oem
 linux-modules-nvidia-545-open-6.5.0-1007-nvidia
 linux-modules-nvidia-545-open-6.5.0-1013-gcp
 linux-modules-nvidia-545-open-6.5.0-1013-nvidia
@@ -75300,6 +75326,7 @@ linux-modules-nvidia-545-open-lowlatency-hwe-22.04
 linux-modules-nvidia-545-open-lowlatency-hwe-22.04-edge
 linux-modules-nvidia-545-open-nvidia
 linux-modules-nvidia-545-open-nvidia-6.5
+linux-modules-nvidia-545-open-nvidia-hwe-22.04
 linux-modules-nvidia-545-open-nvidia-hwe-22.04-edge
 linux-modules-nvidia-545-open-oem-22.04
 linux-modules-nvidia-545-open-oem-22.04c
@@ -76123,6 +76150,7 @@ linux-objects-nvidia-470-6.1.0-1028-oem
 linux-objects-nvidia-470-6.1.0-1029-oem
 linux-objects-nvidia-470-6.1.0-1033-oem
 linux-objects-nvidia-470-6.1.0-1034-oem
+linux-objects-nvidia-470-6.1.0-1035-oem
 linux-objects-nvidia-470-6.2.0-1003-nvidia
 linux-objects-nvidia-470-6.2.0-1007-aws
 linux-objects-nvidia-470-6.2.0-1007-azure
@@ -76920,6 +76948,7 @@ linux-objects-nvidia-525-6.1.0-1028-oem
 linux-objects-nvidia-525-6.1.0-1029-oem
 linux-objects-nvidia-525-6.1.0-1033-oem
 linux-objects-nvidia-525-6.1.0-1034-oem
+linux-objects-nvidia-525-6.1.0-1035-oem
 linux-objects-nvidia-525-6.2.0-1003-nvidia
 linux-objects-nvidia-525-6.2.0-1007-aws
 linux-objects-nvidia-525-6.2.0-1007-azure
@@ -77226,6 +77255,7 @@ linux-objects-nvidia-525-open-6.1.0-1028-oem
 linux-objects-nvidia-525-open-6.1.0-1029-oem
 linux-objects-nvidia-525-open-6.1.0-1033-oem
 linux-objects-nvidia-525-open-6.1.0-1034-oem
+linux-objects-nvidia-525-open-6.1.0-1035-oem
 linux-objects-nvidia-525-open-6.2.0-1003-nvidia
 linux-objects-nvidia-525-open-6.2.0-1007-aws
 linux-objects-nvidia-525-open-6.2.0-1007-azure
@@ -77904,6 +77934,7 @@ linux-objects-nvidia-535-6.1.0-1028-oem
 linux-objects-nvidia-535-6.1.0-1029-oem
 linux-objects-nvidia-535-6.1.0-1033-oem
 linux-objects-nvidia-535-6.1.0-1034-oem
+linux-objects-nvidia-535-6.1.0-1035-oem
 linux-objects-nvidia-535-6.2.0-1007-aws
 linux-objects-nvidia-535-6.2.0-1007-azure
 linux-objects-nvidia-535-6.2.0-1008-aws
@@ -78159,6 +78190,7 @@ linux-objects-nvidia-535-open-6.1.0-1028-oem
 linux-objects-nvidia-535-open-6.1.0-1029-oem
 linux-objects-nvidia-535-open-6.1.0-1033-oem
 linux-objects-nvidia-535-open-6.1.0-1034-oem
+linux-objects-nvidia-535-open-6.1.0-1035-oem
 linux-objects-nvidia-535-open-6.2.0-1007-aws
 linux-objects-nvidia-535-open-6.2.0-1007-azure
 linux-objects-nvidia-535-open-6.2.0-1008-aws
@@ -78731,6 +78763,7 @@ linux-objects-nvidia-545-5.15.0-97-generic
 linux-objects-nvidia-545-5.15.0-97-lowlatency
 linux-objects-nvidia-545-6.1.0-1033-oem
 linux-objects-nvidia-545-6.1.0-1034-oem
+linux-objects-nvidia-545-6.1.0-1035-oem
 linux-objects-nvidia-545-6.5.0-1007-nvidia
 linux-objects-nvidia-545-6.5.0-1013-gcp
 linux-objects-nvidia-545-6.5.0-1013-nvidia
@@ -78775,6 +78808,7 @@ linux-objects-nvidia-545-open-5.15.0-97-generic
 linux-objects-nvidia-545-open-5.15.0-97-lowlatency
 linux-objects-nvidia-545-open-6.1.0-1033-oem
 linux-objects-nvidia-545-open-6.1.0-1034-oem
+linux-objects-nvidia-545-open-6.1.0-1035-oem
 linux-objects-nvidia-545-open-6.5.0-1007-nvidia
 linux-objects-nvidia-545-open-6.5.0-1013-gcp
 linux-objects-nvidia-545-open-6.5.0-1013-nvidia
@@ -79000,6 +79034,7 @@ linux-signatures-nvidia-6.1.0-1028-oem
 linux-signatures-nvidia-6.1.0-1029-oem
 linux-signatures-nvidia-6.1.0-1033-oem
 linux-signatures-nvidia-6.1.0-1034-oem
+linux-signatures-nvidia-6.1.0-1035-oem
 linux-signatures-nvidia-6.2.0-1003-nvidia
 linux-signatures-nvidia-6.2.0-1007-aws
 linux-signatures-nvidia-6.2.0-1007-azure
@@ -79551,7 +79586,7 @@ linux-nvidia-tegra-headers-5.15.0-1018
 linux-nvidia-tegra-headers-5.15.0-1019
 linux-nvidia-tegra-headers-5.15.0-1020
 linux-nvidia-tegra-headers-5.15.0-1021
-linux-nvidia-tegra-igx-cloud-tools-common
+linux-nvidia-tegra-headers-5.15.0-1022
 linux-nvidia-tegra-igx-headers-5.15.0-1001
 linux-nvidia-tegra-igx-headers-5.15.0-1002
 linux-nvidia-tegra-igx-headers-5.15.0-1004
@@ -79559,9 +79594,6 @@ linux-nvidia-tegra-igx-headers-5.15.0-1005
 linux-nvidia-tegra-igx-headers-5.15.0-1006
 linux-nvidia-tegra-igx-headers-5.15.0-1007
 linux-nvidia-tegra-igx-headers-5.15.0-1008
-linux-nvidia-tegra-igx-tegra-igpu-igx-defaults
-linux-nvidia-tegra-igx-tools-common
-linux-nvidia-tegra-igx-tools-host
 linux-nvidia-tegra-tools-common
 linux-nvidia-tegra-tools-host
 linux-objects-nvidia-390-5.19.0-1022-oracle
@@ -79622,6 +79654,7 @@ linux-tools-realtime
 linux-xilinx-zynqmp-headers-5.15.0-1022
 linux-xilinx-zynqmp-headers-5.15.0-1023
 linux-xilinx-zynqmp-headers-5.15.0-1025
+linux-xilinx-zynqmp-headers-5.15.0-1027
 linux-xilinx-zynqmp-tools-common
 linux-xilinx-zynqmp-tools-host
 llvm-spirv-14
@@ -79863,6 +79896,15 @@ nvidia-fabricmanager-dev-525
 nvidia-fabricmanager-dev-535
 virtualbox-guest-utils
 virtualbox-guest-utils-hwe
+libreoffice-uiconfig-base
+libreoffice-uiconfig-calc
+libreoffice-uiconfig-common
+libreoffice-uiconfig-draw
+libreoffice-uiconfig-impress
+libreoffice-uiconfig-math
+libreoffice-uiconfig-report-builder
+libreoffice-uiconfig-writer
+python3-scriptforge
 nala
 python3-socksio
 linux-azure-fde-5.19-edge
@@ -79872,14 +79914,14 @@ linux-image-azure-fde-5.19-edge
 linux-modules-extra-azure-fde-5.19-edge
 linux-tools-azure-fde-5.19-edge
 libmsquic
+dotnet-apphost-pack-8.0
 azure-functions-core-tools-3
 moby-cli
 aziot-identity-service
+aspnetcore-runtime-8.0
 azure-functions-core-tools
 deviceupdate-agent
 azure-functions-core-tools-4
-dotnet-sdk-6.0
-dotnet-runtime-deps-7.0
 procdump
 aztfexport
 powershell-preview
@@ -79887,6 +79929,7 @@ azure-ai-vision-runtime-common
 mdatp
 moby-containerd
 intune-portal
+aziot-edge
 msopenjdk-17
 mde-netfilter-src
 moby-runc
@@ -79902,16 +79945,14 @@ moby-compose
 aztfy
 azure-ai-vision-dev-common
 azcmagent
-aziot-edge
 powershell-lts
 microsoft-identity-broker
 azure-ai-vision-runtime-image-analysis
 msopenjdk-11
 azure-ai-vision-dev-core
-dotnet-runtime-8.0
-dotnet-apphost-pack-8.0
 aadsshlogin
 aadsshlogin-selinux
+dotnet-sdk-7.0
 azapi2azurerm
 msopenjdk-21
 dotnet-apphost-pack-3.1
@@ -79921,32 +79962,33 @@ azureauth
 moby-containerd-shim-systemd
 azure-ai-vision-dev-image-analysis
 virtualclient
-dotnet-sdk-8.0
 sysmonforlinux
 msalsdk-dbusclient
 libdeliveryoptimization-dev
+dotnet-hostfxr-8.0
 dotnet-runtime-3.1
 libdeliveryoptimization
 msodbcsql17
-dotnet-host
 sysinternalsebpf
-aspnetcore-runtime-8.0
+dotnet-host
+omi
 defender-iot-micro-agent
 mssql-tools18
 azure-ai-vision-runtime-core
 dotnet-sdk-3.1
-dotnet-sdk-7.0
 dotnet-runtime-deps-6.0
+dotnet-runtime-deps-8.0
+dotnet-targeting-pack-8.0
 aspnetcore-runtime-3.1
 microsoft-identity-diagnostics
 deliveryoptimization-agent
-dotnet-targeting-pack-8.0
-omi
 dotnet-runtime-deps-3.1
 azure-ai-vision-runtime-common-media
-dotnet-runtime-deps-8.0
-dotnet-hostfxr-8.0
+dotnet-runtime-deps-7.0
+dotnet-runtime-8.0
+dotnet-sdk-8.0
 dotnet-hostfxr-3.1
+dotnet-sdk-6.0
 moby-tini
 sqlcmd
 packages-microsoft-prod
