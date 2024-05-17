@@ -82391,6 +82391,7 @@ xserver-xorg-video-nvidia-545
 xserver-xorg-video-nvidia-550
 xserver-xorg-video-nvidia-550-server
 aspnetcore-runtime-7.0
+aspnetcore-runtime-dbg-8.0
 aspnetcore-targeting-pack-7.0
 bindgen-0.56
 bootgen-xlnx
@@ -82407,7 +82408,9 @@ dotnet-apphost-pack-7.0
 dotnet-host-7.0
 dotnet-hostfxr-7.0
 dotnet-runtime-7.0
+dotnet-runtime-dbg-8.0
 dotnet-sdk-7.0-source-built-artifacts
+dotnet-sdk-dbg-8.0
 dotnet-targeting-pack-7.0
 dotnet-templates-7.0
 dotnet7
@@ -82997,6 +83000,7 @@ linux-headers-azure-fde-5.19-edge
 linux-image-azure-fde-5.19-edge
 linux-modules-extra-azure-fde-5.19-edge
 linux-tools-azure-fde-5.19-edge
+azure-cli
 libmsquic
 moby-tini
 moby-cli
@@ -83079,7 +83083,6 @@ dotnet-hostfxr-3.1
 sqlcmd
 packages-microsoft-prod
 adoptium-ca-certificates
-azure-cli
 containerd.io
 docker-ce
 docker-ce-cli
