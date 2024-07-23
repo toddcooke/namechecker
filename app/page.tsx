@@ -32,6 +32,7 @@ export default function Home() {
   const [cratesResponse, setCratesResponse] = useState<CheckListState>(null);
   const [mavenResponse, setMavenResponse] = useState<CheckListState>(null);
   const [npmResponse, setNpmResponse] = useState<CheckListState>(null);
+  const [npmOrgResponse, setNpmOrgResponse] = useState<CheckListState>(null);
   const [rubyGemsResponse, setRubyGemsResponse] =
     useState<CheckListState>(null);
   const [nugetResponse, setNugetResponse] = useState<CheckListState>(null);
@@ -121,6 +122,12 @@ export default function Home() {
     setNpmResponse(json);
   }
 
+  async function searchNpmOrg(name) {
+    const response = await fetch(`/api/exists/npm_org?name=${name}`);
+    const json = await response.json();
+    setNpmOrgResponse(json);
+  }
+
   async function searchRubygems(name) {
     const response = await fetch(`/api/exists/rubygems?name=${name}`);
     const json = await response.json();
@@ -165,6 +172,7 @@ export default function Home() {
     setDomainsResponse(null);
     setMavenResponse(null);
     setNpmResponse(null);
+    setNpmOrgResponse(null);
     setRubyGemsResponse(null);
     setNugetResponse(null);
     setExistsInGo(null);
@@ -180,6 +188,7 @@ export default function Home() {
       searchCrates(editedText),
       searchMaven(editedText),
       searchNpm(editedText),
+      searchNpmOrg(editedText),
       searchRubygems(editedText),
       searchNuget(editedText),
       searchGo(editedText),
@@ -241,6 +250,7 @@ export default function Home() {
         <CheckListItem state={cratesResponse} name={'Rust crate'} />
         <CheckListItem state={mavenResponse} name={'Maven package'} />
         <CheckListItem state={npmResponse} name={'npm package'} />
+        <CheckListItem state={npmOrgResponse} name={'npm org'} />
         <CheckListItem state={rubyGemsResponse} name={'Ruby gem'} />
         <CheckListItem state={nugetResponse} name={'Nuget package'} />
         <CheckListItem state={packagistResponse} name={'Packagist package'} />

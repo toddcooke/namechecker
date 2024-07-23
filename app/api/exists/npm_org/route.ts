@@ -7,12 +7,12 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
   const response = await fetch(
-    `https://registry.npmjs.org/${name}`,
+    `https://www.npmjs.com/org/${name}`,
     fetchOptions,
   );
   const exists = response.status === 200;
   return NextResponse.json({
     exists: exists,
-    existsUrl: exists && `https://registry.npmjs.org/${name}`,
+    existsUrl: exists && `https://www.npmjs.com/org/${name}`,
   });
 }
