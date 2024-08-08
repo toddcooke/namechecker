@@ -67319,6 +67319,7 @@ linux-buildinfo-6.5.0-1025-gcp
 linux-buildinfo-6.5.0-1025-oem
 linux-buildinfo-6.5.0-1025-oracle
 linux-buildinfo-6.5.0-1026-oracle
+linux-buildinfo-6.5.0-1027-oem
 linux-buildinfo-6.5.0-1027-oracle
 linux-buildinfo-6.5.0-14-generic
 linux-buildinfo-6.5.0-14-lowlatency
@@ -68494,6 +68495,7 @@ linux-headers-6.5.0-1025-gcp
 linux-headers-6.5.0-1025-oem
 linux-headers-6.5.0-1025-oracle
 linux-headers-6.5.0-1026-oracle
+linux-headers-6.5.0-1027-oem
 linux-headers-6.5.0-1027-oracle
 linux-headers-6.5.0-14-generic
 linux-headers-6.5.0-14-lowlatency
@@ -69335,6 +69337,7 @@ linux-image-6.5.0-1025-gcp
 linux-image-6.5.0-1025-oem
 linux-image-6.5.0-1025-oracle
 linux-image-6.5.0-1026-oracle
+linux-image-6.5.0-1027-oem
 linux-image-6.5.0-1027-oracle
 linux-image-6.5.0-14-generic
 linux-image-6.5.0-14-lowlatency
@@ -69441,6 +69444,7 @@ linux-image-uc-6.5.0-1023-oem
 linux-image-uc-6.5.0-1024-nvidia
 linux-image-uc-6.5.0-1024-oem
 linux-image-uc-6.5.0-1025-oem
+linux-image-uc-6.5.0-1027-oem
 linux-image-uc-6.5.0-14-generic
 linux-image-uc-6.5.0-15-generic
 linux-image-uc-6.5.0-17-generic
@@ -70060,6 +70064,7 @@ linux-image-unsigned-6.5.0-1025-gcp
 linux-image-unsigned-6.5.0-1025-oem
 linux-image-unsigned-6.5.0-1025-oracle
 linux-image-unsigned-6.5.0-1026-oracle
+linux-image-unsigned-6.5.0-1027-oem
 linux-image-unsigned-6.5.0-1027-oracle
 linux-image-unsigned-6.5.0-14-generic
 linux-image-unsigned-6.5.0-14-lowlatency
@@ -70985,6 +70990,7 @@ linux-modules-6.5.0-1025-gcp
 linux-modules-6.5.0-1025-oem
 linux-modules-6.5.0-1025-oracle
 linux-modules-6.5.0-1026-oracle
+linux-modules-6.5.0-1027-oem
 linux-modules-6.5.0-1027-oracle
 linux-modules-6.5.0-14-generic
 linux-modules-6.5.0-14-lowlatency
@@ -71568,6 +71574,7 @@ linux-modules-ipu6-6.5.0-1022-oem
 linux-modules-ipu6-6.5.0-1023-oem
 linux-modules-ipu6-6.5.0-1024-oem
 linux-modules-ipu6-6.5.0-1025-oem
+linux-modules-ipu6-6.5.0-1027-oem
 linux-modules-ipu6-6.5.0-14-generic
 linux-modules-ipu6-6.5.0-15-generic
 linux-modules-ipu6-6.5.0-17-generic
@@ -71680,6 +71687,7 @@ linux-modules-ivsc-6.5.0-1022-oem
 linux-modules-ivsc-6.5.0-1023-oem
 linux-modules-ivsc-6.5.0-1024-oem
 linux-modules-ivsc-6.5.0-1025-oem
+linux-modules-ivsc-6.5.0-1027-oem
 linux-modules-ivsc-6.5.0-14-generic
 linux-modules-ivsc-6.5.0-15-generic
 linux-modules-ivsc-6.5.0-17-generic
@@ -71938,6 +71946,7 @@ linux-modules-iwlwifi-6.5.0-1024-gcp
 linux-modules-iwlwifi-6.5.0-1024-oem
 linux-modules-iwlwifi-6.5.0-1025-gcp
 linux-modules-iwlwifi-6.5.0-1025-oem
+linux-modules-iwlwifi-6.5.0-1027-oem
 linux-modules-iwlwifi-6.5.0-14-generic
 linux-modules-iwlwifi-6.5.0-14-lowlatency
 linux-modules-iwlwifi-6.5.0-15-generic
@@ -72083,6 +72092,7 @@ linux-modules-usbio-6.5.0-1022-oem
 linux-modules-usbio-6.5.0-1023-oem
 linux-modules-usbio-6.5.0-1024-oem
 linux-modules-usbio-6.5.0-1025-oem
+linux-modules-usbio-6.5.0-1027-oem
 linux-modules-usbio-6.8.0-38-generic
 linux-modules-usbio-6.8.0-39-generic
 linux-modules-usbio-generic-hwe-22.04-edge
@@ -72323,6 +72333,7 @@ linux-oem-6.5-headers-6.5.0-1022
 linux-oem-6.5-headers-6.5.0-1023
 linux-oem-6.5-headers-6.5.0-1024
 linux-oem-6.5-headers-6.5.0-1025
+linux-oem-6.5-headers-6.5.0-1027
 linux-oem-6.5-lib-rust-6.5.0-1003-oem
 linux-oem-6.5-lib-rust-6.5.0-1004-oem
 linux-oem-6.5-lib-rust-6.5.0-1006-oem
@@ -72341,6 +72352,7 @@ linux-oem-6.5-lib-rust-6.5.0-1022-oem
 linux-oem-6.5-lib-rust-6.5.0-1023-oem
 linux-oem-6.5-lib-rust-6.5.0-1024-oem
 linux-oem-6.5-lib-rust-6.5.0-1025-oem
+linux-oem-6.5-lib-rust-6.5.0-1027-oem
 linux-oem-6.5-tools-6.5.0-1003
 linux-oem-6.5-tools-6.5.0-1004
 linux-oem-6.5-tools-6.5.0-1006
@@ -72359,6 +72371,7 @@ linux-oem-6.5-tools-6.5.0-1022
 linux-oem-6.5-tools-6.5.0-1023
 linux-oem-6.5-tools-6.5.0-1024
 linux-oem-6.5-tools-6.5.0-1025
+linux-oem-6.5-tools-6.5.0-1027
 linux-oem-6.5-tools-host
 linux-oracle-5.19-headers-5.19.0-1023
 linux-oracle-5.19-headers-5.19.0-1024
@@ -73089,6 +73102,7 @@ linux-tools-6.5.0-1025-gcp
 linux-tools-6.5.0-1025-oem
 linux-tools-6.5.0-1025-oracle
 linux-tools-6.5.0-1026-oracle
+linux-tools-6.5.0-1027-oem
 linux-tools-6.5.0-1027-oracle
 linux-tools-6.5.0-14-generic
 linux-tools-6.5.0-14-lowlatency
@@ -74705,6 +74719,7 @@ linux-modules-nvidia-470-6.5.0-1025-gcp
 linux-modules-nvidia-470-6.5.0-1025-oem
 linux-modules-nvidia-470-6.5.0-1025-oracle
 linux-modules-nvidia-470-6.5.0-1026-oracle
+linux-modules-nvidia-470-6.5.0-1027-oem
 linux-modules-nvidia-470-6.5.0-1027-oracle
 linux-modules-nvidia-470-6.5.0-14-generic
 linux-modules-nvidia-470-6.5.0-14-lowlatency
@@ -77248,6 +77263,7 @@ linux-modules-nvidia-535-6.5.0-1025-gcp
 linux-modules-nvidia-535-6.5.0-1025-oem
 linux-modules-nvidia-535-6.5.0-1025-oracle
 linux-modules-nvidia-535-6.5.0-1026-oracle
+linux-modules-nvidia-535-6.5.0-1027-oem
 linux-modules-nvidia-535-6.5.0-1027-oracle
 linux-modules-nvidia-535-6.5.0-14-generic
 linux-modules-nvidia-535-6.5.0-14-lowlatency
@@ -77687,6 +77703,7 @@ linux-modules-nvidia-535-open-6.5.0-1025-gcp
 linux-modules-nvidia-535-open-6.5.0-1025-oem
 linux-modules-nvidia-535-open-6.5.0-1025-oracle
 linux-modules-nvidia-535-open-6.5.0-1026-oracle
+linux-modules-nvidia-535-open-6.5.0-1027-oem
 linux-modules-nvidia-535-open-6.5.0-1027-oracle
 linux-modules-nvidia-535-open-6.5.0-14-generic
 linux-modules-nvidia-535-open-6.5.0-14-lowlatency
@@ -78917,6 +78934,7 @@ linux-modules-nvidia-550-6.5.0-1025-gcp
 linux-modules-nvidia-550-6.5.0-1025-oem
 linux-modules-nvidia-550-6.5.0-1025-oracle
 linux-modules-nvidia-550-6.5.0-1026-oracle
+linux-modules-nvidia-550-6.5.0-1027-oem
 linux-modules-nvidia-550-6.5.0-1027-oracle
 linux-modules-nvidia-550-6.5.0-27-generic
 linux-modules-nvidia-550-6.5.0-27-lowlatency
@@ -79077,6 +79095,7 @@ linux-modules-nvidia-550-open-6.5.0-1025-gcp
 linux-modules-nvidia-550-open-6.5.0-1025-oem
 linux-modules-nvidia-550-open-6.5.0-1025-oracle
 linux-modules-nvidia-550-open-6.5.0-1026-oracle
+linux-modules-nvidia-550-open-6.5.0-1027-oem
 linux-modules-nvidia-550-open-6.5.0-1027-oracle
 linux-modules-nvidia-550-open-6.5.0-27-generic
 linux-modules-nvidia-550-open-6.5.0-27-lowlatency
@@ -80620,6 +80639,7 @@ linux-objects-nvidia-470-6.5.0-1025-gcp
 linux-objects-nvidia-470-6.5.0-1025-oem
 linux-objects-nvidia-470-6.5.0-1025-oracle
 linux-objects-nvidia-470-6.5.0-1026-oracle
+linux-objects-nvidia-470-6.5.0-1027-oem
 linux-objects-nvidia-470-6.5.0-1027-oracle
 linux-objects-nvidia-470-6.5.0-14-generic
 linux-objects-nvidia-470-6.5.0-14-lowlatency
@@ -82760,6 +82780,7 @@ linux-objects-nvidia-535-6.5.0-1025-gcp
 linux-objects-nvidia-535-6.5.0-1025-oem
 linux-objects-nvidia-535-6.5.0-1025-oracle
 linux-objects-nvidia-535-6.5.0-1026-oracle
+linux-objects-nvidia-535-6.5.0-1027-oem
 linux-objects-nvidia-535-6.5.0-1027-oracle
 linux-objects-nvidia-535-6.5.0-14-generic
 linux-objects-nvidia-535-6.5.0-14-lowlatency
@@ -83169,6 +83190,7 @@ linux-objects-nvidia-535-open-6.5.0-1025-gcp
 linux-objects-nvidia-535-open-6.5.0-1025-oem
 linux-objects-nvidia-535-open-6.5.0-1025-oracle
 linux-objects-nvidia-535-open-6.5.0-1026-oracle
+linux-objects-nvidia-535-open-6.5.0-1027-oem
 linux-objects-nvidia-535-open-6.5.0-1027-oracle
 linux-objects-nvidia-535-open-6.5.0-14-generic
 linux-objects-nvidia-535-open-6.5.0-14-lowlatency
@@ -84245,6 +84267,7 @@ linux-objects-nvidia-550-6.5.0-1025-gcp
 linux-objects-nvidia-550-6.5.0-1025-oem
 linux-objects-nvidia-550-6.5.0-1025-oracle
 linux-objects-nvidia-550-6.5.0-1026-oracle
+linux-objects-nvidia-550-6.5.0-1027-oem
 linux-objects-nvidia-550-6.5.0-1027-oracle
 linux-objects-nvidia-550-6.5.0-27-generic
 linux-objects-nvidia-550-6.5.0-27-lowlatency
@@ -84380,6 +84403,7 @@ linux-objects-nvidia-550-open-6.5.0-1025-gcp
 linux-objects-nvidia-550-open-6.5.0-1025-oem
 linux-objects-nvidia-550-open-6.5.0-1025-oracle
 linux-objects-nvidia-550-open-6.5.0-1026-oracle
+linux-objects-nvidia-550-open-6.5.0-1027-oem
 linux-objects-nvidia-550-open-6.5.0-1027-oracle
 linux-objects-nvidia-550-open-6.5.0-27-generic
 linux-objects-nvidia-550-open-6.5.0-27-lowlatency
@@ -85093,6 +85117,7 @@ linux-signatures-nvidia-6.5.0-1025-gcp
 linux-signatures-nvidia-6.5.0-1025-oem
 linux-signatures-nvidia-6.5.0-1025-oracle
 linux-signatures-nvidia-6.5.0-1026-oracle
+linux-signatures-nvidia-6.5.0-1027-oem
 linux-signatures-nvidia-6.5.0-1027-oracle
 linux-signatures-nvidia-6.5.0-14-generic
 linux-signatures-nvidia-6.5.0-14-lowlatency
@@ -86027,11 +86052,11 @@ azure-functions-core-tools-3
 msodbcsql17
 dotnet-runtime-3.1
 libdeliveryoptimization
+mssql-tools18
 sysinternalsebpf
 procmon
 dotnet-host
 defender-iot-micro-agent
-mssql-tools18
 azure-ai-vision-runtime-core
 dotnet-sdk-3.1
 dotnet-sdk-8.0
