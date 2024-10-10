@@ -5961,7 +5961,6 @@ wogerman
 wpasupplicant
 wpolish
 wportuguese
-wsl-setup
 wspanish
 wswedish
 wswiss
@@ -67154,6 +67153,7 @@ linux-buildinfo-5.15.0-119-lowlatency
 linux-buildinfo-5.15.0-121-generic
 linux-buildinfo-5.15.0-121-lowlatency
 linux-buildinfo-5.15.0-122-generic
+linux-buildinfo-5.15.0-122-lowlatency
 linux-buildinfo-5.15.0-72-generic
 linux-buildinfo-5.15.0-72-lowlatency
 linux-buildinfo-5.15.0-73-generic
@@ -67657,6 +67657,7 @@ linux-cloud-tools-5.15.0-121-generic
 linux-cloud-tools-5.15.0-121-lowlatency
 linux-cloud-tools-5.15.0-122
 linux-cloud-tools-5.15.0-122-generic
+linux-cloud-tools-5.15.0-122-lowlatency
 linux-cloud-tools-5.15.0-72
 linux-cloud-tools-5.15.0-72-generic
 linux-cloud-tools-5.15.0-72-lowlatency
@@ -68470,6 +68471,7 @@ linux-headers-5.15.0-121-generic
 linux-headers-5.15.0-121-lowlatency
 linux-headers-5.15.0-122
 linux-headers-5.15.0-122-generic
+linux-headers-5.15.0-122-lowlatency
 linux-headers-5.15.0-72
 linux-headers-5.15.0-72-generic
 linux-headers-5.15.0-72-lowlatency
@@ -69405,6 +69407,7 @@ linux-image-5.15.0-119-lowlatency
 linux-image-5.15.0-121-generic
 linux-image-5.15.0-121-lowlatency
 linux-image-5.15.0-122-generic
+linux-image-5.15.0-122-lowlatency
 linux-image-5.15.0-72-generic
 linux-image-5.15.0-72-lowlatency
 linux-image-5.15.0-73-generic
@@ -70235,6 +70238,7 @@ linux-image-unsigned-5.15.0-119-lowlatency
 linux-image-unsigned-5.15.0-121-generic
 linux-image-unsigned-5.15.0-121-lowlatency
 linux-image-unsigned-5.15.0-122-generic
+linux-image-unsigned-5.15.0-122-lowlatency
 linux-image-unsigned-5.15.0-72-generic
 linux-image-unsigned-5.15.0-72-lowlatency
 linux-image-unsigned-5.15.0-73-generic
@@ -70730,6 +70734,7 @@ linux-lowlatency-cloud-tools-5.15.0-117
 linux-lowlatency-cloud-tools-5.15.0-118
 linux-lowlatency-cloud-tools-5.15.0-119
 linux-lowlatency-cloud-tools-5.15.0-121
+linux-lowlatency-cloud-tools-5.15.0-122
 linux-lowlatency-cloud-tools-5.15.0-72
 linux-lowlatency-cloud-tools-5.15.0-73
 linux-lowlatency-cloud-tools-5.15.0-75
@@ -70760,6 +70765,7 @@ linux-lowlatency-headers-5.15.0-117
 linux-lowlatency-headers-5.15.0-118
 linux-lowlatency-headers-5.15.0-119
 linux-lowlatency-headers-5.15.0-121
+linux-lowlatency-headers-5.15.0-122
 linux-lowlatency-headers-5.15.0-72
 linux-lowlatency-headers-5.15.0-73
 linux-lowlatency-headers-5.15.0-75
@@ -70912,6 +70918,7 @@ linux-lowlatency-tools-5.15.0-117
 linux-lowlatency-tools-5.15.0-118
 linux-lowlatency-tools-5.15.0-119
 linux-lowlatency-tools-5.15.0-121
+linux-lowlatency-tools-5.15.0-122
 linux-lowlatency-tools-5.15.0-72
 linux-lowlatency-tools-5.15.0-73
 linux-lowlatency-tools-5.15.0-75
@@ -71292,6 +71299,7 @@ linux-modules-5.15.0-119-lowlatency
 linux-modules-5.15.0-121-generic
 linux-modules-5.15.0-121-lowlatency
 linux-modules-5.15.0-122-generic
+linux-modules-5.15.0-122-lowlatency
 linux-modules-5.15.0-72-generic
 linux-modules-5.15.0-72-lowlatency
 linux-modules-5.15.0-73-generic
@@ -72458,6 +72466,7 @@ linux-modules-iwlwifi-5.15.0-119-lowlatency
 linux-modules-iwlwifi-5.15.0-121-generic
 linux-modules-iwlwifi-5.15.0-121-lowlatency
 linux-modules-iwlwifi-5.15.0-122-generic
+linux-modules-iwlwifi-5.15.0-122-lowlatency
 linux-modules-iwlwifi-5.15.0-72-generic
 linux-modules-iwlwifi-5.15.0-72-lowlatency
 linux-modules-iwlwifi-5.15.0-73-generic
@@ -73627,6 +73636,7 @@ linux-tools-5.15.0-121-generic
 linux-tools-5.15.0-121-lowlatency
 linux-tools-5.15.0-122
 linux-tools-5.15.0-122-generic
+linux-tools-5.15.0-122-lowlatency
 linux-tools-5.15.0-72
 linux-tools-5.15.0-72-generic
 linux-tools-5.15.0-72-lowlatency
@@ -73999,6 +74009,7 @@ llvm-15-runtime
 llvm-15-tools
 mesa-drm-shim
 mlir-15-tools
+netplan-generator
 netstandard-targeting-pack-2.1
 netstandard-targeting-pack-2.1-8.0
 oem-somerville-hoppip-meta
@@ -74060,6 +74071,7 @@ open-vm-tools-containerinfo
 open-vm-tools-salt-minion
 python3-clang-15
 python3-lldb-15
+python3-netplan
 systemd-hwe-hwdb
 systemd-repart
 u-boot-tools
@@ -74067,6 +74079,7 @@ ubuntu-advantage-tools
 ubuntu-pro-auto-attach
 ubuntu-pro-client
 ubuntu-pro-client-l10n
+wsl-setup
 cuda-drivers-fabricmanager-515
 cuda-drivers-fabricmanager-550
 libnvidia-cfg1-510
@@ -74387,6 +74400,7 @@ linux-modules-nvidia-390-5.15.0-119-lowlatency
 linux-modules-nvidia-390-5.15.0-121-generic
 linux-modules-nvidia-390-5.15.0-121-lowlatency
 linux-modules-nvidia-390-5.15.0-122-generic
+linux-modules-nvidia-390-5.15.0-122-lowlatency
 linux-modules-nvidia-390-5.15.0-72-generic
 linux-modules-nvidia-390-5.15.0-72-lowlatency
 linux-modules-nvidia-390-5.15.0-73-generic
@@ -74959,6 +74973,7 @@ linux-modules-nvidia-450-server-5.15.0-119-lowlatency
 linux-modules-nvidia-450-server-5.15.0-121-generic
 linux-modules-nvidia-450-server-5.15.0-121-lowlatency
 linux-modules-nvidia-450-server-5.15.0-122-generic
+linux-modules-nvidia-450-server-5.15.0-122-lowlatency
 linux-modules-nvidia-450-server-5.15.0-72-generic
 linux-modules-nvidia-450-server-5.15.0-72-lowlatency
 linux-modules-nvidia-450-server-5.15.0-73-generic
@@ -75397,6 +75412,7 @@ linux-modules-nvidia-470-5.15.0-119-lowlatency
 linux-modules-nvidia-470-5.15.0-121-generic
 linux-modules-nvidia-470-5.15.0-121-lowlatency
 linux-modules-nvidia-470-5.15.0-122-generic
+linux-modules-nvidia-470-5.15.0-122-lowlatency
 linux-modules-nvidia-470-5.15.0-72-generic
 linux-modules-nvidia-470-5.15.0-72-lowlatency
 linux-modules-nvidia-470-5.15.0-73-generic
@@ -75932,6 +75948,7 @@ linux-modules-nvidia-470-server-5.15.0-119-lowlatency
 linux-modules-nvidia-470-server-5.15.0-121-generic
 linux-modules-nvidia-470-server-5.15.0-121-lowlatency
 linux-modules-nvidia-470-server-5.15.0-122-generic
+linux-modules-nvidia-470-server-5.15.0-122-lowlatency
 linux-modules-nvidia-470-server-5.15.0-72-generic
 linux-modules-nvidia-470-server-5.15.0-72-lowlatency
 linux-modules-nvidia-470-server-5.15.0-73-generic
@@ -78081,6 +78098,7 @@ linux-modules-nvidia-535-5.15.0-119-lowlatency
 linux-modules-nvidia-535-5.15.0-121-generic
 linux-modules-nvidia-535-5.15.0-121-lowlatency
 linux-modules-nvidia-535-5.15.0-122-generic
+linux-modules-nvidia-535-5.15.0-122-lowlatency
 linux-modules-nvidia-535-5.15.0-76-generic
 linux-modules-nvidia-535-5.15.0-76-lowlatency
 linux-modules-nvidia-535-5.15.0-78-generic
@@ -78578,6 +78596,7 @@ linux-modules-nvidia-535-open-5.15.0-119-lowlatency
 linux-modules-nvidia-535-open-5.15.0-121-generic
 linux-modules-nvidia-535-open-5.15.0-121-lowlatency
 linux-modules-nvidia-535-open-5.15.0-122-generic
+linux-modules-nvidia-535-open-5.15.0-122-lowlatency
 linux-modules-nvidia-535-open-5.15.0-76-generic
 linux-modules-nvidia-535-open-5.15.0-76-lowlatency
 linux-modules-nvidia-535-open-5.15.0-78-generic
@@ -79080,6 +79099,7 @@ linux-modules-nvidia-535-server-5.15.0-119-lowlatency
 linux-modules-nvidia-535-server-5.15.0-121-generic
 linux-modules-nvidia-535-server-5.15.0-121-lowlatency
 linux-modules-nvidia-535-server-5.15.0-122-generic
+linux-modules-nvidia-535-server-5.15.0-122-lowlatency
 linux-modules-nvidia-535-server-5.15.0-76-generic
 linux-modules-nvidia-535-server-5.15.0-76-lowlatency
 linux-modules-nvidia-535-server-5.15.0-78-generic
@@ -79531,6 +79551,7 @@ linux-modules-nvidia-535-server-open-5.15.0-119-lowlatency
 linux-modules-nvidia-535-server-open-5.15.0-121-generic
 linux-modules-nvidia-535-server-open-5.15.0-121-lowlatency
 linux-modules-nvidia-535-server-open-5.15.0-122-generic
+linux-modules-nvidia-535-server-open-5.15.0-122-lowlatency
 linux-modules-nvidia-535-server-open-5.15.0-76-generic
 linux-modules-nvidia-535-server-open-5.15.0-76-lowlatency
 linux-modules-nvidia-535-server-open-5.15.0-78-generic
@@ -80146,6 +80167,7 @@ linux-modules-nvidia-550-5.15.0-119-lowlatency
 linux-modules-nvidia-550-5.15.0-121-generic
 linux-modules-nvidia-550-5.15.0-121-lowlatency
 linux-modules-nvidia-550-5.15.0-122-generic
+linux-modules-nvidia-550-5.15.0-122-lowlatency
 linux-modules-nvidia-550-6.5.0-1013-nvidia
 linux-modules-nvidia-550-6.5.0-1014-nvidia
 linux-modules-nvidia-550-6.5.0-1015-nvidia
@@ -80364,6 +80386,7 @@ linux-modules-nvidia-550-open-5.15.0-119-lowlatency
 linux-modules-nvidia-550-open-5.15.0-121-generic
 linux-modules-nvidia-550-open-5.15.0-121-lowlatency
 linux-modules-nvidia-550-open-5.15.0-122-generic
+linux-modules-nvidia-550-open-5.15.0-122-lowlatency
 linux-modules-nvidia-550-open-6.5.0-1013-nvidia
 linux-modules-nvidia-550-open-6.5.0-1014-nvidia
 linux-modules-nvidia-550-open-6.5.0-1015-nvidia
@@ -80588,6 +80611,7 @@ linux-modules-nvidia-550-server-5.15.0-119-lowlatency
 linux-modules-nvidia-550-server-5.15.0-121-generic
 linux-modules-nvidia-550-server-5.15.0-121-lowlatency
 linux-modules-nvidia-550-server-5.15.0-122-generic
+linux-modules-nvidia-550-server-5.15.0-122-lowlatency
 linux-modules-nvidia-550-server-6.5.0-1013-nvidia
 linux-modules-nvidia-550-server-6.5.0-1014-nvidia
 linux-modules-nvidia-550-server-6.5.0-1015-nvidia
@@ -80798,6 +80822,7 @@ linux-modules-nvidia-550-server-open-5.15.0-119-lowlatency
 linux-modules-nvidia-550-server-open-5.15.0-121-generic
 linux-modules-nvidia-550-server-open-5.15.0-121-lowlatency
 linux-modules-nvidia-550-server-open-5.15.0-122-generic
+linux-modules-nvidia-550-server-open-5.15.0-122-lowlatency
 linux-modules-nvidia-550-server-open-6.5.0-1013-nvidia
 linux-modules-nvidia-550-server-open-6.5.0-1014-nvidia
 linux-modules-nvidia-550-server-open-6.5.0-1015-nvidia
@@ -81133,6 +81158,7 @@ linux-objects-nvidia-390-5.15.0-119-lowlatency
 linux-objects-nvidia-390-5.15.0-121-generic
 linux-objects-nvidia-390-5.15.0-121-lowlatency
 linux-objects-nvidia-390-5.15.0-122-generic
+linux-objects-nvidia-390-5.15.0-122-lowlatency
 linux-objects-nvidia-390-5.15.0-72-generic
 linux-objects-nvidia-390-5.15.0-72-lowlatency
 linux-objects-nvidia-390-5.15.0-73-generic
@@ -81608,6 +81634,7 @@ linux-objects-nvidia-450-server-5.15.0-119-lowlatency
 linux-objects-nvidia-450-server-5.15.0-121-generic
 linux-objects-nvidia-450-server-5.15.0-121-lowlatency
 linux-objects-nvidia-450-server-5.15.0-122-generic
+linux-objects-nvidia-450-server-5.15.0-122-lowlatency
 linux-objects-nvidia-450-server-5.15.0-72-generic
 linux-objects-nvidia-450-server-5.15.0-72-lowlatency
 linux-objects-nvidia-450-server-5.15.0-73-generic
@@ -81954,6 +81981,7 @@ linux-objects-nvidia-470-5.15.0-119-lowlatency
 linux-objects-nvidia-470-5.15.0-121-generic
 linux-objects-nvidia-470-5.15.0-121-lowlatency
 linux-objects-nvidia-470-5.15.0-122-generic
+linux-objects-nvidia-470-5.15.0-122-lowlatency
 linux-objects-nvidia-470-5.15.0-72-generic
 linux-objects-nvidia-470-5.15.0-72-lowlatency
 linux-objects-nvidia-470-5.15.0-73-generic
@@ -82466,6 +82494,7 @@ linux-objects-nvidia-470-server-5.15.0-119-lowlatency
 linux-objects-nvidia-470-server-5.15.0-121-generic
 linux-objects-nvidia-470-server-5.15.0-121-lowlatency
 linux-objects-nvidia-470-server-5.15.0-122-generic
+linux-objects-nvidia-470-server-5.15.0-122-lowlatency
 linux-objects-nvidia-470-server-5.15.0-72-generic
 linux-objects-nvidia-470-server-5.15.0-72-lowlatency
 linux-objects-nvidia-470-server-5.15.0-73-generic
@@ -84234,6 +84263,7 @@ linux-objects-nvidia-535-5.15.0-119-lowlatency
 linux-objects-nvidia-535-5.15.0-121-generic
 linux-objects-nvidia-535-5.15.0-121-lowlatency
 linux-objects-nvidia-535-5.15.0-122-generic
+linux-objects-nvidia-535-5.15.0-122-lowlatency
 linux-objects-nvidia-535-5.15.0-76-generic
 linux-objects-nvidia-535-5.15.0-76-lowlatency
 linux-objects-nvidia-535-5.15.0-78-generic
@@ -84701,6 +84731,7 @@ linux-objects-nvidia-535-open-5.15.0-119-lowlatency
 linux-objects-nvidia-535-open-5.15.0-121-generic
 linux-objects-nvidia-535-open-5.15.0-121-lowlatency
 linux-objects-nvidia-535-open-5.15.0-122-generic
+linux-objects-nvidia-535-open-5.15.0-122-lowlatency
 linux-objects-nvidia-535-open-5.15.0-76-generic
 linux-objects-nvidia-535-open-5.15.0-76-lowlatency
 linux-objects-nvidia-535-open-5.15.0-78-generic
@@ -85167,6 +85198,7 @@ linux-objects-nvidia-535-server-5.15.0-119-lowlatency
 linux-objects-nvidia-535-server-5.15.0-121-generic
 linux-objects-nvidia-535-server-5.15.0-121-lowlatency
 linux-objects-nvidia-535-server-5.15.0-122-generic
+linux-objects-nvidia-535-server-5.15.0-122-lowlatency
 linux-objects-nvidia-535-server-5.15.0-76-generic
 linux-objects-nvidia-535-server-5.15.0-76-lowlatency
 linux-objects-nvidia-535-server-5.15.0-78-generic
@@ -85591,6 +85623,7 @@ linux-objects-nvidia-535-server-open-5.15.0-119-lowlatency
 linux-objects-nvidia-535-server-open-5.15.0-121-generic
 linux-objects-nvidia-535-server-open-5.15.0-121-lowlatency
 linux-objects-nvidia-535-server-open-5.15.0-122-generic
+linux-objects-nvidia-535-server-open-5.15.0-122-lowlatency
 linux-objects-nvidia-535-server-open-5.15.0-76-generic
 linux-objects-nvidia-535-server-open-5.15.0-76-lowlatency
 linux-objects-nvidia-535-server-open-5.15.0-78-generic
@@ -86111,6 +86144,7 @@ linux-objects-nvidia-550-5.15.0-119-lowlatency
 linux-objects-nvidia-550-5.15.0-121-generic
 linux-objects-nvidia-550-5.15.0-121-lowlatency
 linux-objects-nvidia-550-5.15.0-122-generic
+linux-objects-nvidia-550-5.15.0-122-lowlatency
 linux-objects-nvidia-550-6.5.0-1013-nvidia
 linux-objects-nvidia-550-6.5.0-1014-nvidia
 linux-objects-nvidia-550-6.5.0-1015-nvidia
@@ -86304,6 +86338,7 @@ linux-objects-nvidia-550-open-5.15.0-119-lowlatency
 linux-objects-nvidia-550-open-5.15.0-121-generic
 linux-objects-nvidia-550-open-5.15.0-121-lowlatency
 linux-objects-nvidia-550-open-5.15.0-122-generic
+linux-objects-nvidia-550-open-5.15.0-122-lowlatency
 linux-objects-nvidia-550-open-6.5.0-1013-nvidia
 linux-objects-nvidia-550-open-6.5.0-1014-nvidia
 linux-objects-nvidia-550-open-6.5.0-1015-nvidia
@@ -86497,6 +86532,7 @@ linux-objects-nvidia-550-server-5.15.0-119-lowlatency
 linux-objects-nvidia-550-server-5.15.0-121-generic
 linux-objects-nvidia-550-server-5.15.0-121-lowlatency
 linux-objects-nvidia-550-server-5.15.0-122-generic
+linux-objects-nvidia-550-server-5.15.0-122-lowlatency
 linux-objects-nvidia-550-server-6.5.0-1013-nvidia
 linux-objects-nvidia-550-server-6.5.0-1014-nvidia
 linux-objects-nvidia-550-server-6.5.0-1015-nvidia
@@ -86684,6 +86720,7 @@ linux-objects-nvidia-550-server-open-5.15.0-119-lowlatency
 linux-objects-nvidia-550-server-open-5.15.0-121-generic
 linux-objects-nvidia-550-server-open-5.15.0-121-lowlatency
 linux-objects-nvidia-550-server-open-5.15.0-122-generic
+linux-objects-nvidia-550-server-open-5.15.0-122-lowlatency
 linux-objects-nvidia-550-server-open-6.5.0-1013-nvidia
 linux-objects-nvidia-550-server-open-6.5.0-1014-nvidia
 linux-objects-nvidia-550-server-open-6.5.0-1015-nvidia
@@ -86990,6 +87027,7 @@ linux-signatures-nvidia-5.15.0-119-lowlatency
 linux-signatures-nvidia-5.15.0-121-generic
 linux-signatures-nvidia-5.15.0-121-lowlatency
 linux-signatures-nvidia-5.15.0-122-generic
+linux-signatures-nvidia-5.15.0-122-lowlatency
 linux-signatures-nvidia-5.15.0-72-generic
 linux-signatures-nvidia-5.15.0-72-lowlatency
 linux-signatures-nvidia-5.15.0-73-generic
@@ -87543,6 +87581,10 @@ golang-1.22
 golang-1.22-doc
 golang-1.22-go
 golang-1.22-src
+golang-1.23
+golang-1.23-doc
+golang-1.23-go
+golang-1.23-src
 hart-payload-generator
 idle-python3.11
 intel-ipu6-dkms
@@ -88231,7 +88273,6 @@ msopenjdk-21
 azure-ai-vision-dev-core
 azureauth
 adutil
-dotnet-sdk-8.0
 azapi2azurerm
 dotnet-apphost-pack-3.1
 mssql-tools
@@ -88257,6 +88298,7 @@ defender-iot-micro-agent
 azure-ai-vision-runtime-core
 dotnet-sdk-3.1
 aspnetcore-runtime-3.1
+dotnet-sdk-8.0
 deliveryoptimization-agent
 dotnet-apphost-pack-8.0
 dotnet-runtime-deps-3.1
