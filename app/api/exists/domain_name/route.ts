@@ -47,7 +47,9 @@ export async function GET(request: NextRequest) {
 
 async function isDomainAvailable(domainName) {
   try {
-    const resp = await fetch(`https://${domainName}`);
+    const resp = await fetch(`https://${domainName}`, {
+      signal: AbortSignal.timeout(1000),
+    });
     return {
       domain: domainName,
       available: false,
