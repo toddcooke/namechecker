@@ -47,13 +47,19 @@ export async function GET(request: NextRequest) {
 
 function checkSelfSignedCert(url) {
   return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => {
+      req.destroy();
+      reject(new Error('Request timed out'));
+    }, 5000); // Timeout set to 5 seconds
     const req = https.get(url, (res) => {
+      clearTimeout(timeout);
       res.on('data', () => {}); // Consume response data to free up memory
       res.on('end', () => {
         resolve(false); // No error means the certificate is not self-signed
       });
     });
     req.on('error', (e) => {
+      clearTimeout(timeout);
       if (e.code === 'DEPTH_ZERO_SELF_SIGNED_CERT') {
         resolve(true); // Self-signed certificate detected
       } else {
@@ -77,7 +83,7 @@ async function isDomainAvailable(domainName) {
     }
 
     const resp = await fetch(url, {
-      signal: AbortSignal.timeout(1000),
+      signal: AbortSignal.timeout(5000),
     });
     available = false;
   } catch (e) {
