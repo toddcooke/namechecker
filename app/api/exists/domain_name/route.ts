@@ -3,6 +3,8 @@ import path from 'path';
 import { promises } from 'fs';
 import { topLevelDomains } from '@/app/util';
 
+const https = require('https');
+
 const dir = path.resolve('./public', '.');
 const aptPackagesPath = process.env.VERCEL
   ? path.join(dir, 'tlds.txt')
@@ -45,19 +47,50 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({ domains: domains });
 }
 
+function checkSelfSignedCert(url) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(url, (res) => {
+      res.on('data', () => {}); // Consume response data to free up memory
+      res.on('end', () => {
+        resolve(false); // No error means the certificate is not self-signed
+      });
+    });
+    req.on('error', (e) => {
+      if (e.code === 'DEPTH_ZERO_SELF_SIGNED_CERT') {
+        resolve(true); // Self-signed certificate detected
+      } else {
+        reject(e); // Other errors
+      }
+    });
+    req.end();
+  });
+}
+
 async function isDomainAvailable(domainName) {
+  let available = false;
   try {
-    const resp = await fetch(`https://${domainName}`, {
+    const url = `https://${domainName}`;
+    const isSelfSigned = await checkSelfSignedCert(url);
+    if (isSelfSigned) {
+      return {
+        domain: domainName,
+        available: false,
+      };
+    }
+
+    const resp = await fetch(url, {
       signal: AbortSignal.timeout(1000),
     });
-    return {
-      domain: domainName,
-      available: false,
-    };
+    available = false;
   } catch (e) {
-    return {
-      domain: domainName,
-      available: true,
-    };
+    if (e.name === 'AbortError') {
+      available = false;
+    } else {
+      available = true;
+    }
   }
+  return {
+    domain: domainName,
+    available: available,
+  };
 }
