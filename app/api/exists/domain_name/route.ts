@@ -17,7 +17,6 @@ async function isValidTLD(tld) {
 }
 
 export async function GET(request: NextRequest) {
-  const startTime = new Date().getTime();
   const { searchParams } = new URL(request.url);
   const name = searchParams.get('name');
   // Validate input
@@ -27,6 +26,7 @@ export async function GET(request: NextRequest) {
       error: 'Domain name must have 0 or 1 dots',
     });
   }
+  // name includes TLD, check if valid
   if (name.match(/\w+\.\w/)) {
     const tld = name.split('.')[1];
     const isTld = await isValidTLD(tld);
@@ -38,14 +38,6 @@ export async function GET(request: NextRequest) {
   // Check availability
   let domains = [];
   for (let i = 0; i < topLevelDomains.length; i++) {
-    // Return early if we are approaching 10s - Vercel limits function execution at 10s
-    const nowTime = new Date().getTime();
-    const secondsElapsed = (nowTime - startTime) / 1000;
-    if (secondsElapsed >= 8.5) {
-      return NextResponse.json({ domains: domains });
-    }
-
-    if (i > 0) await new Promise((r) => setTimeout(r, 1000));
     const tld = topLevelDomains[i];
     let domain = await isDomainAvailable(name + tld);
     domains.push(domain);
