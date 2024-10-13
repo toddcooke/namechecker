@@ -49,7 +49,7 @@ function checkSelfSignedCert(url) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       req.destroy();
-      reject(new Error('Request timed out'));
+      reject(new Error('TimeoutError'));
     }, 5000); // Timeout set to 5 seconds
     const req = https.get(url, (res) => {
       clearTimeout(timeout);
@@ -87,7 +87,7 @@ async function isDomainAvailable(domainName) {
     });
     available = false;
   } catch (e) {
-    if (e.name === 'AbortError') {
+    if (e.name === 'AbortError' || e.message === 'Timeout') {
       available = false;
     } else {
       available = true;
