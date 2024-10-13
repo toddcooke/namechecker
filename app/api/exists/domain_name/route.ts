@@ -54,9 +54,16 @@ export async function GET(request: NextRequest) {
 }
 
 async function isDomainAvailable(domainName) {
-  const resp = await fetch(`https://${domainName}`);
-  return {
-    domain: domainName,
-    available: resp.status === 404,
-  };
+  try {
+    const resp = await fetch(`https://${domainName}`);
+    return {
+      domain: domainName,
+      available: false,
+    };
+  } catch (e) {
+    return {
+      domain: domainName,
+      available: true,
+    };
+  }
 }
