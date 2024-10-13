@@ -38,12 +38,10 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ domains: [await isDomainAvailable(name)] });
   }
   // Check availability
-  let domains = [];
-  for (let i = 0; i < topLevelDomains.length; i++) {
-    const tld = topLevelDomains[i];
-    let domain = await isDomainAvailable(name + tld);
-    domains.push(domain);
-  }
+  const domainPromises = topLevelDomains.map((tld) =>
+    isDomainAvailable(name + tld),
+  );
+  const domains = await Promise.all(domainPromises);
   return NextResponse.json({ domains: domains });
 }
 
