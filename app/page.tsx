@@ -5,7 +5,6 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { LoadingIcon } from '@/app/components/LoadingIcon';
 import Link from 'next/link';
 import TailwindLayout from '@/app/TailwindLayout';
-import { topLevelDomains } from '@/app/util';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
@@ -14,18 +13,12 @@ interface CheckListState {
   existsUrl: string;
 }
 
-interface DomainsResponse {
-  error?: string;
-  domains: Array<{ available: boolean; domain: string }>;
-}
-
 export default function Home() {
   const [text, setText] = useState('');
   const [githubResponse, setGithubResponse] = useState<CheckListState>(null);
   const [githubOrgResponse, setGithubOrgResponse] =
     useState<CheckListState>(null);
   const [pypiResponse, setPypiResponse] = useState<CheckListState>(null);
-  const [domainsResponse, setDomainsResponse] = useState<DomainsResponse>(null);
   const [homebrewResponse, setHomebrewResponse] =
     useState<CheckListState>(null);
   const [aptResponse, setAptResponse] = useState<CheckListState>(null);
@@ -41,8 +34,6 @@ export default function Home() {
     useState<CheckListState>(null);
   const [gitlabResponse, setGitlabResponse] = useState<CheckListState>(null);
   const [loading, setLoading] = useState(false);
-  const availableDomains = domainsResponse?.domains?.filter((d) => d.available);
-  const domainNameUrl = `https://www.namecheap.com/domains/registration/results/?domain=${text}`;
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams()!;
@@ -84,12 +75,6 @@ export default function Home() {
     const response = await fetch(`/api/exists/gitlab?name=${name}`);
     const json = await response.json();
     setGitlabResponse(json);
-  }
-
-  async function searchDomainName(name) {
-    const response = await fetch(`/api/exists/domain_name?name=${name}`);
-    const json = await response.json();
-    setDomainsResponse(json);
   }
 
   async function searchHomebrew(name) {
@@ -169,7 +154,6 @@ export default function Home() {
     setGithubResponse(null);
     setGithubOrgResponse(null);
     setPypiResponse(null);
-    setDomainsResponse(null);
     setMavenResponse(null);
     setNpmResponse(null);
     setNpmOrgResponse(null);
@@ -182,7 +166,6 @@ export default function Home() {
       searchGithub(editedText),
       searchGithubOrg(editedText),
       searchPypi(editedText),
-      searchDomainName(editedText),
       searchHomebrew(editedText),
       searchApt(editedText),
       searchCrates(editedText),
@@ -268,72 +251,6 @@ export default function Home() {
         )}
         {existsInGo !== null && !existsInGo && (
           <li>✅ Go package name is available!</li>
-        )}
-        {domainsResponse?.domains != null && (
-          <>
-            {availableDomains.length === topLevelDomains.length && (
-              <li>
-                <Link target={'_blank'} href={domainNameUrl}>
-                  ✅ Domain names available!
-                </Link>
-              </li>
-            )}
-            {availableDomains.length === 0 && (
-              <>
-                {domainsResponse?.error ? (
-                  <li>ℹ️ {domainsResponse.error}</li>
-                ) : (
-                  <li>
-                    ℹ️ Domain name already exists.{' '}
-                    <Link
-                      target={'_blank'}
-                      style={{ textDecoration: 'underline' }}
-                      href={domainNameUrl}
-                    >
-                      See alternatives
-                    </Link>
-                  </li>
-                )}
-              </>
-            )}
-            {availableDomains.length > 0 &&
-              availableDomains.length < domainsResponse?.domains?.length && (
-                <li>
-                  <Link target={'_blank'} href={domainNameUrl}>
-                    ℹ️ Some domain names available
-                  </Link>
-                </li>
-              )}
-            <ul className="list-disc">
-              {domainsResponse?.domains?.map((d) =>
-                d.available ? (
-                  <li className="ms-5" key={d.domain}>
-                    ✅{' '}
-                    <Link
-                      target={'_blank'}
-                      style={{ textDecoration: 'underline' }}
-                      href={`https://www.namecheap.com/domains/registration/results/?domain=${d.domain}`}
-                    >
-                      {d.domain}
-                    </Link>{' '}
-                    is available!
-                  </li>
-                ) : (
-                  <li className="ms-5" key={d.domain}>
-                    ❌{' '}
-                    <Link
-                      style={{ textDecoration: 'underline' }}
-                      target={'_blank'}
-                      href={`https://${d.domain}`}
-                    >
-                      {d.domain}
-                    </Link>{' '}
-                    already exists
-                  </li>
-                ),
-              )}
-            </ul>
-          </>
         )}
       </ul>
       {loading && <LoadingIcon />}
