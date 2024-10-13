@@ -3,7 +3,6 @@ import path from 'path';
 import { promises } from 'fs';
 import { topLevelDomains } from '@/app/util';
 
-const whoiser = require('whoiser');
 const dir = path.resolve('./public', '.');
 const aptPackagesPath = process.env.VERCEL
   ? path.join(dir, 'tlds.txt')
@@ -55,24 +54,9 @@ export async function GET(request: NextRequest) {
 }
 
 async function isDomainAvailable(domainName) {
-  const domainWhois = await whoiser(domainName, { follow: 1 });
-  const firstDomainWhois = whoiser.firstResult(domainWhois);
-  const firstTextLine = (firstDomainWhois.text[0] || '').toLowerCase();
-  let domainAvailability = 'unknown';
-  const domainStatusArr = firstDomainWhois['Domain Status'];
-  if (
-    firstTextLine.includes(`no match for "${domainName}"`) ||
-    firstTextLine.includes('domain not found') ||
-    (domainStatusArr &&
-      domainStatusArr[0]?.toLowerCase().includes('no object found'))
-  ) {
-    domainAvailability = 'available';
-  }
-  if (firstTextLine.includes('is reserved')) {
-    domainAvailability = 'reserved';
-  }
+  const resp = await fetch(`https://${domainName}`);
   return {
     domain: domainName,
-    available: domainAvailability === 'available',
+    available: resp.status === 404,
   };
 }
