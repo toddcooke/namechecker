@@ -73427,10 +73427,12 @@ linux-nvidia-tegra-igx-headers-5.15.0-1018
 linux-nvidia-tegra-igx-headers-5.15.0-1019
 linux-nvidia-tegra-igx-rt-tegra-igpu-jetson-defaults
 linux-nvidia-tegra-igx-rt-tegra-igpu-lws-defaults
+linux-nvidia-tegra-igx-rt-tegra-igpu-r36.3.1-defaults
 linux-nvidia-tegra-igx-rt-tegra-igpu-r36.4.1-defaults
 linux-nvidia-tegra-igx-tegra-igpu-igx-defaults
 linux-nvidia-tegra-igx-tegra-igpu-jetson-defaults
 linux-nvidia-tegra-igx-tegra-igpu-lws-defaults
+linux-nvidia-tegra-igx-tegra-igpu-r36.3.1-defaults
 linux-nvidia-tegra-igx-tegra-igpu-r36.4.1-defaults
 linux-nvidia-tegra-igx-tools-common
 linux-nvidia-tegra-igx-tools-host
@@ -89860,13 +89862,13 @@ symcrypt
 msft-golang
 dotnet-targeting-pack-8.0
 dotnet-runtime-deps-6.0
-dotnet-sdk-8.0
 dotnet-sdk-6.0
 dotnet-apphost-pack-8.0
 dotnet-host
 dotnet-hostfxr-8.0
 dotnet-runtime-deps-8.0
 dotnet-runtime-8.0
+dotnet-sdk-8.0
 packages-microsoft-prod
 sqlcmd
 adoptium-ca-certificates
