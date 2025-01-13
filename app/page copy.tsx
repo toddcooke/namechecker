@@ -9,35 +9,30 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 interface CheckListState {
-  name: string;
   exists: boolean;
   existsUrl: string;
 }
 
 export default function Home() {
   const [text, setText] = useState('');
-  const [siteResponse, setSiteResponse] = useState<CheckListState[]>([]);
-  console.log(siteResponse)
-
   const [githubResponse, setGithubResponse] = useState<CheckListState>(null);
-  const [githubOrgResponse, setGithubOrgResponse] = useState<CheckListState>(null);
+  const [githubOrgResponse, setGithubOrgResponse] =
+    useState<CheckListState>(null);
   const [pypiResponse, setPypiResponse] = useState<CheckListState>(null);
-
-  // const [homebrewResponse, setHomebrewResponse] =
-  //   useState<CheckListState>(null);
-  // const [aptResponse, setAptResponse] = useState<CheckListState>(null);
-  // const [cratesResponse, setCratesResponse] = useState<CheckListState>(null);
-  // const [mavenResponse, setMavenResponse] = useState<CheckListState>(null);
-  // const [npmResponse, setNpmResponse] = useState<CheckListState>(null);
-  // const [npmOrgResponse, setNpmOrgResponse] = useState<CheckListState>(null);
-  // const [rubyGemsResponse, setRubyGemsResponse] =
-  //   useState<CheckListState>(null);
-  // const [nugetResponse, setNugetResponse] = useState<CheckListState>(null);
-  // const [existsInGo, setExistsInGo] = useState<CheckListState>(null);
-  // const [packagistResponse, setPackagistResponse] =
-  //   useState<CheckListState>(null);
-  // const [gitlabResponse, setGitlabResponse] = useState<CheckListState>(null);
-
+  const [homebrewResponse, setHomebrewResponse] =
+    useState<CheckListState>(null);
+  const [aptResponse, setAptResponse] = useState<CheckListState>(null);
+  const [cratesResponse, setCratesResponse] = useState<CheckListState>(null);
+  const [mavenResponse, setMavenResponse] = useState<CheckListState>(null);
+  const [npmResponse, setNpmResponse] = useState<CheckListState>(null);
+  const [npmOrgResponse, setNpmOrgResponse] = useState<CheckListState>(null);
+  const [rubyGemsResponse, setRubyGemsResponse] =
+    useState<CheckListState>(null);
+  const [nugetResponse, setNugetResponse] = useState<CheckListState>(null);
+  const [existsInGo, setExistsInGo] = useState<CheckListState>(null);
+  const [packagistResponse, setPackagistResponse] =
+    useState<CheckListState>(null);
+  const [gitlabResponse, setGitlabResponse] = useState<CheckListState>(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -58,98 +53,89 @@ export default function Home() {
     setText(nameQueryParam);
   }, [nameQueryParam]);
 
-  const sites = [
-    {
-      name: "Github",
-      searchName: async function (name) {
-        const response = await fetch(`/api/exists/github?name=${name}`);
-        const json = await response.json();
-        // setGithubResponse(json);
-        setSiteResponse(prevState => [...prevState, json]);
-      }
-    },
-    {
-      name: "PyPI",
-      searchName: async function (name) {
-        const response = await fetch(`/api/exists/pypi?name=${name}`);
-        const json = await response.json();
-        // setPypiResponse(json);
-        setSiteResponse(prevState => [...prevState, json]);
-      }
-    }
-  ]
+  async function searchPypi(name) {
+    const response = await fetch(`/api/exists/pypi?name=${name}`);
+    const json = await response.json();
+    setPypiResponse(json);
+  }
 
-  // async function searchGithubOrg(name) {
-  //   const response = await fetch(`/api/exists/github_org?name=${name}`);
-  //   const json = await response.json();
-  //   setGithubOrgResponse(json);
-  // }
+  async function searchGithub(name) {
+    const response = await fetch(`/api/exists/github?name=${name}`);
+    const json = await response.json();
+    setGithubResponse(json);
+  }
 
-  // async function searchGitlab(name) {
-  //   const response = await fetch(`/api/exists/gitlab?name=${name}`);
-  //   const json = await response.json();
-  //   setGitlabResponse(json);
-  // }
+  async function searchGithubOrg(name) {
+    const response = await fetch(`/api/exists/github_org?name=${name}`);
+    const json = await response.json();
+    setGithubOrgResponse(json);
+  }
 
-  // async function searchHomebrew(name) {
-  //   const response = await fetch(`/api/exists/homebrew?name=${name}`);
-  //   const json = await response.json();
-  //   setHomebrewResponse(json);
-  // }
+  async function searchGitlab(name) {
+    const response = await fetch(`/api/exists/gitlab?name=${name}`);
+    const json = await response.json();
+    setGitlabResponse(json);
+  }
 
-  // async function searchApt(name) {
-  //   const response = await fetch(`/api/exists/apt?name=${name}`);
-  //   const json = await response.json();
-  //   setAptResponse(json);
-  // }
+  async function searchHomebrew(name) {
+    const response = await fetch(`/api/exists/homebrew?name=${name}`);
+    const json = await response.json();
+    setHomebrewResponse(json);
+  }
 
-  // async function searchCrates(name) {
-  //   const response = await fetch(`/api/exists/crates?name=${name}`);
-  //   const json = await response.json();
-  //   setCratesResponse(json);
-  // }
+  async function searchApt(name) {
+    const response = await fetch(`/api/exists/apt?name=${name}`);
+    const json = await response.json();
+    setAptResponse(json);
+  }
 
-  // async function searchMaven(name) {
-  //   const response = await fetch(`/api/exists/maven?name=${name}`);
-  //   const json = await response.json();
-  //   setMavenResponse(json);
-  // }
+  async function searchCrates(name) {
+    const response = await fetch(`/api/exists/crates?name=${name}`);
+    const json = await response.json();
+    setCratesResponse(json);
+  }
 
-  // async function searchNpm(name) {
-  //   const response = await fetch(`/api/exists/npm?name=${name}`);
-  //   const json = await response.json();
-  //   setNpmResponse(json);
-  // }
+  async function searchMaven(name) {
+    const response = await fetch(`/api/exists/maven?name=${name}`);
+    const json = await response.json();
+    setMavenResponse(json);
+  }
 
-  // async function searchNpmOrg(name) {
-  //   const response = await fetch(`/api/exists/npm_org?name=${name}`);
-  //   const json = await response.json();
-  //   setNpmOrgResponse(json);
-  // }
+  async function searchNpm(name) {
+    const response = await fetch(`/api/exists/npm?name=${name}`);
+    const json = await response.json();
+    setNpmResponse(json);
+  }
 
-  // async function searchRubygems(name) {
-  //   const response = await fetch(`/api/exists/rubygems?name=${name}`);
-  //   const json = await response.json();
-  //   setRubyGemsResponse(json);
-  // }
+  async function searchNpmOrg(name) {
+    const response = await fetch(`/api/exists/npm_org?name=${name}`);
+    const json = await response.json();
+    setNpmOrgResponse(json);
+  }
 
-  // async function searchNuget(name) {
-  //   const response = await fetch(`/api/exists/nuget?name=${name}`);
-  //   const json = await response.json();
-  //   setNugetResponse(json);
-  // }
+  async function searchRubygems(name) {
+    const response = await fetch(`/api/exists/rubygems?name=${name}`);
+    const json = await response.json();
+    setRubyGemsResponse(json);
+  }
 
-  // async function searchGo(name) {
-  //   const response = await fetch(`/api/exists/go?name=${name}`);
-  //   const json = await response.json();
-  //   setExistsInGo(json.exists);
-  // }
+  async function searchNuget(name) {
+    const response = await fetch(`/api/exists/nuget?name=${name}`);
+    const json = await response.json();
+    setNugetResponse(json);
+  }
 
-  // async function searchPackagist(name) {
-  //   const response = await fetch(`/api/exists/packagist?name=${name}`);
-  //   const json = await response.json();
-  //   setPackagistResponse(json);
-  // }
+  async function searchGo(name) {
+    const response = await fetch(`/api/exists/go?name=${name}`);
+    const json = await response.json();
+    setExistsInGo(json.exists);
+  }
+
+  async function searchPackagist(name) {
+    const response = await fetch(`/api/exists/packagist?name=${name}`);
+    const json = await response.json();
+    setPackagistResponse(json);
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -162,8 +148,36 @@ export default function Home() {
     router.push(pathname + '?' + createQueryString('name', text));
     setText(editedText);
     // Set state to null to 'reset' search results
-    setSiteResponse([]);
-    await Promise.all(sites.map(site => { site.searchName(editedText) }))
+    setCratesResponse(null);
+    setAptResponse(null);
+    setHomebrewResponse(null);
+    setGithubResponse(null);
+    setGithubOrgResponse(null);
+    setPypiResponse(null);
+    setMavenResponse(null);
+    setNpmResponse(null);
+    setNpmOrgResponse(null);
+    setRubyGemsResponse(null);
+    setNugetResponse(null);
+    setExistsInGo(null);
+    setPackagistResponse(null);
+    setGitlabResponse(null);
+    await Promise.all([
+      searchGithub(editedText),
+      searchGithubOrg(editedText),
+      searchPypi(editedText),
+      searchHomebrew(editedText),
+      searchApt(editedText),
+      searchCrates(editedText),
+      searchMaven(editedText),
+      searchNpm(editedText),
+      searchNpmOrg(editedText),
+      searchRubygems(editedText),
+      searchNuget(editedText),
+      searchGo(editedText),
+      searchPackagist(editedText),
+      searchGitlab(editedText),
+    ]);
     setLoading(false);
   }
 
@@ -207,12 +221,11 @@ export default function Home() {
       </form>
 
       <ul className="list-none pt-5">
-        {siteResponse.map((res, idx) => <CheckListItem key={idx} state={res} name={res.name} />)}
-        {/* <CheckListItem state={githubResponse} name={'GitHub repo'} /> */}
-        {/* <CheckListItem state={githubOrgResponse} name={'GitHub org/user'} /> */}
-        {/* <CheckListItem state={gitlabResponse} name={'GitLab project'} /> */}
-        {/* <CheckListItem state={pypiResponse} name={'PyPI package'} /> */}
-        {/* <CheckListItem
+        <CheckListItem state={githubResponse} name={'GitHub repo'} />
+        <CheckListItem state={githubOrgResponse} name={'GitHub org/user'} />
+        <CheckListItem state={gitlabResponse} name={'GitLab project'} />
+        <CheckListItem state={pypiResponse} name={'PyPI package'} />
+        <CheckListItem
           state={homebrewResponse}
           name={'Homebrew cask/formula'}
         />
@@ -224,9 +237,7 @@ export default function Home() {
         <CheckListItem state={rubyGemsResponse} name={'Ruby gem'} />
         <CheckListItem state={nugetResponse} name={'Nuget package'} />
         <CheckListItem state={packagistResponse} name={'Packagist package'} />
-        */}
-
-        {/* {existsInGo && (
+        {existsInGo && (
           <li>
             ℹ️ Go package name{' '}
             <Link
@@ -240,7 +251,7 @@ export default function Home() {
         )}
         {existsInGo !== null && !existsInGo && (
           <li>✅ Go package name is available!</li>
-        )} */}
+        )}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>

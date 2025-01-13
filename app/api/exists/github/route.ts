@@ -32,6 +32,7 @@ export async function GET(request: NextRequest) {
   const existsUrl = repositories[0]?.html_url;
 
   return NextResponse.json({
+    name: "Github",
     exists: existsUrl !== undefined,
     existsUrl: existsUrl,
   });
