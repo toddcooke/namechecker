@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
   );
   const exists = response.status === 200;
   return NextResponse.json({
+    name: "NPM org",
     exists: exists,
     existsUrl: exists && `https://www.npmjs.com/org/${name}`,
   });

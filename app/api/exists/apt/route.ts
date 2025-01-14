@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
   const name = searchParams.get('name');
   const exists = packages.includes(name);
   return NextResponse.json({
+    name: "Apt package",
     exists: exists,
     existsUrl: exists && `https://packages.ubuntu.com/kinetic/${name}`,
   });

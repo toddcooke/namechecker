@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
   const json = await response.json();
   const exists = json.response.numFound > 0;
   return NextResponse.json({
+    name: "Maven package",
     exists: exists,
     // Sonatype search is currently somewhat broken,
     // so this link may not work correctly: https://issues.sonatype.org/browse/MVNCENTRAL-8264

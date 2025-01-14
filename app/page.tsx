@@ -74,10 +74,18 @@ export default function Home() {
         const response = await fetch(`/api/exists/pypi?name=${name}`);
         const json = await response.json();
         // setPypiResponse(json);
+        console.log(json)
         setSiteResponse(prevState => [...prevState, json]);
       }
     }
   ]
+
+  async function fetchNameResult(site, name) {
+    const response = await fetch(`/api/exists/site?site=${site}&name=${name}`);
+    const json = await response.json();
+    console.log(json)
+    setSiteResponse(prevState => [...prevState, json]);
+  }
 
   // async function searchGithubOrg(name) {
   //   const response = await fetch(`/api/exists/github_org?name=${name}`);
@@ -163,7 +171,7 @@ export default function Home() {
     setText(editedText);
     // Set state to null to 'reset' search results
     setSiteResponse([]);
-    await Promise.all(sites.map(site => { site.searchName(editedText) }))
+    await Promise.all(sites.map(site => { fetchNameResult(site.name, editedText) }))
     setLoading(false);
   }
 
@@ -208,39 +216,6 @@ export default function Home() {
 
       <ul className="list-none pt-5">
         {siteResponse.map((res, idx) => <CheckListItem key={idx} state={res} name={res.name} />)}
-        {/* <CheckListItem state={githubResponse} name={'GitHub repo'} /> */}
-        {/* <CheckListItem state={githubOrgResponse} name={'GitHub org/user'} /> */}
-        {/* <CheckListItem state={gitlabResponse} name={'GitLab project'} /> */}
-        {/* <CheckListItem state={pypiResponse} name={'PyPI package'} /> */}
-        {/* <CheckListItem
-          state={homebrewResponse}
-          name={'Homebrew cask/formula'}
-        />
-        <CheckListItem state={aptResponse} name={'apt package'} />
-        <CheckListItem state={cratesResponse} name={'Rust crate'} />
-        <CheckListItem state={mavenResponse} name={'Maven package'} />
-        <CheckListItem state={npmResponse} name={'npm package'} />
-        <CheckListItem state={npmOrgResponse} name={'npm org'} />
-        <CheckListItem state={rubyGemsResponse} name={'Ruby gem'} />
-        <CheckListItem state={nugetResponse} name={'Nuget package'} />
-        <CheckListItem state={packagistResponse} name={'Packagist package'} />
-        */}
-
-        {/* {existsInGo && (
-          <li>
-            ℹ️ Go package name{' '}
-            <Link
-              target={'_blank'}
-              style={{ textDecoration: 'underline' }}
-              href={`https://pkg.go.dev/search?q=${text}&m=package`}
-            >
-              may already exist
-            </Link>
-          </li>
-        )}
-        {existsInGo !== null && !existsInGo && (
-          <li>✅ Go package name is available!</li>
-        )} */}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
@@ -249,32 +224,25 @@ export default function Home() {
 
 function CheckListItem({
   state,
-  name,
 }: {
   state: CheckListState;
   name: string;
 }) {
   return (
     <>
-      {state && (
-        <>
-          {state.exists ? (
-            <li>
-              ❌ {name}
-              {' name '}
-              <Link
-                style={{ textDecoration: 'underline' }}
-                target={'_blank'}
-                href={state.existsUrl}
-              >
-                already exists
-              </Link>
-            </li>
-          ) : (
-            <li>✅ {name} name is available!</li>
-          )}
-        </>
-      )}
+      {
+        state.exists && (
+          <li> ❌ {state.name} name {' '}
+            <Link
+              style={{ textDecoration: 'underline' }}
+              target={'_blank'}
+              href={state.existsUrl}
+            >
+              already exists
+            </Link>
+          </li>)
+      }
+      {!state.exists && <li>✅ {state.name} name is available!</li>}
     </>
   );
 }

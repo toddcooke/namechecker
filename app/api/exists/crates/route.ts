@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
   );
   const exists = response.status === 200;
   return NextResponse.json({
+    name: "Rust crate",
     exists: exists,
     existsUrl: exists && `https://crates.io/crates/${name}`,
   });

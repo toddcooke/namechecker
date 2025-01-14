@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
     .sort((a, b) => a.downloads < b.downloads)
     .pop()?.url;
   return NextResponse.json({
+    name: "Packagist package",
     exists: existsUrl !== undefined,
     existsUrl: existsUrl,
   });

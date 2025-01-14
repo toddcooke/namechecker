@@ -14,6 +14,7 @@ export async function GET(request: NextRequest) {
   const resCask = await fetch(`https://formulae.brew.sh/api/cask/${name}.json`);
   const exists = resFormula.status !== 404 || resCask.status !== 404;
   return NextResponse.json({
+    name: "Homebrew formula",
     exists: exists,
     existsUrl:
       exists &&

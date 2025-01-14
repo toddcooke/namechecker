@@ -17,12 +17,14 @@ export async function GET(request: NextRequest) {
       const url = json.find((value) => value.name === name)?.web_url;
       if (url) {
         return NextResponse.json({
+          name: "Gitlab project",
           exists: true,
           existsUrl: url,
         });
       }
     }
     return NextResponse.json({
+      name: "Gitlab project",
       exists: false,
     });
   } catch (e) {

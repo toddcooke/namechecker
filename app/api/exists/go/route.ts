@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
     searchCount = parseInt(match[1]);
   }
   return NextResponse.json({
+    name: "Go package",
     exists: searchCount > 0,
     existsUrl: `https://pkg.go.dev/search?q=${name}&m=package`,
   });

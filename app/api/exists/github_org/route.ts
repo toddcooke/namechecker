@@ -22,6 +22,7 @@ export async function GET(request: NextRequest) {
     const existsUrl = response?.data?.html_url;
 
     return NextResponse.json({
+      name: "Github org/user",
       exists: existsUrl !== undefined,
       existsUrl: existsUrl,
     });

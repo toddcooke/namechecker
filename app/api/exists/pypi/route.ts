@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
   );
   const exists = response.status === 200;
   return NextResponse.json({
-    name: "PyPI",
+    name: "PyPI package",
     exists: exists,
     existsUrl: exists && `https://pypi.org/project/${name}/`,
   });
