@@ -7,7 +7,6 @@ export default async function pypi(name) {
   );
   const exists = response.status === 200;
   return {
-    name: "PyPI package",
     exists: exists,
     existsUrl: exists && `https://pypi.org/project/${name}/`,
   };

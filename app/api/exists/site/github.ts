@@ -29,7 +29,6 @@ export default async function github(name) {
   const existsUrl = repositories[0]?.html_url;
 
   return {
-    name: "Github repo",
     exists: existsUrl !== undefined,
     existsUrl: existsUrl,
   };

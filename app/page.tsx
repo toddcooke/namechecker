@@ -9,6 +9,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 interface CheckListState {
+  success: boolean;
   name: string;
   exists: boolean;
   existsUrl: string;
@@ -41,7 +42,7 @@ export default function Home() {
   const sites = [
     "PyPI",
     "Github",
-    // "GithubOrg",
+    "GithubOrg",
     // "Gitlab",
     // "Homebrew",
     // "Apt",
@@ -59,10 +60,8 @@ export default function Home() {
     const response = await fetch(`/api/exists/site?site=${site}&name=${name}`);
     const json = await response.json();
     console.log(json)
-    setSiteResponse(prevState => [...prevState, json]);
+    setSiteResponse(prevState => [...prevState, { name: site, ...json }]);
   }
-
-
 
 
   async function handleSubmit(e) {
@@ -121,34 +120,35 @@ export default function Home() {
       </form>
 
       <ul className="list-none pt-5">
-        {siteResponse.map((res, idx) => <CheckListItem key={idx} state={res} name={res.name} />)}
+        {siteResponse.map((res, idx) => <CheckListItem key={idx} state={res} />)}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
   );
 }
 
-function CheckListItem({
-  state,
-}: {
-  state: CheckListState;
-  name: string;
-}) {
+function CheckListItem({ state }: { state: CheckListState }) {
+  if (!state.success) {
+    return (
+      <li>Error while getting result for {state.name}.</li>
+    )
+  }
+
+  if (state.exists) {
+    return (
+      <li> ❌ {state.name} name {' '}
+        <Link
+          style={{ textDecoration: 'underline' }}
+          target={'_blank'}
+          href={state.existsUrl}
+        >
+          already exists
+        </Link>
+      </li>
+    )
+  }
+
   return (
-    <>
-      {
-        state.exists && (
-          <li> ❌ {state.name} name {' '}
-            <Link
-              style={{ textDecoration: 'underline' }}
-              target={'_blank'}
-              href={state.existsUrl}
-            >
-              already exists
-            </Link>
-          </li>)
-      }
-      {!state.exists && <li>✅ {state.name} name is available!</li>}
-    </>
+      <li>✅ {state.name} name is available!</li>
   );
 }
