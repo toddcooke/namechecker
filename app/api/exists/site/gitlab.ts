@@ -1,11 +1,8 @@
 import 'server-only';
 
-import { NextRequest, NextResponse } from 'next/server';
 import { fetchOptions } from '@/app/util';
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const name = searchParams.get('name');
+export default async function GET(name) {
   try {
     for (let page = 1; page <= 10; page++) {
       const response = await fetch(
@@ -16,21 +13,21 @@ export async function GET(request: NextRequest) {
       if (json.length === 0) break;
       const url = json.find((value) => value.name === name)?.web_url;
       if (url) {
-        return NextResponse.json({
+        return {
           name: "Gitlab project",
           exists: true,
           existsUrl: url,
-        });
+        };
       }
     }
-    return NextResponse.json({
+    return {
       name: "Gitlab project",
       exists: false,
-    });
+    };
   } catch (e) {
     // GitLab doesn't like their api getting spammed, but they don't have a projects/<name> endpoint.
     // So if we get an error we'll just show nothing.
     console.error(e);
-    return NextResponse.json(null);
+    return null;
   }
 }

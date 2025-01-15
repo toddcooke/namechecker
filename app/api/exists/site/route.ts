@@ -14,6 +14,7 @@ export async function GET(request: NextRequest) {
     result = { success: true, ...await caller.default(name) };
   }
   catch (err) {
+    console.log(err)
     result = {
       success: false
     }

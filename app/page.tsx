@@ -36,24 +36,27 @@ export default function Home() {
   // When the URL includes a name query param, set the text to that value
   const nameQueryParam = useSearchParams().get('name');
   useEffect(() => {
-    setText(nameQueryParam);
+    if (nameQueryParam)
+      setText(nameQueryParam);
   }, [nameQueryParam]);
 
+  // The following names correspond to files in the /api/exists/site directory, 
+  // where each name is used as a filename in lowercase.
   const sites = [
     "PyPI",
     "Github",
     "GithubOrg",
-    // "Gitlab",
-    // "Homebrew",
-    // "Apt",
-    // "Crates",
-    // "Maven",
-    // "NPM",
-    // "NPMOrg",
-    // "RubyGems",
-    // "Nuget",
-    // "Go",
-    // "Packagist",
+    "Gitlab",
+    "Homebrew",
+    "Apt",
+    "Crates",
+    "Maven",
+    "NPM",
+    "NPMOrg",
+    "RubyGems",
+    "Nuget",
+    "Go",
+    "Packagist",
   ]
 
   async function fetchNameResult(site, name) {
@@ -76,7 +79,7 @@ export default function Home() {
     setText(editedText);
     // Set state to null to 'reset' search results
     setSiteResponse([]);
-    await Promise.all(sites.map(site => { fetchNameResult(site, editedText) }))
+    await Promise.all(sites.map(site => fetchNameResult(site, editedText)));
     setLoading(false);
   }
 
@@ -149,6 +152,6 @@ function CheckListItem({ state }: { state: CheckListState }) {
   }
 
   return (
-      <li>✅ {state.name} name is available!</li>
+    <li>✅ {state.name} name is available!</li>
   );
 }

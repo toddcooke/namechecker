@@ -7,9 +7,7 @@ const octokit = new Octokit({
 
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const name = searchParams.get('name');
+export default async function GET(name) {
   try {
     const response = await octokit.request(`GET /users/${name}`, {
       headers: {
@@ -21,11 +19,10 @@ export async function GET(request: NextRequest) {
 
     const existsUrl = response?.data?.html_url;
 
-    return NextResponse.json({
-      name: "Github org/user",
+    return {
       exists: existsUrl !== undefined,
       existsUrl: existsUrl,
-    });
+    };
   } catch (error) {
     if (error instanceof RequestError && error.status === 404) {
       return NextResponse.json({ exists: false });
