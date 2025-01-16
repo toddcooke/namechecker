@@ -1,3 +1,4 @@
+azure-cli
 mdatp
 blobfuse2
 moby-tini
@@ -77646,7 +77647,6 @@ nvidia-imex-565
 dh-dlopenlibdeps
 lsp-plugins-vst3
 adoptium-ca-certificates
-azure-cli
 containerd.io
 docker-ce
 docker-ce-cli
