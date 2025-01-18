@@ -399,13 +399,7 @@ docutils-common
 docutils-doc
 dosfstools
 dotnet-apphost-pack-8.0
-dotnet-host-8.0
-dotnet-hostfxr-8.0
-dotnet-runtime-8.0
-dotnet-sdk-8.0
 dotnet-targeting-pack-8.0
-dotnet-templates-8.0
-dotnet8
 dovecot-core
 dovecot-dev
 dovecot-imapd
@@ -72520,6 +72514,12 @@ zangband-data
 zeroc-ice-manual
 znuny
 cd-boot-images-amd64
+dotnet-host-8.0
+dotnet-hostfxr-8.0
+dotnet-runtime-8.0
+dotnet-sdk-8.0
+dotnet-templates-8.0
+dotnet8
 freeradius-utils
 libitm1-riscv64-cross
 libnetplan-dev
