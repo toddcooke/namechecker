@@ -74666,7 +74666,6 @@ linux-nvidia-lowlatency-tools-6.8.0-1024
 linux-nvidia-lowlatency-tools-6.8.0-1025
 linux-nvidia-lowlatency-tools-host
 linux-nvidia-tegra-headers-6.8.0-1003
-linux-nvidia-tegra-headers-6.8.0-1004
 linux-nvidia-tegra-tegra-igpu-jetson-devel-defaults
 linux-nvidia-tools-6.8.0-1007
 linux-nvidia-tools-6.8.0-1008
