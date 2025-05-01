@@ -72617,6 +72617,7 @@ linux-azure-headers-6.8.0-1027
 linux-azure-lts-24.04
 linux-azure-nvidia-cloud-tools-common
 linux-azure-nvidia-headers-6.8.0-1013
+linux-azure-nvidia-headers-6.8.0-1014
 linux-azure-tools-6.8.0-1008
 linux-azure-tools-6.8.0-1009
 linux-azure-tools-6.8.0-1010
