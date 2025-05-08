@@ -1,5 +1,3 @@
-import 'server-only';
-import { NextRequest, NextResponse } from 'next/server';
 import { promises } from 'fs';
 import * as path from 'path';
 
@@ -11,12 +9,10 @@ const packages = (await promises.readFile(aptPackagesPath, 'utf-8')).split(
   '\n',
 );
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const name = searchParams.get('name');
+export default async function GET(name) {
   const exists = packages.includes(name);
-  return NextResponse.json({
+  return {
     exists: exists,
     existsUrl: exists && `https://packages.ubuntu.com/kinetic/${name}`,
-  });
+  };
 }

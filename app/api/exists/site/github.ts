@@ -1,15 +1,12 @@
-import 'server-only';
 import { Octokit } from 'octokit';
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+export default async function github(name) {
 
-import { NextRequest, NextResponse } from 'next/server';
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_TOKEN,
+  });
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const name = searchParams.get('name');
+
   const response = await octokit.request(
     `GET /search/repositories?q=${name}&type=repositories`,
     {
@@ -31,8 +28,8 @@ export async function GET(request: NextRequest) {
 
   const existsUrl = repositories[0]?.html_url;
 
-  return NextResponse.json({
+  return {
     exists: existsUrl !== undefined,
     existsUrl: existsUrl,
-  });
+  };
 }
