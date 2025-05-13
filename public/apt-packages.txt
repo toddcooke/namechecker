@@ -19569,6 +19569,7 @@ gridsite-clients
 gridsite-doc
 grig
 grilo-plugins-0.3
+grilo-plugins-0.3-extra
 grilo-plugins-dvb-daemon
 grim
 grimripper
@@ -75429,7 +75430,6 @@ oem-somerville-tentacool-rpl-meta
 oem-somerville-torchic-meta
 oem-somerville-treecko-meta
 python3-netplan
-rpi-eeprom-firmware
 bolt-19
 cargo-1.76
 cargo-1.76-doc
@@ -75625,7 +75625,6 @@ golang-1.23
 golang-1.23-doc
 golang-1.23-go
 golang-1.23-src
-grilo-plugins-0.3-extra
 lib32gcc-14-dev-mips64-cross
 lib32gcc-14-dev-mips64el-cross
 lib32gcc-14-dev-mips64r6-cross
@@ -76139,11 +76138,9 @@ mesa-drm-shim
 meson-1.5
 mlir-19-tools
 mrcal
-python-pymodbus-doc
 python3-clang-19
 python3-lldb-19
 python3-mrcal
-python3-pymodbus
 rust-1.76-all
 rust-1.76-clippy
 rust-1.76-doc
