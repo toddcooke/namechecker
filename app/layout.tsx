@@ -1,6 +1,7 @@
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+
 export const metadata = {
   title: 'Name Checker',
   description: 'Find out if your project name is taken',

@@ -1,6 +1,5 @@
 import 'server-only';
 
-import { NextRequest, NextResponse } from 'next/server';
 import { fetchOptions } from '@/app/util';
 
 export default async function GET(name) {
@@ -14,7 +13,7 @@ export default async function GET(name) {
     .sort((a, b) => a.downloads < b.downloads)
     .pop()?.url;
   return {
-    name: "Packagist package",
+    name: 'Packagist package',
     exists: existsUrl !== undefined,
     existsUrl: existsUrl,
   };

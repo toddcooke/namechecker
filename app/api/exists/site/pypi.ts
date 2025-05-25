@@ -1,4 +1,4 @@
-import { fetchOptions } from "@/app/util";
+import { fetchOptions } from '@/app/util';
 
 export default async function pypi(name) {
   const response = await fetch(

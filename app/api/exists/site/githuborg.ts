@@ -1,11 +1,10 @@
 import 'server-only';
 import { Octokit, RequestError } from 'octokit';
+import { NextResponse } from 'next/server';
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
-
-import { NextRequest, NextResponse } from 'next/server';
 
 export default async function GET(name) {
   try {

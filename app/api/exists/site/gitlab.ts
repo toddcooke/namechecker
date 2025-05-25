@@ -14,14 +14,14 @@ export default async function GET(name) {
       const url = json.find((value) => value.name === name)?.web_url;
       if (url) {
         return {
-          name: "Gitlab project",
+          name: 'Gitlab project',
           exists: true,
           existsUrl: url,
         };
       }
     }
     return {
-      name: "Gitlab project",
+      name: 'Gitlab project',
       exists: false,
     };
   } catch (e) {

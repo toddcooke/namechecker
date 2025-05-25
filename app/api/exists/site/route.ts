@@ -1,7 +1,6 @@
 import 'server-only';
 
 import { NextRequest, NextResponse } from 'next/server';
-import { fetchOptions } from '@/app/util';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -11,14 +10,13 @@ export async function GET(request: NextRequest) {
   let result;
   try {
     let caller = await import(`./${site}.ts`);
-    result = { success: true, ...await caller.default(name) };
-  }
-  catch (err) {
-    console.log(err)
+    result = { success: true, ...(await caller.default(name)) };
+  } catch (err) {
+    console.log(err);
     result = {
-      success: false
-    }
+      success: false,
+    };
   }
 
-  return NextResponse.json(result)
+  return NextResponse.json(result);
 }
