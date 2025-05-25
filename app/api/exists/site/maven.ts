@@ -1,6 +1,5 @@
 import 'server-only';
 
-import { NextRequest, NextResponse } from 'next/server';
 import { fetchOptions } from '@/app/util';
 
 export default async function GET(name) {
@@ -11,7 +10,7 @@ export default async function GET(name) {
   const json = await response.json();
   const exists = json.response.numFound > 0;
   return {
-    name: "Maven package",
+    name: 'Maven package',
     exists: exists,
     // Sonatype search is currently somewhat broken,
     // so this link may not work correctly: https://issues.sonatype.org/browse/MVNCENTRAL-8264

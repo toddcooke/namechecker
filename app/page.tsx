@@ -36,36 +36,34 @@ export default function Home() {
   // When the URL includes a name query param, set the text to that value
   const nameQueryParam = useSearchParams().get('name');
   useEffect(() => {
-    if (nameQueryParam)
-      setText(nameQueryParam);
+    if (nameQueryParam) setText(nameQueryParam);
   }, [nameQueryParam]);
 
-  // The following names correspond to files in the /api/exists/site directory, 
+  // The following names correspond to files in the /api/exists/site directory,
   // where each name is used as a filename in lowercase.
   const sites = [
-    "PyPI",
-    "Github",
-    "GithubOrg",
-    "Gitlab",
-    "Homebrew",
-    "Apt",
-    "Crates",
-    "Maven",
-    "NPM",
-    "NPMOrg",
-    "RubyGems",
-    "Nuget",
-    "Go",
-    "Packagist",
-  ]
+    'PyPI',
+    'Github',
+    'GithubOrg',
+    'Gitlab',
+    'Homebrew',
+    'Apt',
+    'Crates',
+    'Maven',
+    'NPM',
+    'NPMOrg',
+    'RubyGems',
+    'Nuget',
+    'Go',
+    'Packagist',
+  ];
 
   async function fetchNameResult(site, name) {
     const response = await fetch(`/api/exists/site?site=${site}&name=${name}`);
     const json = await response.json();
-    console.log(json)
-    setSiteResponse(prevState => [...prevState, { name: site, ...json }]);
+    console.log(json);
+    setSiteResponse((prevState) => [...prevState, { name: site, ...json }]);
   }
-
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -79,7 +77,7 @@ export default function Home() {
     setText(editedText);
     // Set state to null to 'reset' search results
     setSiteResponse([]);
-    await Promise.all(sites.map(site => fetchNameResult(site, editedText)));
+    await Promise.all(sites.map((site) => fetchNameResult(site, editedText)));
     setLoading(false);
   }
 
@@ -123,7 +121,9 @@ export default function Home() {
       </form>
 
       <ul className="list-none pt-5">
-        {siteResponse.map((res, idx) => <CheckListItem key={idx} state={res} />)}
+        {siteResponse.map((res, idx) => (
+          <CheckListItem key={idx} state={res} />
+        ))}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
@@ -132,14 +132,14 @@ export default function Home() {
 
 function CheckListItem({ state }: { state: CheckListState }) {
   if (!state.success) {
-    return (
-      <li>Error while getting result for {state.name}.</li>
-    )
+    return <li>Error while getting result for {state.name}.</li>;
   }
 
   if (state.exists) {
     return (
-      <li> ❌ {state.name} name {' '}
+      <li>
+        {' '}
+        ❌ {state.name} name{' '}
         <Link
           style={{ textDecoration: 'underline' }}
           target={'_blank'}
@@ -148,10 +148,8 @@ function CheckListItem({ state }: { state: CheckListState }) {
           already exists
         </Link>
       </li>
-    )
+    );
   }
 
-  return (
-    <li>✅ {state.name} name is available!</li>
-  );
+  return <li>✅ {state.name} name is available!</li>;
 }

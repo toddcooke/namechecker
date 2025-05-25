@@ -9,7 +9,7 @@ export default async function GET(name) {
   );
   const exists = response.status === 200;
   return {
-    name: "Ruby gem",
+    name: 'Ruby gem',
     exists: exists,
     existsUrl: exists && `https://rubygems.org/gems/${name}`,
   };

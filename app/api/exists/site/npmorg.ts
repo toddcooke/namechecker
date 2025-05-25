@@ -9,7 +9,7 @@ export default async function GET(name) {
   );
   const exists = response.status === 200;
   return {
-    name: "NPM org",
+    name: 'NPM org',
     exists: exists,
     existsUrl: exists && `https://www.npmjs.com/org/${name}`,
   };

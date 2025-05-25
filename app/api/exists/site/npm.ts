@@ -1,6 +1,5 @@
 import 'server-only';
 
-import { NextRequest, NextResponse } from 'next/server';
 import { fetchOptions } from '@/app/util';
 
 export default async function GET(name) {
@@ -10,7 +9,7 @@ export default async function GET(name) {
   );
   const exists = response.status === 200;
   return {
-    name: "NPM package",
+    name: 'NPM package',
     exists: exists,
     existsUrl: exists && `https://registry.npmjs.org/${name}`,
   };
