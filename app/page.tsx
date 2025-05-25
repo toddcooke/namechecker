@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, Suspense } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { LoadingIcon } from '@/app/components/LoadingIcon';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ interface CheckListState {
   existsUrl: string;
 }
 
-export default function Home() {
+function HomeContent() {
   const [text, setText] = useState('');
   const [siteResponse, setSiteResponse] = useState<CheckListState[]>([]);
 
@@ -152,4 +152,14 @@ function CheckListItem({ state }: { state: CheckListState }) {
   }
 
   return <li>✅ {state.name} name is available!</li>;
+}
+
+// This exists solely to fix this error:
+// useSearchParams() should be wrapped in a suspense boundary at page "/".
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
 }
