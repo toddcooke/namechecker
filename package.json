@@ -21,7 +21,7 @@
     "octokit": "^5.0.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "whoiser": "^1.17.3"
+    "whoiser": "^1.18.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
