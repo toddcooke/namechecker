@@ -15,6 +15,6 @@ export default async function GET(name) {
   const exists = packages.includes(name);
   return {
     exists: exists,
-    existsUrl: exists && `https://packages.ubuntu.com/kinetic/${name}`,
+    existsUrl: exists && `https://packages.ubuntu.com/plucky/${name}`,
   };
 }
