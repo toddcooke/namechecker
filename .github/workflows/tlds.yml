@@ -1,5 +1,8 @@
 name: Save TLDs
 
+permissions:
+  contents: write
+
 on:
   push:
   repository_dispatch:
