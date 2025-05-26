@@ -10,6 +10,11 @@ const packages = (await promises.readFile(aptPackagesPath, 'utf-8')).split(
 );
 
 export default async function GET(name) {
+  const response = await fetch(
+    `${process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 'http://localhost:3000'}/apt-packages.txt`,
+  );
+  const text = await response.text();
+  const packages = text.split('\n');
   const exists = packages.includes(name);
   return {
     exists: exists,
