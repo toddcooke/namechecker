@@ -56,6 +56,7 @@ function HomeContent() {
     'Nuget',
     'Go',
     'Packagist',
+    'Patents',
   ];
 
   async function fetchNameResult(site, name) {
