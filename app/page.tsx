@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useCallback, useEffect, useState, Suspense } from 'react';
+import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import { LoadingIcon } from '@/app/components/LoadingIcon';
 import Link from 'next/link';
 import TailwindLayout from '@/app/TailwindLayout';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface CheckListState {
   success: boolean;
@@ -122,9 +121,11 @@ function HomeContent() {
       </form>
 
       <ul className="list-none pt-5">
-        {siteResponse.map((res, idx) => (
-          <CheckListItem key={idx} state={res} />
-        ))}
+        {[...siteResponse]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((res, idx) => (
+            <CheckListItem key={idx} state={res} />
+          ))}
       </ul>
       {loading && <LoadingIcon />}
     </TailwindLayout>
