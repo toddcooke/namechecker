@@ -1,29 +1,29 @@
-name: Save TLDs
-
-permissions:
-  contents: write
-
-on:
-  push:
-  repository_dispatch:
-  schedule:
-    - cron: '0 4 * * *'
-
-jobs:
-  scheduled:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out this repo
-        uses: actions/checkout@v3
-      - name: Fetch latest data
-        run: |-
-          curl -s https://data.iana.org/TLD/tlds-alpha-by-domain.txt > public/tlds.txt
-          [ $? -eq 0 ] || exit 1
-      - name: Commit and push if it changed
-        run: |-
-          git config user.name "Automated"
-          git config user.email "actions@users.noreply.github.com"
-          git add -A
-          timestamp=$(date -u)
-          git commit -m "Latest data: ${timestamp}" || exit 0
-          git push
+#name: Save TLDs
+#
+#permissions:
+#  contents: write
+#
+#on:
+#  push:
+#  repository_dispatch:
+#  schedule:
+#    - cron: '0 4 * * *'
+#
+#jobs:
+#  scheduled:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out this repo
+#        uses: actions/checkout@v3
+#      - name: Fetch latest data
+#        run: |-
+#          curl -s https://data.iana.org/TLD/tlds-alpha-by-domain.txt > public/tlds.txt
+#          [ $? -eq 0 ] || exit 1
+#      - name: Commit and push if it changed
+#        run: |-
+#          git config user.name "Automated"
+#          git config user.email "actions@users.noreply.github.com"
+#          git add -A
+#          timestamp=$(date -u)
+#          git commit -m "Latest data: ${timestamp}" || exit 0
+#          git push
