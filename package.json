@@ -16,7 +16,7 @@
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.1.7",
     "@vercel/analytics": "^1.5.0",
-    "@vercel/og": "^0.6.8",
+    "@vercel/og": "^0.7.2",
     "@vercel/speed-insights": "^1.0.12",
     "next": "15.3.3",
     "octokit": "^5.0.3",
