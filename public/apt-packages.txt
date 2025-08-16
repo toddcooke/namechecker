@@ -72493,6 +72493,7 @@ dotnet-templates-8.0
 dotnet8
 freeradius-utils
 libclamav12
+libglapi-amber
 libitm1-riscv64-cross
 libllvm19
 libnetplan-dev
@@ -86344,6 +86345,7 @@ xserver-xorg-video-nvidia-550-server
 xserver-xorg-video-nvidia-575
 xserver-xorg-video-nvidia-575-server
 dh-dlopenlibdeps
+far2l-wx
 lsp-plugins-vst3
 python3-sphinxcontrib-globalsubs
 adoptium-ca-certificates
