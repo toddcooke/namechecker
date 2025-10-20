@@ -20,7 +20,7 @@
     "@vercel/speed-insights": "^1.0.12",
     "next": "15.3.5",
     "octokit": "^5.0.3",
-    "react": "19.1.0",
+    "react": "19.1.1",
     "react-dom": "19.1.0",
     "whoiser": "^1.18.0"
   },
@@ -28,7 +28,7 @@
     "@playwright/test": "^1.53.1",
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^24.0.3",
-    "@types/react": "19.1.8",
+    "@types/react": "19.1.9",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.56.0",
     "eslint-config-next": "15.3.5",
