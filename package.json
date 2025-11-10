@@ -21,7 +21,7 @@
     "next": "15.3.5",
     "octokit": "^5.0.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.2.0",
     "whoiser": "^1.18.0"
   },
   "devDependencies": {
