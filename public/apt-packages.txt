@@ -63,6 +63,7 @@ nvidia-device-plugin
 jcd
 azfilesauth
 msopenjdk-25
+dcgm-exporter
 packages-microsoft-prod
 accountsservice
 acct
@@ -72829,6 +72830,7 @@ linux-buildinfo-6.17.0-1004-nvidia
 linux-buildinfo-6.17.0-1005-oem
 linux-buildinfo-6.17.0-1006-oem
 linux-buildinfo-6.17.0-1007-oem
+linux-buildinfo-6.17.0-1008-oem
 linux-buildinfo-6.8.0-1004-gke
 linux-buildinfo-6.8.0-1005-gke
 linux-buildinfo-6.8.0-1006-gke
@@ -73739,6 +73741,7 @@ linux-headers-6.17.0-1004-nvidia
 linux-headers-6.17.0-1005-oem
 linux-headers-6.17.0-1006-oem
 linux-headers-6.17.0-1007-oem
+linux-headers-6.17.0-1008-oem
 linux-headers-6.8.0-1004-gke
 linux-headers-6.8.0-1005-gke
 linux-headers-6.8.0-1006-gke
@@ -74448,6 +74451,7 @@ linux-image-6.17.0-1004-nvidia
 linux-image-6.17.0-1005-oem
 linux-image-6.17.0-1006-oem
 linux-image-6.17.0-1007-oem
+linux-image-6.17.0-1008-oem
 linux-image-6.8.0-1004-gke
 linux-image-6.8.0-1005-gke
 linux-image-6.8.0-1006-gke
@@ -74958,6 +74962,7 @@ linux-image-uc-6.17.0-1004-gcp
 linux-image-uc-6.17.0-1005-oem
 linux-image-uc-6.17.0-1006-oem
 linux-image-uc-6.17.0-1007-oem
+linux-image-uc-6.17.0-1008-oem
 linux-image-uc-6.8.0-1006-oem
 linux-image-uc-6.8.0-1007-nvidia
 linux-image-uc-6.8.0-1007-oem
@@ -75245,6 +75250,7 @@ linux-image-unsigned-6.17.0-1004-nvidia
 linux-image-unsigned-6.17.0-1005-oem
 linux-image-unsigned-6.17.0-1006-oem
 linux-image-unsigned-6.17.0-1007-oem
+linux-image-unsigned-6.17.0-1008-oem
 linux-image-unsigned-6.8.0-1004-gke
 linux-image-unsigned-6.8.0-1005-gke
 linux-image-unsigned-6.8.0-1006-gke
@@ -75967,6 +75973,7 @@ linux-modules-6.17.0-1004-nvidia
 linux-modules-6.17.0-1005-oem
 linux-modules-6.17.0-1006-oem
 linux-modules-6.17.0-1007-oem
+linux-modules-6.17.0-1008-oem
 linux-modules-6.8.0-1004-gke
 linux-modules-6.8.0-1005-gke
 linux-modules-6.8.0-1006-gke
@@ -76805,6 +76812,7 @@ linux-modules-ipu6-6.14.0-37-generic
 linux-modules-ipu6-6.17.0-1005-oem
 linux-modules-ipu6-6.17.0-1006-oem
 linux-modules-ipu6-6.17.0-1007-oem
+linux-modules-ipu6-6.17.0-1008-oem
 linux-modules-ipu6-6.8.0-1006-oem
 linux-modules-ipu6-6.8.0-1007-oem
 linux-modules-ipu6-6.8.0-1008-oem
@@ -76927,6 +76935,7 @@ linux-modules-ipu7-6.14.0-37-generic
 linux-modules-ipu7-6.17.0-1005-oem
 linux-modules-ipu7-6.17.0-1006-oem
 linux-modules-ipu7-6.17.0-1007-oem
+linux-modules-ipu7-6.17.0-1008-oem
 linux-modules-ipu7-generic-6.11
 linux-modules-ipu7-generic-6.14
 linux-modules-ipu7-generic-hwe-24.04
@@ -77004,6 +77013,7 @@ linux-modules-iwlwifi-6.14.0-37-generic
 linux-modules-iwlwifi-6.17.0-1005-oem
 linux-modules-iwlwifi-6.17.0-1006-oem
 linux-modules-iwlwifi-6.17.0-1007-oem
+linux-modules-iwlwifi-6.17.0-1008-oem
 linux-modules-iwlwifi-6.8.0-1004-gke
 linux-modules-iwlwifi-6.8.0-1005-gke
 linux-modules-iwlwifi-6.8.0-1006-gke
@@ -77360,6 +77370,7 @@ linux-modules-usbio-6.14.0-37-generic
 linux-modules-usbio-6.17.0-1005-oem
 linux-modules-usbio-6.17.0-1006-oem
 linux-modules-usbio-6.17.0-1007-oem
+linux-modules-usbio-6.17.0-1008-oem
 linux-modules-usbio-6.8.0-1006-oem
 linux-modules-usbio-6.8.0-1007-oem
 linux-modules-usbio-6.8.0-1008-oem
@@ -77486,6 +77497,7 @@ linux-modules-vision-6.14.0-37-generic
 linux-modules-vision-6.17.0-1005-oem
 linux-modules-vision-6.17.0-1006-oem
 linux-modules-vision-6.17.0-1007-oem
+linux-modules-vision-6.17.0-1008-oem
 linux-modules-vision-generic-6.11
 linux-modules-vision-generic-6.14
 linux-modules-vision-generic-hwe-24.04
@@ -77753,9 +77765,11 @@ linux-oem-6.17
 linux-oem-6.17-headers-6.17.0-1005
 linux-oem-6.17-headers-6.17.0-1006
 linux-oem-6.17-headers-6.17.0-1007
+linux-oem-6.17-headers-6.17.0-1008
 linux-oem-6.17-tools-6.17.0-1005
 linux-oem-6.17-tools-6.17.0-1006
 linux-oem-6.17-tools-6.17.0-1007
+linux-oem-6.17-tools-6.17.0-1008
 linux-oem-6.8
 linux-oem-6.8-headers-6.8.0-1006
 linux-oem-6.8-headers-6.8.0-1007
@@ -78055,6 +78069,7 @@ linux-tools-6.17.0-1004-nvidia
 linux-tools-6.17.0-1005-oem
 linux-tools-6.17.0-1006-oem
 linux-tools-6.17.0-1007-oem
+linux-tools-6.17.0-1008-oem
 linux-tools-6.8.0-1004-gke
 linux-tools-6.8.0-1005-gke
 linux-tools-6.8.0-1006-gke
@@ -78593,6 +78608,9 @@ python3-netplan
 rpi-eeprom-firmware
 u-boot-qemu
 0ad
+aspnetcore-runtime-10.0
+aspnetcore-runtime-dbg-10.0
+aspnetcore-targeting-pack-10.0
 bolt-19
 bolt-20
 cargo-1.76
@@ -78639,6 +78657,18 @@ cpp-14-mipsisa32r6-linux-gnu
 cpp-14-mipsisa32r6el-linux-gnu
 cpp-14-mipsisa64r6-linux-gnuabi64
 cpp-14-mipsisa64r6el-linux-gnuabi64
+dotnet-apphost-pack-10.0
+dotnet-host-10.0
+dotnet-hostfxr-10.0
+dotnet-runtime-10.0
+dotnet-runtime-dbg-10.0
+dotnet-sdk-10.0
+dotnet-sdk-10.0-source-built-artifacts
+dotnet-sdk-aot-10.0
+dotnet-sdk-dbg-10.0
+dotnet-targeting-pack-10.0
+dotnet-templates-10.0
+dotnet10
 flang-19
 flang-20
 g++-13-loongarch64-linux-gnu
@@ -79380,7 +79410,11 @@ linux-nvidia-tegra-headers-6.8.0-1008
 linux-nvidia-tegra-headers-6.8.0-1009
 linux-nvidia-tegra-headers-6.8.0-1010
 linux-nvidia-tegra-headers-6.8.0-1012
+linux-nvidia-tegra-headers-6.8.0-1013
+linux-nvidia-tegra-tegra-igpu-igx-2.0-defaults
 linux-nvidia-tegra-tegra-igpu-jetson-defaults
+linux-nvidia-tegra-tegra-oot-igx-2.0-defaults
+linux-nvidia-tegra-tegra-oot-igx-2.0-uc-defaults
 linux-nvidia-tegra-tegra-oot-jetson-defaults
 linux-nvidia-tegra-tegra-oot-jetson-uc-defaults
 linux-qcom-headers-6.8.0-1047
@@ -80510,6 +80544,7 @@ linux-modules-nvidia-535-6.17.0-1004-nvidia
 linux-modules-nvidia-535-6.17.0-1005-oem
 linux-modules-nvidia-535-6.17.0-1006-oem
 linux-modules-nvidia-535-6.17.0-1007-oem
+linux-modules-nvidia-535-6.17.0-1008-oem
 linux-modules-nvidia-535-6.8.0-1006-ibm
 linux-modules-nvidia-535-6.8.0-1006-oem
 linux-modules-nvidia-535-6.8.0-1006-oracle
@@ -80994,6 +81029,7 @@ linux-modules-nvidia-535-open-6.17.0-1004-nvidia
 linux-modules-nvidia-535-open-6.17.0-1005-oem
 linux-modules-nvidia-535-open-6.17.0-1006-oem
 linux-modules-nvidia-535-open-6.17.0-1007-oem
+linux-modules-nvidia-535-open-6.17.0-1008-oem
 linux-modules-nvidia-535-open-6.8.0-1006-ibm
 linux-modules-nvidia-535-open-6.8.0-1006-oem
 linux-modules-nvidia-535-open-6.8.0-1006-oracle
@@ -84201,6 +84237,7 @@ linux-modules-nvidia-570-6.17.0-1004-nvidia
 linux-modules-nvidia-570-6.17.0-1005-oem
 linux-modules-nvidia-570-6.17.0-1006-oem
 linux-modules-nvidia-570-6.17.0-1007-oem
+linux-modules-nvidia-570-6.17.0-1008-oem
 linux-modules-nvidia-570-6.8.0-1024-ibm
 linux-modules-nvidia-570-6.8.0-1024-oracle
 linux-modules-nvidia-570-6.8.0-1025-ibm
@@ -84512,6 +84549,7 @@ linux-modules-nvidia-570-open-6.17.0-1004-nvidia
 linux-modules-nvidia-570-open-6.17.0-1005-oem
 linux-modules-nvidia-570-open-6.17.0-1006-oem
 linux-modules-nvidia-570-open-6.17.0-1007-oem
+linux-modules-nvidia-570-open-6.17.0-1008-oem
 linux-modules-nvidia-570-open-6.8.0-1024-ibm
 linux-modules-nvidia-570-open-6.8.0-1024-oracle
 linux-modules-nvidia-570-open-6.8.0-1025-ibm
@@ -85909,6 +85947,7 @@ linux-modules-nvidia-580-6.17.0-1004-nvidia
 linux-modules-nvidia-580-6.17.0-1005-oem
 linux-modules-nvidia-580-6.17.0-1006-oem
 linux-modules-nvidia-580-6.17.0-1007-oem
+linux-modules-nvidia-580-6.17.0-1008-oem
 linux-modules-nvidia-580-6.8.0-1033-ibm
 linux-modules-nvidia-580-6.8.0-1033-oracle
 linux-modules-nvidia-580-6.8.0-1034-azure
@@ -86086,6 +86125,7 @@ linux-modules-nvidia-580-open-6.17.0-1004-nvidia
 linux-modules-nvidia-580-open-6.17.0-1005-oem
 linux-modules-nvidia-580-open-6.17.0-1006-oem
 linux-modules-nvidia-580-open-6.17.0-1007-oem
+linux-modules-nvidia-580-open-6.17.0-1008-oem
 linux-modules-nvidia-580-open-6.8.0-1033-ibm
 linux-modules-nvidia-580-open-6.8.0-1033-oracle
 linux-modules-nvidia-580-open-6.8.0-1034-azure
@@ -87204,6 +87244,7 @@ linux-objects-nvidia-535-6.17.0-1004-nvidia
 linux-objects-nvidia-535-6.17.0-1005-oem
 linux-objects-nvidia-535-6.17.0-1006-oem
 linux-objects-nvidia-535-6.17.0-1007-oem
+linux-objects-nvidia-535-6.17.0-1008-oem
 linux-objects-nvidia-535-6.8.0-1006-ibm
 linux-objects-nvidia-535-6.8.0-1006-oem
 linux-objects-nvidia-535-6.8.0-1006-oracle
@@ -87641,6 +87682,7 @@ linux-objects-nvidia-535-open-6.17.0-1004-nvidia
 linux-objects-nvidia-535-open-6.17.0-1005-oem
 linux-objects-nvidia-535-open-6.17.0-1006-oem
 linux-objects-nvidia-535-open-6.17.0-1007-oem
+linux-objects-nvidia-535-open-6.17.0-1008-oem
 linux-objects-nvidia-535-open-6.8.0-1006-ibm
 linux-objects-nvidia-535-open-6.8.0-1006-oem
 linux-objects-nvidia-535-open-6.8.0-1006-oracle
@@ -90299,6 +90341,7 @@ linux-objects-nvidia-570-6.17.0-1004-nvidia
 linux-objects-nvidia-570-6.17.0-1005-oem
 linux-objects-nvidia-570-6.17.0-1006-oem
 linux-objects-nvidia-570-6.17.0-1007-oem
+linux-objects-nvidia-570-6.17.0-1008-oem
 linux-objects-nvidia-570-6.8.0-1024-ibm
 linux-objects-nvidia-570-6.8.0-1024-oracle
 linux-objects-nvidia-570-6.8.0-1025-ibm
@@ -90557,6 +90600,7 @@ linux-objects-nvidia-570-open-6.17.0-1004-nvidia
 linux-objects-nvidia-570-open-6.17.0-1005-oem
 linux-objects-nvidia-570-open-6.17.0-1006-oem
 linux-objects-nvidia-570-open-6.17.0-1007-oem
+linux-objects-nvidia-570-open-6.17.0-1008-oem
 linux-objects-nvidia-570-open-6.8.0-1024-ibm
 linux-objects-nvidia-570-open-6.8.0-1024-oracle
 linux-objects-nvidia-570-open-6.8.0-1025-ibm
@@ -91575,6 +91619,7 @@ linux-objects-nvidia-580-6.17.0-1004-nvidia
 linux-objects-nvidia-580-6.17.0-1005-oem
 linux-objects-nvidia-580-6.17.0-1006-oem
 linux-objects-nvidia-580-6.17.0-1007-oem
+linux-objects-nvidia-580-6.17.0-1008-oem
 linux-objects-nvidia-580-6.8.0-1033-ibm
 linux-objects-nvidia-580-6.8.0-1033-oracle
 linux-objects-nvidia-580-6.8.0-1034-azure
@@ -91704,6 +91749,7 @@ linux-objects-nvidia-580-open-6.17.0-1004-nvidia
 linux-objects-nvidia-580-open-6.17.0-1005-oem
 linux-objects-nvidia-580-open-6.17.0-1006-oem
 linux-objects-nvidia-580-open-6.17.0-1007-oem
+linux-objects-nvidia-580-open-6.17.0-1008-oem
 linux-objects-nvidia-580-open-6.8.0-1033-ibm
 linux-objects-nvidia-580-open-6.8.0-1033-oracle
 linux-objects-nvidia-580-open-6.8.0-1034-azure
@@ -92139,6 +92185,7 @@ linux-signatures-nvidia-6.17.0-1004-nvidia
 linux-signatures-nvidia-6.17.0-1005-oem
 linux-signatures-nvidia-6.17.0-1006-oem
 linux-signatures-nvidia-6.17.0-1007-oem
+linux-signatures-nvidia-6.17.0-1008-oem
 linux-signatures-nvidia-6.8.0-1006-ibm
 linux-signatures-nvidia-6.8.0-1006-oem
 linux-signatures-nvidia-6.8.0-1006-oracle
