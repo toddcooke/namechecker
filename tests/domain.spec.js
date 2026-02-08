@@ -1,6 +1,6 @@
 // @ts-check
 
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test('domain taken', async ({ page }) => {
   await page.goto('http://localhost:3000');
