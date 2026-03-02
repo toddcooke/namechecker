@@ -29,7 +29,7 @@
     "@tailwindcss/forms": "^0.5.11",
     "@types/node": "^25.3.3",
     "@types/react": "19.2.14",
-    "autoprefixer": "^10.4.24",
+    "autoprefixer": "^10.4.27",
     "eslint": "^10.0.2",
     "eslint-config-next": "16.1.6",
     "postcss": "^8.5.6",
