@@ -73,8 +73,8 @@ adutil
 kubens
 aztfexport
 kubectx
-ig
 kubectl-gadget
+ig
 node-exporter-kubernetes
 azurelustre-csi
 node-problem-detector-kubernetes
@@ -88,6 +88,7 @@ mssql-tools
 containerd-accelerated-container-image
 containerd-overlaybd
 dra-driver-nvidia-gpu
+k3s
 packages-microsoft-prod
 accountsservice
 acct
