@@ -12,7 +12,7 @@
     "test": "npx playwright test"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.9",
+    "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@vercel/analytics": "^2.0.1",
@@ -21,7 +21,7 @@
     "next": "16.2.4",
     "octokit": "^5.0.5",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react-dom": "^19.2.6",
     "whoiser": "^1.18.0"
   },
   "devDependencies": {
@@ -29,11 +29,12 @@
     "@tailwindcss/forms": "^0.5.11",
     "@types/node": "^25.6.0",
     "@types/react": "19.2.14",
-    "autoprefixer": "^10.4.27",
+    "autoprefixer": "^10.5.0",
     "eslint": "^10.3.0",
     "eslint-config-next": "16.2.4",
     "postcss": "^8.5.8",
-    "prettier": "3.8.1",
     "tailwindcss": "^4.3.0"
+
+    "prettier": "3.8.3"
   }
 }
