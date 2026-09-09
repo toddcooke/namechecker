@@ -15,6 +15,7 @@ kubectl-gadget
 dra-driver-nvidia-gpu
 kubelet
 mdatp
+aznfs
 kubectl
 azure-acr-credential-provider
 moby-compose
@@ -26,21 +27,21 @@ azcopy
 node-problem-detector-kubernetes
 libkmpp-client
 containerd-overlaybd
-aznfs
 blobfuse2
 azurelustre-csi
+moby-runc
 kubeadm
 k8s-device-plugin
 libkmpp-containers-dev
 powershell-lts
 msft-golang
 kubernetes-coredns
-moby-runc
 kubernetes-cri-tools
 dcgm-exporter
 kubelogin
 azfilesauth
 aks-node-controller
+moby-buildx
 aks-secure-tls-bootstrap-client
 containerd-accelerated-container-image
 dsc
@@ -57,7 +58,6 @@ aadsshlogin
 aziot-identity-service
 libmsquic
 jaz
-moby-buildx
 omi
 procmon
 msopenjdk-11
@@ -4303,7 +4303,6 @@ linux-cloud-tools-virtual-hwe-24.04
 linux-cloud-tools-virtual-hwe-24.04-edge
 linux-crashdump
 linux-doc
-linux-firmware
 linux-gcp
 linux-gcp-headers-6.8.0-1007
 linux-gcp-tools-6.8.0-1007
@@ -5590,7 +5589,6 @@ sphinx-common
 sphinx-doc
 sphinx-rtd-theme-common
 spice-html5
-spice-vdagent
 sqlite3
 sqlite3-doc
 squashfs-tools
@@ -72135,10 +72133,12 @@ linux-aws-7.0-headers-7.0.0-1007
 linux-aws-7.0-headers-7.0.0-1009
 linux-aws-7.0-headers-7.0.0-1010
 linux-aws-7.0-headers-7.0.0-1011
+linux-aws-7.0-headers-7.0.0-1012
 linux-aws-7.0-tools-7.0.0-1007
 linux-aws-7.0-tools-7.0.0-1009
 linux-aws-7.0-tools-7.0.0-1010
 linux-aws-7.0-tools-7.0.0-1011
+linux-aws-7.0-tools-7.0.0-1012
 linux-aws-edge
 linux-aws-headers-6.8.0-1047
 linux-aws-headers-6.8.0-1050
@@ -72218,6 +72218,7 @@ linux-azure-cloud-tools-6.8.0-1062
 linux-azure-cloud-tools-6.8.0-1063
 linux-azure-cloud-tools-6.8.0-1064
 linux-azure-cloud-tools-6.8.0-1065
+linux-azure-cloud-tools-6.8.0-1067
 linux-azure-edge
 linux-azure-fde-6.11
 linux-azure-fde-6.14
@@ -72279,6 +72280,7 @@ linux-azure-headers-6.8.0-1062
 linux-azure-headers-6.8.0-1063
 linux-azure-headers-6.8.0-1064
 linux-azure-headers-6.8.0-1065
+linux-azure-headers-6.8.0-1067
 linux-azure-lts-24.04
 linux-azure-nvidia-6.14-headers-6.14.0-1007
 linux-azure-nvidia-headers-6.8.0-1029
@@ -72294,6 +72296,7 @@ linux-azure-tools-6.8.0-1062
 linux-azure-tools-6.8.0-1063
 linux-azure-tools-6.8.0-1064
 linux-azure-tools-6.8.0-1065
+linux-azure-tools-6.8.0-1067
 linux-bpf-dev
 linux-buildinfo-6.11.0-1014-aws
 linux-buildinfo-6.11.0-1016-lowlatency
@@ -72369,6 +72372,7 @@ linux-buildinfo-6.17.0-1028-oem
 linux-buildinfo-6.17.0-1029-nvidia
 linux-buildinfo-6.17.0-1030-oem
 linux-buildinfo-6.17.0-1031-nvidia
+linux-buildinfo-6.17.0-1032-nvidia
 linux-buildinfo-6.17.0-1032-oem
 linux-buildinfo-6.17.0-14-generic
 linux-buildinfo-6.17.0-19-generic
@@ -72407,6 +72411,7 @@ linux-buildinfo-6.8.0-1048-gcp
 linux-buildinfo-6.8.0-1048-gke
 linux-buildinfo-6.8.0-1048-gkeop
 linux-buildinfo-6.8.0-1049-gke
+linux-buildinfo-6.8.0-1049-gkeop
 linux-buildinfo-6.8.0-1049-ibm
 linux-buildinfo-6.8.0-1049-nvidia
 linux-buildinfo-6.8.0-1049-nvidia-lowlatency
@@ -72479,7 +72484,10 @@ linux-buildinfo-6.8.0-1061-nvidia-lowlatency
 linux-buildinfo-6.8.0-1062-aws
 linux-buildinfo-6.8.0-1062-azure
 linux-buildinfo-6.8.0-1062-azure-fde
+linux-buildinfo-6.8.0-1062-gke
 linux-buildinfo-6.8.0-1062-ibm
+linux-buildinfo-6.8.0-1062-nvidia
+linux-buildinfo-6.8.0-1062-nvidia-lowlatency
 linux-buildinfo-6.8.0-1063-aws
 linux-buildinfo-6.8.0-1063-azure
 linux-buildinfo-6.8.0-1063-azure-fde
@@ -72491,6 +72499,8 @@ linux-buildinfo-6.8.0-1064-gcp
 linux-buildinfo-6.8.0-1065-azure
 linux-buildinfo-6.8.0-1065-gcp
 linux-buildinfo-6.8.0-1066-gcp
+linux-buildinfo-6.8.0-1067-azure
+linux-buildinfo-6.8.0-1067-gcp
 linux-buildinfo-6.8.0-107-generic
 linux-buildinfo-6.8.0-107-lowlatency
 linux-buildinfo-6.8.0-110-generic
@@ -72508,6 +72518,7 @@ linux-buildinfo-6.8.0-137-generic
 linux-buildinfo-6.8.0-137-lowlatency
 linux-buildinfo-6.8.0-138-generic
 linux-buildinfo-6.8.0-138-lowlatency
+linux-buildinfo-6.8.0-139-generic
 linux-buildinfo-6.8.0-41-generic
 linux-buildinfo-6.8.0-53-generic
 linux-buildinfo-6.8.0-71-generic
@@ -72518,6 +72529,8 @@ linux-buildinfo-7.0.0-1008-azure
 linux-buildinfo-7.0.0-1009-aws
 linux-buildinfo-7.0.0-1010-aws
 linux-buildinfo-7.0.0-1011-aws
+linux-buildinfo-7.0.0-1011-gcp
+linux-buildinfo-7.0.0-1012-aws
 linux-buildinfo-7.0.0-1013-nvidia
 linux-buildinfo-7.0.0-1015-nvidia
 linux-buildinfo-7.0.0-1016-nvidia
@@ -72525,6 +72538,7 @@ linux-buildinfo-7.0.0-14-generic
 linux-buildinfo-7.0.0-28-generic
 linux-buildinfo-7.0.0-29-generic
 linux-buildinfo-7.0.0-30-generic
+linux-buildinfo-7.0.0-31-generic
 linux-cloud-tools-6.11.0-1016-lowlatency
 linux-cloud-tools-6.11.0-1018-azure
 linux-cloud-tools-6.11.0-17-generic
@@ -72576,6 +72590,7 @@ linux-cloud-tools-6.8.0-1046-azure-fde
 linux-cloud-tools-6.8.0-1046-gkeop
 linux-cloud-tools-6.8.0-1047-gkeop
 linux-cloud-tools-6.8.0-1048-gkeop
+linux-cloud-tools-6.8.0-1049-gkeop
 linux-cloud-tools-6.8.0-1051-azure
 linux-cloud-tools-6.8.0-1052-azure
 linux-cloud-tools-6.8.0-1053-azure-fde
@@ -72595,6 +72610,7 @@ linux-cloud-tools-6.8.0-1063-azure-fde
 linux-cloud-tools-6.8.0-1064-azure
 linux-cloud-tools-6.8.0-1064-azure-fde
 linux-cloud-tools-6.8.0-1065-azure
+linux-cloud-tools-6.8.0-1067-azure
 linux-cloud-tools-6.8.0-107
 linux-cloud-tools-6.8.0-107-generic
 linux-cloud-tools-6.8.0-107-lowlatency
@@ -72621,6 +72637,8 @@ linux-cloud-tools-6.8.0-137-lowlatency
 linux-cloud-tools-6.8.0-138
 linux-cloud-tools-6.8.0-138-generic
 linux-cloud-tools-6.8.0-138-lowlatency
+linux-cloud-tools-6.8.0-139
+linux-cloud-tools-6.8.0-139-generic
 linux-cloud-tools-6.8.0-41
 linux-cloud-tools-6.8.0-41-generic
 linux-cloud-tools-6.8.0-53
@@ -72633,6 +72651,7 @@ linux-cloud-tools-7.0.0-14-generic
 linux-cloud-tools-7.0.0-28-generic
 linux-cloud-tools-7.0.0-29-generic
 linux-cloud-tools-7.0.0-30-generic
+linux-cloud-tools-7.0.0-31-generic
 linux-cloud-tools-azure-6.11
 linux-cloud-tools-azure-6.14
 linux-cloud-tools-azure-6.17
@@ -72666,6 +72685,26 @@ linux-cloud-tools-virtual-6.14
 linux-cloud-tools-virtual-6.17
 linux-cloud-tools-virtual-6.8
 linux-cloud-tools-virtual-7.0
+linux-firmware
+linux-firmware-amd-graphics
+linux-firmware-amd-misc
+linux-firmware-broadcom-wireless
+linux-firmware-intel-graphics
+linux-firmware-intel-misc
+linux-firmware-intel-wireless
+linux-firmware-marvell-prestera
+linux-firmware-marvell-wireless
+linux-firmware-mediatek
+linux-firmware-mellanox-spectrum
+linux-firmware-minimal
+linux-firmware-misc
+linux-firmware-netronome
+linux-firmware-nvidia-graphics
+linux-firmware-qlogic
+linux-firmware-qualcomm-graphics
+linux-firmware-qualcomm-misc
+linux-firmware-qualcomm-wireless
+linux-firmware-realtek
 linux-gcp-6.11
 linux-gcp-6.11-headers-6.11.0-1017
 linux-gcp-6.11-lib-rust-6.11.0-1017-gcp
@@ -72695,7 +72734,9 @@ linux-gcp-6.17-tools-6.17.0-1022
 linux-gcp-6.8
 linux-gcp-7.0
 linux-gcp-7.0-headers-7.0.0-1006
+linux-gcp-7.0-headers-7.0.0-1011
 linux-gcp-7.0-tools-7.0.0-1006
+linux-gcp-7.0-tools-7.0.0-1011
 linux-gcp-edge
 linux-gcp-headers-6.8.0-1048
 linux-gcp-headers-6.8.0-1052
@@ -72708,6 +72749,7 @@ linux-gcp-headers-6.8.0-1063
 linux-gcp-headers-6.8.0-1064
 linux-gcp-headers-6.8.0-1065
 linux-gcp-headers-6.8.0-1066
+linux-gcp-headers-6.8.0-1067
 linux-gcp-lts-24.04
 linux-gcp-tools-6.8.0-1048
 linux-gcp-tools-6.8.0-1052
@@ -72720,6 +72762,7 @@ linux-gcp-tools-6.8.0-1063
 linux-gcp-tools-6.8.0-1064
 linux-gcp-tools-6.8.0-1065
 linux-gcp-tools-6.8.0-1066
+linux-gcp-tools-6.8.0-1067
 linux-generic-6.11
 linux-generic-6.14
 linux-generic-6.17
@@ -72737,6 +72780,7 @@ linux-gke-headers-6.8.0-1058
 linux-gke-headers-6.8.0-1059
 linux-gke-headers-6.8.0-1060
 linux-gke-headers-6.8.0-1061
+linux-gke-headers-6.8.0-1062
 linux-gke-tools-6.8.0-1044
 linux-gke-tools-6.8.0-1048
 linux-gke-tools-6.8.0-1049
@@ -72748,6 +72792,7 @@ linux-gke-tools-6.8.0-1058
 linux-gke-tools-6.8.0-1059
 linux-gke-tools-6.8.0-1060
 linux-gke-tools-6.8.0-1061
+linux-gke-tools-6.8.0-1062
 linux-gkeop
 linux-gkeop-6.8
 linux-gkeop-cloud-tools-6.8.0-1031
@@ -72761,6 +72806,7 @@ linux-gkeop-cloud-tools-6.8.0-1045
 linux-gkeop-cloud-tools-6.8.0-1046
 linux-gkeop-cloud-tools-6.8.0-1047
 linux-gkeop-cloud-tools-6.8.0-1048
+linux-gkeop-cloud-tools-6.8.0-1049
 linux-gkeop-headers-6.8.0-1031
 linux-gkeop-headers-6.8.0-1035
 linux-gkeop-headers-6.8.0-1036
@@ -72772,6 +72818,7 @@ linux-gkeop-headers-6.8.0-1045
 linux-gkeop-headers-6.8.0-1046
 linux-gkeop-headers-6.8.0-1047
 linux-gkeop-headers-6.8.0-1048
+linux-gkeop-headers-6.8.0-1049
 linux-gkeop-tools-6.8.0-1031
 linux-gkeop-tools-6.8.0-1035
 linux-gkeop-tools-6.8.0-1036
@@ -72783,6 +72830,7 @@ linux-gkeop-tools-6.8.0-1045
 linux-gkeop-tools-6.8.0-1046
 linux-gkeop-tools-6.8.0-1047
 linux-gkeop-tools-6.8.0-1048
+linux-gkeop-tools-6.8.0-1049
 linux-headers-6.11.0-1014-aws
 linux-headers-6.11.0-1016-lowlatency
 linux-headers-6.11.0-1016-nvidia
@@ -72857,6 +72905,7 @@ linux-headers-6.17.0-1028-oem
 linux-headers-6.17.0-1029-nvidia
 linux-headers-6.17.0-1030-oem
 linux-headers-6.17.0-1031-nvidia
+linux-headers-6.17.0-1032-nvidia
 linux-headers-6.17.0-1032-oem
 linux-headers-6.17.0-14-generic
 linux-headers-6.17.0-19-generic
@@ -72897,6 +72946,7 @@ linux-headers-6.8.0-1048-gcp
 linux-headers-6.8.0-1048-gke
 linux-headers-6.8.0-1048-gkeop
 linux-headers-6.8.0-1049-gke
+linux-headers-6.8.0-1049-gkeop
 linux-headers-6.8.0-1049-ibm
 linux-headers-6.8.0-1049-nvidia
 linux-headers-6.8.0-1049-nvidia-lowlatency
@@ -72970,7 +73020,10 @@ linux-headers-6.8.0-1061-nvidia-lowlatency
 linux-headers-6.8.0-1062-aws
 linux-headers-6.8.0-1062-azure
 linux-headers-6.8.0-1062-azure-fde
+linux-headers-6.8.0-1062-gke
 linux-headers-6.8.0-1062-ibm
+linux-headers-6.8.0-1062-nvidia
+linux-headers-6.8.0-1062-nvidia-lowlatency
 linux-headers-6.8.0-1063-aws
 linux-headers-6.8.0-1063-azure
 linux-headers-6.8.0-1063-azure-fde
@@ -72982,6 +73035,8 @@ linux-headers-6.8.0-1064-gcp
 linux-headers-6.8.0-1065-azure
 linux-headers-6.8.0-1065-gcp
 linux-headers-6.8.0-1066-gcp
+linux-headers-6.8.0-1067-azure
+linux-headers-6.8.0-1067-gcp
 linux-headers-6.8.0-107
 linux-headers-6.8.0-107-generic
 linux-headers-6.8.0-107-lowlatency
@@ -73008,6 +73063,8 @@ linux-headers-6.8.0-137-lowlatency
 linux-headers-6.8.0-138
 linux-headers-6.8.0-138-generic
 linux-headers-6.8.0-138-lowlatency
+linux-headers-6.8.0-139
+linux-headers-6.8.0-139-generic
 linux-headers-6.8.0-41
 linux-headers-6.8.0-41-generic
 linux-headers-6.8.0-53
@@ -73021,6 +73078,8 @@ linux-headers-7.0.0-1008-azure
 linux-headers-7.0.0-1009-aws
 linux-headers-7.0.0-1010-aws
 linux-headers-7.0.0-1011-aws
+linux-headers-7.0.0-1011-gcp
+linux-headers-7.0.0-1012-aws
 linux-headers-7.0.0-1013-nvidia
 linux-headers-7.0.0-1015-nvidia
 linux-headers-7.0.0-1016-nvidia
@@ -73028,6 +73087,7 @@ linux-headers-7.0.0-14-generic
 linux-headers-7.0.0-28-generic
 linux-headers-7.0.0-29-generic
 linux-headers-7.0.0-30-generic
+linux-headers-7.0.0-31-generic
 linux-headers-aws-6.14
 linux-headers-aws-6.17
 linux-headers-aws-6.8
@@ -73144,14 +73204,17 @@ linux-hwe-7.0-cloud-tools-7.0.0-14
 linux-hwe-7.0-cloud-tools-7.0.0-28
 linux-hwe-7.0-cloud-tools-7.0.0-29
 linux-hwe-7.0-cloud-tools-7.0.0-30
+linux-hwe-7.0-cloud-tools-7.0.0-31
 linux-hwe-7.0-headers-7.0.0-14
 linux-hwe-7.0-headers-7.0.0-28
 linux-hwe-7.0-headers-7.0.0-29
 linux-hwe-7.0-headers-7.0.0-30
+linux-hwe-7.0-headers-7.0.0-31
 linux-hwe-7.0-tools-7.0.0-14
 linux-hwe-7.0-tools-7.0.0-28
 linux-hwe-7.0-tools-7.0.0-29
 linux-hwe-7.0-tools-7.0.0-30
+linux-hwe-7.0-tools-7.0.0-31
 linux-ibm-6.8
 linux-ibm-headers-6.8.0-1045
 linux-ibm-headers-6.8.0-1049
@@ -73251,6 +73314,7 @@ linux-image-6.17.0-1028-oem
 linux-image-6.17.0-1029-nvidia
 linux-image-6.17.0-1030-oem
 linux-image-6.17.0-1031-nvidia
+linux-image-6.17.0-1032-nvidia
 linux-image-6.17.0-1032-oem
 linux-image-6.17.0-14-generic
 linux-image-6.17.0-19-generic
@@ -73289,6 +73353,7 @@ linux-image-6.8.0-1048-gcp
 linux-image-6.8.0-1048-gke
 linux-image-6.8.0-1048-gkeop
 linux-image-6.8.0-1049-gke
+linux-image-6.8.0-1049-gkeop
 linux-image-6.8.0-1049-ibm
 linux-image-6.8.0-1049-nvidia
 linux-image-6.8.0-1049-nvidia-lowlatency
@@ -73361,7 +73426,10 @@ linux-image-6.8.0-1061-nvidia-lowlatency
 linux-image-6.8.0-1062-aws
 linux-image-6.8.0-1062-azure
 linux-image-6.8.0-1062-azure-fde
+linux-image-6.8.0-1062-gke
 linux-image-6.8.0-1062-ibm
+linux-image-6.8.0-1062-nvidia
+linux-image-6.8.0-1062-nvidia-lowlatency
 linux-image-6.8.0-1063-aws
 linux-image-6.8.0-1063-azure
 linux-image-6.8.0-1063-azure-fde
@@ -73373,6 +73441,8 @@ linux-image-6.8.0-1064-gcp
 linux-image-6.8.0-1065-azure
 linux-image-6.8.0-1065-gcp
 linux-image-6.8.0-1066-gcp
+linux-image-6.8.0-1067-azure
+linux-image-6.8.0-1067-gcp
 linux-image-6.8.0-107-generic
 linux-image-6.8.0-107-lowlatency
 linux-image-6.8.0-110-generic
@@ -73390,6 +73460,7 @@ linux-image-6.8.0-137-generic
 linux-image-6.8.0-137-lowlatency
 linux-image-6.8.0-138-generic
 linux-image-6.8.0-138-lowlatency
+linux-image-6.8.0-139-generic
 linux-image-6.8.0-41-generic
 linux-image-6.8.0-53-generic
 linux-image-6.8.0-71-generic
@@ -73400,6 +73471,8 @@ linux-image-7.0.0-1008-azure
 linux-image-7.0.0-1009-aws
 linux-image-7.0.0-1010-aws
 linux-image-7.0.0-1011-aws
+linux-image-7.0.0-1011-gcp
+linux-image-7.0.0-1012-aws
 linux-image-7.0.0-1013-nvidia
 linux-image-7.0.0-1015-nvidia
 linux-image-7.0.0-1016-nvidia
@@ -73407,6 +73480,7 @@ linux-image-7.0.0-14-generic
 linux-image-7.0.0-28-generic
 linux-image-7.0.0-29-generic
 linux-image-7.0.0-30-generic
+linux-image-7.0.0-31-generic
 linux-image-aws-6.14
 linux-image-aws-6.17
 linux-image-aws-6.8
@@ -73576,10 +73650,13 @@ linux-image-uc-6.8.0-1061-nvidia
 linux-image-uc-6.8.0-1061-nvidia-lowlatency
 linux-image-uc-6.8.0-1062-aws
 linux-image-uc-6.8.0-1062-azure
+linux-image-uc-6.8.0-1062-nvidia
+linux-image-uc-6.8.0-1062-nvidia-lowlatency
 linux-image-uc-6.8.0-1063-aws
 linux-image-uc-6.8.0-1063-azure
 linux-image-uc-6.8.0-1064-azure
 linux-image-uc-6.8.0-1065-azure
+linux-image-uc-6.8.0-1067-azure
 linux-image-uc-6.8.0-107-generic
 linux-image-uc-6.8.0-110-generic
 linux-image-uc-6.8.0-111-generic
@@ -73589,6 +73666,7 @@ linux-image-uc-6.8.0-134-generic
 linux-image-uc-6.8.0-136-generic
 linux-image-uc-6.8.0-137-generic
 linux-image-uc-6.8.0-138-generic
+linux-image-uc-6.8.0-139-generic
 linux-image-uc-6.8.0-41-generic
 linux-image-uc-6.8.0-53-generic
 linux-image-uc-6.8.0-71-generic
@@ -73598,10 +73676,13 @@ linux-image-uc-7.0.0-1008-azure
 linux-image-uc-7.0.0-1009-aws
 linux-image-uc-7.0.0-1010-aws
 linux-image-uc-7.0.0-1011-aws
+linux-image-uc-7.0.0-1011-gcp
+linux-image-uc-7.0.0-1012-aws
 linux-image-uc-7.0.0-14-generic
 linux-image-uc-7.0.0-28-generic
 linux-image-uc-7.0.0-29-generic
 linux-image-uc-7.0.0-30-generic
+linux-image-uc-7.0.0-31-generic
 linux-image-uc-aws
 linux-image-uc-aws-6.14
 linux-image-uc-aws-6.17
@@ -73703,6 +73784,7 @@ linux-image-unsigned-6.17.0-1028-oem
 linux-image-unsigned-6.17.0-1029-nvidia
 linux-image-unsigned-6.17.0-1030-oem
 linux-image-unsigned-6.17.0-1031-nvidia
+linux-image-unsigned-6.17.0-1032-nvidia
 linux-image-unsigned-6.17.0-1032-oem
 linux-image-unsigned-6.17.0-14-generic
 linux-image-unsigned-6.17.0-19-generic
@@ -73741,6 +73823,7 @@ linux-image-unsigned-6.8.0-1048-gcp
 linux-image-unsigned-6.8.0-1048-gke
 linux-image-unsigned-6.8.0-1048-gkeop
 linux-image-unsigned-6.8.0-1049-gke
+linux-image-unsigned-6.8.0-1049-gkeop
 linux-image-unsigned-6.8.0-1049-ibm
 linux-image-unsigned-6.8.0-1049-nvidia
 linux-image-unsigned-6.8.0-1049-nvidia-lowlatency
@@ -73813,7 +73896,10 @@ linux-image-unsigned-6.8.0-1061-nvidia-lowlatency
 linux-image-unsigned-6.8.0-1062-aws
 linux-image-unsigned-6.8.0-1062-azure
 linux-image-unsigned-6.8.0-1062-azure-fde
+linux-image-unsigned-6.8.0-1062-gke
 linux-image-unsigned-6.8.0-1062-ibm
+linux-image-unsigned-6.8.0-1062-nvidia
+linux-image-unsigned-6.8.0-1062-nvidia-lowlatency
 linux-image-unsigned-6.8.0-1063-aws
 linux-image-unsigned-6.8.0-1063-azure
 linux-image-unsigned-6.8.0-1063-azure-fde
@@ -73825,6 +73911,8 @@ linux-image-unsigned-6.8.0-1064-gcp
 linux-image-unsigned-6.8.0-1065-azure
 linux-image-unsigned-6.8.0-1065-gcp
 linux-image-unsigned-6.8.0-1066-gcp
+linux-image-unsigned-6.8.0-1067-azure
+linux-image-unsigned-6.8.0-1067-gcp
 linux-image-unsigned-6.8.0-107-generic
 linux-image-unsigned-6.8.0-107-lowlatency
 linux-image-unsigned-6.8.0-110-generic
@@ -73842,6 +73930,7 @@ linux-image-unsigned-6.8.0-137-generic
 linux-image-unsigned-6.8.0-137-lowlatency
 linux-image-unsigned-6.8.0-138-generic
 linux-image-unsigned-6.8.0-138-lowlatency
+linux-image-unsigned-6.8.0-139-generic
 linux-image-unsigned-6.8.0-41-generic
 linux-image-unsigned-6.8.0-53-generic
 linux-image-unsigned-6.8.0-71-generic
@@ -73852,6 +73941,8 @@ linux-image-unsigned-7.0.0-1008-azure
 linux-image-unsigned-7.0.0-1009-aws
 linux-image-unsigned-7.0.0-1010-aws
 linux-image-unsigned-7.0.0-1011-aws
+linux-image-unsigned-7.0.0-1011-gcp
+linux-image-unsigned-7.0.0-1012-aws
 linux-image-unsigned-7.0.0-1013-nvidia
 linux-image-unsigned-7.0.0-1015-nvidia
 linux-image-unsigned-7.0.0-1016-nvidia
@@ -73859,6 +73950,7 @@ linux-image-unsigned-7.0.0-14-generic
 linux-image-unsigned-7.0.0-28-generic
 linux-image-unsigned-7.0.0-29-generic
 linux-image-unsigned-7.0.0-30-generic
+linux-image-unsigned-7.0.0-31-generic
 linux-image-virtual-6.11
 linux-image-virtual-6.14
 linux-image-virtual-6.17
@@ -73899,6 +73991,7 @@ linux-lib-rust-6.8.0-134-generic
 linux-lib-rust-6.8.0-136-generic
 linux-lib-rust-6.8.0-137-generic
 linux-lib-rust-6.8.0-138-generic
+linux-lib-rust-6.8.0-139-generic
 linux-lib-rust-6.8.0-41-generic
 linux-lib-rust-6.8.0-53-generic
 linux-lib-rust-6.8.0-71-generic
@@ -73906,6 +73999,7 @@ linux-lib-rust-7.0.0-14-generic
 linux-lib-rust-7.0.0-28-generic
 linux-lib-rust-7.0.0-29-generic
 linux-lib-rust-7.0.0-30-generic
+linux-lib-rust-7.0.0-31-generic
 linux-lowlatency-6.11
 linux-lowlatency-6.14
 linux-lowlatency-6.17
@@ -74031,6 +74125,7 @@ linux-modules-6.17.0-1028-oem
 linux-modules-6.17.0-1029-nvidia
 linux-modules-6.17.0-1030-oem
 linux-modules-6.17.0-1031-nvidia
+linux-modules-6.17.0-1032-nvidia
 linux-modules-6.17.0-1032-oem
 linux-modules-6.17.0-14-generic
 linux-modules-6.17.0-19-generic
@@ -74069,6 +74164,7 @@ linux-modules-6.8.0-1048-gcp
 linux-modules-6.8.0-1048-gke
 linux-modules-6.8.0-1048-gkeop
 linux-modules-6.8.0-1049-gke
+linux-modules-6.8.0-1049-gkeop
 linux-modules-6.8.0-1049-ibm
 linux-modules-6.8.0-1049-nvidia
 linux-modules-6.8.0-1049-nvidia-lowlatency
@@ -74141,7 +74237,10 @@ linux-modules-6.8.0-1061-nvidia-lowlatency
 linux-modules-6.8.0-1062-aws
 linux-modules-6.8.0-1062-azure
 linux-modules-6.8.0-1062-azure-fde
+linux-modules-6.8.0-1062-gke
 linux-modules-6.8.0-1062-ibm
+linux-modules-6.8.0-1062-nvidia
+linux-modules-6.8.0-1062-nvidia-lowlatency
 linux-modules-6.8.0-1063-aws
 linux-modules-6.8.0-1063-azure
 linux-modules-6.8.0-1063-azure-fde
@@ -74153,6 +74252,8 @@ linux-modules-6.8.0-1064-gcp
 linux-modules-6.8.0-1065-azure
 linux-modules-6.8.0-1065-gcp
 linux-modules-6.8.0-1066-gcp
+linux-modules-6.8.0-1067-azure
+linux-modules-6.8.0-1067-gcp
 linux-modules-6.8.0-107-generic
 linux-modules-6.8.0-107-lowlatency
 linux-modules-6.8.0-110-generic
@@ -74170,6 +74271,7 @@ linux-modules-6.8.0-137-generic
 linux-modules-6.8.0-137-lowlatency
 linux-modules-6.8.0-138-generic
 linux-modules-6.8.0-138-lowlatency
+linux-modules-6.8.0-139-generic
 linux-modules-6.8.0-41-generic
 linux-modules-6.8.0-53-generic
 linux-modules-6.8.0-71-generic
@@ -74180,6 +74282,8 @@ linux-modules-7.0.0-1008-azure
 linux-modules-7.0.0-1009-aws
 linux-modules-7.0.0-1010-aws
 linux-modules-7.0.0-1011-aws
+linux-modules-7.0.0-1011-gcp
+linux-modules-7.0.0-1012-aws
 linux-modules-7.0.0-1013-nvidia
 linux-modules-7.0.0-1015-nvidia
 linux-modules-7.0.0-1016-nvidia
@@ -74187,6 +74291,7 @@ linux-modules-7.0.0-14-generic
 linux-modules-7.0.0-28-generic
 linux-modules-7.0.0-29-generic
 linux-modules-7.0.0-30-generic
+linux-modules-7.0.0-31-generic
 linux-modules-evdi-6.17.0-1012-oem
 linux-modules-evdi-6.17.0-1017-oem
 linux-modules-evdi-6.17.0-1020-oem
@@ -74200,6 +74305,7 @@ linux-modules-evdi-7.0.0-14-generic
 linux-modules-evdi-7.0.0-28-generic
 linux-modules-evdi-7.0.0-29-generic
 linux-modules-evdi-7.0.0-30-generic
+linux-modules-evdi-7.0.0-31-generic
 linux-modules-evdi-generic-7.0
 linux-modules-evdi-generic-hwe-24.04
 linux-modules-evdi-generic-hwe-24.04-edge
@@ -74295,6 +74401,7 @@ linux-modules-extra-6.8.0-1048-gcp
 linux-modules-extra-6.8.0-1048-gke
 linux-modules-extra-6.8.0-1048-gkeop
 linux-modules-extra-6.8.0-1049-gke
+linux-modules-extra-6.8.0-1049-gkeop
 linux-modules-extra-6.8.0-1049-ibm
 linux-modules-extra-6.8.0-1049-nvidia-lowlatency
 linux-modules-extra-6.8.0-1049-oracle
@@ -74356,7 +74463,9 @@ linux-modules-extra-6.8.0-1061-nvidia-lowlatency
 linux-modules-extra-6.8.0-1062-aws
 linux-modules-extra-6.8.0-1062-azure
 linux-modules-extra-6.8.0-1062-azure-fde
+linux-modules-extra-6.8.0-1062-gke
 linux-modules-extra-6.8.0-1062-ibm
+linux-modules-extra-6.8.0-1062-nvidia-lowlatency
 linux-modules-extra-6.8.0-1063-aws
 linux-modules-extra-6.8.0-1063-azure
 linux-modules-extra-6.8.0-1063-azure-fde
@@ -74368,6 +74477,8 @@ linux-modules-extra-6.8.0-1064-gcp
 linux-modules-extra-6.8.0-1065-azure
 linux-modules-extra-6.8.0-1065-gcp
 linux-modules-extra-6.8.0-1066-gcp
+linux-modules-extra-6.8.0-1067-azure
+linux-modules-extra-6.8.0-1067-gcp
 linux-modules-extra-6.8.0-107-generic
 linux-modules-extra-6.8.0-110-generic
 linux-modules-extra-6.8.0-111-generic
@@ -74377,6 +74488,7 @@ linux-modules-extra-6.8.0-134-generic
 linux-modules-extra-6.8.0-136-generic
 linux-modules-extra-6.8.0-137-generic
 linux-modules-extra-6.8.0-138-generic
+linux-modules-extra-6.8.0-139-generic
 linux-modules-extra-6.8.0-41-generic
 linux-modules-extra-6.8.0-53-generic
 linux-modules-extra-6.8.0-71-generic
@@ -74423,6 +74535,7 @@ linux-modules-involflt-6.8.0-1063-azure-fde
 linux-modules-involflt-6.8.0-1064-azure
 linux-modules-involflt-6.8.0-1064-azure-fde
 linux-modules-involflt-6.8.0-1065-azure
+linux-modules-involflt-6.8.0-1067-azure
 linux-modules-involflt-azure-6.8
 linux-modules-involflt-azure-fde-6.8
 linux-modules-involflt-azure-fde-lts-24.04
@@ -74465,6 +74578,7 @@ linux-modules-ipu6-6.8.0-134-generic
 linux-modules-ipu6-6.8.0-136-generic
 linux-modules-ipu6-6.8.0-137-generic
 linux-modules-ipu6-6.8.0-138-generic
+linux-modules-ipu6-6.8.0-139-generic
 linux-modules-ipu6-6.8.0-41-generic
 linux-modules-ipu6-6.8.0-53-generic
 linux-modules-ipu6-6.8.0-71-generic
@@ -74472,6 +74586,7 @@ linux-modules-ipu6-7.0.0-14-generic
 linux-modules-ipu6-7.0.0-28-generic
 linux-modules-ipu6-7.0.0-29-generic
 linux-modules-ipu6-7.0.0-30-generic
+linux-modules-ipu6-7.0.0-31-generic
 linux-modules-ipu6-generic-6.11
 linux-modules-ipu6-generic-6.14
 linux-modules-ipu6-generic-6.17
@@ -74514,6 +74629,7 @@ linux-modules-ipu7-7.0.0-14-generic
 linux-modules-ipu7-7.0.0-28-generic
 linux-modules-ipu7-7.0.0-29-generic
 linux-modules-ipu7-7.0.0-30-generic
+linux-modules-ipu7-7.0.0-31-generic
 linux-modules-ipu7-generic-6.11
 linux-modules-ipu7-generic-6.14
 linux-modules-ipu7-generic-6.17
@@ -74593,6 +74709,7 @@ linux-modules-iwlwifi-6.8.0-1061-gke
 linux-modules-iwlwifi-6.8.0-1061-ibm
 linux-modules-iwlwifi-6.8.0-1062-azure
 linux-modules-iwlwifi-6.8.0-1062-azure-fde
+linux-modules-iwlwifi-6.8.0-1062-gke
 linux-modules-iwlwifi-6.8.0-1062-ibm
 linux-modules-iwlwifi-6.8.0-1063-azure
 linux-modules-iwlwifi-6.8.0-1063-azure-fde
@@ -74600,6 +74717,7 @@ linux-modules-iwlwifi-6.8.0-1063-ibm
 linux-modules-iwlwifi-6.8.0-1064-azure
 linux-modules-iwlwifi-6.8.0-1064-azure-fde
 linux-modules-iwlwifi-6.8.0-1065-azure
+linux-modules-iwlwifi-6.8.0-1067-azure
 linux-modules-iwlwifi-6.8.0-107-generic
 linux-modules-iwlwifi-6.8.0-107-lowlatency
 linux-modules-iwlwifi-6.8.0-110-generic
@@ -74617,6 +74735,7 @@ linux-modules-iwlwifi-6.8.0-137-generic
 linux-modules-iwlwifi-6.8.0-137-lowlatency
 linux-modules-iwlwifi-6.8.0-138-generic
 linux-modules-iwlwifi-6.8.0-138-lowlatency
+linux-modules-iwlwifi-6.8.0-139-generic
 linux-modules-iwlwifi-6.8.0-41-generic
 linux-modules-iwlwifi-6.8.0-53-generic
 linux-modules-iwlwifi-6.8.0-71-generic
@@ -74626,6 +74745,7 @@ linux-modules-iwlwifi-7.0.0-14-generic
 linux-modules-iwlwifi-7.0.0-28-generic
 linux-modules-iwlwifi-7.0.0-29-generic
 linux-modules-iwlwifi-7.0.0-30-generic
+linux-modules-iwlwifi-7.0.0-31-generic
 linux-modules-iwlwifi-azure-6.11
 linux-modules-iwlwifi-azure-6.8
 linux-modules-iwlwifi-azure-7.0
@@ -74663,6 +74783,7 @@ linux-modules-nvidia-fs-6.17.0-1021-nvidia
 linux-modules-nvidia-fs-6.17.0-1026-nvidia
 linux-modules-nvidia-fs-6.17.0-1029-nvidia
 linux-modules-nvidia-fs-6.17.0-1031-nvidia
+linux-modules-nvidia-fs-6.17.0-1032-nvidia
 linux-modules-nvidia-fs-6.8.0-1047-nvidia
 linux-modules-nvidia-fs-6.8.0-1047-nvidia-lowlatency
 linux-modules-nvidia-fs-6.8.0-1049-nvidia
@@ -74685,6 +74806,8 @@ linux-modules-nvidia-fs-6.8.0-1060-nvidia
 linux-modules-nvidia-fs-6.8.0-1060-nvidia-lowlatency
 linux-modules-nvidia-fs-6.8.0-1061-nvidia
 linux-modules-nvidia-fs-6.8.0-1061-nvidia-lowlatency
+linux-modules-nvidia-fs-6.8.0-1062-nvidia
+linux-modules-nvidia-fs-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-fs-7.0.0-1015-nvidia
 linux-modules-nvidia-fs-7.0.0-1016-nvidia
 linux-modules-nvidia-fs-nvidia
@@ -74735,6 +74858,7 @@ linux-modules-usbio-6.8.0-134-generic
 linux-modules-usbio-6.8.0-136-generic
 linux-modules-usbio-6.8.0-137-generic
 linux-modules-usbio-6.8.0-138-generic
+linux-modules-usbio-6.8.0-139-generic
 linux-modules-usbio-6.8.0-41-generic
 linux-modules-usbio-6.8.0-53-generic
 linux-modules-usbio-6.8.0-71-generic
@@ -74742,6 +74866,7 @@ linux-modules-usbio-7.0.0-14-generic
 linux-modules-usbio-7.0.0-28-generic
 linux-modules-usbio-7.0.0-29-generic
 linux-modules-usbio-7.0.0-30-generic
+linux-modules-usbio-7.0.0-31-generic
 linux-modules-usbio-generic
 linux-modules-usbio-generic-6.11
 linux-modules-usbio-generic-6.14
@@ -74788,6 +74913,7 @@ linux-modules-vision-7.0.0-14-generic
 linux-modules-vision-7.0.0-28-generic
 linux-modules-vision-7.0.0-29-generic
 linux-modules-vision-7.0.0-30-generic
+linux-modules-vision-7.0.0-31-generic
 linux-modules-vision-generic-6.11
 linux-modules-vision-generic-6.14
 linux-modules-vision-generic-6.17
@@ -74817,6 +74943,7 @@ linux-nvidia-6.17-headers-6.17.0-1021
 linux-nvidia-6.17-headers-6.17.0-1026
 linux-nvidia-6.17-headers-6.17.0-1029
 linux-nvidia-6.17-headers-6.17.0-1031
+linux-nvidia-6.17-headers-6.17.0-1032
 linux-nvidia-6.17-tools-6.17.0-1008
 linux-nvidia-6.17-tools-6.17.0-1014
 linux-nvidia-6.17-tools-6.17.0-1018
@@ -74824,6 +74951,7 @@ linux-nvidia-6.17-tools-6.17.0-1021
 linux-nvidia-6.17-tools-6.17.0-1026
 linux-nvidia-6.17-tools-6.17.0-1029
 linux-nvidia-6.17-tools-6.17.0-1031
+linux-nvidia-6.17-tools-6.17.0-1032
 linux-nvidia-6.8
 linux-nvidia-7.0
 linux-nvidia-7.0-headers-7.0.0-1013
@@ -74843,6 +74971,7 @@ linux-nvidia-headers-6.8.0-1058
 linux-nvidia-headers-6.8.0-1059
 linux-nvidia-headers-6.8.0-1060
 linux-nvidia-headers-6.8.0-1061
+linux-nvidia-headers-6.8.0-1062
 linux-nvidia-hwe-24.04
 linux-nvidia-hwe-24.04-edge
 linux-nvidia-lowlatency
@@ -74858,6 +74987,7 @@ linux-nvidia-lowlatency-headers-6.8.0-1058
 linux-nvidia-lowlatency-headers-6.8.0-1059
 linux-nvidia-lowlatency-headers-6.8.0-1060
 linux-nvidia-lowlatency-headers-6.8.0-1061
+linux-nvidia-lowlatency-headers-6.8.0-1062
 linux-nvidia-lowlatency-tools-6.8.0-1047
 linux-nvidia-lowlatency-tools-6.8.0-1049
 linux-nvidia-lowlatency-tools-6.8.0-1050
@@ -74869,6 +74999,7 @@ linux-nvidia-lowlatency-tools-6.8.0-1058
 linux-nvidia-lowlatency-tools-6.8.0-1059
 linux-nvidia-lowlatency-tools-6.8.0-1060
 linux-nvidia-lowlatency-tools-6.8.0-1061
+linux-nvidia-lowlatency-tools-6.8.0-1062
 linux-nvidia-tools-6.8.0-1047
 linux-nvidia-tools-6.8.0-1049
 linux-nvidia-tools-6.8.0-1050
@@ -74880,6 +75011,7 @@ linux-nvidia-tools-6.8.0-1058
 linux-nvidia-tools-6.8.0-1059
 linux-nvidia-tools-6.8.0-1060
 linux-nvidia-tools-6.8.0-1061
+linux-nvidia-tools-6.8.0-1062
 linux-oem-24.04a
 linux-oem-24.04b
 linux-oem-24.04c
@@ -74969,6 +75101,7 @@ linux-riscv-6.17-headers-6.17.0-38
 linux-riscv-7.0-headers-7.0.0-27
 linux-riscv-7.0-headers-7.0.0-28
 linux-riscv-7.0-headers-7.0.0-30
+linux-riscv-7.0-headers-7.0.0-31
 linux-riscv-headers-6.8.0-41
 linux-riscv-headers-6.8.0-52
 linux-riscv-headers-6.8.0-60
@@ -75046,6 +75179,7 @@ linux-tools-6.17.0-1028-oem
 linux-tools-6.17.0-1029-nvidia
 linux-tools-6.17.0-1030-oem
 linux-tools-6.17.0-1031-nvidia
+linux-tools-6.17.0-1032-nvidia
 linux-tools-6.17.0-1032-oem
 linux-tools-6.17.0-14-generic
 linux-tools-6.17.0-19-generic
@@ -75086,6 +75220,7 @@ linux-tools-6.8.0-1048-gcp
 linux-tools-6.8.0-1048-gke
 linux-tools-6.8.0-1048-gkeop
 linux-tools-6.8.0-1049-gke
+linux-tools-6.8.0-1049-gkeop
 linux-tools-6.8.0-1049-ibm
 linux-tools-6.8.0-1049-nvidia
 linux-tools-6.8.0-1049-nvidia-lowlatency
@@ -75159,7 +75294,10 @@ linux-tools-6.8.0-1061-nvidia-lowlatency
 linux-tools-6.8.0-1062-aws
 linux-tools-6.8.0-1062-azure
 linux-tools-6.8.0-1062-azure-fde
+linux-tools-6.8.0-1062-gke
 linux-tools-6.8.0-1062-ibm
+linux-tools-6.8.0-1062-nvidia
+linux-tools-6.8.0-1062-nvidia-lowlatency
 linux-tools-6.8.0-1063-aws
 linux-tools-6.8.0-1063-azure
 linux-tools-6.8.0-1063-azure-fde
@@ -75171,6 +75309,8 @@ linux-tools-6.8.0-1064-gcp
 linux-tools-6.8.0-1065-azure
 linux-tools-6.8.0-1065-gcp
 linux-tools-6.8.0-1066-gcp
+linux-tools-6.8.0-1067-azure
+linux-tools-6.8.0-1067-gcp
 linux-tools-6.8.0-107
 linux-tools-6.8.0-107-generic
 linux-tools-6.8.0-107-lowlatency
@@ -75197,6 +75337,8 @@ linux-tools-6.8.0-137-lowlatency
 linux-tools-6.8.0-138
 linux-tools-6.8.0-138-generic
 linux-tools-6.8.0-138-lowlatency
+linux-tools-6.8.0-139
+linux-tools-6.8.0-139-generic
 linux-tools-6.8.0-41
 linux-tools-6.8.0-41-generic
 linux-tools-6.8.0-53
@@ -75210,6 +75352,8 @@ linux-tools-7.0.0-1008-azure
 linux-tools-7.0.0-1009-aws
 linux-tools-7.0.0-1010-aws
 linux-tools-7.0.0-1011-aws
+linux-tools-7.0.0-1011-gcp
+linux-tools-7.0.0-1012-aws
 linux-tools-7.0.0-1013-nvidia
 linux-tools-7.0.0-1015-nvidia
 linux-tools-7.0.0-1016-nvidia
@@ -75217,6 +75361,7 @@ linux-tools-7.0.0-14-generic
 linux-tools-7.0.0-28-generic
 linux-tools-7.0.0-29-generic
 linux-tools-7.0.0-30-generic
+linux-tools-7.0.0-31-generic
 linux-tools-aws-6.14
 linux-tools-aws-6.17
 linux-tools-aws-6.8
@@ -75433,6 +75578,7 @@ rpi-eeprom-firmware
 rsyslog
 s390-tools
 samba-vfs-modules
+spice-vdagent
 strongswan-libcharon
 swtpm-tools
 systemd-container
@@ -77109,6 +77255,8 @@ linux-modules-nvidia-535-generic-6.8
 linux-modules-nvidia-535-generic-7.0
 linux-modules-nvidia-535-generic-hwe-24.04
 linux-modules-nvidia-535-generic-hwe-24.04-edge
+linux-modules-nvidia-535-gke
+linux-modules-nvidia-535-gke-6.8
 linux-modules-nvidia-535-ibm
 linux-modules-nvidia-535-ibm-6.8
 linux-modules-nvidia-535-ibm-classic
@@ -77334,6 +77482,8 @@ linux-modules-nvidia-535-open-generic-6.8
 linux-modules-nvidia-535-open-generic-7.0
 linux-modules-nvidia-535-open-generic-hwe-24.04
 linux-modules-nvidia-535-open-generic-hwe-24.04-edge
+linux-modules-nvidia-535-open-gke
+linux-modules-nvidia-535-open-gke-6.8
 linux-modules-nvidia-535-open-ibm
 linux-modules-nvidia-535-open-ibm-6.8
 linux-modules-nvidia-535-open-ibm-classic
@@ -77561,6 +77711,8 @@ linux-modules-nvidia-535-server-generic-6.8
 linux-modules-nvidia-535-server-generic-7.0
 linux-modules-nvidia-535-server-generic-hwe-24.04
 linux-modules-nvidia-535-server-generic-hwe-24.04-edge
+linux-modules-nvidia-535-server-gke
+linux-modules-nvidia-535-server-gke-6.8
 linux-modules-nvidia-535-server-ibm
 linux-modules-nvidia-535-server-ibm-6.8
 linux-modules-nvidia-535-server-ibm-classic
@@ -77767,6 +77919,8 @@ linux-modules-nvidia-535-server-open-generic-6.8
 linux-modules-nvidia-535-server-open-generic-7.0
 linux-modules-nvidia-535-server-open-generic-hwe-24.04
 linux-modules-nvidia-535-server-open-generic-hwe-24.04-edge
+linux-modules-nvidia-535-server-open-gke
+linux-modules-nvidia-535-server-open-gke-6.8
 linux-modules-nvidia-535-server-open-ibm
 linux-modules-nvidia-535-server-open-ibm-6.8
 linux-modules-nvidia-535-server-open-ibm-classic
@@ -77860,6 +78014,8 @@ linux-modules-nvidia-550-generic-6.8
 linux-modules-nvidia-550-generic-7.0
 linux-modules-nvidia-550-generic-hwe-24.04
 linux-modules-nvidia-550-generic-hwe-24.04-edge
+linux-modules-nvidia-550-gke
+linux-modules-nvidia-550-gke-6.8
 linux-modules-nvidia-550-ibm
 linux-modules-nvidia-550-ibm-6.8
 linux-modules-nvidia-550-ibm-classic
@@ -77934,6 +78090,8 @@ linux-modules-nvidia-550-open-generic-6.8
 linux-modules-nvidia-550-open-generic-7.0
 linux-modules-nvidia-550-open-generic-hwe-24.04
 linux-modules-nvidia-550-open-generic-hwe-24.04-edge
+linux-modules-nvidia-550-open-gke
+linux-modules-nvidia-550-open-gke-6.8
 linux-modules-nvidia-550-open-ibm
 linux-modules-nvidia-550-open-ibm-6.8
 linux-modules-nvidia-550-open-ibm-classic
@@ -78312,6 +78470,8 @@ linux-modules-nvidia-570-generic-6.8
 linux-modules-nvidia-570-generic-7.0
 linux-modules-nvidia-570-generic-hwe-24.04
 linux-modules-nvidia-570-generic-hwe-24.04-edge
+linux-modules-nvidia-570-gke
+linux-modules-nvidia-570-gke-6.8
 linux-modules-nvidia-570-ibm
 linux-modules-nvidia-570-ibm-6.8
 linux-modules-nvidia-570-ibm-classic
@@ -78454,6 +78614,8 @@ linux-modules-nvidia-570-open-generic-6.8
 linux-modules-nvidia-570-open-generic-7.0
 linux-modules-nvidia-570-open-generic-hwe-24.04
 linux-modules-nvidia-570-open-generic-hwe-24.04-edge
+linux-modules-nvidia-570-open-gke
+linux-modules-nvidia-570-open-gke-6.8
 linux-modules-nvidia-570-open-ibm
 linux-modules-nvidia-570-open-ibm-6.8
 linux-modules-nvidia-570-open-ibm-classic
@@ -78603,6 +78765,8 @@ linux-modules-nvidia-570-server-generic-6.8
 linux-modules-nvidia-570-server-generic-7.0
 linux-modules-nvidia-570-server-generic-hwe-24.04
 linux-modules-nvidia-570-server-generic-hwe-24.04-edge
+linux-modules-nvidia-570-server-gke
+linux-modules-nvidia-570-server-gke-6.8
 linux-modules-nvidia-570-server-ibm
 linux-modules-nvidia-570-server-ibm-6.8
 linux-modules-nvidia-570-server-ibm-classic
@@ -78731,6 +78895,8 @@ linux-modules-nvidia-570-server-open-generic-6.8
 linux-modules-nvidia-570-server-open-generic-7.0
 linux-modules-nvidia-570-server-open-generic-hwe-24.04
 linux-modules-nvidia-570-server-open-generic-hwe-24.04-edge
+linux-modules-nvidia-570-server-open-gke
+linux-modules-nvidia-570-server-open-gke-6.8
 linux-modules-nvidia-570-server-open-ibm
 linux-modules-nvidia-570-server-open-ibm-6.8
 linux-modules-nvidia-570-server-open-ibm-classic
@@ -78806,6 +78972,8 @@ linux-modules-nvidia-575-generic-6.8
 linux-modules-nvidia-575-generic-7.0
 linux-modules-nvidia-575-generic-hwe-24.04
 linux-modules-nvidia-575-generic-hwe-24.04-edge
+linux-modules-nvidia-575-gke
+linux-modules-nvidia-575-gke-6.8
 linux-modules-nvidia-575-ibm
 linux-modules-nvidia-575-ibm-6.8
 linux-modules-nvidia-575-ibm-classic
@@ -78878,6 +79046,8 @@ linux-modules-nvidia-575-open-generic-6.8
 linux-modules-nvidia-575-open-generic-7.0
 linux-modules-nvidia-575-open-generic-hwe-24.04
 linux-modules-nvidia-575-open-generic-hwe-24.04-edge
+linux-modules-nvidia-575-open-gke
+linux-modules-nvidia-575-open-gke-6.8
 linux-modules-nvidia-575-open-ibm
 linux-modules-nvidia-575-open-ibm-6.8
 linux-modules-nvidia-575-open-ibm-classic
@@ -78961,6 +79131,8 @@ linux-modules-nvidia-575-server-generic-6.8
 linux-modules-nvidia-575-server-generic-7.0
 linux-modules-nvidia-575-server-generic-hwe-24.04
 linux-modules-nvidia-575-server-generic-hwe-24.04-edge
+linux-modules-nvidia-575-server-gke
+linux-modules-nvidia-575-server-gke-6.8
 linux-modules-nvidia-575-server-ibm
 linux-modules-nvidia-575-server-ibm-6.8
 linux-modules-nvidia-575-server-ibm-classic
@@ -79023,6 +79195,8 @@ linux-modules-nvidia-575-server-open-generic-6.8
 linux-modules-nvidia-575-server-open-generic-7.0
 linux-modules-nvidia-575-server-open-generic-hwe-24.04
 linux-modules-nvidia-575-server-open-generic-hwe-24.04-edge
+linux-modules-nvidia-575-server-open-gke
+linux-modules-nvidia-575-server-open-gke-6.8
 linux-modules-nvidia-575-server-open-ibm
 linux-modules-nvidia-575-server-open-ibm-6.8
 linux-modules-nvidia-575-server-open-ibm-classic
@@ -79122,6 +79296,7 @@ linux-modules-nvidia-580-6.17.0-1028-oem
 linux-modules-nvidia-580-6.17.0-1029-nvidia
 linux-modules-nvidia-580-6.17.0-1030-oem
 linux-modules-nvidia-580-6.17.0-1031-nvidia
+linux-modules-nvidia-580-6.17.0-1032-nvidia
 linux-modules-nvidia-580-6.17.0-1032-oem
 linux-modules-nvidia-580-6.17.0-14-generic
 linux-modules-nvidia-580-6.17.0-19-generic
@@ -79208,7 +79383,10 @@ linux-modules-nvidia-580-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-580-6.8.0-1062-aws
 linux-modules-nvidia-580-6.8.0-1062-azure
 linux-modules-nvidia-580-6.8.0-1062-azure-fde
+linux-modules-nvidia-580-6.8.0-1062-gke
 linux-modules-nvidia-580-6.8.0-1062-ibm
+linux-modules-nvidia-580-6.8.0-1062-nvidia
+linux-modules-nvidia-580-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-580-6.8.0-1063-aws
 linux-modules-nvidia-580-6.8.0-1063-azure
 linux-modules-nvidia-580-6.8.0-1063-azure-fde
@@ -79220,6 +79398,8 @@ linux-modules-nvidia-580-6.8.0-1064-gcp
 linux-modules-nvidia-580-6.8.0-1065-azure
 linux-modules-nvidia-580-6.8.0-1065-gcp
 linux-modules-nvidia-580-6.8.0-1066-gcp
+linux-modules-nvidia-580-6.8.0-1067-azure
+linux-modules-nvidia-580-6.8.0-1067-gcp
 linux-modules-nvidia-580-6.8.0-107-generic
 linux-modules-nvidia-580-6.8.0-107-lowlatency
 linux-modules-nvidia-580-6.8.0-110-generic
@@ -79237,6 +79417,7 @@ linux-modules-nvidia-580-6.8.0-137-generic
 linux-modules-nvidia-580-6.8.0-137-lowlatency
 linux-modules-nvidia-580-6.8.0-138-generic
 linux-modules-nvidia-580-6.8.0-138-lowlatency
+linux-modules-nvidia-580-6.8.0-139-generic
 linux-modules-nvidia-580-7.0.0-1006-gcp
 linux-modules-nvidia-580-7.0.0-1007-aws
 linux-modules-nvidia-580-7.0.0-1007-azure-fde
@@ -79244,6 +79425,8 @@ linux-modules-nvidia-580-7.0.0-1008-azure
 linux-modules-nvidia-580-7.0.0-1009-aws
 linux-modules-nvidia-580-7.0.0-1010-aws
 linux-modules-nvidia-580-7.0.0-1011-aws
+linux-modules-nvidia-580-7.0.0-1011-gcp
+linux-modules-nvidia-580-7.0.0-1012-aws
 linux-modules-nvidia-580-7.0.0-1013-nvidia
 linux-modules-nvidia-580-7.0.0-1015-nvidia
 linux-modules-nvidia-580-7.0.0-1016-nvidia
@@ -79251,6 +79434,7 @@ linux-modules-nvidia-580-7.0.0-14-generic
 linux-modules-nvidia-580-7.0.0-28-generic
 linux-modules-nvidia-580-7.0.0-29-generic
 linux-modules-nvidia-580-7.0.0-30-generic
+linux-modules-nvidia-580-7.0.0-31-generic
 linux-modules-nvidia-580-aws
 linux-modules-nvidia-580-aws-6.14
 linux-modules-nvidia-580-aws-6.17
@@ -79287,6 +79471,8 @@ linux-modules-nvidia-580-generic-6.8
 linux-modules-nvidia-580-generic-7.0
 linux-modules-nvidia-580-generic-hwe-24.04
 linux-modules-nvidia-580-generic-hwe-24.04-edge
+linux-modules-nvidia-580-gke
+linux-modules-nvidia-580-gke-6.8
 linux-modules-nvidia-580-ibm
 linux-modules-nvidia-580-ibm-6.8
 linux-modules-nvidia-580-ibm-classic
@@ -79379,6 +79565,7 @@ linux-modules-nvidia-580-open-6.17.0-1028-oem
 linux-modules-nvidia-580-open-6.17.0-1029-nvidia
 linux-modules-nvidia-580-open-6.17.0-1030-oem
 linux-modules-nvidia-580-open-6.17.0-1031-nvidia
+linux-modules-nvidia-580-open-6.17.0-1032-nvidia
 linux-modules-nvidia-580-open-6.17.0-1032-oem
 linux-modules-nvidia-580-open-6.17.0-14-generic
 linux-modules-nvidia-580-open-6.17.0-19-generic
@@ -79465,7 +79652,10 @@ linux-modules-nvidia-580-open-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-580-open-6.8.0-1062-aws
 linux-modules-nvidia-580-open-6.8.0-1062-azure
 linux-modules-nvidia-580-open-6.8.0-1062-azure-fde
+linux-modules-nvidia-580-open-6.8.0-1062-gke
 linux-modules-nvidia-580-open-6.8.0-1062-ibm
+linux-modules-nvidia-580-open-6.8.0-1062-nvidia
+linux-modules-nvidia-580-open-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-580-open-6.8.0-1063-aws
 linux-modules-nvidia-580-open-6.8.0-1063-azure
 linux-modules-nvidia-580-open-6.8.0-1063-azure-fde
@@ -79477,6 +79667,8 @@ linux-modules-nvidia-580-open-6.8.0-1064-gcp
 linux-modules-nvidia-580-open-6.8.0-1065-azure
 linux-modules-nvidia-580-open-6.8.0-1065-gcp
 linux-modules-nvidia-580-open-6.8.0-1066-gcp
+linux-modules-nvidia-580-open-6.8.0-1067-azure
+linux-modules-nvidia-580-open-6.8.0-1067-gcp
 linux-modules-nvidia-580-open-6.8.0-107-generic
 linux-modules-nvidia-580-open-6.8.0-107-lowlatency
 linux-modules-nvidia-580-open-6.8.0-110-generic
@@ -79494,6 +79686,7 @@ linux-modules-nvidia-580-open-6.8.0-137-generic
 linux-modules-nvidia-580-open-6.8.0-137-lowlatency
 linux-modules-nvidia-580-open-6.8.0-138-generic
 linux-modules-nvidia-580-open-6.8.0-138-lowlatency
+linux-modules-nvidia-580-open-6.8.0-139-generic
 linux-modules-nvidia-580-open-7.0.0-1006-gcp
 linux-modules-nvidia-580-open-7.0.0-1007-aws
 linux-modules-nvidia-580-open-7.0.0-1007-azure-fde
@@ -79501,6 +79694,8 @@ linux-modules-nvidia-580-open-7.0.0-1008-azure
 linux-modules-nvidia-580-open-7.0.0-1009-aws
 linux-modules-nvidia-580-open-7.0.0-1010-aws
 linux-modules-nvidia-580-open-7.0.0-1011-aws
+linux-modules-nvidia-580-open-7.0.0-1011-gcp
+linux-modules-nvidia-580-open-7.0.0-1012-aws
 linux-modules-nvidia-580-open-7.0.0-1013-nvidia
 linux-modules-nvidia-580-open-7.0.0-1015-nvidia
 linux-modules-nvidia-580-open-7.0.0-1016-nvidia
@@ -79508,6 +79703,7 @@ linux-modules-nvidia-580-open-7.0.0-14-generic
 linux-modules-nvidia-580-open-7.0.0-28-generic
 linux-modules-nvidia-580-open-7.0.0-29-generic
 linux-modules-nvidia-580-open-7.0.0-30-generic
+linux-modules-nvidia-580-open-7.0.0-31-generic
 linux-modules-nvidia-580-open-aws
 linux-modules-nvidia-580-open-aws-6.14
 linux-modules-nvidia-580-open-aws-6.17
@@ -79544,6 +79740,8 @@ linux-modules-nvidia-580-open-generic-6.8
 linux-modules-nvidia-580-open-generic-7.0
 linux-modules-nvidia-580-open-generic-hwe-24.04
 linux-modules-nvidia-580-open-generic-hwe-24.04-edge
+linux-modules-nvidia-580-open-gke
+linux-modules-nvidia-580-open-gke-6.8
 linux-modules-nvidia-580-open-ibm
 linux-modules-nvidia-580-open-ibm-6.8
 linux-modules-nvidia-580-open-ibm-classic
@@ -79638,6 +79836,7 @@ linux-modules-nvidia-580-server-6.17.0-1022-gcp
 linux-modules-nvidia-580-server-6.17.0-1026-nvidia
 linux-modules-nvidia-580-server-6.17.0-1029-nvidia
 linux-modules-nvidia-580-server-6.17.0-1031-nvidia
+linux-modules-nvidia-580-server-6.17.0-1032-nvidia
 linux-modules-nvidia-580-server-6.17.0-14-generic
 linux-modules-nvidia-580-server-6.17.0-19-generic
 linux-modules-nvidia-580-server-6.17.0-20-generic
@@ -79723,7 +79922,10 @@ linux-modules-nvidia-580-server-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-580-server-6.8.0-1062-aws
 linux-modules-nvidia-580-server-6.8.0-1062-azure
 linux-modules-nvidia-580-server-6.8.0-1062-azure-fde
+linux-modules-nvidia-580-server-6.8.0-1062-gke
 linux-modules-nvidia-580-server-6.8.0-1062-ibm
+linux-modules-nvidia-580-server-6.8.0-1062-nvidia
+linux-modules-nvidia-580-server-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-580-server-6.8.0-1063-aws
 linux-modules-nvidia-580-server-6.8.0-1063-azure
 linux-modules-nvidia-580-server-6.8.0-1063-azure-fde
@@ -79735,6 +79937,8 @@ linux-modules-nvidia-580-server-6.8.0-1064-gcp
 linux-modules-nvidia-580-server-6.8.0-1065-azure
 linux-modules-nvidia-580-server-6.8.0-1065-gcp
 linux-modules-nvidia-580-server-6.8.0-1066-gcp
+linux-modules-nvidia-580-server-6.8.0-1067-azure
+linux-modules-nvidia-580-server-6.8.0-1067-gcp
 linux-modules-nvidia-580-server-6.8.0-107-generic
 linux-modules-nvidia-580-server-6.8.0-107-lowlatency
 linux-modules-nvidia-580-server-6.8.0-110-generic
@@ -79752,6 +79956,7 @@ linux-modules-nvidia-580-server-6.8.0-137-generic
 linux-modules-nvidia-580-server-6.8.0-137-lowlatency
 linux-modules-nvidia-580-server-6.8.0-138-generic
 linux-modules-nvidia-580-server-6.8.0-138-lowlatency
+linux-modules-nvidia-580-server-6.8.0-139-generic
 linux-modules-nvidia-580-server-7.0.0-1006-gcp
 linux-modules-nvidia-580-server-7.0.0-1007-aws
 linux-modules-nvidia-580-server-7.0.0-1007-azure-fde
@@ -79759,6 +79964,8 @@ linux-modules-nvidia-580-server-7.0.0-1008-azure
 linux-modules-nvidia-580-server-7.0.0-1009-aws
 linux-modules-nvidia-580-server-7.0.0-1010-aws
 linux-modules-nvidia-580-server-7.0.0-1011-aws
+linux-modules-nvidia-580-server-7.0.0-1011-gcp
+linux-modules-nvidia-580-server-7.0.0-1012-aws
 linux-modules-nvidia-580-server-7.0.0-1013-nvidia
 linux-modules-nvidia-580-server-7.0.0-1015-nvidia
 linux-modules-nvidia-580-server-7.0.0-1016-nvidia
@@ -79766,6 +79973,7 @@ linux-modules-nvidia-580-server-7.0.0-14-generic
 linux-modules-nvidia-580-server-7.0.0-28-generic
 linux-modules-nvidia-580-server-7.0.0-29-generic
 linux-modules-nvidia-580-server-7.0.0-30-generic
+linux-modules-nvidia-580-server-7.0.0-31-generic
 linux-modules-nvidia-580-server-aws
 linux-modules-nvidia-580-server-aws-6.14
 linux-modules-nvidia-580-server-aws-6.17
@@ -79802,6 +80010,8 @@ linux-modules-nvidia-580-server-generic-6.8
 linux-modules-nvidia-580-server-generic-7.0
 linux-modules-nvidia-580-server-generic-hwe-24.04
 linux-modules-nvidia-580-server-generic-hwe-24.04-edge
+linux-modules-nvidia-580-server-gke
+linux-modules-nvidia-580-server-gke-6.8
 linux-modules-nvidia-580-server-ibm
 linux-modules-nvidia-580-server-ibm-6.8
 linux-modules-nvidia-580-server-ibm-classic
@@ -79877,6 +80087,7 @@ linux-modules-nvidia-580-server-open-6.17.0-1022-gcp
 linux-modules-nvidia-580-server-open-6.17.0-1026-nvidia
 linux-modules-nvidia-580-server-open-6.17.0-1029-nvidia
 linux-modules-nvidia-580-server-open-6.17.0-1031-nvidia
+linux-modules-nvidia-580-server-open-6.17.0-1032-nvidia
 linux-modules-nvidia-580-server-open-6.17.0-14-generic
 linux-modules-nvidia-580-server-open-6.17.0-19-generic
 linux-modules-nvidia-580-server-open-6.17.0-20-generic
@@ -79962,7 +80173,10 @@ linux-modules-nvidia-580-server-open-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-580-server-open-6.8.0-1062-aws
 linux-modules-nvidia-580-server-open-6.8.0-1062-azure
 linux-modules-nvidia-580-server-open-6.8.0-1062-azure-fde
+linux-modules-nvidia-580-server-open-6.8.0-1062-gke
 linux-modules-nvidia-580-server-open-6.8.0-1062-ibm
+linux-modules-nvidia-580-server-open-6.8.0-1062-nvidia
+linux-modules-nvidia-580-server-open-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-580-server-open-6.8.0-1063-aws
 linux-modules-nvidia-580-server-open-6.8.0-1063-azure
 linux-modules-nvidia-580-server-open-6.8.0-1063-azure-fde
@@ -79974,6 +80188,8 @@ linux-modules-nvidia-580-server-open-6.8.0-1064-gcp
 linux-modules-nvidia-580-server-open-6.8.0-1065-azure
 linux-modules-nvidia-580-server-open-6.8.0-1065-gcp
 linux-modules-nvidia-580-server-open-6.8.0-1066-gcp
+linux-modules-nvidia-580-server-open-6.8.0-1067-azure
+linux-modules-nvidia-580-server-open-6.8.0-1067-gcp
 linux-modules-nvidia-580-server-open-6.8.0-107-generic
 linux-modules-nvidia-580-server-open-6.8.0-107-lowlatency
 linux-modules-nvidia-580-server-open-6.8.0-110-generic
@@ -79991,6 +80207,7 @@ linux-modules-nvidia-580-server-open-6.8.0-137-generic
 linux-modules-nvidia-580-server-open-6.8.0-137-lowlatency
 linux-modules-nvidia-580-server-open-6.8.0-138-generic
 linux-modules-nvidia-580-server-open-6.8.0-138-lowlatency
+linux-modules-nvidia-580-server-open-6.8.0-139-generic
 linux-modules-nvidia-580-server-open-7.0.0-1006-gcp
 linux-modules-nvidia-580-server-open-7.0.0-1007-aws
 linux-modules-nvidia-580-server-open-7.0.0-1007-azure-fde
@@ -79998,6 +80215,8 @@ linux-modules-nvidia-580-server-open-7.0.0-1008-azure
 linux-modules-nvidia-580-server-open-7.0.0-1009-aws
 linux-modules-nvidia-580-server-open-7.0.0-1010-aws
 linux-modules-nvidia-580-server-open-7.0.0-1011-aws
+linux-modules-nvidia-580-server-open-7.0.0-1011-gcp
+linux-modules-nvidia-580-server-open-7.0.0-1012-aws
 linux-modules-nvidia-580-server-open-7.0.0-1013-nvidia
 linux-modules-nvidia-580-server-open-7.0.0-1015-nvidia
 linux-modules-nvidia-580-server-open-7.0.0-1016-nvidia
@@ -80005,6 +80224,7 @@ linux-modules-nvidia-580-server-open-7.0.0-14-generic
 linux-modules-nvidia-580-server-open-7.0.0-28-generic
 linux-modules-nvidia-580-server-open-7.0.0-29-generic
 linux-modules-nvidia-580-server-open-7.0.0-30-generic
+linux-modules-nvidia-580-server-open-7.0.0-31-generic
 linux-modules-nvidia-580-server-open-aws
 linux-modules-nvidia-580-server-open-aws-6.14
 linux-modules-nvidia-580-server-open-aws-6.17
@@ -80041,6 +80261,8 @@ linux-modules-nvidia-580-server-open-generic-6.8
 linux-modules-nvidia-580-server-open-generic-7.0
 linux-modules-nvidia-580-server-open-generic-hwe-24.04
 linux-modules-nvidia-580-server-open-generic-hwe-24.04-edge
+linux-modules-nvidia-580-server-open-gke
+linux-modules-nvidia-580-server-open-gke-6.8
 linux-modules-nvidia-580-server-open-ibm
 linux-modules-nvidia-580-server-open-ibm-6.8
 linux-modules-nvidia-580-server-open-ibm-classic
@@ -80172,6 +80394,8 @@ linux-modules-nvidia-590-generic-6.8
 linux-modules-nvidia-590-generic-7.0
 linux-modules-nvidia-590-generic-hwe-24.04
 linux-modules-nvidia-590-generic-hwe-24.04-edge
+linux-modules-nvidia-590-gke
+linux-modules-nvidia-590-gke-6.8
 linux-modules-nvidia-590-ibm
 linux-modules-nvidia-590-ibm-6.8
 linux-modules-nvidia-590-ibm-classic
@@ -80296,6 +80520,8 @@ linux-modules-nvidia-590-open-generic-6.8
 linux-modules-nvidia-590-open-generic-7.0
 linux-modules-nvidia-590-open-generic-hwe-24.04
 linux-modules-nvidia-590-open-generic-hwe-24.04-edge
+linux-modules-nvidia-590-open-gke
+linux-modules-nvidia-590-open-gke-6.8
 linux-modules-nvidia-590-open-ibm
 linux-modules-nvidia-590-open-ibm-6.8
 linux-modules-nvidia-590-open-ibm-classic
@@ -80429,6 +80655,8 @@ linux-modules-nvidia-590-server-generic-6.8
 linux-modules-nvidia-590-server-generic-7.0
 linux-modules-nvidia-590-server-generic-hwe-24.04
 linux-modules-nvidia-590-server-generic-hwe-24.04-edge
+linux-modules-nvidia-590-server-gke
+linux-modules-nvidia-590-server-gke-6.8
 linux-modules-nvidia-590-server-ibm
 linux-modules-nvidia-590-server-ibm-6.8
 linux-modules-nvidia-590-server-ibm-classic
@@ -80545,6 +80773,8 @@ linux-modules-nvidia-590-server-open-generic-6.8
 linux-modules-nvidia-590-server-open-generic-7.0
 linux-modules-nvidia-590-server-open-generic-hwe-24.04
 linux-modules-nvidia-590-server-open-generic-hwe-24.04-edge
+linux-modules-nvidia-590-server-open-gke
+linux-modules-nvidia-590-server-open-gke-6.8
 linux-modules-nvidia-590-server-open-ibm
 linux-modules-nvidia-590-server-open-ibm-6.8
 linux-modules-nvidia-590-server-open-ibm-classic
@@ -80622,6 +80852,7 @@ linux-modules-nvidia-595-6.17.0-1028-oem
 linux-modules-nvidia-595-6.17.0-1029-nvidia
 linux-modules-nvidia-595-6.17.0-1030-oem
 linux-modules-nvidia-595-6.17.0-1031-nvidia
+linux-modules-nvidia-595-6.17.0-1032-nvidia
 linux-modules-nvidia-595-6.17.0-1032-oem
 linux-modules-nvidia-595-6.17.0-22-generic
 linux-modules-nvidia-595-6.17.0-23-generic
@@ -80682,7 +80913,10 @@ linux-modules-nvidia-595-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-595-6.8.0-1062-aws
 linux-modules-nvidia-595-6.8.0-1062-azure
 linux-modules-nvidia-595-6.8.0-1062-azure-fde
+linux-modules-nvidia-595-6.8.0-1062-gke
 linux-modules-nvidia-595-6.8.0-1062-ibm
+linux-modules-nvidia-595-6.8.0-1062-nvidia
+linux-modules-nvidia-595-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-595-6.8.0-1063-aws
 linux-modules-nvidia-595-6.8.0-1063-azure
 linux-modules-nvidia-595-6.8.0-1063-azure-fde
@@ -80694,6 +80928,8 @@ linux-modules-nvidia-595-6.8.0-1064-gcp
 linux-modules-nvidia-595-6.8.0-1065-azure
 linux-modules-nvidia-595-6.8.0-1065-gcp
 linux-modules-nvidia-595-6.8.0-1066-gcp
+linux-modules-nvidia-595-6.8.0-1067-azure
+linux-modules-nvidia-595-6.8.0-1067-gcp
 linux-modules-nvidia-595-6.8.0-110-generic
 linux-modules-nvidia-595-6.8.0-110-lowlatency
 linux-modules-nvidia-595-6.8.0-111-generic
@@ -80709,6 +80945,7 @@ linux-modules-nvidia-595-6.8.0-137-generic
 linux-modules-nvidia-595-6.8.0-137-lowlatency
 linux-modules-nvidia-595-6.8.0-138-generic
 linux-modules-nvidia-595-6.8.0-138-lowlatency
+linux-modules-nvidia-595-6.8.0-139-generic
 linux-modules-nvidia-595-7.0.0-1006-gcp
 linux-modules-nvidia-595-7.0.0-1007-aws
 linux-modules-nvidia-595-7.0.0-1007-azure-fde
@@ -80716,6 +80953,8 @@ linux-modules-nvidia-595-7.0.0-1008-azure
 linux-modules-nvidia-595-7.0.0-1009-aws
 linux-modules-nvidia-595-7.0.0-1010-aws
 linux-modules-nvidia-595-7.0.0-1011-aws
+linux-modules-nvidia-595-7.0.0-1011-gcp
+linux-modules-nvidia-595-7.0.0-1012-aws
 linux-modules-nvidia-595-7.0.0-1013-nvidia
 linux-modules-nvidia-595-7.0.0-1015-nvidia
 linux-modules-nvidia-595-7.0.0-1016-nvidia
@@ -80723,6 +80962,7 @@ linux-modules-nvidia-595-7.0.0-14-generic
 linux-modules-nvidia-595-7.0.0-28-generic
 linux-modules-nvidia-595-7.0.0-29-generic
 linux-modules-nvidia-595-7.0.0-30-generic
+linux-modules-nvidia-595-7.0.0-31-generic
 linux-modules-nvidia-595-aws
 linux-modules-nvidia-595-aws-6.17
 linux-modules-nvidia-595-aws-6.8
@@ -80755,6 +80995,8 @@ linux-modules-nvidia-595-generic-6.8
 linux-modules-nvidia-595-generic-7.0
 linux-modules-nvidia-595-generic-hwe-24.04
 linux-modules-nvidia-595-generic-hwe-24.04-edge
+linux-modules-nvidia-595-gke
+linux-modules-nvidia-595-gke-6.8
 linux-modules-nvidia-595-ibm
 linux-modules-nvidia-595-ibm-6.8
 linux-modules-nvidia-595-ibm-classic
@@ -80823,6 +81065,7 @@ linux-modules-nvidia-595-open-6.17.0-1028-oem
 linux-modules-nvidia-595-open-6.17.0-1029-nvidia
 linux-modules-nvidia-595-open-6.17.0-1030-oem
 linux-modules-nvidia-595-open-6.17.0-1031-nvidia
+linux-modules-nvidia-595-open-6.17.0-1032-nvidia
 linux-modules-nvidia-595-open-6.17.0-1032-oem
 linux-modules-nvidia-595-open-6.17.0-22-generic
 linux-modules-nvidia-595-open-6.17.0-23-generic
@@ -80883,7 +81126,10 @@ linux-modules-nvidia-595-open-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-595-open-6.8.0-1062-aws
 linux-modules-nvidia-595-open-6.8.0-1062-azure
 linux-modules-nvidia-595-open-6.8.0-1062-azure-fde
+linux-modules-nvidia-595-open-6.8.0-1062-gke
 linux-modules-nvidia-595-open-6.8.0-1062-ibm
+linux-modules-nvidia-595-open-6.8.0-1062-nvidia
+linux-modules-nvidia-595-open-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-595-open-6.8.0-1063-aws
 linux-modules-nvidia-595-open-6.8.0-1063-azure
 linux-modules-nvidia-595-open-6.8.0-1063-azure-fde
@@ -80895,6 +81141,8 @@ linux-modules-nvidia-595-open-6.8.0-1064-gcp
 linux-modules-nvidia-595-open-6.8.0-1065-azure
 linux-modules-nvidia-595-open-6.8.0-1065-gcp
 linux-modules-nvidia-595-open-6.8.0-1066-gcp
+linux-modules-nvidia-595-open-6.8.0-1067-azure
+linux-modules-nvidia-595-open-6.8.0-1067-gcp
 linux-modules-nvidia-595-open-6.8.0-110-generic
 linux-modules-nvidia-595-open-6.8.0-110-lowlatency
 linux-modules-nvidia-595-open-6.8.0-111-generic
@@ -80910,6 +81158,7 @@ linux-modules-nvidia-595-open-6.8.0-137-generic
 linux-modules-nvidia-595-open-6.8.0-137-lowlatency
 linux-modules-nvidia-595-open-6.8.0-138-generic
 linux-modules-nvidia-595-open-6.8.0-138-lowlatency
+linux-modules-nvidia-595-open-6.8.0-139-generic
 linux-modules-nvidia-595-open-7.0.0-1006-gcp
 linux-modules-nvidia-595-open-7.0.0-1007-aws
 linux-modules-nvidia-595-open-7.0.0-1007-azure-fde
@@ -80917,6 +81166,8 @@ linux-modules-nvidia-595-open-7.0.0-1008-azure
 linux-modules-nvidia-595-open-7.0.0-1009-aws
 linux-modules-nvidia-595-open-7.0.0-1010-aws
 linux-modules-nvidia-595-open-7.0.0-1011-aws
+linux-modules-nvidia-595-open-7.0.0-1011-gcp
+linux-modules-nvidia-595-open-7.0.0-1012-aws
 linux-modules-nvidia-595-open-7.0.0-1013-nvidia
 linux-modules-nvidia-595-open-7.0.0-1015-nvidia
 linux-modules-nvidia-595-open-7.0.0-1016-nvidia
@@ -80924,6 +81175,7 @@ linux-modules-nvidia-595-open-7.0.0-14-generic
 linux-modules-nvidia-595-open-7.0.0-28-generic
 linux-modules-nvidia-595-open-7.0.0-29-generic
 linux-modules-nvidia-595-open-7.0.0-30-generic
+linux-modules-nvidia-595-open-7.0.0-31-generic
 linux-modules-nvidia-595-open-aws
 linux-modules-nvidia-595-open-aws-6.17
 linux-modules-nvidia-595-open-aws-6.8
@@ -80956,6 +81208,8 @@ linux-modules-nvidia-595-open-generic-6.8
 linux-modules-nvidia-595-open-generic-7.0
 linux-modules-nvidia-595-open-generic-hwe-24.04
 linux-modules-nvidia-595-open-generic-hwe-24.04-edge
+linux-modules-nvidia-595-open-gke
+linux-modules-nvidia-595-open-gke-6.8
 linux-modules-nvidia-595-open-ibm
 linux-modules-nvidia-595-open-ibm-6.8
 linux-modules-nvidia-595-open-ibm-classic
@@ -81027,6 +81281,7 @@ linux-modules-nvidia-595-server-6.17.0-1022-gcp
 linux-modules-nvidia-595-server-6.17.0-1026-nvidia
 linux-modules-nvidia-595-server-6.17.0-1029-nvidia
 linux-modules-nvidia-595-server-6.17.0-1031-nvidia
+linux-modules-nvidia-595-server-6.17.0-1032-nvidia
 linux-modules-nvidia-595-server-6.17.0-22-generic
 linux-modules-nvidia-595-server-6.17.0-23-generic
 linux-modules-nvidia-595-server-6.17.0-29-generic
@@ -81086,7 +81341,10 @@ linux-modules-nvidia-595-server-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-595-server-6.8.0-1062-aws
 linux-modules-nvidia-595-server-6.8.0-1062-azure
 linux-modules-nvidia-595-server-6.8.0-1062-azure-fde
+linux-modules-nvidia-595-server-6.8.0-1062-gke
 linux-modules-nvidia-595-server-6.8.0-1062-ibm
+linux-modules-nvidia-595-server-6.8.0-1062-nvidia
+linux-modules-nvidia-595-server-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-595-server-6.8.0-1063-aws
 linux-modules-nvidia-595-server-6.8.0-1063-azure
 linux-modules-nvidia-595-server-6.8.0-1063-azure-fde
@@ -81098,6 +81356,8 @@ linux-modules-nvidia-595-server-6.8.0-1064-gcp
 linux-modules-nvidia-595-server-6.8.0-1065-azure
 linux-modules-nvidia-595-server-6.8.0-1065-gcp
 linux-modules-nvidia-595-server-6.8.0-1066-gcp
+linux-modules-nvidia-595-server-6.8.0-1067-azure
+linux-modules-nvidia-595-server-6.8.0-1067-gcp
 linux-modules-nvidia-595-server-6.8.0-110-generic
 linux-modules-nvidia-595-server-6.8.0-110-lowlatency
 linux-modules-nvidia-595-server-6.8.0-111-generic
@@ -81113,6 +81373,7 @@ linux-modules-nvidia-595-server-6.8.0-137-generic
 linux-modules-nvidia-595-server-6.8.0-137-lowlatency
 linux-modules-nvidia-595-server-6.8.0-138-generic
 linux-modules-nvidia-595-server-6.8.0-138-lowlatency
+linux-modules-nvidia-595-server-6.8.0-139-generic
 linux-modules-nvidia-595-server-7.0.0-1006-gcp
 linux-modules-nvidia-595-server-7.0.0-1007-aws
 linux-modules-nvidia-595-server-7.0.0-1007-azure-fde
@@ -81120,6 +81381,8 @@ linux-modules-nvidia-595-server-7.0.0-1008-azure
 linux-modules-nvidia-595-server-7.0.0-1009-aws
 linux-modules-nvidia-595-server-7.0.0-1010-aws
 linux-modules-nvidia-595-server-7.0.0-1011-aws
+linux-modules-nvidia-595-server-7.0.0-1011-gcp
+linux-modules-nvidia-595-server-7.0.0-1012-aws
 linux-modules-nvidia-595-server-7.0.0-1013-nvidia
 linux-modules-nvidia-595-server-7.0.0-1015-nvidia
 linux-modules-nvidia-595-server-7.0.0-1016-nvidia
@@ -81127,6 +81390,7 @@ linux-modules-nvidia-595-server-7.0.0-14-generic
 linux-modules-nvidia-595-server-7.0.0-28-generic
 linux-modules-nvidia-595-server-7.0.0-29-generic
 linux-modules-nvidia-595-server-7.0.0-30-generic
+linux-modules-nvidia-595-server-7.0.0-31-generic
 linux-modules-nvidia-595-server-aws
 linux-modules-nvidia-595-server-aws-6.17
 linux-modules-nvidia-595-server-aws-6.8
@@ -81159,6 +81423,8 @@ linux-modules-nvidia-595-server-generic-6.8
 linux-modules-nvidia-595-server-generic-7.0
 linux-modules-nvidia-595-server-generic-hwe-24.04
 linux-modules-nvidia-595-server-generic-hwe-24.04-edge
+linux-modules-nvidia-595-server-gke
+linux-modules-nvidia-595-server-gke-6.8
 linux-modules-nvidia-595-server-ibm
 linux-modules-nvidia-595-server-ibm-6.8
 linux-modules-nvidia-595-server-ibm-classic
@@ -81217,6 +81483,7 @@ linux-modules-nvidia-595-server-open-6.17.0-1022-gcp
 linux-modules-nvidia-595-server-open-6.17.0-1026-nvidia
 linux-modules-nvidia-595-server-open-6.17.0-1029-nvidia
 linux-modules-nvidia-595-server-open-6.17.0-1031-nvidia
+linux-modules-nvidia-595-server-open-6.17.0-1032-nvidia
 linux-modules-nvidia-595-server-open-6.17.0-22-generic
 linux-modules-nvidia-595-server-open-6.17.0-23-generic
 linux-modules-nvidia-595-server-open-6.17.0-29-generic
@@ -81276,7 +81543,10 @@ linux-modules-nvidia-595-server-open-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-595-server-open-6.8.0-1062-aws
 linux-modules-nvidia-595-server-open-6.8.0-1062-azure
 linux-modules-nvidia-595-server-open-6.8.0-1062-azure-fde
+linux-modules-nvidia-595-server-open-6.8.0-1062-gke
 linux-modules-nvidia-595-server-open-6.8.0-1062-ibm
+linux-modules-nvidia-595-server-open-6.8.0-1062-nvidia
+linux-modules-nvidia-595-server-open-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-595-server-open-6.8.0-1063-aws
 linux-modules-nvidia-595-server-open-6.8.0-1063-azure
 linux-modules-nvidia-595-server-open-6.8.0-1063-azure-fde
@@ -81288,6 +81558,8 @@ linux-modules-nvidia-595-server-open-6.8.0-1064-gcp
 linux-modules-nvidia-595-server-open-6.8.0-1065-azure
 linux-modules-nvidia-595-server-open-6.8.0-1065-gcp
 linux-modules-nvidia-595-server-open-6.8.0-1066-gcp
+linux-modules-nvidia-595-server-open-6.8.0-1067-azure
+linux-modules-nvidia-595-server-open-6.8.0-1067-gcp
 linux-modules-nvidia-595-server-open-6.8.0-110-generic
 linux-modules-nvidia-595-server-open-6.8.0-110-lowlatency
 linux-modules-nvidia-595-server-open-6.8.0-111-generic
@@ -81303,6 +81575,7 @@ linux-modules-nvidia-595-server-open-6.8.0-137-generic
 linux-modules-nvidia-595-server-open-6.8.0-137-lowlatency
 linux-modules-nvidia-595-server-open-6.8.0-138-generic
 linux-modules-nvidia-595-server-open-6.8.0-138-lowlatency
+linux-modules-nvidia-595-server-open-6.8.0-139-generic
 linux-modules-nvidia-595-server-open-7.0.0-1006-gcp
 linux-modules-nvidia-595-server-open-7.0.0-1007-aws
 linux-modules-nvidia-595-server-open-7.0.0-1007-azure-fde
@@ -81310,6 +81583,8 @@ linux-modules-nvidia-595-server-open-7.0.0-1008-azure
 linux-modules-nvidia-595-server-open-7.0.0-1009-aws
 linux-modules-nvidia-595-server-open-7.0.0-1010-aws
 linux-modules-nvidia-595-server-open-7.0.0-1011-aws
+linux-modules-nvidia-595-server-open-7.0.0-1011-gcp
+linux-modules-nvidia-595-server-open-7.0.0-1012-aws
 linux-modules-nvidia-595-server-open-7.0.0-1013-nvidia
 linux-modules-nvidia-595-server-open-7.0.0-1015-nvidia
 linux-modules-nvidia-595-server-open-7.0.0-1016-nvidia
@@ -81317,6 +81592,7 @@ linux-modules-nvidia-595-server-open-7.0.0-14-generic
 linux-modules-nvidia-595-server-open-7.0.0-28-generic
 linux-modules-nvidia-595-server-open-7.0.0-29-generic
 linux-modules-nvidia-595-server-open-7.0.0-30-generic
+linux-modules-nvidia-595-server-open-7.0.0-31-generic
 linux-modules-nvidia-595-server-open-aws
 linux-modules-nvidia-595-server-open-aws-6.17
 linux-modules-nvidia-595-server-open-aws-6.8
@@ -81349,6 +81625,8 @@ linux-modules-nvidia-595-server-open-generic-6.8
 linux-modules-nvidia-595-server-open-generic-7.0
 linux-modules-nvidia-595-server-open-generic-hwe-24.04
 linux-modules-nvidia-595-server-open-generic-hwe-24.04-edge
+linux-modules-nvidia-595-server-open-gke
+linux-modules-nvidia-595-server-open-gke-6.8
 linux-modules-nvidia-595-server-open-ibm
 linux-modules-nvidia-595-server-open-ibm-6.8
 linux-modules-nvidia-595-server-open-ibm-classic
@@ -81395,6 +81673,7 @@ linux-modules-nvidia-610-6.17.0-1026-nvidia
 linux-modules-nvidia-610-6.17.0-1029-nvidia
 linux-modules-nvidia-610-6.17.0-1030-oem
 linux-modules-nvidia-610-6.17.0-1031-nvidia
+linux-modules-nvidia-610-6.17.0-1032-nvidia
 linux-modules-nvidia-610-6.17.0-1032-oem
 linux-modules-nvidia-610-6.17.0-40-generic
 linux-modules-nvidia-610-6.17.0-41-generic
@@ -81416,7 +81695,10 @@ linux-modules-nvidia-610-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-610-6.8.0-1062-aws
 linux-modules-nvidia-610-6.8.0-1062-azure
 linux-modules-nvidia-610-6.8.0-1062-azure-fde
+linux-modules-nvidia-610-6.8.0-1062-gke
 linux-modules-nvidia-610-6.8.0-1062-ibm
+linux-modules-nvidia-610-6.8.0-1062-nvidia
+linux-modules-nvidia-610-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-610-6.8.0-1063-aws
 linux-modules-nvidia-610-6.8.0-1063-azure
 linux-modules-nvidia-610-6.8.0-1063-azure-fde
@@ -81427,23 +81709,29 @@ linux-modules-nvidia-610-6.8.0-1064-gcp
 linux-modules-nvidia-610-6.8.0-1065-azure
 linux-modules-nvidia-610-6.8.0-1065-gcp
 linux-modules-nvidia-610-6.8.0-1066-gcp
+linux-modules-nvidia-610-6.8.0-1067-azure
+linux-modules-nvidia-610-6.8.0-1067-gcp
 linux-modules-nvidia-610-6.8.0-136-generic
 linux-modules-nvidia-610-6.8.0-137-generic
 linux-modules-nvidia-610-6.8.0-137-lowlatency
 linux-modules-nvidia-610-6.8.0-138-generic
 linux-modules-nvidia-610-6.8.0-138-lowlatency
+linux-modules-nvidia-610-6.8.0-139-generic
 linux-modules-nvidia-610-7.0.0-1007-aws
 linux-modules-nvidia-610-7.0.0-1007-azure-fde
 linux-modules-nvidia-610-7.0.0-1008-azure
 linux-modules-nvidia-610-7.0.0-1009-aws
 linux-modules-nvidia-610-7.0.0-1010-aws
 linux-modules-nvidia-610-7.0.0-1011-aws
+linux-modules-nvidia-610-7.0.0-1011-gcp
+linux-modules-nvidia-610-7.0.0-1012-aws
 linux-modules-nvidia-610-7.0.0-1013-nvidia
 linux-modules-nvidia-610-7.0.0-1015-nvidia
 linux-modules-nvidia-610-7.0.0-1016-nvidia
 linux-modules-nvidia-610-7.0.0-28-generic
 linux-modules-nvidia-610-7.0.0-29-generic
 linux-modules-nvidia-610-7.0.0-30-generic
+linux-modules-nvidia-610-7.0.0-31-generic
 linux-modules-nvidia-610-aws
 linux-modules-nvidia-610-aws-6.17
 linux-modules-nvidia-610-aws-6.8
@@ -81467,6 +81755,8 @@ linux-modules-nvidia-610-azure-lts-24.04
 linux-modules-nvidia-610-gcp
 linux-modules-nvidia-610-gcp-6.17
 linux-modules-nvidia-610-gcp-6.8
+linux-modules-nvidia-610-gcp-7.0
+linux-modules-nvidia-610-gcp-edge
 linux-modules-nvidia-610-gcp-lts-24.04
 linux-modules-nvidia-610-generic
 linux-modules-nvidia-610-generic-6.17
@@ -81474,6 +81764,8 @@ linux-modules-nvidia-610-generic-6.8
 linux-modules-nvidia-610-generic-7.0
 linux-modules-nvidia-610-generic-hwe-24.04
 linux-modules-nvidia-610-generic-hwe-24.04-edge
+linux-modules-nvidia-610-gke
+linux-modules-nvidia-610-gke-6.8
 linux-modules-nvidia-610-ibm
 linux-modules-nvidia-610-ibm-6.8
 linux-modules-nvidia-610-ibm-classic
@@ -81513,6 +81805,7 @@ linux-modules-nvidia-610-open-6.17.0-1026-nvidia
 linux-modules-nvidia-610-open-6.17.0-1029-nvidia
 linux-modules-nvidia-610-open-6.17.0-1030-oem
 linux-modules-nvidia-610-open-6.17.0-1031-nvidia
+linux-modules-nvidia-610-open-6.17.0-1032-nvidia
 linux-modules-nvidia-610-open-6.17.0-1032-oem
 linux-modules-nvidia-610-open-6.17.0-40-generic
 linux-modules-nvidia-610-open-6.17.0-41-generic
@@ -81534,7 +81827,10 @@ linux-modules-nvidia-610-open-6.8.0-1061-nvidia-lowlatency
 linux-modules-nvidia-610-open-6.8.0-1062-aws
 linux-modules-nvidia-610-open-6.8.0-1062-azure
 linux-modules-nvidia-610-open-6.8.0-1062-azure-fde
+linux-modules-nvidia-610-open-6.8.0-1062-gke
 linux-modules-nvidia-610-open-6.8.0-1062-ibm
+linux-modules-nvidia-610-open-6.8.0-1062-nvidia
+linux-modules-nvidia-610-open-6.8.0-1062-nvidia-lowlatency
 linux-modules-nvidia-610-open-6.8.0-1063-aws
 linux-modules-nvidia-610-open-6.8.0-1063-azure
 linux-modules-nvidia-610-open-6.8.0-1063-azure-fde
@@ -81545,23 +81841,29 @@ linux-modules-nvidia-610-open-6.8.0-1064-gcp
 linux-modules-nvidia-610-open-6.8.0-1065-azure
 linux-modules-nvidia-610-open-6.8.0-1065-gcp
 linux-modules-nvidia-610-open-6.8.0-1066-gcp
+linux-modules-nvidia-610-open-6.8.0-1067-azure
+linux-modules-nvidia-610-open-6.8.0-1067-gcp
 linux-modules-nvidia-610-open-6.8.0-136-generic
 linux-modules-nvidia-610-open-6.8.0-137-generic
 linux-modules-nvidia-610-open-6.8.0-137-lowlatency
 linux-modules-nvidia-610-open-6.8.0-138-generic
 linux-modules-nvidia-610-open-6.8.0-138-lowlatency
+linux-modules-nvidia-610-open-6.8.0-139-generic
 linux-modules-nvidia-610-open-7.0.0-1007-aws
 linux-modules-nvidia-610-open-7.0.0-1007-azure-fde
 linux-modules-nvidia-610-open-7.0.0-1008-azure
 linux-modules-nvidia-610-open-7.0.0-1009-aws
 linux-modules-nvidia-610-open-7.0.0-1010-aws
 linux-modules-nvidia-610-open-7.0.0-1011-aws
+linux-modules-nvidia-610-open-7.0.0-1011-gcp
+linux-modules-nvidia-610-open-7.0.0-1012-aws
 linux-modules-nvidia-610-open-7.0.0-1013-nvidia
 linux-modules-nvidia-610-open-7.0.0-1015-nvidia
 linux-modules-nvidia-610-open-7.0.0-1016-nvidia
 linux-modules-nvidia-610-open-7.0.0-28-generic
 linux-modules-nvidia-610-open-7.0.0-29-generic
 linux-modules-nvidia-610-open-7.0.0-30-generic
+linux-modules-nvidia-610-open-7.0.0-31-generic
 linux-modules-nvidia-610-open-aws
 linux-modules-nvidia-610-open-aws-6.17
 linux-modules-nvidia-610-open-aws-6.8
@@ -81585,6 +81887,8 @@ linux-modules-nvidia-610-open-azure-lts-24.04
 linux-modules-nvidia-610-open-gcp
 linux-modules-nvidia-610-open-gcp-6.17
 linux-modules-nvidia-610-open-gcp-6.8
+linux-modules-nvidia-610-open-gcp-7.0
+linux-modules-nvidia-610-open-gcp-edge
 linux-modules-nvidia-610-open-gcp-lts-24.04
 linux-modules-nvidia-610-open-generic
 linux-modules-nvidia-610-open-generic-6.17
@@ -81592,6 +81896,8 @@ linux-modules-nvidia-610-open-generic-6.8
 linux-modules-nvidia-610-open-generic-7.0
 linux-modules-nvidia-610-open-generic-hwe-24.04
 linux-modules-nvidia-610-open-generic-hwe-24.04-edge
+linux-modules-nvidia-610-open-gke
+linux-modules-nvidia-610-open-gke-6.8
 linux-modules-nvidia-610-open-ibm
 linux-modules-nvidia-610-open-ibm-6.8
 linux-modules-nvidia-610-open-ibm-classic
@@ -82663,6 +82969,7 @@ linux-objects-nvidia-580-6.17.0-1028-oem
 linux-objects-nvidia-580-6.17.0-1029-nvidia
 linux-objects-nvidia-580-6.17.0-1030-oem
 linux-objects-nvidia-580-6.17.0-1031-nvidia
+linux-objects-nvidia-580-6.17.0-1032-nvidia
 linux-objects-nvidia-580-6.17.0-1032-oem
 linux-objects-nvidia-580-6.17.0-14-generic
 linux-objects-nvidia-580-6.17.0-19-generic
@@ -82749,7 +83056,10 @@ linux-objects-nvidia-580-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-580-6.8.0-1062-aws
 linux-objects-nvidia-580-6.8.0-1062-azure
 linux-objects-nvidia-580-6.8.0-1062-azure-fde
+linux-objects-nvidia-580-6.8.0-1062-gke
 linux-objects-nvidia-580-6.8.0-1062-ibm
+linux-objects-nvidia-580-6.8.0-1062-nvidia
+linux-objects-nvidia-580-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-580-6.8.0-1063-aws
 linux-objects-nvidia-580-6.8.0-1063-azure
 linux-objects-nvidia-580-6.8.0-1063-azure-fde
@@ -82761,6 +83071,8 @@ linux-objects-nvidia-580-6.8.0-1064-gcp
 linux-objects-nvidia-580-6.8.0-1065-azure
 linux-objects-nvidia-580-6.8.0-1065-gcp
 linux-objects-nvidia-580-6.8.0-1066-gcp
+linux-objects-nvidia-580-6.8.0-1067-azure
+linux-objects-nvidia-580-6.8.0-1067-gcp
 linux-objects-nvidia-580-6.8.0-107-generic
 linux-objects-nvidia-580-6.8.0-107-lowlatency
 linux-objects-nvidia-580-6.8.0-110-generic
@@ -82778,6 +83090,7 @@ linux-objects-nvidia-580-6.8.0-137-generic
 linux-objects-nvidia-580-6.8.0-137-lowlatency
 linux-objects-nvidia-580-6.8.0-138-generic
 linux-objects-nvidia-580-6.8.0-138-lowlatency
+linux-objects-nvidia-580-6.8.0-139-generic
 linux-objects-nvidia-580-7.0.0-1006-gcp
 linux-objects-nvidia-580-7.0.0-1007-aws
 linux-objects-nvidia-580-7.0.0-1007-azure-fde
@@ -82785,6 +83098,8 @@ linux-objects-nvidia-580-7.0.0-1008-azure
 linux-objects-nvidia-580-7.0.0-1009-aws
 linux-objects-nvidia-580-7.0.0-1010-aws
 linux-objects-nvidia-580-7.0.0-1011-aws
+linux-objects-nvidia-580-7.0.0-1011-gcp
+linux-objects-nvidia-580-7.0.0-1012-aws
 linux-objects-nvidia-580-7.0.0-1013-nvidia
 linux-objects-nvidia-580-7.0.0-1015-nvidia
 linux-objects-nvidia-580-7.0.0-1016-nvidia
@@ -82792,6 +83107,7 @@ linux-objects-nvidia-580-7.0.0-14-generic
 linux-objects-nvidia-580-7.0.0-28-generic
 linux-objects-nvidia-580-7.0.0-29-generic
 linux-objects-nvidia-580-7.0.0-30-generic
+linux-objects-nvidia-580-7.0.0-31-generic
 linux-objects-nvidia-580-open-6.11.0-1016-nvidia
 linux-objects-nvidia-580-open-6.11.0-1018-azure
 linux-objects-nvidia-580-open-6.11.0-1027-oem
@@ -82861,6 +83177,7 @@ linux-objects-nvidia-580-open-6.17.0-1028-oem
 linux-objects-nvidia-580-open-6.17.0-1029-nvidia
 linux-objects-nvidia-580-open-6.17.0-1030-oem
 linux-objects-nvidia-580-open-6.17.0-1031-nvidia
+linux-objects-nvidia-580-open-6.17.0-1032-nvidia
 linux-objects-nvidia-580-open-6.17.0-1032-oem
 linux-objects-nvidia-580-open-6.17.0-14-generic
 linux-objects-nvidia-580-open-6.17.0-19-generic
@@ -82947,7 +83264,10 @@ linux-objects-nvidia-580-open-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-580-open-6.8.0-1062-aws
 linux-objects-nvidia-580-open-6.8.0-1062-azure
 linux-objects-nvidia-580-open-6.8.0-1062-azure-fde
+linux-objects-nvidia-580-open-6.8.0-1062-gke
 linux-objects-nvidia-580-open-6.8.0-1062-ibm
+linux-objects-nvidia-580-open-6.8.0-1062-nvidia
+linux-objects-nvidia-580-open-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-580-open-6.8.0-1063-aws
 linux-objects-nvidia-580-open-6.8.0-1063-azure
 linux-objects-nvidia-580-open-6.8.0-1063-azure-fde
@@ -82959,6 +83279,8 @@ linux-objects-nvidia-580-open-6.8.0-1064-gcp
 linux-objects-nvidia-580-open-6.8.0-1065-azure
 linux-objects-nvidia-580-open-6.8.0-1065-gcp
 linux-objects-nvidia-580-open-6.8.0-1066-gcp
+linux-objects-nvidia-580-open-6.8.0-1067-azure
+linux-objects-nvidia-580-open-6.8.0-1067-gcp
 linux-objects-nvidia-580-open-6.8.0-107-generic
 linux-objects-nvidia-580-open-6.8.0-107-lowlatency
 linux-objects-nvidia-580-open-6.8.0-110-generic
@@ -82976,6 +83298,7 @@ linux-objects-nvidia-580-open-6.8.0-137-generic
 linux-objects-nvidia-580-open-6.8.0-137-lowlatency
 linux-objects-nvidia-580-open-6.8.0-138-generic
 linux-objects-nvidia-580-open-6.8.0-138-lowlatency
+linux-objects-nvidia-580-open-6.8.0-139-generic
 linux-objects-nvidia-580-open-7.0.0-1006-gcp
 linux-objects-nvidia-580-open-7.0.0-1007-aws
 linux-objects-nvidia-580-open-7.0.0-1007-azure-fde
@@ -82983,6 +83306,8 @@ linux-objects-nvidia-580-open-7.0.0-1008-azure
 linux-objects-nvidia-580-open-7.0.0-1009-aws
 linux-objects-nvidia-580-open-7.0.0-1010-aws
 linux-objects-nvidia-580-open-7.0.0-1011-aws
+linux-objects-nvidia-580-open-7.0.0-1011-gcp
+linux-objects-nvidia-580-open-7.0.0-1012-aws
 linux-objects-nvidia-580-open-7.0.0-1013-nvidia
 linux-objects-nvidia-580-open-7.0.0-1015-nvidia
 linux-objects-nvidia-580-open-7.0.0-1016-nvidia
@@ -82990,6 +83315,7 @@ linux-objects-nvidia-580-open-7.0.0-14-generic
 linux-objects-nvidia-580-open-7.0.0-28-generic
 linux-objects-nvidia-580-open-7.0.0-29-generic
 linux-objects-nvidia-580-open-7.0.0-30-generic
+linux-objects-nvidia-580-open-7.0.0-31-generic
 linux-objects-nvidia-580-server-6.11.0-1016-nvidia
 linux-objects-nvidia-580-server-6.11.0-1018-azure
 linux-objects-nvidia-580-server-6.14.0-1015-nvidia
@@ -83049,6 +83375,7 @@ linux-objects-nvidia-580-server-6.17.0-1022-gcp
 linux-objects-nvidia-580-server-6.17.0-1026-nvidia
 linux-objects-nvidia-580-server-6.17.0-1029-nvidia
 linux-objects-nvidia-580-server-6.17.0-1031-nvidia
+linux-objects-nvidia-580-server-6.17.0-1032-nvidia
 linux-objects-nvidia-580-server-6.17.0-14-generic
 linux-objects-nvidia-580-server-6.17.0-19-generic
 linux-objects-nvidia-580-server-6.17.0-20-generic
@@ -83134,7 +83461,10 @@ linux-objects-nvidia-580-server-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-580-server-6.8.0-1062-aws
 linux-objects-nvidia-580-server-6.8.0-1062-azure
 linux-objects-nvidia-580-server-6.8.0-1062-azure-fde
+linux-objects-nvidia-580-server-6.8.0-1062-gke
 linux-objects-nvidia-580-server-6.8.0-1062-ibm
+linux-objects-nvidia-580-server-6.8.0-1062-nvidia
+linux-objects-nvidia-580-server-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-580-server-6.8.0-1063-aws
 linux-objects-nvidia-580-server-6.8.0-1063-azure
 linux-objects-nvidia-580-server-6.8.0-1063-azure-fde
@@ -83146,6 +83476,8 @@ linux-objects-nvidia-580-server-6.8.0-1064-gcp
 linux-objects-nvidia-580-server-6.8.0-1065-azure
 linux-objects-nvidia-580-server-6.8.0-1065-gcp
 linux-objects-nvidia-580-server-6.8.0-1066-gcp
+linux-objects-nvidia-580-server-6.8.0-1067-azure
+linux-objects-nvidia-580-server-6.8.0-1067-gcp
 linux-objects-nvidia-580-server-6.8.0-107-generic
 linux-objects-nvidia-580-server-6.8.0-107-lowlatency
 linux-objects-nvidia-580-server-6.8.0-110-generic
@@ -83163,6 +83495,7 @@ linux-objects-nvidia-580-server-6.8.0-137-generic
 linux-objects-nvidia-580-server-6.8.0-137-lowlatency
 linux-objects-nvidia-580-server-6.8.0-138-generic
 linux-objects-nvidia-580-server-6.8.0-138-lowlatency
+linux-objects-nvidia-580-server-6.8.0-139-generic
 linux-objects-nvidia-580-server-7.0.0-1006-gcp
 linux-objects-nvidia-580-server-7.0.0-1007-aws
 linux-objects-nvidia-580-server-7.0.0-1007-azure-fde
@@ -83170,6 +83503,8 @@ linux-objects-nvidia-580-server-7.0.0-1008-azure
 linux-objects-nvidia-580-server-7.0.0-1009-aws
 linux-objects-nvidia-580-server-7.0.0-1010-aws
 linux-objects-nvidia-580-server-7.0.0-1011-aws
+linux-objects-nvidia-580-server-7.0.0-1011-gcp
+linux-objects-nvidia-580-server-7.0.0-1012-aws
 linux-objects-nvidia-580-server-7.0.0-1013-nvidia
 linux-objects-nvidia-580-server-7.0.0-1015-nvidia
 linux-objects-nvidia-580-server-7.0.0-1016-nvidia
@@ -83177,6 +83512,7 @@ linux-objects-nvidia-580-server-7.0.0-14-generic
 linux-objects-nvidia-580-server-7.0.0-28-generic
 linux-objects-nvidia-580-server-7.0.0-29-generic
 linux-objects-nvidia-580-server-7.0.0-30-generic
+linux-objects-nvidia-580-server-7.0.0-31-generic
 linux-objects-nvidia-580-server-open-6.11.0-1016-nvidia
 linux-objects-nvidia-580-server-open-6.11.0-1018-azure
 linux-objects-nvidia-580-server-open-6.14.0-1015-nvidia
@@ -83236,6 +83572,7 @@ linux-objects-nvidia-580-server-open-6.17.0-1022-gcp
 linux-objects-nvidia-580-server-open-6.17.0-1026-nvidia
 linux-objects-nvidia-580-server-open-6.17.0-1029-nvidia
 linux-objects-nvidia-580-server-open-6.17.0-1031-nvidia
+linux-objects-nvidia-580-server-open-6.17.0-1032-nvidia
 linux-objects-nvidia-580-server-open-6.17.0-14-generic
 linux-objects-nvidia-580-server-open-6.17.0-19-generic
 linux-objects-nvidia-580-server-open-6.17.0-20-generic
@@ -83321,7 +83658,10 @@ linux-objects-nvidia-580-server-open-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-580-server-open-6.8.0-1062-aws
 linux-objects-nvidia-580-server-open-6.8.0-1062-azure
 linux-objects-nvidia-580-server-open-6.8.0-1062-azure-fde
+linux-objects-nvidia-580-server-open-6.8.0-1062-gke
 linux-objects-nvidia-580-server-open-6.8.0-1062-ibm
+linux-objects-nvidia-580-server-open-6.8.0-1062-nvidia
+linux-objects-nvidia-580-server-open-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-580-server-open-6.8.0-1063-aws
 linux-objects-nvidia-580-server-open-6.8.0-1063-azure
 linux-objects-nvidia-580-server-open-6.8.0-1063-azure-fde
@@ -83333,6 +83673,8 @@ linux-objects-nvidia-580-server-open-6.8.0-1064-gcp
 linux-objects-nvidia-580-server-open-6.8.0-1065-azure
 linux-objects-nvidia-580-server-open-6.8.0-1065-gcp
 linux-objects-nvidia-580-server-open-6.8.0-1066-gcp
+linux-objects-nvidia-580-server-open-6.8.0-1067-azure
+linux-objects-nvidia-580-server-open-6.8.0-1067-gcp
 linux-objects-nvidia-580-server-open-6.8.0-107-generic
 linux-objects-nvidia-580-server-open-6.8.0-107-lowlatency
 linux-objects-nvidia-580-server-open-6.8.0-110-generic
@@ -83350,6 +83692,7 @@ linux-objects-nvidia-580-server-open-6.8.0-137-generic
 linux-objects-nvidia-580-server-open-6.8.0-137-lowlatency
 linux-objects-nvidia-580-server-open-6.8.0-138-generic
 linux-objects-nvidia-580-server-open-6.8.0-138-lowlatency
+linux-objects-nvidia-580-server-open-6.8.0-139-generic
 linux-objects-nvidia-580-server-open-7.0.0-1006-gcp
 linux-objects-nvidia-580-server-open-7.0.0-1007-aws
 linux-objects-nvidia-580-server-open-7.0.0-1007-azure-fde
@@ -83357,6 +83700,8 @@ linux-objects-nvidia-580-server-open-7.0.0-1008-azure
 linux-objects-nvidia-580-server-open-7.0.0-1009-aws
 linux-objects-nvidia-580-server-open-7.0.0-1010-aws
 linux-objects-nvidia-580-server-open-7.0.0-1011-aws
+linux-objects-nvidia-580-server-open-7.0.0-1011-gcp
+linux-objects-nvidia-580-server-open-7.0.0-1012-aws
 linux-objects-nvidia-580-server-open-7.0.0-1013-nvidia
 linux-objects-nvidia-580-server-open-7.0.0-1015-nvidia
 linux-objects-nvidia-580-server-open-7.0.0-1016-nvidia
@@ -83364,6 +83709,7 @@ linux-objects-nvidia-580-server-open-7.0.0-14-generic
 linux-objects-nvidia-580-server-open-7.0.0-28-generic
 linux-objects-nvidia-580-server-open-7.0.0-29-generic
 linux-objects-nvidia-580-server-open-7.0.0-30-generic
+linux-objects-nvidia-580-server-open-7.0.0-31-generic
 linux-objects-nvidia-590-6.11.0-1016-nvidia
 linux-objects-nvidia-590-6.14.0-1015-nvidia
 linux-objects-nvidia-590-6.14.0-1017-azure
@@ -83679,6 +84025,7 @@ linux-objects-nvidia-595-6.17.0-1028-oem
 linux-objects-nvidia-595-6.17.0-1029-nvidia
 linux-objects-nvidia-595-6.17.0-1030-oem
 linux-objects-nvidia-595-6.17.0-1031-nvidia
+linux-objects-nvidia-595-6.17.0-1032-nvidia
 linux-objects-nvidia-595-6.17.0-1032-oem
 linux-objects-nvidia-595-6.17.0-22-generic
 linux-objects-nvidia-595-6.17.0-23-generic
@@ -83739,7 +84086,10 @@ linux-objects-nvidia-595-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-595-6.8.0-1062-aws
 linux-objects-nvidia-595-6.8.0-1062-azure
 linux-objects-nvidia-595-6.8.0-1062-azure-fde
+linux-objects-nvidia-595-6.8.0-1062-gke
 linux-objects-nvidia-595-6.8.0-1062-ibm
+linux-objects-nvidia-595-6.8.0-1062-nvidia
+linux-objects-nvidia-595-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-595-6.8.0-1063-aws
 linux-objects-nvidia-595-6.8.0-1063-azure
 linux-objects-nvidia-595-6.8.0-1063-azure-fde
@@ -83751,6 +84101,8 @@ linux-objects-nvidia-595-6.8.0-1064-gcp
 linux-objects-nvidia-595-6.8.0-1065-azure
 linux-objects-nvidia-595-6.8.0-1065-gcp
 linux-objects-nvidia-595-6.8.0-1066-gcp
+linux-objects-nvidia-595-6.8.0-1067-azure
+linux-objects-nvidia-595-6.8.0-1067-gcp
 linux-objects-nvidia-595-6.8.0-110-generic
 linux-objects-nvidia-595-6.8.0-110-lowlatency
 linux-objects-nvidia-595-6.8.0-111-generic
@@ -83766,6 +84118,7 @@ linux-objects-nvidia-595-6.8.0-137-generic
 linux-objects-nvidia-595-6.8.0-137-lowlatency
 linux-objects-nvidia-595-6.8.0-138-generic
 linux-objects-nvidia-595-6.8.0-138-lowlatency
+linux-objects-nvidia-595-6.8.0-139-generic
 linux-objects-nvidia-595-7.0.0-1006-gcp
 linux-objects-nvidia-595-7.0.0-1007-aws
 linux-objects-nvidia-595-7.0.0-1007-azure-fde
@@ -83773,6 +84126,8 @@ linux-objects-nvidia-595-7.0.0-1008-azure
 linux-objects-nvidia-595-7.0.0-1009-aws
 linux-objects-nvidia-595-7.0.0-1010-aws
 linux-objects-nvidia-595-7.0.0-1011-aws
+linux-objects-nvidia-595-7.0.0-1011-gcp
+linux-objects-nvidia-595-7.0.0-1012-aws
 linux-objects-nvidia-595-7.0.0-1013-nvidia
 linux-objects-nvidia-595-7.0.0-1015-nvidia
 linux-objects-nvidia-595-7.0.0-1016-nvidia
@@ -83780,6 +84135,7 @@ linux-objects-nvidia-595-7.0.0-14-generic
 linux-objects-nvidia-595-7.0.0-28-generic
 linux-objects-nvidia-595-7.0.0-29-generic
 linux-objects-nvidia-595-7.0.0-30-generic
+linux-objects-nvidia-595-7.0.0-31-generic
 linux-objects-nvidia-595-open-6.11.0-1016-nvidia
 linux-objects-nvidia-595-open-6.14.0-1015-nvidia
 linux-objects-nvidia-595-open-6.14.0-1017-azure
@@ -83829,6 +84185,7 @@ linux-objects-nvidia-595-open-6.17.0-1028-oem
 linux-objects-nvidia-595-open-6.17.0-1029-nvidia
 linux-objects-nvidia-595-open-6.17.0-1030-oem
 linux-objects-nvidia-595-open-6.17.0-1031-nvidia
+linux-objects-nvidia-595-open-6.17.0-1032-nvidia
 linux-objects-nvidia-595-open-6.17.0-1032-oem
 linux-objects-nvidia-595-open-6.17.0-22-generic
 linux-objects-nvidia-595-open-6.17.0-23-generic
@@ -83889,7 +84246,10 @@ linux-objects-nvidia-595-open-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-595-open-6.8.0-1062-aws
 linux-objects-nvidia-595-open-6.8.0-1062-azure
 linux-objects-nvidia-595-open-6.8.0-1062-azure-fde
+linux-objects-nvidia-595-open-6.8.0-1062-gke
 linux-objects-nvidia-595-open-6.8.0-1062-ibm
+linux-objects-nvidia-595-open-6.8.0-1062-nvidia
+linux-objects-nvidia-595-open-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-595-open-6.8.0-1063-aws
 linux-objects-nvidia-595-open-6.8.0-1063-azure
 linux-objects-nvidia-595-open-6.8.0-1063-azure-fde
@@ -83901,6 +84261,8 @@ linux-objects-nvidia-595-open-6.8.0-1064-gcp
 linux-objects-nvidia-595-open-6.8.0-1065-azure
 linux-objects-nvidia-595-open-6.8.0-1065-gcp
 linux-objects-nvidia-595-open-6.8.0-1066-gcp
+linux-objects-nvidia-595-open-6.8.0-1067-azure
+linux-objects-nvidia-595-open-6.8.0-1067-gcp
 linux-objects-nvidia-595-open-6.8.0-110-generic
 linux-objects-nvidia-595-open-6.8.0-110-lowlatency
 linux-objects-nvidia-595-open-6.8.0-111-generic
@@ -83916,6 +84278,7 @@ linux-objects-nvidia-595-open-6.8.0-137-generic
 linux-objects-nvidia-595-open-6.8.0-137-lowlatency
 linux-objects-nvidia-595-open-6.8.0-138-generic
 linux-objects-nvidia-595-open-6.8.0-138-lowlatency
+linux-objects-nvidia-595-open-6.8.0-139-generic
 linux-objects-nvidia-595-open-7.0.0-1006-gcp
 linux-objects-nvidia-595-open-7.0.0-1007-aws
 linux-objects-nvidia-595-open-7.0.0-1007-azure-fde
@@ -83923,6 +84286,8 @@ linux-objects-nvidia-595-open-7.0.0-1008-azure
 linux-objects-nvidia-595-open-7.0.0-1009-aws
 linux-objects-nvidia-595-open-7.0.0-1010-aws
 linux-objects-nvidia-595-open-7.0.0-1011-aws
+linux-objects-nvidia-595-open-7.0.0-1011-gcp
+linux-objects-nvidia-595-open-7.0.0-1012-aws
 linux-objects-nvidia-595-open-7.0.0-1013-nvidia
 linux-objects-nvidia-595-open-7.0.0-1015-nvidia
 linux-objects-nvidia-595-open-7.0.0-1016-nvidia
@@ -83930,6 +84295,7 @@ linux-objects-nvidia-595-open-7.0.0-14-generic
 linux-objects-nvidia-595-open-7.0.0-28-generic
 linux-objects-nvidia-595-open-7.0.0-29-generic
 linux-objects-nvidia-595-open-7.0.0-30-generic
+linux-objects-nvidia-595-open-7.0.0-31-generic
 linux-objects-nvidia-595-server-6.11.0-1016-nvidia
 linux-objects-nvidia-595-server-6.14.0-1015-nvidia
 linux-objects-nvidia-595-server-6.14.0-1017-azure
@@ -83972,6 +84338,7 @@ linux-objects-nvidia-595-server-6.17.0-1022-gcp
 linux-objects-nvidia-595-server-6.17.0-1026-nvidia
 linux-objects-nvidia-595-server-6.17.0-1029-nvidia
 linux-objects-nvidia-595-server-6.17.0-1031-nvidia
+linux-objects-nvidia-595-server-6.17.0-1032-nvidia
 linux-objects-nvidia-595-server-6.17.0-22-generic
 linux-objects-nvidia-595-server-6.17.0-23-generic
 linux-objects-nvidia-595-server-6.17.0-29-generic
@@ -84031,7 +84398,10 @@ linux-objects-nvidia-595-server-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-595-server-6.8.0-1062-aws
 linux-objects-nvidia-595-server-6.8.0-1062-azure
 linux-objects-nvidia-595-server-6.8.0-1062-azure-fde
+linux-objects-nvidia-595-server-6.8.0-1062-gke
 linux-objects-nvidia-595-server-6.8.0-1062-ibm
+linux-objects-nvidia-595-server-6.8.0-1062-nvidia
+linux-objects-nvidia-595-server-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-595-server-6.8.0-1063-aws
 linux-objects-nvidia-595-server-6.8.0-1063-azure
 linux-objects-nvidia-595-server-6.8.0-1063-azure-fde
@@ -84043,6 +84413,8 @@ linux-objects-nvidia-595-server-6.8.0-1064-gcp
 linux-objects-nvidia-595-server-6.8.0-1065-azure
 linux-objects-nvidia-595-server-6.8.0-1065-gcp
 linux-objects-nvidia-595-server-6.8.0-1066-gcp
+linux-objects-nvidia-595-server-6.8.0-1067-azure
+linux-objects-nvidia-595-server-6.8.0-1067-gcp
 linux-objects-nvidia-595-server-6.8.0-110-generic
 linux-objects-nvidia-595-server-6.8.0-110-lowlatency
 linux-objects-nvidia-595-server-6.8.0-111-generic
@@ -84058,6 +84430,7 @@ linux-objects-nvidia-595-server-6.8.0-137-generic
 linux-objects-nvidia-595-server-6.8.0-137-lowlatency
 linux-objects-nvidia-595-server-6.8.0-138-generic
 linux-objects-nvidia-595-server-6.8.0-138-lowlatency
+linux-objects-nvidia-595-server-6.8.0-139-generic
 linux-objects-nvidia-595-server-7.0.0-1006-gcp
 linux-objects-nvidia-595-server-7.0.0-1007-aws
 linux-objects-nvidia-595-server-7.0.0-1007-azure-fde
@@ -84065,6 +84438,8 @@ linux-objects-nvidia-595-server-7.0.0-1008-azure
 linux-objects-nvidia-595-server-7.0.0-1009-aws
 linux-objects-nvidia-595-server-7.0.0-1010-aws
 linux-objects-nvidia-595-server-7.0.0-1011-aws
+linux-objects-nvidia-595-server-7.0.0-1011-gcp
+linux-objects-nvidia-595-server-7.0.0-1012-aws
 linux-objects-nvidia-595-server-7.0.0-1013-nvidia
 linux-objects-nvidia-595-server-7.0.0-1015-nvidia
 linux-objects-nvidia-595-server-7.0.0-1016-nvidia
@@ -84072,6 +84447,7 @@ linux-objects-nvidia-595-server-7.0.0-14-generic
 linux-objects-nvidia-595-server-7.0.0-28-generic
 linux-objects-nvidia-595-server-7.0.0-29-generic
 linux-objects-nvidia-595-server-7.0.0-30-generic
+linux-objects-nvidia-595-server-7.0.0-31-generic
 linux-objects-nvidia-595-server-open-6.11.0-1016-nvidia
 linux-objects-nvidia-595-server-open-6.14.0-1015-nvidia
 linux-objects-nvidia-595-server-open-6.14.0-1017-azure
@@ -84114,6 +84490,7 @@ linux-objects-nvidia-595-server-open-6.17.0-1022-gcp
 linux-objects-nvidia-595-server-open-6.17.0-1026-nvidia
 linux-objects-nvidia-595-server-open-6.17.0-1029-nvidia
 linux-objects-nvidia-595-server-open-6.17.0-1031-nvidia
+linux-objects-nvidia-595-server-open-6.17.0-1032-nvidia
 linux-objects-nvidia-595-server-open-6.17.0-22-generic
 linux-objects-nvidia-595-server-open-6.17.0-23-generic
 linux-objects-nvidia-595-server-open-6.17.0-29-generic
@@ -84173,7 +84550,10 @@ linux-objects-nvidia-595-server-open-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-595-server-open-6.8.0-1062-aws
 linux-objects-nvidia-595-server-open-6.8.0-1062-azure
 linux-objects-nvidia-595-server-open-6.8.0-1062-azure-fde
+linux-objects-nvidia-595-server-open-6.8.0-1062-gke
 linux-objects-nvidia-595-server-open-6.8.0-1062-ibm
+linux-objects-nvidia-595-server-open-6.8.0-1062-nvidia
+linux-objects-nvidia-595-server-open-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-595-server-open-6.8.0-1063-aws
 linux-objects-nvidia-595-server-open-6.8.0-1063-azure
 linux-objects-nvidia-595-server-open-6.8.0-1063-azure-fde
@@ -84185,6 +84565,8 @@ linux-objects-nvidia-595-server-open-6.8.0-1064-gcp
 linux-objects-nvidia-595-server-open-6.8.0-1065-azure
 linux-objects-nvidia-595-server-open-6.8.0-1065-gcp
 linux-objects-nvidia-595-server-open-6.8.0-1066-gcp
+linux-objects-nvidia-595-server-open-6.8.0-1067-azure
+linux-objects-nvidia-595-server-open-6.8.0-1067-gcp
 linux-objects-nvidia-595-server-open-6.8.0-110-generic
 linux-objects-nvidia-595-server-open-6.8.0-110-lowlatency
 linux-objects-nvidia-595-server-open-6.8.0-111-generic
@@ -84200,6 +84582,7 @@ linux-objects-nvidia-595-server-open-6.8.0-137-generic
 linux-objects-nvidia-595-server-open-6.8.0-137-lowlatency
 linux-objects-nvidia-595-server-open-6.8.0-138-generic
 linux-objects-nvidia-595-server-open-6.8.0-138-lowlatency
+linux-objects-nvidia-595-server-open-6.8.0-139-generic
 linux-objects-nvidia-595-server-open-7.0.0-1006-gcp
 linux-objects-nvidia-595-server-open-7.0.0-1007-aws
 linux-objects-nvidia-595-server-open-7.0.0-1007-azure-fde
@@ -84207,6 +84590,8 @@ linux-objects-nvidia-595-server-open-7.0.0-1008-azure
 linux-objects-nvidia-595-server-open-7.0.0-1009-aws
 linux-objects-nvidia-595-server-open-7.0.0-1010-aws
 linux-objects-nvidia-595-server-open-7.0.0-1011-aws
+linux-objects-nvidia-595-server-open-7.0.0-1011-gcp
+linux-objects-nvidia-595-server-open-7.0.0-1012-aws
 linux-objects-nvidia-595-server-open-7.0.0-1013-nvidia
 linux-objects-nvidia-595-server-open-7.0.0-1015-nvidia
 linux-objects-nvidia-595-server-open-7.0.0-1016-nvidia
@@ -84214,6 +84599,7 @@ linux-objects-nvidia-595-server-open-7.0.0-14-generic
 linux-objects-nvidia-595-server-open-7.0.0-28-generic
 linux-objects-nvidia-595-server-open-7.0.0-29-generic
 linux-objects-nvidia-595-server-open-7.0.0-30-generic
+linux-objects-nvidia-595-server-open-7.0.0-31-generic
 linux-objects-nvidia-610-6.11.0-1016-nvidia
 linux-objects-nvidia-610-6.14.0-1015-nvidia
 linux-objects-nvidia-610-6.14.0-1017-azure
@@ -84234,6 +84620,7 @@ linux-objects-nvidia-610-6.17.0-1026-nvidia
 linux-objects-nvidia-610-6.17.0-1029-nvidia
 linux-objects-nvidia-610-6.17.0-1030-oem
 linux-objects-nvidia-610-6.17.0-1031-nvidia
+linux-objects-nvidia-610-6.17.0-1032-nvidia
 linux-objects-nvidia-610-6.17.0-1032-oem
 linux-objects-nvidia-610-6.17.0-40-generic
 linux-objects-nvidia-610-6.17.0-41-generic
@@ -84255,7 +84642,10 @@ linux-objects-nvidia-610-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-610-6.8.0-1062-aws
 linux-objects-nvidia-610-6.8.0-1062-azure
 linux-objects-nvidia-610-6.8.0-1062-azure-fde
+linux-objects-nvidia-610-6.8.0-1062-gke
 linux-objects-nvidia-610-6.8.0-1062-ibm
+linux-objects-nvidia-610-6.8.0-1062-nvidia
+linux-objects-nvidia-610-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-610-6.8.0-1063-aws
 linux-objects-nvidia-610-6.8.0-1063-azure
 linux-objects-nvidia-610-6.8.0-1063-azure-fde
@@ -84266,23 +84656,29 @@ linux-objects-nvidia-610-6.8.0-1064-gcp
 linux-objects-nvidia-610-6.8.0-1065-azure
 linux-objects-nvidia-610-6.8.0-1065-gcp
 linux-objects-nvidia-610-6.8.0-1066-gcp
+linux-objects-nvidia-610-6.8.0-1067-azure
+linux-objects-nvidia-610-6.8.0-1067-gcp
 linux-objects-nvidia-610-6.8.0-136-generic
 linux-objects-nvidia-610-6.8.0-137-generic
 linux-objects-nvidia-610-6.8.0-137-lowlatency
 linux-objects-nvidia-610-6.8.0-138-generic
 linux-objects-nvidia-610-6.8.0-138-lowlatency
+linux-objects-nvidia-610-6.8.0-139-generic
 linux-objects-nvidia-610-7.0.0-1007-aws
 linux-objects-nvidia-610-7.0.0-1007-azure-fde
 linux-objects-nvidia-610-7.0.0-1008-azure
 linux-objects-nvidia-610-7.0.0-1009-aws
 linux-objects-nvidia-610-7.0.0-1010-aws
 linux-objects-nvidia-610-7.0.0-1011-aws
+linux-objects-nvidia-610-7.0.0-1011-gcp
+linux-objects-nvidia-610-7.0.0-1012-aws
 linux-objects-nvidia-610-7.0.0-1013-nvidia
 linux-objects-nvidia-610-7.0.0-1015-nvidia
 linux-objects-nvidia-610-7.0.0-1016-nvidia
 linux-objects-nvidia-610-7.0.0-28-generic
 linux-objects-nvidia-610-7.0.0-29-generic
 linux-objects-nvidia-610-7.0.0-30-generic
+linux-objects-nvidia-610-7.0.0-31-generic
 linux-objects-nvidia-610-open-6.11.0-1016-nvidia
 linux-objects-nvidia-610-open-6.14.0-1015-nvidia
 linux-objects-nvidia-610-open-6.14.0-1017-azure
@@ -84303,6 +84699,7 @@ linux-objects-nvidia-610-open-6.17.0-1026-nvidia
 linux-objects-nvidia-610-open-6.17.0-1029-nvidia
 linux-objects-nvidia-610-open-6.17.0-1030-oem
 linux-objects-nvidia-610-open-6.17.0-1031-nvidia
+linux-objects-nvidia-610-open-6.17.0-1032-nvidia
 linux-objects-nvidia-610-open-6.17.0-1032-oem
 linux-objects-nvidia-610-open-6.17.0-40-generic
 linux-objects-nvidia-610-open-6.17.0-41-generic
@@ -84324,7 +84721,10 @@ linux-objects-nvidia-610-open-6.8.0-1061-nvidia-lowlatency
 linux-objects-nvidia-610-open-6.8.0-1062-aws
 linux-objects-nvidia-610-open-6.8.0-1062-azure
 linux-objects-nvidia-610-open-6.8.0-1062-azure-fde
+linux-objects-nvidia-610-open-6.8.0-1062-gke
 linux-objects-nvidia-610-open-6.8.0-1062-ibm
+linux-objects-nvidia-610-open-6.8.0-1062-nvidia
+linux-objects-nvidia-610-open-6.8.0-1062-nvidia-lowlatency
 linux-objects-nvidia-610-open-6.8.0-1063-aws
 linux-objects-nvidia-610-open-6.8.0-1063-azure
 linux-objects-nvidia-610-open-6.8.0-1063-azure-fde
@@ -84335,23 +84735,29 @@ linux-objects-nvidia-610-open-6.8.0-1064-gcp
 linux-objects-nvidia-610-open-6.8.0-1065-azure
 linux-objects-nvidia-610-open-6.8.0-1065-gcp
 linux-objects-nvidia-610-open-6.8.0-1066-gcp
+linux-objects-nvidia-610-open-6.8.0-1067-azure
+linux-objects-nvidia-610-open-6.8.0-1067-gcp
 linux-objects-nvidia-610-open-6.8.0-136-generic
 linux-objects-nvidia-610-open-6.8.0-137-generic
 linux-objects-nvidia-610-open-6.8.0-137-lowlatency
 linux-objects-nvidia-610-open-6.8.0-138-generic
 linux-objects-nvidia-610-open-6.8.0-138-lowlatency
+linux-objects-nvidia-610-open-6.8.0-139-generic
 linux-objects-nvidia-610-open-7.0.0-1007-aws
 linux-objects-nvidia-610-open-7.0.0-1007-azure-fde
 linux-objects-nvidia-610-open-7.0.0-1008-azure
 linux-objects-nvidia-610-open-7.0.0-1009-aws
 linux-objects-nvidia-610-open-7.0.0-1010-aws
 linux-objects-nvidia-610-open-7.0.0-1011-aws
+linux-objects-nvidia-610-open-7.0.0-1011-gcp
+linux-objects-nvidia-610-open-7.0.0-1012-aws
 linux-objects-nvidia-610-open-7.0.0-1013-nvidia
 linux-objects-nvidia-610-open-7.0.0-1015-nvidia
 linux-objects-nvidia-610-open-7.0.0-1016-nvidia
 linux-objects-nvidia-610-open-7.0.0-28-generic
 linux-objects-nvidia-610-open-7.0.0-29-generic
 linux-objects-nvidia-610-open-7.0.0-30-generic
+linux-objects-nvidia-610-open-7.0.0-31-generic
 linux-signatures-nvidia-6.11.0-1014-aws
 linux-signatures-nvidia-6.11.0-1016-lowlatency
 linux-signatures-nvidia-6.11.0-1016-nvidia
@@ -84426,6 +84832,7 @@ linux-signatures-nvidia-6.17.0-1028-oem
 linux-signatures-nvidia-6.17.0-1029-nvidia
 linux-signatures-nvidia-6.17.0-1030-oem
 linux-signatures-nvidia-6.17.0-1031-nvidia
+linux-signatures-nvidia-6.17.0-1032-nvidia
 linux-signatures-nvidia-6.17.0-1032-oem
 linux-signatures-nvidia-6.17.0-14-generic
 linux-signatures-nvidia-6.17.0-19-generic
@@ -84513,7 +84920,10 @@ linux-signatures-nvidia-6.8.0-1061-nvidia-lowlatency
 linux-signatures-nvidia-6.8.0-1062-aws
 linux-signatures-nvidia-6.8.0-1062-azure
 linux-signatures-nvidia-6.8.0-1062-azure-fde
+linux-signatures-nvidia-6.8.0-1062-gke
 linux-signatures-nvidia-6.8.0-1062-ibm
+linux-signatures-nvidia-6.8.0-1062-nvidia
+linux-signatures-nvidia-6.8.0-1062-nvidia-lowlatency
 linux-signatures-nvidia-6.8.0-1063-aws
 linux-signatures-nvidia-6.8.0-1063-azure
 linux-signatures-nvidia-6.8.0-1063-azure-fde
@@ -84525,6 +84935,8 @@ linux-signatures-nvidia-6.8.0-1064-gcp
 linux-signatures-nvidia-6.8.0-1065-azure
 linux-signatures-nvidia-6.8.0-1065-gcp
 linux-signatures-nvidia-6.8.0-1066-gcp
+linux-signatures-nvidia-6.8.0-1067-azure
+linux-signatures-nvidia-6.8.0-1067-gcp
 linux-signatures-nvidia-6.8.0-107-generic
 linux-signatures-nvidia-6.8.0-107-lowlatency
 linux-signatures-nvidia-6.8.0-110-generic
@@ -84542,6 +84954,7 @@ linux-signatures-nvidia-6.8.0-137-generic
 linux-signatures-nvidia-6.8.0-137-lowlatency
 linux-signatures-nvidia-6.8.0-138-generic
 linux-signatures-nvidia-6.8.0-138-lowlatency
+linux-signatures-nvidia-6.8.0-139-generic
 linux-signatures-nvidia-6.8.0-71-generic
 linux-signatures-nvidia-7.0.0-1006-gcp
 linux-signatures-nvidia-7.0.0-1007-aws
@@ -84550,6 +84963,8 @@ linux-signatures-nvidia-7.0.0-1008-azure
 linux-signatures-nvidia-7.0.0-1009-aws
 linux-signatures-nvidia-7.0.0-1010-aws
 linux-signatures-nvidia-7.0.0-1011-aws
+linux-signatures-nvidia-7.0.0-1011-gcp
+linux-signatures-nvidia-7.0.0-1012-aws
 linux-signatures-nvidia-7.0.0-1013-nvidia
 linux-signatures-nvidia-7.0.0-1015-nvidia
 linux-signatures-nvidia-7.0.0-1016-nvidia
@@ -84557,6 +84972,7 @@ linux-signatures-nvidia-7.0.0-14-generic
 linux-signatures-nvidia-7.0.0-28-generic
 linux-signatures-nvidia-7.0.0-29-generic
 linux-signatures-nvidia-7.0.0-30-generic
+linux-signatures-nvidia-7.0.0-31-generic
 nvidia-compute-utils-470
 nvidia-compute-utils-535
 nvidia-compute-utils-535-server
