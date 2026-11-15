@@ -39,9 +39,9 @@ azcmagent
 microsoft-identity-broker
 moby-tini
 az-oras
-aadsshlogin-selinux
 aks-secure-tls-bootstrap-client
 msodbcsql17
+aadsshlogin-selinux
 omi
 jcd
 mssql-tools
