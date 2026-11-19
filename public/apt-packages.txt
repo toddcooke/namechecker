@@ -39,9 +39,9 @@ azcmagent
 microsoft-identity-broker
 moby-tini
 az-oras
+aadsshlogin-selinux
 aks-secure-tls-bootstrap-client
 msodbcsql17
-aadsshlogin-selinux
 omi
 jcd
 mssql-tools
@@ -75497,6 +75497,7 @@ linux-buildinfo-7.0.0-38-realtime
 linux-buildinfo-7.0.0-42-generic
 linux-buildinfo-7.0.0-43-generic
 linux-buildinfo-7.0.0-43-realtime
+linux-buildinfo-7.3.0-1004-oem
 linux-cloud-tools-7.0.0-1006-azure-fde
 linux-cloud-tools-7.0.0-1006-vmware
 linux-cloud-tools-7.0.0-1007-azure
@@ -75703,6 +75704,7 @@ linux-headers-7.0.0-42-generic
 linux-headers-7.0.0-43
 linux-headers-7.0.0-43-generic
 linux-headers-7.0.0-43-realtime
+linux-headers-7.3.0-1004-oem
 linux-headers-azure-fde-lts-26.04
 linux-headers-azure-lts-26.04
 linux-headers-gke
@@ -75848,6 +75850,7 @@ linux-image-7.0.0-38-realtime
 linux-image-7.0.0-42-generic
 linux-image-7.0.0-43-generic
 linux-image-7.0.0-43-realtime
+linux-image-7.3.0-1004-oem
 linux-image-azure-fde-lts-26.04
 linux-image-azure-lts-26.04
 linux-image-gke
@@ -75951,6 +75954,7 @@ linux-image-uc-7.0.0-38-realtime
 linux-image-uc-7.0.0-42-generic
 linux-image-uc-7.0.0-43-generic
 linux-image-uc-7.0.0-43-realtime
+linux-image-uc-7.3.0-1004-oem
 linux-image-uc-oem-26.04
 linux-image-uc-oem-26.04a
 linux-image-uc-oem-26.04b
@@ -76062,6 +76066,7 @@ linux-image-unsigned-7.0.0-38-realtime
 linux-image-unsigned-7.0.0-42-generic
 linux-image-unsigned-7.0.0-43-generic
 linux-image-unsigned-7.0.0-43-realtime
+linux-image-unsigned-7.3.0-1004-oem
 linux-image-vmware
 linux-image-vmware-7.0
 linux-lib-rust-7.0.0-15-generic
@@ -76308,6 +76313,7 @@ linux-main-modules-evdi-7.0.0-34-generic
 linux-main-modules-evdi-7.0.0-38-generic
 linux-main-modules-evdi-7.0.0-42-generic
 linux-main-modules-evdi-7.0.0-43-generic
+linux-main-modules-evdi-7.3.0-1004-oem
 linux-main-modules-evdi-unsigned-7.0.0-1010-oem
 linux-main-modules-evdi-unsigned-7.0.0-1011-oem
 linux-main-modules-evdi-unsigned-7.0.0-1013-oem
@@ -76344,6 +76350,7 @@ linux-main-modules-ipu6-7.0.0-34-generic
 linux-main-modules-ipu6-7.0.0-38-generic
 linux-main-modules-ipu6-7.0.0-42-generic
 linux-main-modules-ipu6-7.0.0-43-generic
+linux-main-modules-ipu6-7.3.0-1004-oem
 linux-main-modules-ipu6-unsigned-7.0.0-1010-oem
 linux-main-modules-ipu6-unsigned-7.0.0-1011-oem
 linux-main-modules-ipu6-unsigned-7.0.0-1013-oem
@@ -76379,6 +76386,7 @@ linux-main-modules-ipu7-7.0.0-34-generic
 linux-main-modules-ipu7-7.0.0-38-generic
 linux-main-modules-ipu7-7.0.0-42-generic
 linux-main-modules-ipu7-7.0.0-43-generic
+linux-main-modules-ipu7-7.3.0-1004-oem
 linux-main-modules-ipu7-unsigned-7.0.0-1010-oem
 linux-main-modules-ipu7-unsigned-7.0.0-1011-oem
 linux-main-modules-ipu7-unsigned-7.0.0-1013-oem
@@ -76423,6 +76431,7 @@ linux-main-modules-iwlwifi-7.0.0-38-realtime
 linux-main-modules-iwlwifi-7.0.0-42-generic
 linux-main-modules-iwlwifi-7.0.0-43-generic
 linux-main-modules-iwlwifi-7.0.0-43-realtime
+linux-main-modules-iwlwifi-7.3.0-1004-oem
 linux-main-modules-iwlwifi-unsigned-7.0.0-1010-oem
 linux-main-modules-iwlwifi-unsigned-7.0.0-1011-oem
 linux-main-modules-iwlwifi-unsigned-7.0.0-1013-oem
@@ -76537,6 +76546,7 @@ linux-main-modules-v4l2loopback-7.0.0-38-realtime
 linux-main-modules-v4l2loopback-7.0.0-42-generic
 linux-main-modules-v4l2loopback-7.0.0-43-generic
 linux-main-modules-v4l2loopback-7.0.0-43-realtime
+linux-main-modules-v4l2loopback-7.3.0-1004-oem
 linux-main-modules-v4l2loopback-unsigned-7.0.0-1010-oem
 linux-main-modules-v4l2loopback-unsigned-7.0.0-1011-ibm
 linux-main-modules-v4l2loopback-unsigned-7.0.0-1011-oem
@@ -76692,6 +76702,7 @@ linux-main-modules-zfs-7.0.0-34-generic
 linux-main-modules-zfs-7.0.0-38-generic
 linux-main-modules-zfs-7.0.0-42-generic
 linux-main-modules-zfs-7.0.0-43-generic
+linux-main-modules-zfs-7.3.0-1004-oem
 linux-main-modules-zfs-unsigned-7.0.0-1003-gke
 linux-main-modules-zfs-unsigned-7.0.0-1005-gke
 linux-main-modules-zfs-unsigned-7.0.0-1006-gke
@@ -76758,6 +76769,7 @@ linux-main-signed-gke
 linux-main-signed-nvidia
 linux-main-signed-nvidia-bos
 linux-main-signed-oem-7.0
+linux-main-signed-oem-7.3
 linux-main-signed-vmware
 linux-modules-7.0.0-1002-gke
 linux-modules-7.0.0-1003-gke
@@ -76866,6 +76878,7 @@ linux-modules-7.0.0-38-realtime
 linux-modules-7.0.0-42-generic
 linux-modules-7.0.0-43-generic
 linux-modules-7.0.0-43-realtime
+linux-modules-7.3.0-1004-oem
 linux-modules-doca-ofed-26.01-aws-7.0
 linux-modules-doca-ofed-26.01-azure-7.0
 linux-modules-doca-ofed-26.01-azure-fde-7.0
@@ -77005,6 +77018,7 @@ linux-modules-evdi-oem-26.04
 linux-modules-evdi-oem-26.04a
 linux-modules-evdi-oem-26.04b
 linux-modules-evdi-oem-7.0
+linux-modules-evdi-oem-7.3
 linux-modules-evdi-unsigned-generic
 linux-modules-evdi-unsigned-generic-7.0
 linux-modules-evdi-unsigned-generic-hwe-26.04
@@ -77018,6 +77032,7 @@ linux-modules-ipu6-oem-26.04
 linux-modules-ipu6-oem-26.04a
 linux-modules-ipu6-oem-26.04b
 linux-modules-ipu6-oem-7.0
+linux-modules-ipu6-oem-7.3
 linux-modules-ipu6-unsigned-generic
 linux-modules-ipu6-unsigned-generic-7.0
 linux-modules-ipu6-unsigned-generic-hwe-26.04
@@ -77031,6 +77046,7 @@ linux-modules-ipu7-oem-26.04
 linux-modules-ipu7-oem-26.04a
 linux-modules-ipu7-oem-26.04b
 linux-modules-ipu7-oem-7.0
+linux-modules-ipu7-oem-7.3
 linux-modules-ipu7-unsigned-generic
 linux-modules-ipu7-unsigned-generic-7.0
 linux-modules-ipu7-unsigned-generic-hwe-26.04
@@ -77044,6 +77060,7 @@ linux-modules-iwlwifi-oem-26.04
 linux-modules-iwlwifi-oem-26.04a
 linux-modules-iwlwifi-oem-26.04b
 linux-modules-iwlwifi-oem-7.0
+linux-modules-iwlwifi-oem-7.3
 linux-modules-iwlwifi-realtime-7.0
 linux-modules-iwlwifi-unsigned-generic
 linux-modules-iwlwifi-unsigned-generic-7.0
@@ -77103,6 +77120,7 @@ linux-modules-v4l2loopback-oem-26.04
 linux-modules-v4l2loopback-oem-26.04a
 linux-modules-v4l2loopback-oem-26.04b
 linux-modules-v4l2loopback-oem-7.0
+linux-modules-v4l2loopback-oem-7.3
 linux-modules-v4l2loopback-realtime-7.0
 linux-modules-v4l2loopback-unsigned-generic
 linux-modules-v4l2loopback-unsigned-generic-7.0
@@ -77154,6 +77172,7 @@ linux-modules-zfs-oem-26.04
 linux-modules-zfs-oem-26.04a
 linux-modules-zfs-oem-26.04b
 linux-modules-zfs-oem-7.0
+linux-modules-zfs-oem-7.3
 linux-modules-zfs-oracle-7.0
 linux-modules-zfs-unsigned-aws
 linux-modules-zfs-unsigned-aws-7.0
@@ -77252,6 +77271,8 @@ linux-oem-7.0-tools-7.0.0-1014
 linux-oem-7.0-tools-7.0.0-1015
 linux-oem-7.0-tools-7.0.0-1017
 linux-oem-7.0-tools-7.0.0-1018
+linux-oem-7.3-headers-7.3.0-1004
+linux-oem-7.3-tools-7.3.0-1004
 linux-oracle-headers-7.0.0-1005
 linux-oracle-headers-7.0.0-1007
 linux-oracle-headers-7.0.0-1008
@@ -77427,6 +77448,7 @@ linux-tools-7.0.0-42-generic
 linux-tools-7.0.0-43
 linux-tools-7.0.0-43-generic
 linux-tools-7.0.0-43-realtime
+linux-tools-7.3.0-1004-oem
 linux-tools-azure-fde-lts-26.04
 linux-tools-azure-lts-26.04
 linux-tools-gke
@@ -77458,45 +77480,23 @@ libstd-rust-1.97
 libstd-rust-1.97-dev
 libstd-rust-1.97-dev-wasm32
 libtcnative-2
-linux-buildinfo-7.3.0-1004-oem
-linux-headers-7.3.0-1004-oem
 linux-headers-oem-7.3
-linux-image-7.3.0-1004-oem
 linux-image-oem-7.3
-linux-image-uc-7.3.0-1004-oem
 linux-image-uc-oem-7.3
-linux-image-unsigned-7.3.0-1004-oem
-linux-main-modules-evdi-7.3.0-1004-oem
 linux-main-modules-evdi-unsigned-7.3.0-1004-oem
-linux-main-modules-ipu6-7.3.0-1004-oem
 linux-main-modules-ipu6-unsigned-7.3.0-1004-oem
-linux-main-modules-ipu7-7.3.0-1004-oem
 linux-main-modules-ipu7-unsigned-7.3.0-1004-oem
-linux-main-modules-iwlwifi-7.3.0-1004-oem
 linux-main-modules-iwlwifi-unsigned-7.3.0-1004-oem
 linux-main-modules-oem-7.3
-linux-main-modules-v4l2loopback-7.3.0-1004-oem
 linux-main-modules-v4l2loopback-unsigned-7.3.0-1004-oem
-linux-main-modules-zfs-7.3.0-1004-oem
 linux-main-modules-zfs-unsigned-7.3.0-1004-oem
-linux-main-signed-oem-7.3
-linux-modules-7.3.0-1004-oem
-linux-modules-evdi-oem-7.3
 linux-modules-evdi-unsigned-oem-7.3
-linux-modules-ipu6-oem-7.3
 linux-modules-ipu6-unsigned-oem-7.3
-linux-modules-ipu7-oem-7.3
 linux-modules-ipu7-unsigned-oem-7.3
-linux-modules-iwlwifi-oem-7.3
 linux-modules-iwlwifi-unsigned-oem-7.3
-linux-modules-v4l2loopback-oem-7.3
 linux-modules-v4l2loopback-unsigned-oem-7.3
-linux-modules-zfs-oem-7.3
 linux-modules-zfs-unsigned-oem-7.3
 linux-oem-7.3
-linux-oem-7.3-headers-7.3.0-1004
-linux-oem-7.3-tools-7.3.0-1004
-linux-tools-7.3.0-1004-oem
 linux-tools-oem-7.3
 openjdk-26-dbg
 openjdk-26-demo
